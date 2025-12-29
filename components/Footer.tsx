@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 text-sm text-white/70 md:flex-row md:items-center">
         <div>
           <p className="font-display text-lg text-white">
-            Prometheus-P Portfolio
+            Jed Park Portfolio
           </p>
           <p>AI/ML 기반 솔루션을 설계하고 비즈니스 가치를 구현합니다.</p>
         </div>

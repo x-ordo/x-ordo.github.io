@@ -15,12 +15,12 @@ export function generateMetadata({ params }: PageProps): Metadata {
   const project = projects.find((item) => item.slug === params.slug);
   if (!project) {
     return {
-      title: "Project Not Found | Prometheus-P",
+      title: "Project Not Found | Jed Park",
     };
   }
 
   return {
-    title: `${project.name} | Prometheus-P`,
+    title: `${project.name} | Jed Park`,
     description: project.summary,
   };
 }

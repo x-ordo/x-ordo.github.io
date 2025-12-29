@@ -17,7 +17,7 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Prometheus-P | Developer & Entrepreneur",
+  title: "Jed Park | Developer & Entrepreneur",
   description:
     "AI/ML 기반 솔루션을 설계하고 비즈니스 가치를 구현하는 풀스택 개발자.",
   keywords: [
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     "OracleDB",
     "Upstage",
   ],
-  authors: [{ name: "Prometheus-P" }],
+  authors: [{ name: "Jed Park" }],
   openGraph: {
-    title: "Prometheus-P | Developer & Entrepreneur",
+    title: "Jed Park | Developer & Entrepreneur",
     description:
       "AI/ML 기반 솔루션을 설계하고 비즈니스 가치를 구현하는 풀스택 개발자.",
     type: "website",

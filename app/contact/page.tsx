@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact | Prometheus-P",
+  title: "Contact | Jed Park",
   description: "프로젝트 협업 및 문의를 위한 연락처 페이지입니다.",
 };
 
@@ -37,9 +37,9 @@ export default function ContactPage() {
             <p className="text-xs uppercase tracking-[0.4em] text-white/50">
               GitHub
             </p>
-            <p className="mt-3 text-lg text-white">github.com/Prometheus-P</p>
+            <p className="mt-3 text-lg text-white">github.com/x-ordo</p>
             <a
-              href="https://github.com/Prometheus-P"
+              href="https://github.com/x-ordo"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 inline-flex text-sm uppercase tracking-[0.2em] text-white/70 hover:text-white"

@@ -13,7 +13,7 @@ export default function Hero() {
             AI로 미래를 설계하고, 비즈니스 가치를 구현합니다.
           </h1>
           <p className="text-lg text-white/70">
-            Prometheus-P는 제품, 시스템, 비즈니스를 연결하는 풀스택 개발자입니다.
+            Jed Park은 제품, 시스템, 비즈니스를 연결하는 풀스택 개발자입니다.
             LLM 기반 서비스 설계, 자동화 파이프라인, 데이터 중심 제품을 구축합니다.
           </p>
           <div className="flex flex-wrap items-center gap-4">

@@ -35,10 +35,10 @@ export default function Navigation() {
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="group flex items-center gap-3">
           <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg font-semibold text-white shadow-lg">
-            P
+            J
           </span>
           <span className="hidden text-sm uppercase tracking-[0.3em] text-white/70 md:inline">
-            Prometheus-P
+            Jed Park
           </span>
         </Link>
         <div className="flex items-center gap-6 text-sm uppercase tracking-[0.2em] text-white/70">

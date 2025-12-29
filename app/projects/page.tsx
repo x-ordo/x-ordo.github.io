@@ -3,8 +3,8 @@ import CategoryFilter from "../../components/CategoryFilter";
 import { projects } from "../../data/projects";
 
 export const metadata: Metadata = {
-  title: "Projects | Prometheus-P",
-  description: "Prometheus-P의 28개 프로젝트 포트폴리오를 확인하세요.",
+  title: "Projects | Jed Park",
+  description: "Jed Park의 28개 프로젝트 포트폴리오를 확인하세요.",
 };
 
 export default function ProjectsPage() {

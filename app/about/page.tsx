@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | Prometheus-P",
-  description: "Prometheus-P의 개발 철학과 핵심 역량을 소개합니다.",
+  title: "About | Jed Park",
+  description: "Jed Park의 개발 철학과 핵심 역량을 소개합니다.",
 };
 
 export default function AboutPage() {
@@ -16,7 +16,7 @@ export default function AboutPage() {
           기술과 비즈니스를 연결하는 개발자
         </h1>
         <p className="text-lg text-white/70">
-          Prometheus-P는 AI/ML 기반 솔루션을 설계하고, 복잡한 비즈니스 문제를
+          Jed Park은 AI/ML 기반 솔루션을 설계하고, 복잡한 비즈니스 문제를
           제품으로 구현합니다. 고대의 지혜와 현대 기술을 연결하는 관점으로
           시스템을 설계합니다.
         </p>
