@@ -17,7 +17,7 @@ export default function ProjectsPage() {
           </p>
         </div>
         <h1 className="text-4xl font-black uppercase text-black sm:text-5xl">
-          25개 프로젝트
+          21개 프로젝트
         </h1>
         <p className="max-w-2xl text-sm text-black/70 border-l-4 border-black pl-4">
           AI/ML, SaaS, 자동화, 분석까지 다양한 도메인의 제품을 설계하고

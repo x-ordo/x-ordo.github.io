@@ -103,22 +103,6 @@ export const projects: Project[] = [
 
   // ===== B2C Consumer Apps =====
   {
-    slug: "tripkit",
-    name: "TripKit",
-    summary: "AI 감성 여행 플랫폼 (Vibe 기반 큐레이션)",
-    description:
-      "사용자의 여행 분위기(Vibe)를 AI가 분석하여 숨겨진 명소, 필름 카메라 스타일, 의상 컨셉을 큐레이션합니다. LangGraph 에이전트와 Gemini Imagen을 활용합니다.",
-    category: "b2c-consumer",
-    stack: ["Next.js", "TypeScript", "FastAPI", "LangGraph", "OpenAI", "Gemini", "Google Places API"],
-    highlights: [
-      "10단계 Vibe 수집 대화 (Human-in-the-loop)",
-      "3가지 감성 컨셉 선택",
-      "SSE 스트리밍 여행지 추천",
-    ],
-    links: [{ label: "Demo Video", href: "https://www.youtube.com/watch?v=cBE6nhh1Iaw" }],
-    featured: true,
-  },
-  {
     slug: "interview-service",
     name: "Interview Service",
     summary: "AI 기반 실시간 모의 면접 & 피드백 플랫폼",
@@ -146,21 +130,6 @@ export const projects: Project[] = [
       "eSIM 상품 관리",
       "Stripe 결제 연동",
       "자동 이메일 발송 (QR 포함)",
-    ],
-    featured: true,
-  },
-  {
-    slug: "careguide",
-    name: "CareGuide",
-    summary: "만성콩팥병(CKD) 환자 종합 케어 플랫폼",
-    description:
-      "CKD 환자를 위한 AI 챗봇 의료정보, 영양 관리, 커뮤니티 기능을 제공합니다. FastAPI 백엔드와 React 프론트엔드, OpenAI 챗봇을 통합했습니다.",
-    category: "b2c-consumer",
-    stack: ["Python", "FastAPI", "MongoDB", "OpenAI", "React", "TypeScript"],
-    highlights: [
-      "AI 챗봇 기반 의료정보 제공",
-      "영양 관리 (Nutri Coach)",
-      "커뮤니티 & 지식 검색",
     ],
     featured: true,
   },
@@ -252,20 +221,6 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: "satiachat",
-    name: "SatiaChat Diet Coach",
-    summary: "GLP-1 사용자 대상 AI 다이어트 챗봇",
-    description:
-      "위고비/마운자로 사용자를 위한 AI 식단 코칭입니다. 3가지 동물 페르소나, LlamaIndex RAG 기반 약물 Q&A, 영양 관리를 제공합니다.",
-    category: "b2c-consumer",
-    stack: ["React", "TypeScript", "Vite", "Supabase", "FastAPI", "OpenAI", "LlamaIndex"],
-    highlights: [
-      "3가지 동물 페르소나 (냥이/댕댕이/꿀꿀이)",
-      "자연어 식단 기록 (Function Calling)",
-      "RAG 기반 약물 정보 Q&A",
-    ],
-  },
-  {
     slug: "tee-up",
     name: "TEE:UP",
     summary: "프리미엄 골프 레슨 매칭 플랫폼",
@@ -325,18 +280,19 @@ export const projects: Project[] = [
 
   // ===== AI / Agent Systems =====
   {
-    slug: "contents-creator",
-    name: "Contents Supporter",
-    summary: "AI 기반 콘텐츠 제작 & 멀티 플랫폼 발행 서비스",
+    slug: "talkstudio",
+    name: "TalkStudio",
+    summary: "AI 대화 생성기 & Discord 연동 플랫폼",
     description:
-      "블로그, SNS, 동영상 콘텐츠를 LLM 에이전트로 자동 생성하고 Instagram, YouTube, TikTok 등 멀티 플랫폼에 동시 발행합니다.",
+      "Upstage/OpenAI 기반 AI 대화 생성기입니다. Discord 봇 연동, 실시간 스트리밍, 다양한 페르소나 설정을 지원합니다.",
     category: "ai-agent",
-    stack: ["React", "FastAPI", "Supabase", "OpenAI", "Gemini", "Replicate", "Stable Diffusion"],
+    stack: ["JavaScript", "Python", "Discord.js", "OpenAI", "Upstage API", "Vercel"],
     highlights: [
-      "Multi-Agent 콘텐츠 생성 파이프라인",
-      "AI 이미지 생성 (Gemini 2.0 Flash)",
-      "7개 SNS + WordPress 멀티 플랫폼 발행",
+      "AI 대화 생성 (Upstage/OpenAI)",
+      "Discord 봇 연동",
+      "58개 배포 이력 (Production/Preview)",
     ],
+    links: [{ label: "Live", href: "https://talkstudio.vercel.app" }],
     featured: true,
   },
   {
