@@ -11,25 +11,25 @@ type ProjectCardProps = {
 };
 
 const categoryColors: Record<string, string> = {
-  saas: "bg-[#22c55e]",
-  consumer: "bg-[#a855f7]",
-  ai: "bg-[#3b82f6]",
-  automation: "bg-[#eab308]",
-  tools: "bg-[#f97316]",
+  saas: "bg-[#00ff00]",
+  consumer: "bg-[#ff00ff]",
+  ai: "bg-[#00ffff]",
+  automation: "bg-[#ffff00]",
+  tools: "bg-[#ff6600]",
 };
 
 const categoryBorders: Record<string, string> = {
-  saas: "group-hover:border-[#22c55e]",
-  consumer: "group-hover:border-[#a855f7]",
-  ai: "group-hover:border-[#3b82f6]",
-  automation: "group-hover:border-[#eab308]",
-  tools: "group-hover:border-[#f97316]",
+  saas: "group-hover:border-[#00ff00]",
+  consumer: "group-hover:border-[#ff00ff]",
+  ai: "group-hover:border-[#00ffff]",
+  automation: "group-hover:border-[#ffff00]",
+  tools: "group-hover:border-[#ff6600]",
 };
 
 export default function ProjectCard({ project, compact }: ProjectCardProps) {
   const meta = categoryMeta[project.category];
-  const accentColor = categoryColors[project.category] || "bg-[#22c55e]";
-  const borderHover = categoryBorders[project.category] || "group-hover:border-[#22c55e]";
+  const accentColor = categoryColors[project.category] || "bg-[#00ff00]";
+  const borderHover = categoryBorders[project.category] || "group-hover:border-[#00ff00]";
 
   return (
     <Link
@@ -41,11 +41,11 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
         compact ? "p-5" : "p-6"
       )}
     >
-      {/* Category Indicator */}
-      <div className="flex items-center justify-between mb-4">
-        <span className={cn("h-1.5 w-12 rounded-full", accentColor)} />
+      {/* Header: Category Indicator + Featured Badge */}
+      <div className="flex items-center justify-between mb-5">
+        <span className={cn("h-1.5 w-10 rounded-full", accentColor)} />
         {project.featured && (
-          <span className="text-[10px] font-semibold text-black/40 uppercase tracking-wider">
+          <span className="text-[10px] font-semibold text-black/35 uppercase tracking-wider">
             Featured
           </span>
         )}
@@ -53,28 +53,33 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
 
       {/* Content */}
       <div className="flex flex-1 flex-col">
-        <p className="text-[11px] font-medium text-black/50 uppercase tracking-wider">
+        {/* Category Label */}
+        <p className="text-[10px] font-medium text-black/45 uppercase tracking-wider mb-2">
           {meta.label}
         </p>
-        <h3 className="mt-2 text-lg font-bold text-black leading-tight">
+
+        {/* Project Name */}
+        <h3 className="text-base font-bold text-black leading-snug mb-3 lg:text-lg">
           {project.name}
         </h3>
-        <p className="mt-2 text-sm text-black/60 leading-relaxed line-clamp-2">
+
+        {/* Summary */}
+        <p className="text-sm text-black/55 leading-relaxed line-clamp-2 mb-5">
           {project.summary}
         </p>
 
-        {/* Stack */}
-        <div className="mt-auto pt-4 flex flex-wrap gap-1.5">
+        {/* Tech Stack Tags */}
+        <div className="mt-auto flex flex-wrap gap-1.5">
           {project.stack.slice(0, 4).map((item) => (
             <span
               key={item}
-              className="px-2 py-0.5 text-[10px] font-medium text-black/70 bg-black/5 rounded-sm"
+              className="px-2.5 py-1 text-[10px] font-medium text-black/65 bg-black/[0.04] rounded-sm"
             >
               {item}
             </span>
           ))}
           {project.stack.length > 4 && (
-            <span className="px-2 py-0.5 text-[10px] font-medium text-black/40">
+            <span className="px-2.5 py-1 text-[10px] font-medium text-black/35">
               +{project.stack.length - 4}
             </span>
           )}
@@ -82,10 +87,10 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
       </div>
 
       {/* Footer */}
-      <div className="mt-4 pt-4 border-t border-black/10 flex items-center justify-between">
-        <span className="text-xs font-medium text-black/50">View project</span>
-        <span className="w-6 h-6 flex items-center justify-center bg-black/5 rounded-full transition-all group-hover:bg-black group-hover:text-white">
-          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="mt-5 pt-4 border-t border-black/[0.08] flex items-center justify-between">
+        <span className="text-xs font-medium text-black/45">View project</span>
+        <span className="w-7 h-7 flex items-center justify-center bg-black/[0.04] rounded-full transition-all group-hover:bg-black group-hover:text-white">
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </span>

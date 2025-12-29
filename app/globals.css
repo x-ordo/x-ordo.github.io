@@ -1,16 +1,31 @@
 @import "tailwindcss";
 
 :root {
+  /* Colors - Bold Neon */
   --background: #fafafa;
   --foreground: #0a0a0a;
-  --accent: #22c55e;
-  --accent-hover: #16a34a;
-  --accent-soft: #dcfce7;
+  --accent: #00ff00;
+  --accent-hover: #00cc00;
+  --accent-soft: #00ff0020;
   --secondary: #3b82f6;
   --secondary-soft: #dbeafe;
   --muted: #71717a;
   --border-color: #0a0a0a;
   --card-bg: #ffffff;
+
+  /* Spacing Scale (8px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
 }
 
 @theme inline {
@@ -62,16 +77,18 @@ body {
 .brutal-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
   border: 2px solid var(--border-color);
   background: var(--accent);
   color: var(--foreground);
   font-weight: 600;
   font-size: 14px;
-  padding: 12px 24px;
+  padding: 14px 28px;
   box-shadow: 4px 4px 0 var(--border-color);
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .brutal-btn:hover {
@@ -83,15 +100,17 @@ body {
 .brutal-btn-outline {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
   border: 2px solid var(--border-color);
   background: transparent;
   color: var(--foreground);
   font-weight: 600;
   font-size: 14px;
-  padding: 12px 24px;
+  padding: 14px 28px;
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .brutal-btn-outline:hover {
@@ -103,8 +122,8 @@ body {
   display: inline-block;
   border: 1.5px solid var(--border-color);
   background: var(--card-bg);
-  padding: 4px 10px;
-  font-size: 11px;
+  padding: 6px 14px;
+  font-size: 12px;
   font-weight: 500;
   transition: all 0.15s ease;
 }
@@ -145,7 +164,7 @@ body {
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
+  padding: 6px 14px;
   font-size: 11px;
   font-weight: 600;
   text-transform: uppercase;
@@ -161,12 +180,12 @@ body {
   background: var(--secondary-soft);
 }
 
-/* Section */
+/* Section Header */
 .section-header {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  margin-bottom: 48px;
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
 }
 
 @media (min-width: 768px) {
@@ -234,7 +253,7 @@ body {
 
 /* Utility */
 .glass {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(250, 250, 250, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }

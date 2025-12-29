@@ -9,20 +9,20 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="px-6 pb-24 pt-8">
+    <div className="px-6 pt-10 pb-24 lg:pt-14 lg:pb-32">
       <section className="mx-auto max-w-6xl">
-        {/* Header */}
-        <div className="mb-12">
+        {/* Page Header */}
+        <div className="mb-12 lg:mb-14">
           <span className="badge badge-secondary mb-4">Portfolio</span>
-          <h1 className="text-3xl font-bold text-black sm:text-4xl">
+          <h1 className="text-2xl font-bold text-black sm:text-3xl lg:text-4xl">
             프로젝트
           </h1>
-          <p className="mt-3 text-black/60 max-w-xl">
+          <p className="mt-4 text-sm text-black/55 max-w-lg leading-relaxed lg:text-base lg:mt-5">
             AI/ML, SaaS, 자동화, 분석까지 다양한 도메인의 제품을 설계하고 구현했습니다.
           </p>
         </div>
 
-        {/* Projects */}
+        {/* Projects with Filter */}
         <CategoryFilter projects={projects} />
       </section>
     </div>
