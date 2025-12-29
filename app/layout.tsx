@@ -3,6 +3,7 @@ import { Newsreader, Syne } from "next/font/google";
 import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
+import PixelDog from "../components/PixelDog";
 
 const syne = Syne({
   variable: "--font-display",
@@ -65,6 +66,7 @@ export default function RootLayout({
         <Navigation />
         <main className="min-h-screen pt-24">{children}</main>
         <Footer />
+        <PixelDog />
       </body>
     </html>
   );
