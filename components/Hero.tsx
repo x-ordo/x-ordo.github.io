@@ -15,7 +15,7 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="relative px-6 pt-4 pb-20 lg:pt-6 lg:pb-28">
+    <section className="relative px-6 pt-4 pb-28 lg:pt-6 lg:pb-36">
       <div className="mx-auto max-w-6xl">
         {/* Top Badge */}
         <div className="mb-10 flex items-center gap-3">
@@ -89,7 +89,7 @@ export default function Hero() {
             ))}
 
             {/* Signature Stack Card */}
-            <div className="p-5 border-2 border-black bg-black text-white transition-all duration-200 hover:shadow-[6px_6px_0_#00ff00] hover:-translate-x-1 hover:-translate-y-1 lg:p-6">
+            <div className="p-5 border-3 border-black bg-black text-white transition-all duration-100 hover:shadow-[8px_8px_0_#00ff00] hover:-translate-x-1 hover:-translate-y-1 lg:p-6">
               <p className="text-[11px] font-semibold text-white/45 uppercase tracking-wider mb-4">
                 Signature Stack
               </p>
