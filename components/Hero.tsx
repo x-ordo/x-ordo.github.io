@@ -1,89 +1,108 @@
 import Link from "next/link";
-import TypeWriter from "./TypeWriter";
+
+const skills = [
+  "LLM Orchestration",
+  "RAG Systems",
+  "Full-Stack",
+  "Automation",
+];
+
+const highlights = [
+  { label: "Projects", value: "21+", desc: "AI, SaaS, Automation" },
+  { label: "Focus", value: "LLM", desc: "RAG, Agents, Pipelines" },
+  { label: "Goal", value: "Scale", desc: "Production & Revenue" },
+];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-10">
-      {/* Marquee banner */}
-      <div className="mb-12 -mx-6 border-y-4 border-black bg-[#00ff00] py-3 overflow-hidden">
-        <div className="marquee">
-          <span className="marquee-content text-sm font-bold uppercase tracking-wider">
-            DEVELOPER & ENTREPRENEUR • AI/ML SPECIALIST • FULL-STACK ENGINEER • LLM ORCHESTRATION • PRODUCT BUILDER • DEVELOPER & ENTREPRENEUR • AI/ML SPECIALIST • FULL-STACK ENGINEER • LLM ORCHESTRATION • PRODUCT BUILDER •{" "}
-          </span>
+    <section className="relative px-6 pb-24 pt-8">
+      <div className="mx-auto max-w-6xl">
+        {/* Top Badge */}
+        <div className="mb-8 flex items-center gap-3">
+          <span className="badge badge-primary">Available for hire</span>
+          <span className="h-1.5 w-1.5 rounded-full bg-[#22c55e] animate-pulse" />
         </div>
-      </div>
 
-      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
-        <div className="space-y-8">
-          <div className="inline-block border-4 border-black bg-white px-4 py-2">
-            <p className="text-xs font-bold uppercase tracking-wider">
-              Developer & Entrepreneur
+        {/* Main Content */}
+        <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          {/* Left */}
+          <div className="space-y-8">
+            <h1 className="text-4xl font-bold leading-[1.1] text-black sm:text-5xl lg:text-[3.5rem]">
+              AI로 비즈니스
+              <br />
+              <span className="relative inline-block">
+                가치를 만듭니다
+                <span className="absolute -bottom-2 left-0 h-3 w-full bg-[#22c55e]/30 -z-10" />
+              </span>
+            </h1>
+
+            <p className="text-lg text-black/70 max-w-lg leading-relaxed">
+              제품, 시스템, 비즈니스를 연결하는 풀스택 개발자입니다.
+              LLM 기반 서비스 설계부터 자동화 파이프라인까지,
+              실제 운영 가능한 솔루션을 구축합니다.
             </p>
-          </div>
-          <h1 className="text-4xl font-black uppercase leading-tight text-black sm:text-5xl lg:text-6xl">
-            AI로 미래를
-            <br />
-            <span className="bg-[#00ff00]">설계하고,</span>
-            <br />
-            비즈니스 가치를
-            <br />
-            구현합니다.
-          </h1>
-          <p className="text-lg text-black/80 max-w-xl border-l-4 border-black pl-4">
-            Jed Park은 제품, 시스템, 비즈니스를 연결하는 풀스택 개발자입니다.
-            LLM 기반 서비스 설계, 자동화 파이프라인, 데이터 중심 제품을 구축합니다.
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
-            <Link
-              href="/projects"
-              className="brutal-btn px-8 py-4 text-sm font-bold uppercase tracking-wider"
-            >
-              View Projects →
-            </Link>
-            <Link
-              href="/contact"
-              className="brutal-btn-outline px-8 py-4 text-sm font-bold uppercase tracking-wider"
-            >
-              Contact
-            </Link>
-          </div>
-          <div className="flex items-center gap-3 text-sm font-bold text-black">
-            <span className="inline-flex h-3 w-3 animate-blink bg-[#00ff00] border-2 border-black" />
-            <TypeWriter
-              texts={[
-                "LLM & RAG Specialist",
-                "Product-focused Full-Stack",
-                "Automation & Integration",
-              ]}
-            />
-          </div>
-        </div>
 
-        <div className="relative">
-          <div className="brutal-box p-8">
-            <div className="flex items-center justify-between border-b-4 border-black pb-4 mb-6">
-              <p className="text-xs font-bold uppercase tracking-wider">
+            {/* Skills */}
+            <div className="flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="brutal-tag"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
+              <Link href="/projects" className="brutal-btn">
+                프로젝트 보기
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link href="/contact" className="brutal-btn-outline">
+                연락하기
+              </Link>
+            </div>
+          </div>
+
+          {/* Right - Stats Cards */}
+          <div className="grid gap-4">
+            {highlights.map((item, i) => (
+              <div
+                key={item.label}
+                className="card-elevated p-6 flex items-center gap-6"
+                style={{ animationDelay: `${i * 100}ms` }}
+              >
+                <div className="flex-shrink-0">
+                  <span className="text-3xl font-bold text-black">{item.value}</span>
+                </div>
+                <div className="flex-1 border-l-2 border-black/10 pl-6">
+                  <p className="text-xs font-semibold text-black/50 uppercase tracking-wider">
+                    {item.label}
+                  </p>
+                  <p className="text-sm text-black/80 mt-1">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+
+            {/* Signature Stack */}
+            <div className="card-elevated p-6 bg-black text-white">
+              <p className="text-xs font-semibold text-white/50 uppercase tracking-wider mb-3">
                 Signature Stack
               </p>
-              <span className="border-4 border-black bg-[#ff00ff] px-3 py-1 text-xs font-bold text-black">
-                2025
-              </span>
-            </div>
-            <div className="grid gap-4">
-              {[
-                { name: "LLM Orchestration", status: "LIVE" },
-                { name: "Event-driven Systems", status: "LIVE" },
-                { name: "Product Analytics", status: "LIVE" },
-                { name: "Enterprise Automation", status: "LIVE" },
-              ].map((item) => (
-                <div
-                  key={item.name}
-                  className="flex items-center justify-between border-4 border-black bg-white px-4 py-3 hover:bg-[#00ff00] transition-colors"
-                >
-                  <span className="text-sm font-bold text-black">{item.name}</span>
-                  <span className="text-xs font-bold text-black/60">{item.status}</span>
-                </div>
-              ))}
+              <div className="flex flex-wrap gap-2">
+                {["Next.js", "Python", "LangChain", "PostgreSQL", "Go"].map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1 text-xs font-medium bg-white/10 border border-white/20"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

@@ -48,21 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${jetbrains.variable} font-mono antialiased`}>
-        {/* Grid background */}
-        <div className="pointer-events-none fixed inset-0 -z-10">
-          <div className="absolute inset-0 bg-white" />
-          <div
-            className="absolute inset-0 opacity-[0.03]"
-            style={{
-              backgroundImage: `
-                linear-gradient(to right, #000 1px, transparent 1px),
-                linear-gradient(to bottom, #000 1px, transparent 1px)
-              `,
-              backgroundSize: "40px 40px",
-            }}
-          />
-        </div>
+      <body className={`${jetbrains.variable} font-mono antialiased bg-[#fafafa]`}>
         <Navigation />
         <main className="min-h-screen pt-20">{children}</main>
         <Footer />

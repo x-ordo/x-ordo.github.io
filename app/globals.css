@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #000000;
-  --accent: #00ff00;
-  --accent-alt: #ff00ff;
-  --border: 3px solid #000000;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --accent: #22c55e;
+  --accent-hover: #16a34a;
+  --accent-soft: #dcfce7;
+  --secondary: #3b82f6;
+  --secondary-soft: #dbeafe;
+  --muted: #71717a;
+  --border-color: #0a0a0a;
+  --card-bg: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: "JetBrains Mono", "Courier New", monospace;
+  --font-sans: "JetBrains Mono", ui-monospace, monospace;
 }
 
 * {
@@ -27,99 +32,161 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  line-height: 1.6;
 }
 
+/* Typography */
 .font-display {
-  font-family: "JetBrains Mono", "Courier New", monospace;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.font-body {
-  font-family: "JetBrains Mono", "Courier New", monospace;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .text-balance {
   text-wrap: balance;
 }
 
-/* Brutalist components */
+/* Refined Brutalist Components */
 .brutal-box {
-  border: 3px solid #000;
-  background: #fff;
-  box-shadow: 8px 8px 0 #000;
-  transition: all 0.1s ease;
+  border: 2px solid var(--border-color);
+  background: var(--card-bg);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .brutal-box:hover {
-  box-shadow: 4px 4px 0 #000;
-  transform: translate(4px, 4px);
+  box-shadow: 6px 6px 0 var(--border-color);
+  transform: translate(-3px, -3px);
 }
 
 .brutal-btn {
-  border: 3px solid #000;
-  background: #00ff00;
-  color: #000;
-  font-weight: 700;
-  text-transform: uppercase;
-  box-shadow: 4px 4px 0 #000;
-  transition: all 0.1s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--border-color);
+  background: var(--accent);
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  box-shadow: 4px 4px 0 var(--border-color);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
 .brutal-btn:hover {
-  box-shadow: 2px 2px 0 #000;
+  box-shadow: 2px 2px 0 var(--border-color);
   transform: translate(2px, 2px);
+  background: var(--accent-hover);
 }
 
 .brutal-btn-outline {
-  border: 3px solid #000;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid var(--border-color);
   background: transparent;
-  color: #000;
-  font-weight: 700;
-  text-transform: uppercase;
-  box-shadow: 4px 4px 0 #000;
-  transition: all 0.1s ease;
+  color: var(--foreground);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 12px 24px;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
 }
 
 .brutal-btn-outline:hover {
-  box-shadow: 2px 2px 0 #000;
-  transform: translate(2px, 2px);
-  background: #000;
-  color: #fff;
+  background: var(--foreground);
+  color: var(--background);
 }
 
 .brutal-tag {
-  border: 2px solid #000;
-  background: #fff;
-  padding: 4px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
+  display: inline-block;
+  border: 1.5px solid var(--border-color);
+  background: var(--card-bg);
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.brutal-tag:hover {
+  background: var(--accent-soft);
 }
 
 .brutal-link {
-  color: #000;
+  color: var(--foreground);
   text-decoration: underline;
-  text-underline-offset: 4px;
-  text-decoration-thickness: 2px;
-  font-weight: 600;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+  font-weight: 500;
+  transition: all 0.15s ease;
 }
 
 .brutal-link:hover {
-  background: #00ff00;
+  background: var(--accent);
+  text-decoration: none;
+  padding: 0 4px;
+  margin: 0 -4px;
+}
+
+/* Card Variants */
+.card-elevated {
+  background: var(--card-bg);
+  border: 2px solid var(--border-color);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-elevated:hover {
+  box-shadow: 8px 8px 0 var(--border-color);
+  transform: translate(-4px, -4px);
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1.5px solid var(--border-color);
+}
+
+.badge-primary {
+  background: var(--accent);
+}
+
+.badge-secondary {
+  background: var(--secondary-soft);
+}
+
+/* Section */
+.section-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .section-header {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
 }
 
 /* Animations */
-@keyframes glitch {
-  0% { transform: translate(0); }
-  20% { transform: translate(-2px, 2px); }
-  40% { transform: translate(-2px, -2px); }
-  60% { transform: translate(2px, 2px); }
-  80% { transform: translate(2px, -2px); }
-  100% { transform: translate(0); }
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes blink {
@@ -127,8 +194,8 @@ body {
   50% { opacity: 0; }
 }
 
-.animate-glitch:hover {
-  animation: glitch 0.3s ease infinite;
+.animate-fade-in {
+  animation: fade-in 0.5s ease forwards;
 }
 
 .animate-blink {
@@ -137,40 +204,37 @@ body {
 
 /* Selection */
 ::selection {
-  background: #00ff00;
-  color: #000;
+  background: var(--accent);
+  color: var(--foreground);
 }
 
 /* Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fff;
-  border-left: 3px solid #000;
+  background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000;
+  background: var(--muted);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00ff00;
+  background: var(--foreground);
 }
 
-/* Marquee */
-.marquee {
-  overflow: hidden;
-  white-space: nowrap;
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
-.marquee-content {
-  display: inline-block;
-  animation: marquee 20s linear infinite;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* Utility */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }

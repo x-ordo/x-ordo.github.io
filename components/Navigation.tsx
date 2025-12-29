@@ -17,7 +17,7 @@ export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
@@ -26,16 +26,18 @@ export default function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all border-b-4 border-black",
-        scrolled ? "bg-white" : "bg-white"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+        scrolled
+          ? "glass border-b border-black/10 shadow-sm"
+          : "bg-transparent"
       )}
     >
       <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <Link href="/" className="group flex items-center gap-3">
-          <span className="flex h-12 w-12 items-center justify-center border-4 border-black bg-[#00ff00] text-xl font-black text-black">
+          <span className="flex h-10 w-10 items-center justify-center border-2 border-black bg-[#22c55e] text-base font-bold text-black transition-all group-hover:shadow-[3px_3px_0_#000] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
             JP
           </span>
-          <span className="hidden text-sm font-bold uppercase tracking-wider text-black md:inline">
+          <span className="hidden text-sm font-semibold text-black/90 md:inline">
             Jed Park
           </span>
         </Link>
@@ -48,13 +50,16 @@ export default function Navigation() {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "px-4 py-2 text-sm font-bold uppercase tracking-wider transition-all border-4",
+                  "relative px-4 py-2 text-sm font-medium transition-all",
                   isActive
-                    ? "border-black bg-black text-white"
-                    : "border-transparent text-black hover:border-black"
+                    ? "text-black"
+                    : "text-black/60 hover:text-black"
                 )}
               >
                 {item.label}
+                {isActive && (
+                  <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-[#22c55e]" />
+                )}
               </Link>
             );
           })}

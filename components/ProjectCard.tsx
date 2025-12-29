@@ -11,52 +11,83 @@ type ProjectCardProps = {
 };
 
 const categoryColors: Record<string, string> = {
-  saas: "bg-[#00ff00]",
-  consumer: "bg-[#ff00ff]",
-  ai: "bg-[#00ffff]",
-  automation: "bg-[#ffff00]",
-  tools: "bg-[#ff6600]",
+  saas: "bg-[#22c55e]",
+  consumer: "bg-[#a855f7]",
+  ai: "bg-[#3b82f6]",
+  automation: "bg-[#eab308]",
+  tools: "bg-[#f97316]",
+};
+
+const categoryBorders: Record<string, string> = {
+  saas: "group-hover:border-[#22c55e]",
+  consumer: "group-hover:border-[#a855f7]",
+  ai: "group-hover:border-[#3b82f6]",
+  automation: "group-hover:border-[#eab308]",
+  tools: "group-hover:border-[#f97316]",
 };
 
 export default function ProjectCard({ project, compact }: ProjectCardProps) {
   const meta = categoryMeta[project.category];
-  const accentColor = categoryColors[project.category] || "bg-[#00ff00]";
+  const accentColor = categoryColors[project.category] || "bg-[#22c55e]";
+  const borderHover = categoryBorders[project.category] || "group-hover:border-[#22c55e]";
 
   return (
     <Link
       href={`/projects/${project.slug}`}
       className={cn(
-        "group flex h-full flex-col border-4 border-black bg-white transition-all duration-100",
-        "hover:shadow-[8px_8px_0_#000] hover:-translate-x-1 hover:-translate-y-1",
+        "group flex h-full flex-col bg-white border-2 border-black/10 transition-all duration-200",
+        "hover:border-2 hover:shadow-[6px_6px_0_#0a0a0a] hover:-translate-x-1 hover:-translate-y-1",
+        borderHover,
         compact ? "p-5" : "p-6"
       )}
     >
-      <div className={cn("h-2 w-full -mt-5 -mx-5 mb-5", accentColor, compact ? "-mt-5 -mx-5 mb-5 w-[calc(100%+40px)]" : "-mt-6 -mx-6 mb-6 w-[calc(100%+48px)]")} />
-      <div className="flex flex-1 flex-col gap-4">
-        <div>
-          <p className="text-xs font-bold uppercase tracking-wider text-black/60">
-            {meta.label}
-          </p>
-          <h3 className="mt-3 text-xl font-black uppercase text-black">
-            {project.name}
-          </h3>
-          <p className="mt-3 text-sm text-black/70">{project.summary}</p>
-        </div>
-        <div className="mt-auto flex flex-wrap gap-2">
+      {/* Category Indicator */}
+      <div className="flex items-center justify-between mb-4">
+        <span className={cn("h-1.5 w-12 rounded-full", accentColor)} />
+        {project.featured && (
+          <span className="text-[10px] font-semibold text-black/40 uppercase tracking-wider">
+            Featured
+          </span>
+        )}
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col">
+        <p className="text-[11px] font-medium text-black/50 uppercase tracking-wider">
+          {meta.label}
+        </p>
+        <h3 className="mt-2 text-lg font-bold text-black leading-tight">
+          {project.name}
+        </h3>
+        <p className="mt-2 text-sm text-black/60 leading-relaxed line-clamp-2">
+          {project.summary}
+        </p>
+
+        {/* Stack */}
+        <div className="mt-auto pt-4 flex flex-wrap gap-1.5">
           {project.stack.slice(0, 4).map((item) => (
             <span
               key={item}
-              className="border-2 border-black bg-white px-3 py-1 text-xs font-bold uppercase"
+              className="px-2 py-0.5 text-[10px] font-medium text-black/70 bg-black/5 rounded-sm"
             >
               {item}
             </span>
           ))}
+          {project.stack.length > 4 && (
+            <span className="px-2 py-0.5 text-[10px] font-medium text-black/40">
+              +{project.stack.length - 4}
+            </span>
+          )}
         </div>
       </div>
-      <div className="mt-6 flex items-center justify-between border-t-4 border-black pt-4 text-xs font-bold uppercase tracking-wider">
-        <span>View</span>
-        <span className="translate-x-0 transition-transform group-hover:translate-x-2">
-          →
+
+      {/* Footer */}
+      <div className="mt-4 pt-4 border-t border-black/10 flex items-center justify-between">
+        <span className="text-xs font-medium text-black/50">View project</span>
+        <span className="w-6 h-6 flex items-center justify-center bg-black/5 rounded-full transition-all group-hover:bg-black group-hover:text-white">
+          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
         </span>
       </div>
     </Link>

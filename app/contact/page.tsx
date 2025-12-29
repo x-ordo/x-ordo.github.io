@@ -5,74 +5,88 @@ export const metadata: Metadata = {
   description: "프로젝트 협업 및 문의를 위한 연락처 페이지입니다.",
 };
 
+const focusAreas = [
+  "LLM Product Design",
+  "B2B SaaS",
+  "Automation",
+  "RAG Pipelines",
+  "Growth & Monetization",
+];
+
 export default function ContactPage() {
   return (
-    <div className="px-6 pb-24 text-black">
-      <section className="mx-auto max-w-3xl space-y-8">
-        <div className="inline-block border-4 border-black bg-[#ff00ff] px-4 py-2">
-          <p className="text-xs font-bold uppercase tracking-wider">Contact</p>
-        </div>
-        <h1 className="text-4xl font-black uppercase text-black sm:text-5xl">
-          함께 만들
-          <br />
-          프로젝트가 있다면
-        </h1>
-        <p className="text-lg text-black/80 border-l-4 border-black pl-4">
-          스타트업 빌딩, AI 제품, 엔터프라이즈 자동화까지 다양한 협업을
-          환영합니다. 아래 채널로 편하게 연락해주세요.
-        </p>
+    <div className="px-6 pb-24 pt-8">
+      <div className="mx-auto max-w-3xl">
+        {/* Header */}
+        <section className="mb-12">
+          <span className="badge badge-secondary mb-4">Contact</span>
+          <h1 className="text-3xl font-bold text-black sm:text-4xl leading-tight">
+            함께 만들
+            <br />
+            프로젝트가 있다면
+          </h1>
+          <p className="mt-6 text-lg text-black/70 leading-relaxed">
+            스타트업 빌딩, AI 제품, 엔터프라이즈 자동화까지 다양한 협업을 환영합니다.
+          </p>
+        </section>
 
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="border-4 border-black bg-white p-6 hover:shadow-[8px_8px_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all">
-            <p className="text-xs font-bold uppercase tracking-wider text-black/60">
+        {/* Contact Cards */}
+        <section className="grid gap-4 sm:grid-cols-2 mb-12">
+          <div className="card-elevated p-6">
+            <p className="text-xs font-semibold text-black/40 uppercase tracking-wider mb-2">
               Email
             </p>
-            <p className="mt-3 text-xl font-black text-black">parkdavid31@gmail.com</p>
+            <p className="text-lg font-semibold text-black mb-4">
+              parkdavid31@gmail.com
+            </p>
             <a
               href="mailto:parkdavid31@gmail.com"
-              className="mt-4 inline-flex border-4 border-black bg-[#00ff00] px-4 py-2 text-sm font-bold uppercase tracking-wider hover:shadow-[4px_4px_0_#000] transition-all"
+              className="brutal-btn text-sm"
             >
-              Send a message →
+              메일 보내기
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
             </a>
           </div>
-          <div className="border-4 border-black bg-white p-6 hover:shadow-[8px_8px_0_#000] hover:-translate-x-1 hover:-translate-y-1 transition-all">
-            <p className="text-xs font-bold uppercase tracking-wider text-black/60">
+
+          <div className="card-elevated p-6">
+            <p className="text-xs font-semibold text-black/40 uppercase tracking-wider mb-2">
               GitHub
             </p>
-            <p className="mt-3 text-xl font-black text-black">github.com/x-ordo</p>
+            <p className="text-lg font-semibold text-black mb-4">
+              github.com/x-ordo
+            </p>
             <a
               href="https://github.com/x-ordo"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex border-4 border-black bg-black px-4 py-2 text-sm font-bold uppercase tracking-wider text-white hover:bg-[#00ff00] hover:text-black transition-all"
+              className="brutal-btn-outline text-sm"
             >
-              Visit profile →
+              프로필 방문
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
             </a>
           </div>
-        </div>
+        </section>
 
-        <div className="border-4 border-black bg-[#ffff00] p-8">
-          <p className="text-xs font-bold uppercase tracking-wider text-black/60">
-            Focus Areas
-          </p>
-          <div className="mt-4 flex flex-wrap gap-3">
-            {[
-              "LLM Product Design",
-              "B2B SaaS",
-              "Automation",
-              "RAG Pipelines",
-              "Growth & Monetization",
-            ].map((item) => (
-              <span
-                key={item}
-                className="border-4 border-black bg-white px-4 py-2 text-sm font-bold uppercase"
-              >
-                {item}
-              </span>
-            ))}
+        {/* Focus Areas */}
+        <section>
+          <div className="card-elevated p-8 bg-[#eab308]/5 border-[#eab308]/20">
+            <p className="text-xs font-semibold text-black/40 uppercase tracking-wider mb-4">
+              Focus Areas
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {focusAreas.map((item) => (
+                <span key={item} className="brutal-tag">
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 }

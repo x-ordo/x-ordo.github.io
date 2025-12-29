@@ -4,11 +4,11 @@ import { notFound } from "next/navigation";
 import { categoryMeta, projects } from "../../../data/projects";
 
 const categoryColors: Record<string, string> = {
-  saas: "bg-[#00ff00]",
-  consumer: "bg-[#ff00ff]",
-  ai: "bg-[#00ffff]",
-  automation: "bg-[#ffff00]",
-  tools: "bg-[#ff6600]",
+  saas: "bg-[#22c55e]",
+  consumer: "bg-[#a855f7]",
+  ai: "bg-[#3b82f6]",
+  automation: "bg-[#eab308]",
+  tools: "bg-[#f97316]",
 };
 
 type PageProps = {
@@ -41,73 +41,103 @@ export default function ProjectDetailPage({ params }: PageProps) {
   }
 
   const meta = categoryMeta[project.category];
-  const accentColor = categoryColors[project.category] || "bg-[#00ff00]";
+  const accentColor = categoryColors[project.category] || "bg-[#22c55e]";
 
   return (
-    <div className="px-6 pb-24 text-black">
-      <section className="mx-auto max-w-4xl space-y-6">
+    <div className="px-6 pb-24 pt-8">
+      <div className="mx-auto max-w-4xl">
+        {/* Back Link */}
         <Link
           href="/projects"
-          className="inline-flex border-4 border-black px-4 py-2 text-xs font-bold uppercase tracking-wider hover:bg-[#00ff00] transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-black/60 hover:text-black transition-colors mb-8"
         >
-          ← Back to Projects
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Projects
         </Link>
-        <div className="border-4 border-black bg-white p-8">
-          <div className={`h-3 w-full -mt-8 -mx-8 mb-8 ${accentColor}`} style={{ width: 'calc(100% + 64px)' }} />
-          <div className="inline-block border-4 border-black bg-white px-4 py-2 mb-4">
-            <p className="text-xs font-bold uppercase tracking-wider">
+
+        {/* Header */}
+        <section className="mb-12">
+          <div className="flex items-center gap-3 mb-4">
+            <span className={`h-2 w-12 rounded-full ${accentColor}`} />
+            <span className="text-xs font-medium text-black/50 uppercase tracking-wider">
               {meta.label}
-            </p>
+            </span>
           </div>
-          <h1 className="text-4xl font-black uppercase text-black">
+          <h1 className="text-3xl font-bold text-black sm:text-4xl">
             {project.name}
           </h1>
-          <p className="mt-4 text-lg text-black/80 border-l-4 border-black pl-4">{project.summary}</p>
-          <p className="mt-6 text-sm text-black/70">{project.description}</p>
-        </div>
+          <p className="mt-4 text-lg text-black/70 leading-relaxed">
+            {project.summary}
+          </p>
+          <p className="mt-4 text-sm text-black/60 leading-relaxed">
+            {project.description}
+          </p>
+        </section>
 
+        {/* Content Grid */}
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="border-4 border-black bg-white p-6">
-            <h2 className="text-xl font-black uppercase text-black border-b-4 border-black pb-4 mb-4">Highlights</h2>
-            <ul className="space-y-3 text-sm text-black/70">
+          {/* Highlights */}
+          <div className="card-elevated p-6">
+            <h2 className="text-xs font-semibold text-black/40 uppercase tracking-wider mb-4">
+              Highlights
+            </h2>
+            <ul className="space-y-3">
               {project.highlights.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span className="text-[#00ff00] font-bold">→</span>
+                <li key={item} className="flex gap-3 text-sm text-black/70">
+                  <span className="text-[#22c55e] mt-0.5">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
                   {item}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="border-4 border-black bg-white p-6">
-            <h2 className="text-xl font-black uppercase text-black border-b-4 border-black pb-4 mb-4">Tech Stack</h2>
-            <div className="flex flex-wrap gap-2">
-              {project.stack.map((item) => (
-                <span
-                  key={item}
-                  className="border-2 border-black px-3 py-1 text-xs font-bold uppercase hover:bg-[#00ff00] transition-colors"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-            {project.links && project.links.length > 0 ? (
-              <div className="mt-6 space-y-2 border-t-4 border-black pt-4">
-                {project.links.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-sm font-bold uppercase hover:bg-[#00ff00] transition-colors"
-                  >
-                    {link.label} →
-                  </a>
+
+          {/* Tech Stack & Links */}
+          <div className="space-y-6">
+            <div className="card-elevated p-6">
+              <h2 className="text-xs font-semibold text-black/40 uppercase tracking-wider mb-4">
+                Tech Stack
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {project.stack.map((item) => (
+                  <span key={item} className="brutal-tag">
+                    {item}
+                  </span>
                 ))}
               </div>
-            ) : null}
+            </div>
+
+            {project.links && project.links.length > 0 && (
+              <div className="card-elevated p-6">
+                <h2 className="text-xs font-semibold text-black/40 uppercase tracking-wider mb-4">
+                  Links
+                </h2>
+                <div className="flex flex-col gap-2">
+                  {project.links.map((link) => (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-black hover:text-[#22c55e] transition-colors"
+                    >
+                      {link.label}
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }
