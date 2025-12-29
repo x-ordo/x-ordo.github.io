@@ -50,7 +50,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={`${jetbrains.variable} font-mono antialiased bg-[#fafafa]`}>
         <Navigation />
-        <main className="min-h-screen pt-20">{children}</main>
+        <main className="min-h-screen pt-20 lg:pt-24">{children}</main>
         <Footer />
         <PixelDog />
       </body>

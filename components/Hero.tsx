@@ -15,7 +15,7 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="relative px-6 pt-12 pb-20 lg:pt-16 lg:pb-28">
+    <section className="relative px-6 pt-4 pb-20 lg:pt-6 lg:pb-28">
       <div className="mx-auto max-w-6xl">
         {/* Top Badge */}
         <div className="mb-10 flex items-center gap-3">
