@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import PixelDog from "../components/PixelDog";
+import DockNavigation from "../components/DockNavigation";
 import Squares from "../components/ui/Squares";
 import FloatingParticles from "../components/ui/FloatingParticles";
 import ClickSpark from "../components/ui/ClickSpark";
@@ -66,6 +67,7 @@ export default function RootLayout({
           <Footer />
         </ClickSpark>
         <PixelDog />
+        <DockNavigation />
       </body>
     </html>
   );

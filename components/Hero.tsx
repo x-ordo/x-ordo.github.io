@@ -5,6 +5,7 @@ import GradientText from "./ui/GradientText";
 import CountUp from "./ui/CountUp";
 import ShinyText from "./ui/ShinyText";
 import MagnetLines from "./ui/MagnetLines";
+import GlitchText from "./ui/GlitchText";
 
 const skills = ["LLM", "RAG", "Full-Stack", "Automation"];
 
@@ -38,9 +39,11 @@ export default function Hero() {
           </span>
         </div>
 
-        {/* Main Heading with Gradient */}
+        {/* Main Heading with Glitch + Gradient */}
         <h1 className="text-[2rem] font-black leading-[1.1] tracking-tight text-black mb-4 md:text-5xl lg:text-6xl md:mb-6">
-          AI로 비즈니스
+          <GlitchText speed={0.7} enableOnHover className="inline-block">
+            AI로 비즈니스
+          </GlitchText>
           <br />
           <span className="relative">
             <GradientText
