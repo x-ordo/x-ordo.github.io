@@ -4,6 +4,8 @@ import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import PixelDog from "../components/PixelDog";
+import GridBackground from "../components/ui/GridBackground";
+import FloatingParticles from "../components/ui/FloatingParticles";
 
 const jetbrains = JetBrains_Mono({
   variable: "--font-mono",
@@ -49,8 +51,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${jetbrains.variable} font-mono antialiased bg-[#fafafa]`}>
+        <GridBackground />
+        <FloatingParticles />
         <Navigation />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen relative z-10">{children}</main>
         <Footer />
         <PixelDog />
       </body>
