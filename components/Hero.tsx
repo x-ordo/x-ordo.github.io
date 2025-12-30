@@ -6,6 +6,7 @@ import CountUp from "./ui/CountUp";
 import ShinyText from "./ui/ShinyText";
 import MagnetLines from "./ui/MagnetLines";
 import GlitchText from "./ui/GlitchText";
+import DecryptedText from "./ui/DecryptedText";
 
 const skills = ["LLM", "RAG", "Full-Stack", "Automation"];
 
@@ -31,10 +32,15 @@ export default function Hero() {
         />
       </div>
       <div className="mx-auto max-w-5xl relative z-10">
-        {/* Badge with pulse effect */}
+        {/* Badge with decrypt effect */}
         <div className="mb-6 md:mb-8">
           <span className="badge badge-primary animate-pulse-neon">
-            <ShinyText text="Available" speed={2} />
+            <DecryptedText
+              text="Available"
+              speed={60}
+              animateOn="view"
+              className="font-bold"
+            />
             <span className="ml-2 h-2 w-2 rounded-full bg-black animate-pulse" />
           </span>
         </div>

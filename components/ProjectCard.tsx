@@ -7,6 +7,7 @@ import { cn } from "../lib/utils";
 import SpotlightCard from "./ui/SpotlightCard";
 import TiltCard from "./ui/TiltCard";
 import ShinyText from "./ui/ShinyText";
+import PixelCard from "./ui/PixelCard";
 
 type ProjectCardProps = {
   project: Project;
@@ -34,10 +35,21 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
   const accentColor = categoryColors[project.category] || "bg-[#00ff00]";
   const spotlightColor = spotlightColors[project.category] || "rgba(0, 255, 0, 0.15)";
 
+  const pixelColors: Record<string, string[]> = {
+    "b2b-saas": ["#00ff00", "#00dd00", "#00bb00"],
+    "b2c-consumer": ["#ff00ff", "#dd00dd", "#bb00bb"],
+    "ai-agent": ["#00ffff", "#00dddd", "#00bbbb"],
+    automation: ["#ffff00", "#dddd00", "#bbbb00"],
+    "developer-tools": ["#ff6600", "#dd5500", "#bb4400"],
+    analytics: ["#6600ff", "#5500dd", "#4400bb"],
+    experimental: ["#ff0066", "#dd0055", "#bb0044"],
+  };
+
   return (
-    <TiltCard tiltAmount={8} scale={1.02} className="h-full">
-      <SpotlightCard spotlightColor={spotlightColor} className="h-full">
-        <Link
+    <PixelCard colors={pixelColors[project.category] || ["#00ff00", "#00dd00", "#00bb00"]} className="h-full">
+      <TiltCard tiltAmount={8} scale={1.02} className="h-full">
+        <SpotlightCard spotlightColor={spotlightColor} className="h-full">
+          <Link
           href={`/projects/${project.slug}`}
           className={cn(
             "group flex h-full flex-col bg-white border-3 border-black transition-all duration-150",
@@ -103,8 +115,9 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
           </svg>
         </span>
       </div>
-        </Link>
-      </SpotlightCard>
-    </TiltCard>
+          </Link>
+        </SpotlightCard>
+      </TiltCard>
+    </PixelCard>
   );
 }

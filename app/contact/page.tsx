@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Lanyard from "../../components/ui/Lanyard";
 
 export const metadata: Metadata = {
   title: "Contact | Jed Park",
@@ -66,6 +67,14 @@ export default function ContactPage() {
               </svg>
             </a>
           </div>
+        </section>
+
+        {/* Discord Status */}
+        <section className="mb-10 md:mb-14 lg:mb-16">
+          <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-3 md:mb-4">
+            Discord Status
+          </p>
+          <Lanyard />
         </section>
 
         {/* Focus Areas */}

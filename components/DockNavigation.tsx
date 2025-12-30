@@ -62,9 +62,11 @@ export default function DockNavigation() {
     <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-50 hidden md:block">
       <Dock
         items={navItems}
-        panelHeight={58}
-        baseItemSize={44}
-        magnification={68}
+        panelHeight={52}
+        baseItemSize={40}
+        magnification={52}
+        distance={120}
+        spring={{ mass: 0.2, stiffness: 120, damping: 14 }}
       />
     </div>
   );
