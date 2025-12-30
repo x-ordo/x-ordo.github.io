@@ -64,9 +64,7 @@ export default function DockNavigation() {
         items={navItems}
         panelHeight={52}
         baseItemSize={40}
-        magnification={52}
-        distance={120}
-        spring={{ mass: 0.2, stiffness: 120, damping: 14 }}
+        magnification={48}
       />
     </div>
   );
