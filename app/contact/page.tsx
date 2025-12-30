@@ -16,28 +16,28 @@ const focusAreas = [
 
 export default function ContactPage() {
   return (
-    <div className="px-4 pt-6 pb-16 md:px-6 md:pt-10 md:pb-24 lg:pt-14 lg:pb-32">
+    <div className="px-5 pt-10 pb-20 md:px-8 md:pt-16 md:pb-32 lg:pt-20 lg:pb-40">
       <div className="mx-auto max-w-3xl">
         {/* Page Header */}
-        <section className="mb-10 md:mb-14 lg:mb-16">
-          <span className="badge badge-secondary mb-3 md:mb-4">Contact</span>
+        <section className="mb-12 md:mb-18 lg:mb-22">
+          <span className="badge badge-secondary mb-4 md:mb-5">Contact</span>
           <h1 className="text-xl font-black text-black sm:text-2xl md:text-3xl lg:text-4xl leading-tight">
             함께 만들
             <br />
             프로젝트가 있다면
           </h1>
-          <p className="mt-4 text-xs md:text-base text-black/60 leading-relaxed md:leading-[1.75] md:mt-6 lg:text-lg lg:mt-8">
+          <p className="mt-5 text-xs md:text-base text-black/60 leading-relaxed md:leading-[1.75] md:mt-8 lg:text-lg lg:mt-10">
             스타트업 빌딩, AI 제품, 엔터프라이즈 자동화까지 다양한 협업을 환영합니다.
           </p>
         </section>
 
         {/* Contact Cards */}
-        <section className="grid gap-3 sm:grid-cols-2 md:gap-5 mb-10 md:mb-14 lg:mb-16">
-          <div className="card-elevated p-4 md:p-6 lg:p-7">
-            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-2 md:mb-3">
+        <section className="grid gap-4 sm:grid-cols-2 md:gap-6 mb-12 md:mb-18 lg:mb-22">
+          <div className="card-elevated p-5 md:p-7 lg:p-8">
+            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-3 md:mb-4">
               Email
             </p>
-            <p className="text-sm md:text-base font-bold text-black mb-4 md:mb-5 lg:text-lg break-all">
+            <p className="text-sm md:text-base font-bold text-black mb-5 md:mb-6 lg:text-lg break-all">
               parkdavid31@gmail.com
             </p>
             <a href="mailto:parkdavid31@gmail.com" className="brutal-btn">
@@ -48,11 +48,11 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className="card-elevated p-4 md:p-6 lg:p-7">
-            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-2 md:mb-3">
+          <div className="card-elevated p-5 md:p-7 lg:p-8">
+            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-3 md:mb-4">
               GitHub
             </p>
-            <p className="text-sm md:text-base font-bold text-black mb-4 md:mb-5 lg:text-lg">
+            <p className="text-sm md:text-base font-bold text-black mb-5 md:mb-6 lg:text-lg">
               github.com/x-ordo
             </p>
             <a
@@ -70,8 +70,8 @@ export default function ContactPage() {
         </section>
 
         {/* Discord Status */}
-        <section className="mb-10 md:mb-14 lg:mb-16">
-          <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-3 md:mb-4">
+        <section className="mb-12 md:mb-18 lg:mb-22">
+          <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-4 md:mb-6">
             Discord Status
           </p>
           <Lanyard />
@@ -79,11 +79,11 @@ export default function ContactPage() {
 
         {/* Focus Areas */}
         <section>
-          <div className="card-elevated p-4 md:p-6 lg:p-8 bg-[#ffff00]/10 border-[#ffff00]">
-            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-3 md:mb-5">
+          <div className="card-elevated p-5 md:p-8 lg:p-10 bg-[#ffff00]/10 border-[#ffff00]">
+            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-4 md:mb-6">
               Focus Areas
             </p>
-            <div className="flex flex-wrap gap-1.5 md:gap-2.5">
+            <div className="flex flex-wrap gap-2 md:gap-3">
               {focusAreas.map((item) => (
                 <span key={item} className="brutal-tag">
                   {item}

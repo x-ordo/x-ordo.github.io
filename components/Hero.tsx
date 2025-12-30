@@ -18,7 +18,7 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="px-4 pt-2 pb-8 md:px-6 md:pt-4 md:pb-16 relative overflow-hidden">
+    <section className="px-5 pt-8 pb-12 md:px-8 md:pt-12 md:pb-20 lg:pt-16 lg:pb-24 relative overflow-hidden">
       {/* MagnetLines - Desktop Only */}
       <div className="hidden lg:block absolute top-10 right-10 opacity-40 pointer-events-none z-0">
         <MagnetLines

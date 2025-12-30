@@ -31,9 +31,9 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
       : projects.filter((project) => project.category === active);
 
   return (
-    <div className="space-y-6 md:space-y-10">
+    <div className="space-y-8 md:space-y-12">
       {/* Filter Tabs */}
-      <div className="flex flex-wrap gap-1.5 md:gap-2 pb-4 md:pb-6 border-b-2 border-black/10">
+      <div className="flex flex-wrap gap-2 md:gap-3 pb-5 md:pb-8 border-b-2 border-black/10">
         <button
           type="button"
           onClick={() => setActive("all")}
@@ -71,7 +71,7 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
       </p>
 
       {/* Project Grid */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 md:gap-5 lg:gap-6">
+      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8">
         {filtered.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}

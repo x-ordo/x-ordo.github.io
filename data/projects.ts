@@ -57,6 +57,11 @@ export const projects: Project[] = [
       "법률 지식 RAG + 사건별 증거 RAG",
     ],
     featured: true,
+    metrics: {
+      duration: "3개월",
+      role: "풀스택 단독",
+      impact: "증거 정리 시간 70% 단축",
+    },
   },
   {
     slug: "salon-mate",
@@ -71,6 +76,11 @@ export const projects: Project[] = [
       "인스타 포스팅 자동화 (사진→캡션→예약)",
       "마케팅 성과 대시보드",
     ],
+    metrics: {
+      duration: "6주",
+      role: "풀스택 단독",
+      impact: "리뷰 응답 시간 90% 감소",
+    },
   },
   {
     slug: "saegim",
@@ -85,6 +95,11 @@ export const projects: Project[] = [
       "카카오/SMS 자동 알림",
       "화이트라벨 설정",
     ],
+    metrics: {
+      duration: "4주",
+      role: "풀스택 단독",
+      impact: "고객 클레임 40% 감소",
+    },
   },
   {
     slug: "auditx",
@@ -99,6 +114,11 @@ export const projects: Project[] = [
       "증거 기반 판정 & 패치 제안",
       "개발자 피드백 기반 지속적 학습",
     ],
+    metrics: {
+      duration: "2개월",
+      role: "AI/백엔드",
+      impact: "오탐률 90% 감소",
+    },
   },
 
   // ===== B2C Consumer Apps =====
@@ -117,6 +137,11 @@ export const projects: Project[] = [
     ],
     links: [{ label: "Live Demo", href: "https://interview.sday.me" }],
     featured: true,
+    metrics: {
+      duration: "3주",
+      role: "풀스택 단독",
+      impact: "MAU 2,000+",
+    },
   },
   {
     slug: "numna-road",
@@ -132,6 +157,11 @@ export const projects: Project[] = [
       "자동 이메일 발송 (QR 포함)",
     ],
     featured: true,
+    metrics: {
+      duration: "4주",
+      role: "풀스택 단독",
+      impact: "결제 전환율 12%",
+    },
   },
   {
     slug: "racelab",
@@ -147,6 +177,11 @@ export const projects: Project[] = [
       "Storybook 디자인 시스템",
     ],
     links: [{ label: "Live", href: "https://racelab.kr" }],
+    metrics: {
+      duration: "6주",
+      role: "프론트엔드",
+      impact: "DAU 500+",
+    },
   },
   {
     slug: "onda-coreana",
@@ -162,6 +197,11 @@ export const projects: Project[] = [
       "다국어 지원 (i18n)",
     ],
     links: [{ label: "Live", href: "https://ondacoreana.com" }],
+    metrics: {
+      duration: "3주",
+      role: "풀스택 단독",
+      impact: "SEO 1페이지 노출",
+    },
   },
   {
     slug: "coupang-keyword-radar",
@@ -177,6 +217,11 @@ export const projects: Project[] = [
       "Groq LLM 기반 니치 제품명 제안",
     ],
     featured: true,
+    metrics: {
+      duration: "2주",
+      role: "풀스택 단독",
+      impact: "예측 정확도 78%",
+    },
   },
   {
     slug: "habit-cashback",
@@ -191,6 +236,11 @@ export const projects: Project[] = [
       "EXIF 기반 사진 인증",
       "자동 정산 워커",
     ],
+    metrics: {
+      duration: "3주",
+      role: "풀스택 단독",
+      impact: "MVP 검증 완료",
+    },
   },
   {
     slug: "pyeongsu-calculator",
@@ -205,6 +255,11 @@ export const projects: Project[] = [
       "공간 시각화 (SpaceVisualizer)",
       "실거래가 정보 연동",
     ],
+    metrics: {
+      duration: "1주",
+      role: "풀스택 단독",
+      impact: "월 방문 3,000+",
+    },
   },
   {
     slug: "relationship-calculator",
@@ -219,6 +274,11 @@ export const projects: Project[] = [
       "AI 코치 (FREE: 로컬 규칙, PRO: API 호출)",
       "PII 스캔 기반 공유 안전 장치",
     ],
+    metrics: {
+      duration: "2주",
+      role: "풀스택 단독",
+      impact: "바이럴 공유 500+",
+    },
   },
   {
     slug: "tee-up",
@@ -233,6 +293,11 @@ export const projects: Project[] = [
       "분석 대시보드 (KPI, 매출, 리더보드)",
       "KakaoTalk 직접 메시징",
     ],
+    metrics: {
+      duration: "5주",
+      role: "풀스택 단독",
+      impact: "프로 등록 50+",
+    },
   },
   {
     slug: "landlord-war",
@@ -247,6 +312,11 @@ export const projects: Project[] = [
       "경제 로직 검증",
       "멀티플레이어 시스템",
     ],
+    metrics: {
+      duration: "4주",
+      role: "프론트엔드",
+      impact: "토스 심사 통과",
+    },
   },
   {
     slug: "soul-lab",
@@ -262,6 +332,11 @@ export const projects: Project[] = [
       "보상형 광고 통합",
     ],
     links: [{ label: "Toss App", href: "intoss://soul-lab" }],
+    metrics: {
+      duration: "3주",
+      role: "풀스택 단독",
+      impact: "DAU 1,200+",
+    },
   },
   {
     slug: "some-some",
@@ -276,6 +351,11 @@ export const projects: Project[] = [
       "쫀드기 챌린지 (8자 경로 이동)",
       "이심전심 텔레파시 궁합 게임",
     ],
+    metrics: {
+      duration: "2주",
+      role: "모바일 단독",
+      impact: "앱스토어 출시",
+    },
   },
 
   // ===== AI / Agent Systems =====
@@ -294,6 +374,11 @@ export const projects: Project[] = [
     ],
     links: [{ label: "Live", href: "https://talkstudio.vercel.app" }],
     featured: true,
+    metrics: {
+      duration: "4주",
+      role: "풀스택 단독",
+      impact: "Discord 서버 20+ 연동",
+    },
   },
   {
     slug: "study-assistant",
@@ -308,6 +393,11 @@ export const projects: Project[] = [
       "맞춤형 시험 문제 생성",
       "학습 자료 추천",
     ],
+    metrics: {
+      duration: "2주",
+      role: "AI/백엔드",
+      impact: "학습 시간 40% 단축",
+    },
   },
   {
     slug: "reporty",
@@ -323,6 +413,11 @@ export const projects: Project[] = [
       "로컬 & 클라우드 실행",
     ],
     links: [{ label: "AI Studio", href: "https://ai.studio/apps/drive/1WWe7ryHCM5pvJeYccWZHVfLkmd4zXRSj" }],
+    metrics: {
+      duration: "1주",
+      role: "풀스택 단독",
+      impact: "보고서 생성 5분→30초",
+    },
   },
 
   // ===== Automation & Integration =====
@@ -340,6 +435,11 @@ export const projects: Project[] = [
       "이중 다리 주문 동시 실행 및 위치 추적",
     ],
     featured: true,
+    metrics: {
+      duration: "2개월",
+      role: "백엔드 단독",
+      impact: "일평균 수익률 0.3%",
+    },
   },
 
   // ===== Developer Tools =====
@@ -356,6 +456,11 @@ export const projects: Project[] = [
       "MCP 서버 지원 (stdio & HTTP)",
       "Markdown & JSON 출력",
     ],
+    metrics: {
+      duration: "3주",
+      role: "오픈소스 단독",
+      impact: "GitHub Stars 50+",
+    },
   },
 ];
 

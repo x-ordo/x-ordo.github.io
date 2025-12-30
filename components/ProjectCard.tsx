@@ -85,6 +85,23 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
           {project.summary}
         </p>
 
+        {/* Metrics */}
+        {project.metrics && (
+          <div className="flex flex-wrap gap-1.5 mb-3 md:mb-4">
+            <span className="px-1.5 py-0.5 text-[8px] md:text-[9px] font-bold text-white bg-black">
+              {project.metrics.duration}
+            </span>
+            <span className="px-1.5 py-0.5 text-[8px] md:text-[9px] font-bold text-black/70 bg-black/10">
+              {project.metrics.role}
+            </span>
+            {project.metrics.impact && (
+              <span className="px-1.5 py-0.5 text-[8px] md:text-[9px] font-bold text-[#00aa00] bg-[#00ff00]/20 border border-[#00ff00]/50">
+                {project.metrics.impact}
+              </span>
+            )}
+          </div>
+        )}
+
         {/* Tech Stack Tags */}
         <div className="mt-auto flex flex-wrap gap-1 md:gap-1.5">
           {project.stack.slice(0, 3).map((item, i) => (
