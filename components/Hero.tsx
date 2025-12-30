@@ -4,6 +4,7 @@ import Link from "next/link";
 import GradientText from "./ui/GradientText";
 import CountUp from "./ui/CountUp";
 import ShinyText from "./ui/ShinyText";
+import Cubes from "./ui/Cubes";
 
 const skills = ["LLM", "RAG", "Full-Stack", "Automation"];
 
@@ -15,8 +16,22 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="px-4 pt-2 pb-8 md:px-6 md:pt-4 md:pb-16">
-      <div className="mx-auto max-w-5xl">
+    <section className="px-4 pt-2 pb-8 md:px-6 md:pt-4 md:pb-16 relative overflow-hidden">
+      {/* Cubes Background - Desktop Only */}
+      <div className="hidden lg:block absolute top-0 right-0 w-[400px] h-[400px] opacity-60 pointer-events-auto z-0">
+        <Cubes
+          gridSize={8}
+          maxAngle={50}
+          radius={4}
+          borderStyle="1px solid rgba(0, 255, 0, 0.4)"
+          faceColor="rgba(0, 0, 0, 0.9)"
+          rippleColor="#00ff00"
+          rippleSpeed={1.5}
+          autoAnimate={true}
+          rippleOnClick={true}
+        />
+      </div>
+      <div className="mx-auto max-w-5xl relative z-10">
         {/* Badge with pulse effect */}
         <div className="mb-6 md:mb-8">
           <span className="badge badge-primary animate-pulse-neon">
