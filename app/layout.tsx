@@ -4,8 +4,9 @@ import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import PixelDog from "../components/PixelDog";
-import GridBackground from "../components/ui/GridBackground";
+import Squares from "../components/ui/Squares";
 import FloatingParticles from "../components/ui/FloatingParticles";
+import ClickSpark from "../components/ui/ClickSpark";
 
 const jetbrains = JetBrains_Mono({
   variable: "--font-mono",
@@ -51,11 +52,19 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${jetbrains.variable} font-mono antialiased bg-[#fafafa]`}>
-        <GridBackground />
+        <Squares
+          direction="diagonal"
+          speed={0.3}
+          borderColor="rgba(0, 255, 0, 0.08)"
+          squareSize={60}
+          hoverFillColor="rgba(0, 255, 0, 0.15)"
+        />
         <FloatingParticles />
-        <Navigation />
-        <main className="min-h-screen relative z-10">{children}</main>
-        <Footer />
+        <ClickSpark sparkColor="#00ff00" sparkSize={12} sparkRadius={25} sparkCount={10}>
+          <Navigation />
+          <main className="min-h-screen relative z-10">{children}</main>
+          <Footer />
+        </ClickSpark>
         <PixelDog />
       </body>
     </html>

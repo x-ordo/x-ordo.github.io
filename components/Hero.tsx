@@ -4,7 +4,7 @@ import Link from "next/link";
 import GradientText from "./ui/GradientText";
 import CountUp from "./ui/CountUp";
 import ShinyText from "./ui/ShinyText";
-import Cubes from "./ui/Cubes";
+import MagnetLines from "./ui/MagnetLines";
 
 const skills = ["LLM", "RAG", "Full-Stack", "Automation"];
 
@@ -17,18 +17,16 @@ const highlights = [
 export default function Hero() {
   return (
     <section className="px-4 pt-2 pb-8 md:px-6 md:pt-4 md:pb-16 relative overflow-hidden">
-      {/* Cubes Background - Desktop Only */}
-      <div className="hidden lg:block absolute top-0 right-0 w-[400px] h-[400px] opacity-60 pointer-events-auto z-0">
-        <Cubes
-          gridSize={8}
-          maxAngle={50}
-          radius={4}
-          borderStyle="1px solid rgba(0, 255, 0, 0.4)"
-          faceColor="rgba(0, 0, 0, 0.9)"
-          rippleColor="#00ff00"
-          rippleSpeed={1.5}
-          autoAnimate={true}
-          rippleOnClick={true}
+      {/* MagnetLines - Desktop Only */}
+      <div className="hidden lg:block absolute top-10 right-10 opacity-40 pointer-events-none z-0">
+        <MagnetLines
+          rows={7}
+          columns={7}
+          containerSize="280px"
+          lineColor="#00ff00"
+          lineWidth="2px"
+          lineHeight="16px"
+          baseAngle={0}
         />
       </div>
       <div className="mx-auto max-w-5xl relative z-10">
