@@ -18,8 +18,8 @@ const highlights = [
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden pt-[12vh] pb-[15vh] md:pt-[15vh] md:pb-[20vh]">
-      <div className="mx-auto max-w-[1000px] px-8 md:px-16 lg:px-0 relative z-10">
+    <section className="relative overflow-hidden pb-[10vh] md:pb-[15vh]">
+      <div className="relative z-10">
         {/* Minimal Badge */}
         <div className="mb-10 md:mb-14">
           <span className="text-[9px] font-black uppercase tracking-[0.3em] text-black/20 border-b border-black/5 pb-1">

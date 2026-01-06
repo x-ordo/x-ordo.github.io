@@ -9,8 +9,8 @@ export default function Home() {
       <Hero />
 
       {/* Featured Projects Section */}
-      <section className="pt-[12vh] pb-[15vh] border-t border-black/5 bg-white">
-        <div className="mx-auto max-w-[1000px] px-8 md:px-16 lg:px-0">
+      <section className="pt-[10vh] pb-[15vh] border-t border-black/5 bg-white">
+        <div>
           {/* Section Header */}
           <div className="flex flex-col gap-10 mb-20 md:flex-row md:items-end md:justify-between lg:mb-24">
             <div className="space-y-5 max-w-xl">

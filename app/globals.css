@@ -40,46 +40,46 @@
 
 /* 
    HIGH-END COMPACT LAYOUT SYSTEM
-   Outer Margin: 20vw (sides), 12vh (top/bottom)
-   Max Content Width: 1000px
+   Absolute Outer Margin: 20vw (sides)
+   Content centered via Main container padding
 */
 
 :root {
-  /* Colors - Sophisticated & High-Contrast */
+  /* Colors */
   --background: #ffffff;
   --foreground: #000000;
   --accent: #00ff00;
   --muted: #888888;
-  --border-color: #000000;
   
-  /* Extremely Generous Spacing for "Boutique" feel */
-  --outer-gutter: 20vw;
-  --vertical-gutter: 12vh;
-}
-
-main {
-  padding-top: var(--vertical-gutter);
+  /* The "Secret" to the layout: Massive responsive gutters */
+  --page-gutter: 20vw;
+  --page-top-margin: 12vh;
 }
 
 @media (max-width: 1600px) {
-  :root { --outer-gutter: 15vw; }
+  :root { --page-gutter: 15vw; }
 }
 
 @media (max-width: 1200px) {
-  :root { --outer-gutter: 10vw; }
+  :root { --page-gutter: 10vw; }
 }
 
 @media (max-width: 768px) {
   :root { 
-    --outer-gutter: 32px;
-    --vertical-gutter: 60px;
+    --page-gutter: 24px;
+    --page-top-margin: 80px;
   }
-  main { padding-top: 100px; }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 15px; /* Scaled down base size */
+  font-size: 15px;
 }
 
 body {
@@ -89,29 +89,26 @@ body {
   line-height: 1.7; 
   letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
+  /* Force global gutters */
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
 }
 
-/* Typography Scale Down */
-h1 {
-  letter-spacing: -0.05em;
-  line-height: 0.95;
-  font-weight: 900;
-}
-
-h2, h3 {
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  font-weight: 800;
-}
-
-/* Layout Containers */
-.editorial-container {
+main {
+  padding-top: var(--page-top-margin);
   width: 100%;
-  max-width: 1000px; /* More focused content area */
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: var(--outer-gutter);
-  padding-right: var(--outer-gutter);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Ensure Nav and Footer also respect the gutters */
+header, footer {
+  width: 100%;
+}
+
+header > nav, footer > div {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* ===================
