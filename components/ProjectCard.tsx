@@ -55,14 +55,14 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
             "group flex h-full flex-col bg-white border-3 border-black transition-all duration-150",
             "hover:shadow-[4px_4px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5",
             "md:hover:shadow-[6px_6px_0_#000] md:hover:-translate-x-1 md:hover:-translate-y-1",
-            compact ? "p-3 md:p-5" : "p-4 md:p-6"
+            compact ? "p-5 md:p-6" : "p-6 md:p-8"
           )}
         >
       {/* Header: Category Indicator + Featured Badge */}
-      <div className="flex items-center justify-between mb-3 md:mb-4">
-        <span className={cn("h-1.5 w-8 md:w-10", accentColor)} />
+      <div className="flex items-center justify-between mb-4 md:mb-5">
+        <span className={cn("h-2 w-10 md:w-12", accentColor)} />
         {project.featured && (
-          <span className="px-2 py-0.5 text-[8px] md:text-[9px] font-bold text-black bg-[#00ff00] border border-black uppercase tracking-wider animate-pulse-neon">
+          <span className="px-2.5 py-1 text-[9px] md:text-[10px] font-bold text-black bg-[#00ff00] border border-black uppercase tracking-wider animate-pulse-neon">
             <ShinyText text="Featured" speed={2} />
           </span>
         )}
@@ -71,31 +71,31 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
       {/* Content */}
       <div className="flex flex-1 flex-col">
         {/* Category Label */}
-        <p className="text-[9px] md:text-[10px] font-bold text-black/50 uppercase tracking-wider mb-1.5 md:mb-2">
+        <p className="text-[10px] md:text-xs font-bold text-black/50 uppercase tracking-wider mb-2 md:mb-3">
           {meta.label}
         </p>
 
         {/* Project Name */}
-        <h3 className="text-sm md:text-base font-black text-black leading-tight mb-2 md:mb-3 lg:text-lg">
+        <h3 className="text-lg md:text-xl font-black text-black leading-tight mb-3 md:mb-4 lg:text-2xl tracking-tight">
           {project.name}
         </h3>
 
         {/* Summary */}
-        <p className="text-xs md:text-sm text-black/60 leading-relaxed line-clamp-2 mb-3 md:mb-4">
+        <p className="text-sm md:text-base text-black/70 leading-relaxed line-clamp-3 mb-4 md:mb-6 font-medium">
           {project.summary}
         </p>
 
         {/* Metrics */}
         {project.metrics && (
-          <div className="flex flex-wrap gap-1.5 mb-3 md:mb-4">
-            <span className="px-1.5 py-0.5 text-[8px] md:text-[9px] font-bold text-white bg-black">
+          <div className="flex flex-wrap gap-2 mb-4 md:mb-5">
+            <span className="px-2 py-1 text-[9px] md:text-[10px] font-bold text-white bg-black">
               {project.metrics.duration}
             </span>
-            <span className="px-1.5 py-0.5 text-[8px] md:text-[9px] font-bold text-black/70 bg-black/10">
+            <span className="px-2 py-1 text-[9px] md:text-[10px] font-bold text-black/80 bg-black/10">
               {project.metrics.role}
             </span>
             {project.metrics.impact && (
-              <span className="px-1.5 py-0.5 text-[8px] md:text-[9px] font-bold text-[#00aa00] bg-[#00ff00]/20 border border-[#00ff00]/50">
+              <span className="px-2 py-1 text-[9px] md:text-[10px] font-bold text-[#008800] bg-[#00ff00]/25 border border-[#00ff00]/60">
                 {project.metrics.impact}
               </span>
             )}
@@ -103,18 +103,18 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
         )}
 
         {/* Tech Stack Tags */}
-        <div className="mt-auto flex flex-wrap gap-1 md:gap-1.5">
+        <div className="mt-auto flex flex-wrap gap-1.5 md:gap-2">
           {project.stack.slice(0, 3).map((item, i) => (
             <span
               key={item}
-              className="px-1.5 py-0.5 md:px-2 md:py-1 text-[9px] md:text-[10px] font-semibold text-black/70 bg-black/5 border border-black/20 transition-all duration-200 hover:bg-[#00ff00] hover:text-black hover:border-black hover:scale-105"
+              className="px-2 py-1 md:px-2.5 md:py-1.5 text-[10px] md:text-[11px] font-semibold text-black/80 bg-white border border-black/20 shadow-[2px_2px_0_rgba(0,0,0,0.1)] transition-all duration-200 hover:bg-[#00ff00] hover:text-black hover:border-black hover:shadow-[2px_2px_0_#000] hover:-translate-y-0.5"
               style={{ transitionDelay: `${i * 50}ms` }}
             >
               {item}
             </span>
           ))}
           {project.stack.length > 3 && (
-            <span className="px-1.5 py-0.5 md:px-2 md:py-1 text-[9px] md:text-[10px] font-semibold text-black/40">
+            <span className="px-2 py-1 md:px-2.5 md:py-1.5 text-[10px] md:text-[11px] font-semibold text-black/50 border border-transparent">
               +{project.stack.length - 3}
             </span>
           )}

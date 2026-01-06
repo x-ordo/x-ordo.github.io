@@ -46,21 +46,22 @@ export const projects: Project[] = [
   {
     slug: "chagok",
     name: "CHAGOK",
-    summary: "이혼 사건 전용 AI 파라리걸 & 증거 허브",
+    summary: "이혼 소송 AI 파라리걸 & 멀티모달 증거 허브",
     description:
-      "변호사 소유 AWS S3 내 증거를 AI가 정리·분석·라벨링하고, 소장 초안 후보를 제안합니다. Next.js 대시보드와 FastAPI 백엔드, OpenAI GPT-4o 비전, Qdrant RAG를 활용합니다.",
+      "이혼 소송 시 발생하는 방대한 증거 자료(이미지/오디오/비디오/텍스트) 정리의 비효율성을 해결하기 위해, AI 기반의 멀티모달 분석 및 자동 법률 문서 생성 시스템을 구축했습니다.",
     category: "b2b-saas",
-    stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "AWS S3", "Qdrant", "OpenAI"],
+    stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "AWS S3", "Qdrant", "OpenAI GPT-4o"],
     highlights: [
-      "증거 무결성 (SHA-256 + Audit Log)",
-      "STT/OCR/요약/라벨링 자동화",
-      "법률 지식 RAG + 사건별 증거 RAG",
+      "멀티모달 증거 분석 (STT/OCR/요약/라벨링) 파이프라인 구축",
+      "이중 RAG (법률 지식 + 사건별 증거) 아키텍처로 할루시네이션 최소화",
+      "증거 무결성을 보장하는 SHA-256 해시 및 Audit Log 시스템",
+      "변호사와 의뢰인 간의 권한 기반 협업 워크스페이스 제공",
     ],
     featured: true,
     metrics: {
       duration: "3개월",
       role: "풀스택 단독",
-      impact: "증거 정리 시간 70% 단축",
+      impact: "증거 정리 70% 단축",
     },
   },
   {
@@ -68,13 +69,13 @@ export const projects: Project[] = [
     name: "SalonMate",
     summary: "뷰티/살롱 사장님 AI 마케팅 자동화",
     description:
-      "네이버/구글 리뷰 자동 응답, 인스타 포스팅 자동 생성, 마케팅 대시보드를 제공합니다. Next.js 16과 FastAPI, OpenAI GPT-4o를 활용합니다.",
+      "소규모 뷰티샵 사장님들이 고객 리뷰 응대와 SNS 마케팅에 쏟는 시간을 줄이기 위해, AI 기반의 자동 응답 및 콘텐츠 생성 자동화 솔루션을 개발했습니다.",
     category: "b2b-saas",
     stack: ["Next.js", "TypeScript", "FastAPI", "Supabase", "OpenAI", "LangChain"],
     highlights: [
-      "AI 리뷰 답변 자동 생성",
-      "인스타 포스팅 자동화 (사진→캡션→예약)",
-      "마케팅 성과 대시보드",
+      "고객 리뷰 감성 분석 기반의 맞춤형 답글 자동 생성",
+      "시술 사진을 분석하여 인스타그램 캡션 및 해시태그 자동 생성",
+      "마케팅 성과(노출, 예약 전환)를 시각화하는 대시보드 구축",
     ],
     metrics: {
       duration: "6주",
@@ -87,13 +88,13 @@ export const projects: Project[] = [
     name: "Saegim",
     summary: "배송/화환/수리 현장 사진 인증 B2B SaaS",
     description:
-      "현장 직원이 사진 업로드 시 고객에게 카카오 알림톡/SMS 자동 발송합니다. 관리자 대시보드와 화이트라벨을 지원합니다.",
+      "현장 작업(배송, 수리 등) 완료 여부에 대한 고객 불신과 확인 비용을 해결하기 위해, 사진 기반의 자동 인증 및 알림 발송 시스템을 구축했습니다.",
     category: "b2b-saas",
     stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "Clerk", "KakaoTalk"],
     highlights: [
-      "Before/After 슬라이더 검증",
-      "카카오/SMS 자동 알림",
-      "화이트라벨 설정",
+      "작업 전후 비교를 위한 Before/After 슬라이더 UI 구현",
+      "사진 업로드 트리거 기반 카카오 알림톡/SMS 자동 발송 파이프라인",
+      "파트너사 브랜드 아이덴티티 유지를 위한 화이트라벨링 지원",
     ],
     metrics: {
       duration: "4주",
@@ -104,16 +105,17 @@ export const projects: Project[] = [
   {
     slug: "auditx",
     name: "Sentinel (Auditx)",
-    summary: "AI 스마트컨트랙트 보안 감시 시스템",
+    summary: "AI 스마트컨트랙트 보안 오케스트레이터",
     description:
-      "Slither, Aderyn, Mythril 같은 정적 분석 센서와 LLM 기반 판단을 결합하여 90% 오탐을 필터링하고 실행 가능한 보안 인사이트를 제공합니다.",
+      "기존 보안 감사 툴의 높은 오탐률(False Positive) 문제를 해결하기 위해, 정적 분석 도구와 LLM을 결합한 하이브리드 보안 오케스트레이터를 개발했습니다.",
     category: "b2b-saas",
-    stack: ["Python", "OpenAI GPT-4o", "Slither", "Mythril", "SQLite", "GitHub Actions"],
+    stack: ["Python", "FastAPI", "OpenAI GPT-4o", "Slither", "Mythril", "Aderyn"],
     highlights: [
-      "LLM 기반 오탐 필터링 (90% 감소)",
-      "증거 기반 판정 & 패치 제안",
-      "개발자 피드백 기반 지속적 학습",
+      "Slither, Mythril 등 오픈소스 센서와 LLM을 연동한 다단계 분석 파이프라인",
+      "탐지된 취약점을 LLM이 재검증하여 90% 이상의 오탐 필터링",
+      "취약점 우선순위 스코어링 및 자동 패치 코드 제안 기능",
     ],
+    featured: true,
     metrics: {
       duration: "2개월",
       role: "AI/백엔드",
@@ -124,43 +126,43 @@ export const projects: Project[] = [
   // ===== B2C Consumer Apps =====
   {
     slug: "interview-service",
-    name: "Interview Service",
-    summary: "AI 기반 실시간 모의 면접 & 피드백 플랫폼",
+    name: "Interview Service (면접코치)",
+    summary: "AI 실시간 모의면접 & 8축 역량 피드백 플랫폼",
     description:
-      "OpenAI GPT 기반 실시간 모의 면접 및 AI 피드백을 제공합니다. 직무별 맞춤 질문과 면접 성과 분석을 지원합니다.",
+      "혼자서 면접을 준비하는 구직자들의 막막함을 해소하기 위해, 실제 면접관 페르소나를 가진 AI와 실시간 음성 대화가 가능한 모의면접 서비스를 개발했습니다.",
     category: "b2c-consumer",
-    stack: ["Next.js", "TypeScript", "Supabase", "OpenAI", "Tailwind CSS"],
+    stack: ["Next.js 15", "TypeScript", "Supabase", "OpenAI GPT-4o", "Whisper", "Cohere"],
     highlights: [
-      "실시간 음성 모의 면접",
-      "AI 자동 피드백",
-      "면접 성과 분석",
+      "채용담당자/HR/시니어 등 3가지 페르소나 및 MBTI 기반 맞춤형 면접관 구현",
+      "Whisper STT 및 TTS 스트리밍을 활용한 자연스러운 음성 대화 경험",
+      "8축 역량 평가 모델 및 발화 습관(WPM, 필러워드) 분석 리포트 제공",
     ],
     links: [{ label: "Live Demo", href: "https://interview.sday.me" }],
     featured: true,
     metrics: {
       duration: "3주",
       role: "풀스택 단독",
-      impact: "MAU 2,000+",
+      impact: "E2E 레이턴시 <2.5s",
     },
   },
   {
     slug: "numna-road",
     name: "NumnaRoad",
-    summary: "eSIM 전자여행증 판매 플랫폼",
+    summary: "24/7 eSIM 자동 발급 플랫폼 (10초 이내)",
     description:
-      "eSIM 상품 검색 & 구매 플랫폼입니다. Next.js 14 App Router, PocketBase 백엔드, Stripe 결제를 활용합니다.",
+      "복잡한 eSIM 구매 및 발급 절차를 간소화하고 대기 시간을 없애기 위해, 결제부터 QR 발송까지 10초 이내에 완료되는 완전 자동화 플랫폼을 구축했습니다.",
     category: "b2c-consumer",
-    stack: ["Next.js", "TypeScript", "PocketBase", "Stripe", "React Query"],
+    stack: ["Next.js 14", "TypeScript", "PocketBase", "Stripe", "n8n", "Resend"],
     highlights: [
-      "eSIM 상품 관리",
-      "Stripe 결제 연동",
-      "자동 이메일 발송 (QR 포함)",
+      "결제-발급-발송 프로세스 완전 자동화로 10초 이내 서비스 제공",
+      "공급사 장애 시 자동으로 대체 경로를 찾는 멀티 프로바이더 페일오버 시스템",
+      "사용자가 직접 주문 상태를 확인하고 재발송할 수 있는 셀프서비스 기능",
     ],
     featured: true,
     metrics: {
       duration: "4주",
       role: "풀스택 단독",
-      impact: "결제 전환율 12%",
+      impact: "발급 시간 <10초",
     },
   },
   {
@@ -168,18 +170,18 @@ export const projects: Project[] = [
     name: "KRace (레이스랩)",
     summary: "한국 공영경주(경마/경륜/경정) 정보 플랫폼",
     description:
-      "경마, 경륜, 경정 실시간 정보를 제공합니다. Next.js 14, Storybook, KSPO 공식 API를 기반으로 합니다.",
+      "파편화된 한국 공영경주(경마/경륜/경정) 정보를 통합하고 실시간성을 확보하기 위해, 통합 데이터 파이프라인과 직관적인 UI를 갖춘 정보 플랫폼을 개발했습니다.",
     category: "b2c-consumer",
-    stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Storybook"],
+    stack: ["Next.js 14", "React", "TypeScript", "Tailwind CSS", "Storybook", "Redis", "Bull"],
     highlights: [
-      "3개 종목 통합 정보",
-      "실시간 배당률 & 결과",
-      "Storybook 디자인 시스템",
+      "KSPO 및 각 시행체 데이터를 통합 수집/정제하는 ETL 파이프라인 구축",
+      "실시간 배당률 변동 및 경기 결과 푸시 시스템 (Redis/Bull 활용)",
+      "다양한 베팅 정보를 일관되게 보여주는 Storybook 기반 디자인 시스템",
     ],
     links: [{ label: "Live", href: "https://racelab.kr" }],
     metrics: {
       duration: "6주",
-      role: "프론트엔드",
+      role: "프론트엔드/백엔드",
       impact: "DAU 500+",
     },
   },
@@ -188,13 +190,13 @@ export const projects: Project[] = [
     name: "OndaCoreana",
     summary: "K-드라마 & K-팝 문화 포털 (스페인어)",
     description:
-      "K-드라마, K-팝, 한국 문화 컨텐츠를 라틴아메리카 스페인어권 커뮤니티에 제공합니다. Astro SSG, SEO 최적화, Content Collections를 활용합니다.",
+      "스페인어권 사용자들을 위한 고품질 K-Culture 콘텐츠 부재를 해결하기 위해, SEO에 최적화된 정적 사이트 생성(SSG) 기반의 문화 포털을 구축했습니다.",
     category: "b2c-consumer",
     stack: ["Astro", "TypeScript", "Tailwind CSS", "MDX", "Cloudflare Pages"],
     highlights: [
-      "SSG 기반 SEO 최적화",
-      "JSON-LD 스키마 마크업",
-      "다국어 지원 (i18n)",
+      "Astro SSG를 활용한 빠른 로딩 속도 및 검색 엔진 최적화(SEO)",
+      "구조화된 데이터(JSON-LD) 자동 생성으로 검색 노출 극대화",
+      "Content Collections를 활용한 체계적인 콘텐츠 관리 및 다국어 확장성 확보",
     ],
     links: [{ label: "Live", href: "https://ondacoreana.com" }],
     metrics: {
@@ -208,13 +210,13 @@ export const projects: Project[] = [
     name: "Coupang Keyword Radar",
     summary: "쿠팡 최적화 키워드 추천 & 시계열 분석",
     description:
-      "네이버 데이터랩 인기 키워드를 시계열로 학습하고 쿠팡 경쟁도를 결합해 미래 유망 키워드 Top 10을 추천합니다. Groq LLM 기반 제품명 제안을 지원합니다.",
+      "이커머스 셀러들이 '돈이 되는' 키워드를 찾기 어려운 문제를 해결하기 위해, 검색 트렌드와 경쟁 강도를 분석하여 유망 키워드를 추천하는 시스템을 개발했습니다.",
     category: "b2c-consumer",
     stack: ["Next.js", "TypeScript", "Groq API", "Supabase", "Tailwind CSS"],
     highlights: [
-      "ARIMA/Prophet 시계열 예측",
-      "쿠팡 경쟁도 & 가격 지표 반영",
-      "Groq LLM 기반 니치 제품명 제안",
+      "네이버 데이터랩 트렌드 데이터에 대한 시계열 예측(ARIMA/Prophet) 적용",
+      "쿠팡 검색 결과 크롤링을 통한 경쟁 강도 및 가격 지표 분석",
+      "Groq LLM을 활용한 검색 패턴 기반의 니치(Niche) 제품명 자동 제안",
     ],
     featured: true,
     metrics: {
@@ -228,13 +230,13 @@ export const projects: Project[] = [
     name: "Habit Cashback",
     summary: "습관 인증 → 정산(환급/차감) MVP (토스 WebView)",
     description:
-      "토스 Apps in Toss WebView 환경에서 동작하는 습관 인증 및 포인트 정산 서비스입니다. React WebView 프론트엔드와 Go 스텁 API, EXIF 기반 사진 검증을 활용합니다.",
+      "원격 습관 형성의 동기 부여 부족 문제를 해결하기 위해, 금전적 인센티브(환급/차감)와 확실한 사진 인증을 결합한 MVP 모델을 토스 WebView 환경에서 검증했습니다.",
     category: "b2c-consumer",
     stack: ["React", "Vite", "Go", "PostgreSQL", "Docker", "Caddy"],
     highlights: [
-      "토스 WebView 환경 최적화",
-      "EXIF 기반 사진 인증",
-      "자동 정산 워커",
+      "토스 Apps in Toss (WebView) 환경에 최적화된 UX/UI 설계",
+      "EXIF 메타데이터 분석을 통한 실시간 촬영 사진 진위 여부 검증",
+      "사용자 인증 내역에 따른 포인트 자동 정산/환급 워커 구현",
     ],
     metrics: {
       duration: "3주",
@@ -247,13 +249,13 @@ export const projects: Project[] = [
     name: "Pyeongsu Calculator",
     summary: "제곱미터↔평 실시간 변환 계산기",
     description:
-      "부동산 평수 계산, 공간 시각화, 예산 추정을 제공합니다. Material 3 디자인, 다크모드, SEO 최적화를 지원합니다.",
+      "부동산 면적 단위(평/㎡)의 직관적 이해가 어려운 점을 해결하기 위해, 실시간 양방향 변환 및 공간 크기를 시각적으로 비교할 수 있는 도구를 개발했습니다.",
     category: "b2c-consumer",
     stack: ["Astro", "React", "TypeScript", "Tailwind CSS", "Cloudflare Pages"],
     highlights: [
-      "Material 3 디자인 시스템",
-      "공간 시각화 (SpaceVisualizer)",
-      "실거래가 정보 연동",
+      "Material 3 디자인 시스템을 적용하여 일관되고 직관적인 UX 제공",
+      "실제 가구/물건 크기와 비교 가능한 공간 시각화(SpaceVisualizer) 기능",
+      "국토교통부 실거래가 정보 연동을 통한 평형별 시세 정보 제공",
     ],
     metrics: {
       duration: "1주",
@@ -266,13 +268,13 @@ export const projects: Project[] = [
     name: "Relationship Calculator",
     summary: "인간관계 ROI 분석 & 공유 카드 생성",
     description:
-      "시간/돈/멘탈 손익을 기록하고 사람별 손익을 계산한 뒤 공유 카드(PNG)를 생성합니다. Preact MVP와 코치 기능을 제공합니다.",
+      "주관적인 인간관계 스트레스를 객관화하기 위해, 관계에 투입된 시간/비용/감정을 정량적으로 분석하고 ROI(투자 대비 수익)를 산출하는 서비스를 만들었습니다.",
     category: "b2c-consumer",
     stack: ["Preact", "TypeScript", "Cloudflare Pages", "Cloudflare Functions"],
     highlights: [
-      "주간/월간 손익 리포트",
-      "AI 코치 (FREE: 로컬 규칙, PRO: API 호출)",
-      "PII 스캔 기반 공유 안전 장치",
+      "관계 손익 리포트 생성 및 주간/월간 변화 추이 시각화",
+      "개인정보 유출 방지를 위한 클라이언트 사이드 PII 스캔 및 마스킹 처리",
+      "바이럴 확산을 위한 SNS 공유 최적화 이미지 생성 및 공유 기능",
     ],
     metrics: {
       duration: "2주",
@@ -285,13 +287,13 @@ export const projects: Project[] = [
     name: "TEE:UP",
     summary: "프리미엄 골프 레슨 매칭 플랫폼",
     description:
-      "골프 프로 프로필 쇼케이스, 검색 & 필터, KakaoTalk 직접 메시징을 제공합니다. Next.js 14와 Supabase 백엔드를 활용합니다.",
+      "폐쇄적인 골프 레슨 시장의 정보 비대칭을 해결하기 위해, 검증된 프로의 정보를 투명하게 공개하고 직접 소통할 수 있는 매칭 플랫폼을 구축했습니다.",
     category: "b2c-consumer",
     stack: ["Next.js", "TypeScript", "Supabase", "Stripe", "KakaoTalk API"],
     highlights: [
-      "프로 프로필 매거진 스타일",
-      "분석 대시보드 (KPI, 매출, 리더보드)",
-      "KakaoTalk 직접 메시징",
+      "매거진 스타일의 고화질 프로필 쇼케이스로 신뢰도 및 매력도 향상",
+      "프로 회원을 위한 레슨 성과, 매출, 리더보드 등 분석 대시보드 제공",
+      "카카오톡 API 연동을 통한 레슨 문의 및 예약 알림 시스템",
     ],
     metrics: {
       duration: "5주",
@@ -304,13 +306,13 @@ export const projects: Project[] = [
     name: "Landlord War",
     summary: "땅뺏기 경제 시뮬레이션 게임 (Toss WebView)",
     description:
-      "토스 플랫폼용 Web3 경제 게임입니다. Vite + React 프론트엔드와 백엔드 템플릿 통합, 멱등성 및 경제 로직 검증을 지원합니다.",
+      "별도의 앱 설치 없이 토스 앱 내에서 즐길 수 있는 게임 콘텐츠 부족을 해결하기 위해, WebView 환경에서도 부드럽게 동작하는 경제 시뮬레이션 게임을 개발했습니다.",
     category: "b2c-consumer",
     stack: ["Vite", "React", "TypeScript", "Toss SDK"],
     highlights: [
-      "토스 WebView 최적화",
-      "경제 로직 검증",
-      "멀티플레이어 시스템",
+      "WebView 환경의 성능 제약을 극복한 최적화된 렌더링 및 인터랙션 구현",
+      "게임 내 경제 시스템의 밸런스 유지 및 부정 행위 방지를 위한 로직 검증",
+      "실시간 경쟁 요소를 도입한 멀티플레이어 땅뺏기 시스템",
     ],
     metrics: {
       duration: "4주",
@@ -323,13 +325,13 @@ export const projects: Project[] = [
     name: "Soul Lab",
     summary: "토스 운세/궁합 분석 미니앱",
     description:
-      "Toss WebView 기반 운세 및 궁합 분석 미니앱입니다. 결정론적 엔진, 50+ 템플릿, 바이럴 언락 시스템을 제공합니다.",
+      "단순 운세 서비스의 낮은 리텐션 문제를 해결하기 위해, 친구 초대 및 공유를 통해서만 전체 결과를 확인할 수 있는 바이럴 중심의 운세 앱을 기획했습니다.",
     category: "b2c-consumer",
     stack: ["React", "TypeScript", "Toss Apps in Toss", "Cloudflare Workers"],
     highlights: [
-      "결정론적 운세 엔진",
-      "바이럴 잠금 해제 (궁합 페어링)",
-      "보상형 광고 통합",
+      "입력값에 따라 항상 동일한 결과를 보장하는 결정론적(Deterministic) 운세 엔진",
+      "궁합 확인을 위해 상대방의 참여를 유도하는 바이럴 잠금 해제(Viral Unlock) 메커니즘",
+      "수익화를 위한 보상형 광고 시스템 통합 및 퍼널 최적화",
     ],
     links: [{ label: "Toss App", href: "intoss://soul-lab" }],
     metrics: {
@@ -343,13 +345,13 @@ export const projects: Project[] = [
     name: "Some Some (썸썸)",
     summary: "손 터치 기반 스킨십 게임 (Flutter)",
     description:
-      "스마트폰 두 사람이 함께 화면을 터치하여 자연스러운 스킨십을 유도하는 하이퍼 캐주얼 게임입니다. Material Design 3, 햅틱 피드백을 지원합니다.",
+      "데이트 초기 단계의 어색함을 해소하고 자연스러운 스킨십을 유도하기 위해, 스마트폰 멀티터치 기능을 활용한 인터랙티브 커플 게임을 개발했습니다.",
     category: "b2c-consumer",
     stack: ["Flutter", "Dart", "Material Design 3", "CustomPainter"],
     highlights: [
-      "Material Design 3 + Kitsch 톤앤매너",
-      "쫀드기 챌린지 (8자 경로 이동)",
-      "이심전심 텔레파시 궁합 게임",
+      "Material Design 3 기반의 감각적인 UI와 햅틱 피드백을 활용한 몰입감 제공",
+      "두 사용자의 터치 경로가 겹치도록 유도하는 '8자 경로' 및 '나선형' 알고리즘",
+      "실시간 터치 동기화 및 물리적 접촉을 유도하는 레벨 디자인",
     ],
     metrics: {
       duration: "2주",
@@ -360,24 +362,96 @@ export const projects: Project[] = [
 
   // ===== AI / Agent Systems =====
   {
-    slug: "talkstudio",
+    slug: "talk-studio",
     name: "TalkStudio",
-    summary: "AI 대화 생성기 & Discord 연동 플랫폼",
+    summary: "오디오/팟캐스트 제작 플랫폼",
     description:
-      "Upstage/OpenAI 기반 AI 대화 생성기입니다. Discord 봇 연동, 실시간 스트리밍, 다양한 페르소나 설정을 지원합니다.",
+      "전문 기술 없이도 고품질 오디오 콘텐츠를 제작하고 싶어하는 크리에이터를 위해, AI 기술을 활용한 원스톱 오디오 편집 및 퍼블리싱 스튜디오를 구축했습니다.",
     category: "ai-agent",
-    stack: ["JavaScript", "Python", "Discord.js", "OpenAI", "Upstage API", "Vercel"],
+    stack: ["React", "Node.js", "Audio Processing"],
     highlights: [
-      "AI 대화 생성 (Upstage/OpenAI)",
-      "Discord 봇 연동",
-      "58개 배포 이력 (Production/Preview)",
+      "잡음 제거 및 음질 향상을 위한 자동 오디오 정제(Audio Cleansing) 기술",
+      "텍스트 편집하듯 오디오를 편집할 수 있는 스크립트 기반 편집 워크플로우",
+      "제작된 콘텐츠를 주요 팟캐스트 플랫폼에 일괄 배포하는 멀티 채널 퍼블리싱",
     ],
-    links: [{ label: "Live", href: "https://talkstudio.vercel.app" }],
+  },
+  {
+    slug: "careguide",
+    name: "CareGuide",
+    summary: "만성콩팥병(CKD) 환자 AI 건강관리 플랫폼",
+    description:
+      "신뢰할 수 없는 건강 정보의 범람 속에서 CKD 환자들에게 정확한 정보를 제공하기 위해, 의학 논문 기반의 전문 지식을 제공하는 멀티 에이전트 시스템을 개발했습니다.",
+    category: "ai-agent",
+    stack: ["Python", "FastAPI", "React", "MongoDB", "OpenAI", "Anthropic"],
+    highlights: [
+      "연구논문/영양/의료복지/트렌드 등 4개 분야별 특화 에이전트 협업 시스템",
+      "4,850+편의 최신 의학 논문을 임베딩하여 할루시네이션을 억제한 RAG 검색",
+      "PubMed API 연동을 통한 실시간 최신 연구 동향 및 임상 결과 제공",
+    ],
     featured: true,
     metrics: {
-      duration: "4주",
+      duration: "3개월",
       role: "풀스택 단독",
-      impact: "Discord 서버 20+ 연동",
+      impact: "4,850+ 논문 임베딩",
+    },
+  },
+  {
+    slug: "contents-creator",
+    name: "Contents Supporter",
+    summary: "멀티에이전트 AI 콘텐츠 생성 & 자동 퍼블리싱",
+    description:
+      "다양한 플랫폼에 맞는 콘텐츠를 지속적으로 생산해야 하는 마케터의 부담을 줄이기 위해, 기획부터 제작, 발행까지 자동화하는 멀티 에이전트 시스템을 구축했습니다.",
+    category: "ai-agent",
+    stack: ["React", "FastAPI", "Gemini 2.0 Flash", "Claude 3.5", "Replicate", "Supabase"],
+    highlights: [
+      "데이터 수집→스타일 분석→콘텐츠 합성→디자인 생성으로 이어지는 자율 에이전트 파이프라인",
+      "Gemini, Stable Diffusion 등을 활용한 고품질 멀티미디어(이미지, 영상) 자동 생성",
+      "YouTube, Instagram, TikTok 등 11개 플랫폼 API 연동을 통한 원클릭 퍼블리싱",
+    ],
+    featured: true,
+    metrics: {
+      duration: "2개월",
+      role: "풀스택 단독",
+      impact: "11개+ 플랫폼 통합",
+    },
+  },
+  {
+    slug: "satiachat",
+    name: "SatiaChat",
+    summary: "GLP-1 사용자 AI 식단 코칭 챗봇",
+    description:
+      "GLP-1 다이어트 약물 사용자의 식단 및 부작용 관리를 돕기 위해, 전문적인 약물 정보와 한국 식단 DB를 결합한 페르소나 챗봇을 개발했습니다.",
+    category: "ai-agent",
+    stack: ["React", "Vite", "FastAPI", "Supabase", "OpenAI GPT-4o-mini", "LlamaIndex"],
+    highlights: [
+      "사용자 성향에 맞춘 3가지 코치 페르소나(냥이/댕댕이/꿀꿀이)로 참여 유도",
+      "11,086개 한국 음식 데이터베이스를 구축하여 자연어 식단 기록 및 칼로리 분석 지원",
+      "식약처 공식 문서를 기반으로 한 RAG 시스템으로 정확한 약물 정보 및 Q&A 제공",
+    ],
+    metrics: {
+      duration: "1주",
+      role: "풀스택 단독",
+      impact: "11,086 음식 DB",
+    },
+  },
+  {
+    slug: "tripkit",
+    name: "Tripkit",
+    summary: "바이브 기반 AI 여행 플래너 (필름 미학)",
+    description:
+      "천편일률적인 최저가/효율 중심 여행 계획에서 벗어나, 사용자의 감성과 취향(Vibe)을 반영한 영화 같은 여행 일정을 설계하는 AI 플래너를 만들었습니다.",
+    category: "ai-agent",
+    stack: ["Next.js 14", "Python", "LangGraph", "Gemini Imagen 3.0", "FastMCP", "Tavily"],
+    highlights: [
+      "Human-in-the-loop 방식의 10단계 대화를 통해 사용자의 숨겨진 여행 취향 추출",
+      "Gemini Imagen 3.0을 활용하여 3가지 미학 컨셉(플라뇌르/필름로그/미드나잇)의 시각적 여정 생성",
+      "여행지 분위기에 맞는 의상, 소품, 카메라 앵글까지 추천하는 통합 패키지 제공",
+    ],
+    featured: true,
+    metrics: {
+      duration: "3주",
+      role: "풀스택 단독",
+      impact: "6개 미학 컨셉",
     },
   },
   {
@@ -385,13 +459,13 @@ export const projects: Project[] = [
     name: "Study Assistant Chatbot",
     summary: "LLM 기반 학습 보조 챗봇",
     description:
-      "OpenAI/Claude API를 활용한 요약, Q&A 생성, 문제 생성, 자료 추천 기능을 제공합니다. Streamlit 프론트엔드와 FastAPI 백엔드를 사용합니다.",
+      "방대한 학습 자료를 효율적으로 소화하기 어려운 학생들을 위해, AI가 핵심 내용을 요약하고 맞춤형 문제를 출제해주는 학습 파트너 챗봇을 개발했습니다.",
     category: "ai-agent",
     stack: ["Streamlit", "FastAPI", "Python", "OpenAI", "Claude API", "LangChain"],
     highlights: [
-      "요약 & Q&A 자동 생성",
-      "맞춤형 시험 문제 생성",
-      "학습 자료 추천",
+      "긴 문서나 강의록을 핵심 위주로 요약하고 예상 Q&A를 자동 생성하는 파이프라인",
+      "학습자의 이해도를 점검할 수 있는 객관식/주관식 시험 문제 자동 출제 기능",
+      "문서의 문맥을 분석하여 심화 학습에 필요한 외부 자료 및 레퍼런스 자동 추천",
     ],
     metrics: {
       duration: "2주",
@@ -404,13 +478,13 @@ export const projects: Project[] = [
     name: "Reporty",
     summary: "AI Studio 기반 보고서 생성 앱",
     description:
-      "Google Gemini API 기반 AI 보고서 생성 플랫폼입니다. AI Studio에서 배포 및 로컬 실행이 가능합니다.",
+      "반복적이고 형식적인 보고서 작성 업무를 자동화하기 위해, 데이터를 입력하면 전문적인 형식의 PDF 보고서를 즉시 생성하는 AI 도구를 개발했습니다.",
     category: "ai-agent",
     stack: ["React", "Node.js", "Google Gemini API"],
     highlights: [
-      "AI Studio 네이티브",
-      "Gemini API 기반",
-      "로컬 & 클라우드 실행",
+      "Google AI Studio 환경에 최적화된 네이티브 앱으로 별도 설치 없이 즉시 사용 가능",
+      "Gemini API의 긴 컨텍스트 처리 능력을 활용한 방대한 자료 분석 및 보고서 구조화",
+      "브라우저 로컬 환경과 클라우드 실행을 모두 지원하는 유연한 배포 아키텍처",
     ],
     links: [{ label: "AI Studio", href: "https://ai.studio/apps/drive/1WWe7ryHCM5pvJeYccWZHVfLkmd4zXRSj" }],
     metrics: {
@@ -426,41 +500,221 @@ export const projects: Project[] = [
     name: "ArbQuant",
     summary: "암호화폐 Gray Box 중재 거래 시스템 (Upbit↔Binance)",
     description:
-      "한국 & 글로벌 암호화폐 거래소의 교차 차익 거래 기회를 실시간 감지 및 실행합니다. 텔레그램 기반 휴먼-인-더-루프 승인 워크플로우를 제공합니다.",
+      "한국(Upbit)과 글로벌(Binance) 거래소 간 실시간 KIMP 차익거래 플랫폼입니다. Gray Box 아키텍처로 휴먼-인-더-루프 승인 워크플로우와 텔레그램 모바일 콕핏을 제공합니다.",
     category: "automation",
-    stack: ["Go", "TimescaleDB", "NATS JetStream", "Redis", "Telegram Bot API", "Docker"],
+    stack: ["Go", "Next.js", "TimescaleDB", "NATS JetStream", "Redis", "Supabase", "Fly.io", "Vercel"],
     highlights: [
-      "Gray Box 아키텍처 (휴먼 승인 워크플로우)",
-      "KIMP 신호 기반 자동 감지",
-      "이중 다리 주문 동시 실행 및 위치 추적",
+      "Gray Box 트레이딩 (휴먼 승인 워크플로우)",
+      "실시간 KIMP 신호 생성 & 이중 다리 동기화 실행",
+      "Kelly 포지션 사이징 & 시장 영향 모델링",
+      "Walk-forward 백테스팅 (OOS 검증)",
     ],
     featured: true,
     metrics: {
       duration: "2개월",
-      role: "백엔드 단독",
+      role: "풀스택 단독",
       impact: "일평균 수익률 0.3%",
     },
+  },
+  {
+    slug: "airalo-api",
+    name: "Airalo API",
+    summary: "eSIM 통합 발급 서비스",
+    description:
+      "주문, 발급, 고객 알림을 통합한 백엔드 서비스입니다. 파트너사 주문 자동화를 지원합니다.",
+    category: "automation",
+    stack: ["Go", "Gin", "OAuth2"],
+    highlights: [
+      "주문-발급-알림 자동화",
+      "파트너 API 게이트웨이",
+      "에러 복구 큐",
+    ],
   },
 
   // ===== Developer Tools =====
   {
     slug: "hwp-bridge",
     name: "HwpBridge",
-    summary: "한글 파일(HWP) Rust 파싱 & MCP 서버",
+    summary: "Rust HWP 파싱 & MCP 서버 (Claude Desktop 통합)",
     description:
-      "HWP v5 포맷 파싱 및 Markdown/JSON 변환을 제공합니다. MCP 서버로 Claude Desktop 등 AI 클라이언트에 통합 가능합니다.",
+      "Rust 워크스페이스 아키텍처로 HWP 5.x(OLE/CFB) 포맷을 파싱하고 Markdown/JSON 변환을 제공합니다. MCP 서버로 Claude Desktop 등 AI 클라이언트와 직접 통합됩니다.",
     category: "developer-tools",
-    stack: ["Rust", "MCP", "CLI", "Smithery"],
+    stack: ["Rust", "cfb", "axum", "MCP", "WASM", "Tauri"],
     highlights: [
-      "HWP v5 (OLE/CFB) 전문 파싱",
-      "MCP 서버 지원 (stdio & HTTP)",
-      "Markdown & JSON 출력",
+      "hwp-cli: 로컬 변환 & 검사 CLI",
+      "hwp-mcp: MCP 서버 (stdio & HTTP)",
+      "hwp-wasm: WebAssembly 바인딩",
+      "hwp-gui: Tauri 데스크톱 GUI",
     ],
     metrics: {
       duration: "3주",
       role: "오픈소스 단독",
-      impact: "GitHub Stars 50+",
+      impact: "테스트 커버리지 80%+",
     },
+  },
+  {
+    slug: "ai-software-factory",
+    name: "AI Software Factory",
+    summary: "AI 개발 프레임워크",
+    description:
+      "Spec-Driven Development와 TDD를 결합한 AI 개발 프레임워크입니다. 역할 기반 에이전트 협업을 지원합니다.",
+    category: "developer-tools",
+    stack: ["Node.js", "Python", "Docker", "GitHub Actions"],
+    highlights: [
+      "요구사항 → 테스트 → 구현 자동화",
+      "멀티 에이전트 협업",
+      "CI 파이프라인 통합",
+    ],
+  },
+
+  // ===== Experimental =====
+  {
+    slug: "abitrage",
+    name: "Abitrage",
+    summary: "차익거래 실험/프로토타입",
+    description:
+      "차익거래 아이디어를 빠르게 검증하기 위한 실험성 프로젝트입니다. 데이터 수집, 알림, 리스크 체크를 중심으로 구성했습니다.",
+    category: "experimental",
+    stack: ["Node.js", "TypeScript"],
+    highlights: [
+      "시장 데이터 수집",
+      "시그널 탐지 및 알림",
+      "리스크 체크 리스트",
+    ],
+  },
+  // ===== New Projects =====
+  {
+    slug: "growing",
+    name: "Growing",
+    summary: "B2E 온라인 학습 및 역량 개발 플랫폼",
+    description:
+      "기존 기업 교육 시스템의 낮은 참여율과 관리 비효율을 해결하기 위해, React Query 기반의 현대적인 학습 경험(LXP)과 관리자 편의성을 갖춘 B2E 플랫폼을 구축했습니다.",
+    category: "b2b-saas",
+    stack: ["React 18", "TypeScript", "Vite", "Redux Toolkit", "React Query", "Ant Design"],
+    highlights: [
+      "React Query를 활용한 효율적인 서버 상태 동기화 및 캐싱 전략 구현",
+      "Redux Toolkit 기반의 예측 가능한 전역 상태 관리로 복잡한 강의실 로직 제어",
+      "Playwright를 이용한 E2E 테스트 자동화로 안정적인 서비스 품질 유지",
+    ],
+    metrics: {
+      duration: "진행중",
+      role: "프론트엔드 리드",
+      impact: "B2E 플랫폼 구축",
+    },
+  },
+  {
+    slug: "h-mule",
+    name: "Human Mule",
+    summary: "지하철 활용 B2B 급송 물류 플랫폼",
+    description:
+      "높은 퀵서비스 비용과 지연 문제를 해결하기 위해, 서울의 지하철 인프라와 유휴 인력(실버 택배 등)을 연결하는 저비용 고효율 크라우드소싱 물류망을 설계했습니다.",
+    category: "b2b-saas",
+    stack: ["Flutter", "Go", "PostgreSQL", "sqlc", "Asynq"],
+    highlights: [
+      "지하철 노선과 실시간 위치를 매칭하는 최적 경로 알고리즘 및 배차 시스템",
+      "Go와 sqlc를 활용한 Type-safe한 고성능 백엔드 API 서버 구축",
+      "크로스 플랫폼(Flutter) 앱을 통해 배송원과 의뢰인 간의 실시간 연결 지원",
+    ],
+    metrics: {
+      duration: "초기 단계",
+      role: "풀스택 리드",
+      impact: "물류 비용 절감 목표",
+    },
+  },
+  {
+    slug: "to-learn",
+    name: "To-Learn (투런)",
+    summary: "개인화 금융 컨시어지 챗봇 모노레포",
+    description:
+      "일관성 없는 챗봇 응답과 파편화된 로직 관리를 해결하기 위해, 프론트엔드와 백엔드가 타입을 공유하는 모노레포 구조하에 유연한 LLM 파이프라인을 구축했습니다.",
+    category: "ai-agent",
+    stack: ["Next.js", "Express", "SQLite", "OpenAI", "n8n", "Turborepo"],
+    highlights: [
+      "Turborepo 기반의 모노레포 환경에서 스키마(계약) 공유를 통한 개발 생산성 향상",
+      "비즈니스 요구에 따라 OpenAI 직접 호출과 n8n 워크플로우를 즉시 전환 가능한 어댑터 패턴",
+      "사용자 학습 데이터를 SQLite로 로컬/서버에 안전하게 기록하고 리포트 생성",
+    ],
+    metrics: {
+      duration: "2주",
+      role: "풀스택 단독",
+      impact: "금융 교육 개인화",
+    },
+  },
+  {
+    slug: "mirror-mcp",
+    name: "Mirror MCP",
+    summary: "유튜브 시청 기록 분석 & Suno 프롬프트 생성",
+    description:
+      "자신의 유튜브 시청 패턴을 객관적으로 파악하고 이를 창작의 영감으로 삼기 위해, 시청 기록 데이터를 분석하여 개인화된 음악 생성 프롬프트를 만드는 도구를 개발했습니다.",
+    category: "developer-tools",
+    stack: ["Python", "MCP", "Pandas", "Suno AI"],
+    highlights: [
+      "Google Takeout 데이터 파싱 및 Pandas를 활용한 시청 시간대/장르 패턴 분석",
+      "분석된 사용자 취향을 반영하여 Suno AI용 고품질 음악 생성 프롬프트 자동 변환",
+      "Claude Desktop과 연동되는 Model Context Protocol(MCP) 서버 구현",
+    ],
+  },
+  {
+    slug: "lotto-shrine",
+    name: "LottoShrine",
+    summary: "AI 기반 로또 분석 및 명당 지도 플랫폼",
+    description:
+      "단순 운에 의존하는 로또 구매 경험을 데이터 기반의 전략적 탐색으로 바꾸기 위해, 위치 정보와 과거 당첨 데이터를 결합한 '명당 순례' 지도 서비스를 만들었습니다.",
+    category: "b2c-consumer",
+    stack: ["Next.js 16", "Tailwind CSS 4", "Kakao Maps", "Cloudflare Pages"],
+    highlights: [
+      "Kakao Maps API를 활용한 전국 로또 명당 위치 및 회차별 당첨 정보 시각화",
+      "1,200회 이상의 과거 당첨 번호 패턴 분석을 통한 AI 번호 추천 알고리즘",
+      "Cloudflare Pages를 통한 정적 배포로 빠르고 안정적인 서비스 환경 제공",
+    ],
+    links: [{ label: "Live", href: "https://lotto-shrine.pages.dev" }],
+    metrics: {
+      duration: "진행중",
+      role: "풀스택 단독",
+      impact: "로또 분석 커뮤니티",
+    },
+  },
+  {
+    slug: "king-sourcing",
+    name: "King Sourcing",
+    summary: "이커머스 소싱 자동화 및 모니터링",
+    description:
+      "이커머스 셀러의 반복적인 상품 발굴 및 재고 확인 작업을 자동화하기 위해, 서버리스 아키텍처 기반의 지능형 크롤링 및 모니터링 시스템을 개발했습니다.",
+    category: "automation",
+    stack: ["TypeScript", "AWS Lambda", "Puppeteer", "Turborepo"],
+    highlights: [
+      "AWS Lambda와 Puppeteer를 활용하여 확장성 있는 병렬 크롤링 파이프라인 구축",
+      "상품 가격 변동 및 재고 상태를 실시간으로 감지하여 알림을 보내는 모니터링 로직",
+      "Turborepo를 이용해 크롤러, API, 공통 라이브러리를 효율적으로 관리하는 모노레포 구조",
+    ],
+  },
+  {
+    slug: "go-monitoring",
+    name: "Go Monitoring",
+    summary: "Go 기반 웹 모니터링 및 크롤링 서비스",
+    description:
+      "무거운 헤드리스 브라우저 대신 가볍고 빠른 모니터링이 필요한 요구사항을 충족하기 위해, Go 언어의 동시성(Goroutines)을 활용한 고성능 모니터링 에이전트를 개발했습니다.",
+    category: "automation",
+    stack: ["Go", "Gin", "Selenium", "Gocron"],
+    highlights: [
+      "Gocron을 활용한 정교한 주기적 작업 스케줄링 및 상태 체크 로직",
+      "Selenium WebDriver를 제어하여 동적 웹페이지의 데이터를 정확하게 수집",
+      "Go의 높은 성능과 적은 리소스 점유율로 다수의 타겟을 동시에 안정적으로 모니터링",
+    ],
+  },
+  {
+    slug: "aether-terminal",
+    name: "Aether Terminal",
+    summary: "AI 금융 점성술 터미널",
+    description:
+      "이성적인 시장 분석에 지친 투자자들에게 색다른 관점을 제공하기 위해, 금융 데이터와 천체 주기를 결합한 실험적인 '금융 점성술' AI 터미널을 기획했습니다.",
+    category: "experimental",
+    stack: ["React", "Google AI Studio"],
+    highlights: [
+      "Google AI Studio의 멀티모달 기능을 활용하여 복잡한 차트와 천체 데이터를 통합 분석",
+      "천체 이동 주기와 시장 변동성 간의 상관관계를 시각화하는 인터랙티브 대시보드",
+      "재미와 흥미를 유발하는 엔터테인먼트 요소로서의 데이터 스토리텔링 구현",
+    ],
   },
 ];
 
