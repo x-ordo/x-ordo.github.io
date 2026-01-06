@@ -13,9 +13,9 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t-4 border-black bg-white">
-      <div className="mx-auto max-w-7xl px-6 py-12 md:px-10 md:py-20 lg:px-12 lg:py-24">
-        <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr] md:gap-12 lg:gap-20">
+    <footer className="border-t-8 border-black bg-white">
+      <div className="mx-auto max-w-7xl px-6 py-24 md:px-12 md:py-32 lg:px-16 lg:py-48">
+        <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr] md:gap-16 lg:gap-24">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-5">
