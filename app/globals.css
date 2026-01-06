@@ -38,20 +38,20 @@
   margin: 0;
 }
 
-/* Main content padding for fixed navigation - Large responsive gaps */
+/* Main content padding - Focus on page-level breathing room */
 main {
-  padding-top: 120px; 
+  padding-top: 100px; 
 }
 
 @media (min-width: 768px) {
   main {
-    padding-top: 160px;
+    padding-top: 140px;
   }
 }
 
 @media (min-width: 1024px) {
   main {
-    padding-top: 200px;
+    padding-top: 180px;
   }
 }
 
@@ -62,13 +62,7 @@ html {
 
 @media (min-width: 768px) {
   html {
-    font-size: 18px; 
-  }
-}
-
-@media (min-width: 1440px) {
-  html {
-    font-size: 20px; /* Even larger for ultra-wide */
+    font-size: 17px; 
   }
 }
 
@@ -76,7 +70,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  line-height: 1.7; /* Increased line-height for better flow */
+  line-height: 1.6; 
   -webkit-font-smoothing: antialiased;
 }
 
