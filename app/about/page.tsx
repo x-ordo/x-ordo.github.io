@@ -45,32 +45,33 @@ const techStack = [
 
 export default function AboutPage() {
   return (
-    <div className="px-5 pt-10 pb-20 md:px-8 md:pt-16 md:pb-32 lg:pt-20 lg:pb-40">
-      <div className="mx-auto max-w-4xl">
+    <div className="px-5 pt-12 pb-24 md:px-8 md:pt-20 md:pb-36 lg:pt-24 lg:pb-48">
+      <div className="mx-auto max-w-5xl">
         {/* Page Header */}
-        <section className="mb-12 md:mb-20 lg:mb-24">
-          <span className="badge badge-primary mb-4 md:mb-5">About</span>
-          <h1 className="text-xl font-black text-black sm:text-2xl md:text-3xl lg:text-4xl leading-tight">
+        <section className="mb-16 md:mb-24 lg:mb-32">
+          <span className="badge badge-primary mb-6 md:mb-8 scale-110 origin-left">About</span>
+          <h1 className="text-3xl font-black text-black sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
             기술과 비즈니스를
             <br />
             연결하는 개발자
           </h1>
-          <p className="mt-5 text-xs md:text-base text-black/60 max-w-xl leading-relaxed md:leading-[1.75] md:mt-8 lg:text-lg lg:mt-10">
+          <p className="mt-8 text-sm md:text-lg text-black/70 max-w-2xl leading-relaxed md:leading-[1.8] font-medium lg:text-xl lg:mt-12">
             AI/ML 기반 솔루션을 설계하고, 복잡한 비즈니스 문제를 제품으로 구현합니다.
+            <br className="hidden md:block" />
             실용적인 관점으로 시스템을 설계하고 운영합니다.
           </p>
         </section>
 
         {/* Capabilities */}
-        <section className="mb-12 md:mb-20 lg:mb-24">
-          <h2 className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-6 md:mb-10">
+        <section className="mb-16 md:mb-24 lg:mb-32">
+          <h2 className="text-xs md:text-sm font-bold text-black/50 uppercase tracking-widest mb-8 md:mb-12">
             Core Capabilities
           </h2>
-          <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:gap-8">
+          <div className="grid gap-6 sm:grid-cols-2 md:gap-8 lg:gap-10">
             {capabilities.map((item) => (
-              <div key={item.title} className="card-elevated p-5 md:p-7 lg:p-8">
-                <h3 className="text-sm md:text-base font-bold text-black mb-3 md:mb-4">{item.title}</h3>
-                <p className="text-xs md:text-sm text-black/60 leading-relaxed">
+              <div key={item.title} className="card-elevated p-6 md:p-8 lg:p-10 hover:-translate-y-1 transition-transform duration-300">
+                <h3 className="text-lg md:text-xl font-bold text-black mb-4 md:mb-5">{item.title}</h3>
+                <p className="text-sm md:text-base text-black/70 leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -79,20 +80,20 @@ export default function AboutPage() {
         </section>
 
         {/* Tech Stack */}
-        <section className="mb-12 md:mb-20 lg:mb-24">
-          <h2 className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-6 md:mb-10">
+        <section className="mb-16 md:mb-24 lg:mb-32">
+          <h2 className="text-xs md:text-sm font-bold text-black/50 uppercase tracking-widest mb-8 md:mb-12">
             Tech Stack
           </h2>
-          <div className="card-elevated p-5 md:p-8 lg:p-10">
-            <div className="grid gap-6 sm:grid-cols-2 md:gap-10 lg:gap-12">
+          <div className="card-elevated p-6 md:p-10 lg:p-12">
+            <div className="grid gap-8 sm:grid-cols-2 md:gap-12 lg:gap-16">
               {techStack.map((group) => (
                 <div key={group.title}>
-                  <h3 className="text-xs md:text-sm font-bold text-black mb-4 md:mb-5">
+                  <h3 className="text-sm md:text-base font-bold text-black mb-5 md:mb-6 uppercase tracking-wide">
                     {group.title}
                   </h3>
-                  <div className="flex flex-wrap gap-2 md:gap-2.5">
+                  <div className="flex flex-wrap gap-2.5 md:gap-3">
                     {group.items.map((item) => (
-                      <span key={item} className="brutal-tag">
+                      <span key={item} className="brutal-tag text-xs md:text-sm py-2 px-3 md:py-2.5 md:px-4">
                         {item}
                       </span>
                     ))}
@@ -105,15 +106,16 @@ export default function AboutPage() {
 
         {/* Philosophy */}
         <section>
-          <div className="card-elevated p-5 md:p-8 lg:p-10 bg-[#00ff00]/10 border-[#00ff00]">
-            <h2 className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-4 md:mb-6">
+          <div className="card-elevated p-6 md:p-10 lg:p-12 bg-[#00ff00]/10 border-[#00ff00]">
+            <h2 className="text-xs md:text-sm font-bold text-black/50 uppercase tracking-widest mb-6 md:mb-8">
               Philosophy
             </h2>
-            <p className="text-base md:text-lg font-black text-black leading-snug md:leading-relaxed lg:text-xl">
+            <p className="text-xl md:text-2xl font-black text-black leading-snug md:leading-relaxed lg:text-3xl tracking-tight">
               실용적인 AI 응용, 사용자 중심 설계, 지속적 학습
             </p>
-            <p className="mt-4 text-xs md:text-sm text-black/60 leading-relaxed md:mt-5 lg:mt-6">
+            <p className="mt-6 text-sm md:text-base text-black/70 leading-relaxed md:mt-8 lg:mt-10 font-medium">
               기술을 통해 실질적인 비즈니스 가치를 만드는 데 집중합니다.
+              <br className="hidden md:block" />
               복잡한 문제를 단순하게 풀고, 확장 가능한 시스템을 구축합니다.
             </p>
           </div>

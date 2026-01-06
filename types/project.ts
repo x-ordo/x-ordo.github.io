@@ -23,8 +23,10 @@ export type Project = {
   name: string;
   summary: string;
   description: string;
+  intent?: string;        // 프로젝트의 시작 동기 및 방향성
   category: ProjectCategory;
   stack: string[];
+  techStackMap?: Record<string, string[]>; // 상세 기술 스택 (e.g. { Frontend: ["React"], Backend: ["Go"] })
   highlights: string[];
   links?: ProjectLink[];
   featured?: boolean;

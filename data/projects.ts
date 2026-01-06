@@ -49,8 +49,16 @@ export const projects: Project[] = [
     summary: "이혼 소송 AI 파라리걸 & 멀티모달 증거 허브",
     description:
       "이혼 소송 시 발생하는 방대한 증거 자료(이미지/오디오/비디오/텍스트) 정리의 비효율성을 해결하기 위해, AI 기반의 멀티모달 분석 및 자동 법률 문서 생성 시스템을 구축했습니다.",
+    intent: "법률 시장의 '비정형 데이터 정리' 병목을 기술로 해결하고자 했습니다. 변호사가 가장 기피하는 단순 반복 업무(녹취록 작성, 타임라인 정리)를 AI가 대신하고, 인간은 최종 판단만 내리는 'Human-in-the-loop' 구조를 지향했습니다.",
     category: "b2b-saas",
     stack: ["Next.js", "TypeScript", "FastAPI", "PostgreSQL", "AWS S3", "Qdrant", "OpenAI GPT-4o"],
+    techStackMap: {
+      Frontend: ["Next.js 14", "TypeScript", "Tailwind CSS", "Zustand"],
+      Backend: ["FastAPI", "Python 3.11", "Pydantic"],
+      Database: ["PostgreSQL (RDS)", "DynamoDB (Metadata)", "Qdrant (Vector DB)"],
+      Infra: ["AWS S3", "AWS Lambda", "ECS Fargate", "CloudFront"],
+      AI: ["OpenAI GPT-4o", "Whisper", "GPT-4o Vision"],
+    },
     highlights: [
       "멀티모달 증거 분석 (STT/OCR/요약/라벨링) 파이프라인 구축",
       "이중 RAG (법률 지식 + 사건별 증거) 아키텍처로 할루시네이션 최소화",
@@ -65,11 +73,145 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "tee-up",
+    name: "TEE:UP",
+    summary: "프리미엄 골프 레슨 매칭 플랫폼",
+    description:
+      "폐쇄적인 골프 레슨 시장의 정보 비대칭을 해결하기 위해, 검증된 프로의 정보를 투명하게 공개하고 직접 소통할 수 있는 매칭 플랫폼을 구축했습니다.",
+    intent: "골프 레슨 시장의 '정보 불투명성'을 해소하고, 프로에게는 '브랜딩 도구'를, 아마추어에게는 '검증된 선택지'를 제공하고자 했습니다. 단순 매칭을 넘어 프로의 비즈니스(예약/정산)를 돕는 SaaS로의 확장을 목표로 합니다.",
+    category: "b2c-consumer",
+    stack: ["Next.js", "TypeScript", "Supabase", "Stripe", "KakaoTalk API"],
+    techStackMap: {
+      Frontend: ["Next.js 14", "React Server Components", "Tailwind CSS"],
+      Backend: ["Next.js API Routes", "Supabase Edge Functions"],
+      Database: ["Supabase (PostgreSQL)", "Redis (Upstash)"],
+      Integration: ["Toss Payments", "KakaoTalk Alimtalk", "Resend Email"],
+    },
+    highlights: [
+      "매거진 스타일의 고화질 프로필 쇼케이스로 신뢰도 및 매력도 향상",
+      "프로 회원을 위한 레슨 성과, 매출, 리더보드 등 분석 대시보드 제공",
+      "카카오톡 API 연동을 통한 레슨 문의 및 예약 알림 시스템",
+    ],
+    metrics: {
+      duration: "5주",
+      role: "풀스택 단독",
+      impact: "프로 등록 50+",
+    },
+  },
+  {
+    slug: "numna-road",
+    name: "NumnaRoad",
+    summary: "24/7 eSIM 자동 발급 플랫폼 (10초 이내)",
+    description:
+      "복잡한 eSIM 구매 및 발급 절차를 간소화하고 대기 시간을 없애기 위해, 결제부터 QR 발송까지 10초 이내에 완료되는 완전 자동화 플랫폼을 구축했습니다.",
+    intent: "여행 준비의 마지막 단계인 데이터 로밍을 '가장 빠르고 간편하게' 해결하는 경험을 제공하고자 했습니다. 노코드 툴의 한계를 느껴 직접 코드로 마이그레이션하며 '안정성'과 '비용 효율성'이라는 두 마리 토끼를 잡았습니다.",
+    category: "b2c-consumer",
+    stack: ["Next.js 14", "TypeScript", "PocketBase", "Stripe", "n8n", "Resend"],
+    techStackMap: {
+      Frontend: ["Next.js 14 (App Router)", "React Query", "Zustand"],
+      Backend: ["Vercel Serverless Functions", "PocketBase (Go)"],
+      Infra: ["Oracle Cloud Free Tier", "Cloudflare Tunnel"],
+      Automation: ["Stripe Webhook", "Resend Email API", "Inline Fulfillment Logic"],
+    },
+    highlights: [
+      "결제-발급-발송 프로세스 완전 자동화로 10초 이내 서비스 제공",
+      "공급사 장애 시 자동으로 대체 경로를 찾는 멀티 프로바이더 페일오버 시스템",
+      "사용자가 직접 주문 상태를 확인하고 재발송할 수 있는 셀프서비스 기능",
+    ],
+    featured: true,
+    metrics: {
+      duration: "4주",
+      role: "풀스택 단독",
+      impact: "발급 시간 <10초",
+    },
+  },
+  {
+    slug: "auditx",
+    name: "Sentinel (Auditx)",
+    summary: "AI 스마트컨트랙트 보안 오케스트레이터",
+    description:
+      "기존 보안 감사 툴의 높은 오탐률(False Positive) 문제를 해결하기 위해, 정적 분석 도구와 LLM을 결합한 하이브리드 보안 오케스트레이터를 개발했습니다.",
+    intent: "Web3 생태계의 가장 큰 진입 장벽인 '보안 사고'를 예방하고자 했습니다. 기존 정적 분석 도구의 결과를 AI가 재검증(Double Check)함으로써, 보안 감사의 효율성과 신뢰성을 동시에 높이는 것을 목표로 합니다.",
+    category: "b2b-saas",
+    stack: ["Python", "FastAPI", "OpenAI GPT-4o", "Slither", "Mythril", "Aderyn"],
+    techStackMap: {
+      Core: ["Python 3.10", "FastAPI", "Celery"],
+      Analysis: ["Slither", "Mythril", "Aderyn", "Solidity Parser"],
+      AI: ["OpenAI GPT-4o", "LangChain"],
+      Queue: ["Redis", "RabbitMQ"],
+    },
+    highlights: [
+      "Slither, Mythril 등 오픈소스 센서와 LLM을 연동한 다단계 분석 파이프라인",
+      "탐지된 취약점을 LLM이 재검증하여 90% 이상의 오탐 필터링",
+      "취약점 우선순위 스코어링 및 자동 패치 코드 제안 기능",
+    ],
+    featured: true,
+    metrics: {
+      duration: "2개월",
+      role: "AI/백엔드",
+      impact: "오탐률 90% 감소",
+    },
+  },
+  {
+    slug: "careguide",
+    name: "CareGuide",
+    summary: "만성콩팥병(CKD) 환자 AI 건강관리 플랫폼",
+    description:
+      "신뢰할 수 없는 건강 정보의 범람 속에서 CKD 환자들에게 정확한 정보를 제공하기 위해, 의학 논문 기반의 전문 지식을 제공하는 멀티 에이전트 시스템을 개발했습니다.",
+    intent: "만성 질환자는 평생 관리가 필요하지만, 인터넷의 정보는 부정확하고 병원 진료는 짧습니다. '내 손안의 주치의'처럼 언제든 신뢰할 수 있는 의학 정보를 제공하여 환자의 삶의 질을 높이고자 했습니다.",
+    category: "ai-agent",
+    stack: ["Python", "FastAPI", "React", "MongoDB", "OpenAI", "Anthropic"],
+    techStackMap: {
+      Frontend: ["React", "TypeScript", "Recharts"],
+      Backend: ["FastAPI", "Python"],
+      Data: ["MongoDB", "Pinecone (Vector DB)"],
+      AI: ["LangGraph (Multi-Agent)", "OpenAI GPT-4o", "PubMed API"],
+    },
+    highlights: [
+      "연구논문/영양/의료복지/트렌드 등 4개 분야별 특화 에이전트 협업 시스템",
+      "4,850+편의 최신 의학 논문을 임베딩하여 할루시네이션을 억제한 RAG 검색",
+      "PubMed API 연동을 통한 실시간 최신 연구 동향 및 임상 결과 제공",
+    ],
+    featured: true,
+    metrics: {
+      duration: "3개월",
+      role: "풀스택 단독",
+      impact: "4,850+ 논문 임베딩",
+    },
+  },
+  {
+    slug: "contents-creator",
+    name: "Contents Supporter",
+    summary: "멀티에이전트 AI 콘텐츠 생성 & 자동 퍼블리싱",
+    description:
+      "다양한 플랫폼에 맞는 콘텐츠를 지속적으로 생산해야 하는 마케터의 부담을 줄이기 위해, 기획부터 제작, 발행까지 자동화하는 멀티 에이전트 시스템을 구축했습니다.",
+    category: "ai-agent",
+    stack: ["React", "FastAPI", "Gemini 2.0 Flash", "Claude 3.5", "Replicate", "Supabase"],
+    techStackMap: {
+      Frontend: ["React", "Vite", "Shadcn UI"],
+      Backend: ["FastAPI", "Supabase"],
+      AI_Media: ["Gemini 2.0 Flash", "Stable Diffusion XL", "Replicate API"],
+      Integration: ["YouTube Data API", "Instagram Graph API", "TikTok API"],
+    },
+    highlights: [
+      "데이터 수집→스타일 분석→콘텐츠 합성→디자인 생성으로 이어지는 자율 에이전트 파이프라인",
+      "Gemini, Stable Diffusion 등을 활용한 고품질 멀티미디어(이미지, 영상) 자동 생성",
+      "YouTube, Instagram, TikTok 등 11개 플랫폼 API 연동을 통한 원클릭 퍼블리싱",
+    ],
+    featured: true,
+    metrics: {
+      duration: "2개월",
+      role: "풀스택 단독",
+      impact: "11개+ 플랫폼 통합",
+    },
+  },
+  {
     slug: "salon-mate",
     name: "SalonMate",
     summary: "뷰티/살롱 사장님 AI 마케팅 자동화",
     description:
       "소규모 뷰티샵 사장님들이 고객 리뷰 응대와 SNS 마케팅에 쏟는 시간을 줄이기 위해, AI 기반의 자동 응답 및 콘텐츠 생성 자동화 솔루션을 개발했습니다.",
+    intent: "소상공인에게 마케팅은 생존이지만 시간이 부족합니다. AI를 활용해 '최소한의 시간 투자로 최대한의 마케팅 효과'를 낼 수 있도록 돕는 실용적인 도구를 만들고자 했습니다.",
     category: "b2b-saas",
     stack: ["Next.js", "TypeScript", "FastAPI", "Supabase", "OpenAI", "LangChain"],
     highlights: [
@@ -103,28 +245,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "auditx",
-    name: "Sentinel (Auditx)",
-    summary: "AI 스마트컨트랙트 보안 오케스트레이터",
-    description:
-      "기존 보안 감사 툴의 높은 오탐률(False Positive) 문제를 해결하기 위해, 정적 분석 도구와 LLM을 결합한 하이브리드 보안 오케스트레이터를 개발했습니다.",
-    category: "b2b-saas",
-    stack: ["Python", "FastAPI", "OpenAI GPT-4o", "Slither", "Mythril", "Aderyn"],
-    highlights: [
-      "Slither, Mythril 등 오픈소스 센서와 LLM을 연동한 다단계 분석 파이프라인",
-      "탐지된 취약점을 LLM이 재검증하여 90% 이상의 오탐 필터링",
-      "취약점 우선순위 스코어링 및 자동 패치 코드 제안 기능",
-    ],
-    featured: true,
-    metrics: {
-      duration: "2개월",
-      role: "AI/백엔드",
-      impact: "오탐률 90% 감소",
-    },
-  },
-
-  // ===== B2C Consumer Apps =====
-  {
     slug: "interview-service",
     name: "Interview Service (면접코치)",
     summary: "AI 실시간 모의면접 & 8축 역량 피드백 플랫폼",
@@ -143,26 +263,6 @@ export const projects: Project[] = [
       duration: "3주",
       role: "풀스택 단독",
       impact: "E2E 레이턴시 <2.5s",
-    },
-  },
-  {
-    slug: "numna-road",
-    name: "NumnaRoad",
-    summary: "24/7 eSIM 자동 발급 플랫폼 (10초 이내)",
-    description:
-      "복잡한 eSIM 구매 및 발급 절차를 간소화하고 대기 시간을 없애기 위해, 결제부터 QR 발송까지 10초 이내에 완료되는 완전 자동화 플랫폼을 구축했습니다.",
-    category: "b2c-consumer",
-    stack: ["Next.js 14", "TypeScript", "PocketBase", "Stripe", "n8n", "Resend"],
-    highlights: [
-      "결제-발급-발송 프로세스 완전 자동화로 10초 이내 서비스 제공",
-      "공급사 장애 시 자동으로 대체 경로를 찾는 멀티 프로바이더 페일오버 시스템",
-      "사용자가 직접 주문 상태를 확인하고 재발송할 수 있는 셀프서비스 기능",
-    ],
-    featured: true,
-    metrics: {
-      duration: "4주",
-      role: "풀스택 단독",
-      impact: "발급 시간 <10초",
     },
   },
   {
@@ -283,25 +383,6 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "tee-up",
-    name: "TEE:UP",
-    summary: "프리미엄 골프 레슨 매칭 플랫폼",
-    description:
-      "폐쇄적인 골프 레슨 시장의 정보 비대칭을 해결하기 위해, 검증된 프로의 정보를 투명하게 공개하고 직접 소통할 수 있는 매칭 플랫폼을 구축했습니다.",
-    category: "b2c-consumer",
-    stack: ["Next.js", "TypeScript", "Supabase", "Stripe", "KakaoTalk API"],
-    highlights: [
-      "매거진 스타일의 고화질 프로필 쇼케이스로 신뢰도 및 매력도 향상",
-      "프로 회원을 위한 레슨 성과, 매출, 리더보드 등 분석 대시보드 제공",
-      "카카오톡 API 연동을 통한 레슨 문의 및 예약 알림 시스템",
-    ],
-    metrics: {
-      duration: "5주",
-      role: "풀스택 단독",
-      impact: "프로 등록 50+",
-    },
-  },
-  {
     slug: "landlord-war",
     name: "Landlord War",
     summary: "땅뺏기 경제 시뮬레이션 게임 (Toss WebView)",
@@ -359,8 +440,6 @@ export const projects: Project[] = [
       impact: "앱스토어 출시",
     },
   },
-
-  // ===== AI / Agent Systems =====
   {
     slug: "talk-studio",
     name: "TalkStudio",
@@ -374,46 +453,6 @@ export const projects: Project[] = [
       "텍스트 편집하듯 오디오를 편집할 수 있는 스크립트 기반 편집 워크플로우",
       "제작된 콘텐츠를 주요 팟캐스트 플랫폼에 일괄 배포하는 멀티 채널 퍼블리싱",
     ],
-  },
-  {
-    slug: "careguide",
-    name: "CareGuide",
-    summary: "만성콩팥병(CKD) 환자 AI 건강관리 플랫폼",
-    description:
-      "신뢰할 수 없는 건강 정보의 범람 속에서 CKD 환자들에게 정확한 정보를 제공하기 위해, 의학 논문 기반의 전문 지식을 제공하는 멀티 에이전트 시스템을 개발했습니다.",
-    category: "ai-agent",
-    stack: ["Python", "FastAPI", "React", "MongoDB", "OpenAI", "Anthropic"],
-    highlights: [
-      "연구논문/영양/의료복지/트렌드 등 4개 분야별 특화 에이전트 협업 시스템",
-      "4,850+편의 최신 의학 논문을 임베딩하여 할루시네이션을 억제한 RAG 검색",
-      "PubMed API 연동을 통한 실시간 최신 연구 동향 및 임상 결과 제공",
-    ],
-    featured: true,
-    metrics: {
-      duration: "3개월",
-      role: "풀스택 단독",
-      impact: "4,850+ 논문 임베딩",
-    },
-  },
-  {
-    slug: "contents-creator",
-    name: "Contents Supporter",
-    summary: "멀티에이전트 AI 콘텐츠 생성 & 자동 퍼블리싱",
-    description:
-      "다양한 플랫폼에 맞는 콘텐츠를 지속적으로 생산해야 하는 마케터의 부담을 줄이기 위해, 기획부터 제작, 발행까지 자동화하는 멀티 에이전트 시스템을 구축했습니다.",
-    category: "ai-agent",
-    stack: ["React", "FastAPI", "Gemini 2.0 Flash", "Claude 3.5", "Replicate", "Supabase"],
-    highlights: [
-      "데이터 수집→스타일 분석→콘텐츠 합성→디자인 생성으로 이어지는 자율 에이전트 파이프라인",
-      "Gemini, Stable Diffusion 등을 활용한 고품질 멀티미디어(이미지, 영상) 자동 생성",
-      "YouTube, Instagram, TikTok 등 11개 플랫폼 API 연동을 통한 원클릭 퍼블리싱",
-    ],
-    featured: true,
-    metrics: {
-      duration: "2개월",
-      role: "풀스택 단독",
-      impact: "11개+ 플랫폼 통합",
-    },
   },
   {
     slug: "satiachat",
@@ -493,8 +532,6 @@ export const projects: Project[] = [
       impact: "보고서 생성 5분→30초",
     },
   },
-
-  // ===== Automation & Integration =====
   {
     slug: "arbquant",
     name: "ArbQuant",
@@ -530,8 +567,6 @@ export const projects: Project[] = [
       "에러 복구 큐",
     ],
   },
-
-  // ===== Developer Tools =====
   {
     slug: "hwp-bridge",
     name: "HwpBridge",
@@ -566,8 +601,6 @@ export const projects: Project[] = [
       "CI 파이프라인 통합",
     ],
   },
-
-  // ===== Experimental =====
   {
     slug: "abitrage",
     name: "Abitrage",
@@ -582,7 +615,6 @@ export const projects: Project[] = [
       "리스크 체크 리스트",
     ],
   },
-  // ===== New Projects =====
   {
     slug: "growing",
     name: "Growing",
