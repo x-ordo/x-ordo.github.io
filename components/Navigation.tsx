@@ -38,19 +38,19 @@ export default function Navigation() {
           : "bg-transparent"
       )}
     >
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 h-14 md:px-6 md:h-16 lg:h-[72px]">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 h-16 md:px-10 md:h-20 lg:h-24">
         {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2 md:gap-3">
-          <span className="flex h-8 w-8 items-center justify-center border-2 border-black bg-[#00ff00] text-xs font-black text-black transition-all group-hover:shadow-[3px_3px_0_#000] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 md:h-9 md:w-9 md:text-sm lg:h-10 lg:w-10">
+        <Link href="/" className="group flex items-center gap-3 md:gap-4">
+          <span className="flex h-9 w-9 items-center justify-center border-2 border-black bg-[#00ff00] text-xs font-black text-black transition-all group-hover:shadow-[4px_4px_0_#000] group-hover:-translate-x-0.5 group-hover:-translate-y-0.5 md:h-10 md:w-10 md:text-sm lg:h-11 lg:w-11">
             JP
           </span>
-          <span className="hidden text-xs font-bold text-black md:inline md:text-sm">
+          <span className="hidden text-sm font-black text-black md:inline lg:text-base tracking-tight">
             Jed Park
           </span>
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-1 lg:gap-2">
+        <div className="hidden md:flex items-center gap-2 lg:gap-4">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -59,15 +59,15 @@ export default function Navigation() {
                 href={item.href}
                 aria-current={isActive ? "page" : undefined}
                 className={cn(
-                  "relative px-3 py-2 text-sm font-medium transition-all lg:px-4",
+                  "relative px-4 py-2 text-sm font-bold uppercase tracking-widest transition-all lg:px-6 lg:text-base",
                   isActive
                     ? "text-black"
-                    : "text-black/55 hover:text-black"
+                    : "text-black/50 hover:text-black hover:-translate-y-0.5"
                 )}
               >
                 {item.label}
                 {isActive && (
-                  <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-[#00ff00] lg:left-4 lg:right-4" />
+                  <span className="absolute bottom-1 left-4 right-4 h-1 bg-[#00ff00] lg:left-6 lg:right-6" />
                 )}
               </Link>
             );
