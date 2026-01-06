@@ -38,40 +38,81 @@
   margin: 0;
 }
 
-/* Main content padding - Focus on page-level breathing room */
+/* 
+   HIGH-END EDITORIAL LAYOUT SYSTEM
+   Outer Margin: 15vw (sides), 10vh (top/bottom)
+   Max Content Width: 1200px
+*/
+
+:root {
+  /* Colors - Sophisticated & High-Contrast */
+  --background: #ffffff;
+  --foreground: #000000;
+  --accent: #00ff00;
+  --muted: #888888;
+  --border-color: #000000;
+  
+  /* Fluid Spacing based on Viewport */
+  --outer-gutter: 15vw;
+  --vertical-gutter: 10vh;
+}
+
 main {
-  padding-top: 100px; 
+  padding-top: var(--vertical-gutter);
 }
 
-@media (min-width: 768px) {
-  main {
-    padding-top: 140px;
-  }
+@media (max-width: 1440px) {
+  :root { --outer-gutter: 10vw; }
 }
 
-@media (min-width: 1024px) {
-  main {
-    padding-top: 180px;
+@media (max-width: 1024px) {
+  :root { --outer-gutter: 8vw; }
+}
+
+@media (max-width: 768px) {
+  :root { 
+    --outer-gutter: 24px;
+    --vertical-gutter: 40px;
   }
+  main { padding-top: 80px; }
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px; 
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 17px; 
-  }
+  font-size: 16px;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  line-height: 1.6; 
+  line-height: 1.8; /* Generous line height */
+  letter-spacing: -0.01em; /* Tight letter spacing for editorial feel */
   -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Overrides for Editorial Feel */
+h1, h2, h3 {
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+/* Layout Containers */
+.editorial-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--outer-gutter);
+  padding-right: var(--outer-gutter);
+  /* Ensure fluid width when max-width not reached */
+  box-sizing: content-box; 
+}
+
+@media (min-width: 1921px) {
+  .editorial-container {
+    max-width: 1400px;
+  }
 }
 
 /* ===================
