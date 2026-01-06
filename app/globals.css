@@ -39,9 +39,9 @@
 }
 
 /* 
-   HIGH-END EDITORIAL LAYOUT SYSTEM
-   Outer Margin: 15vw (sides), 10vh (top/bottom)
-   Max Content Width: 1200px
+   HIGH-END COMPACT LAYOUT SYSTEM
+   Outer Margin: 20vw (sides), 12vh (top/bottom)
+   Max Content Width: 1000px
 */
 
 :root {
@@ -52,67 +52,66 @@
   --muted: #888888;
   --border-color: #000000;
   
-  /* Fluid Spacing based on Viewport */
-  --outer-gutter: 15vw;
-  --vertical-gutter: 10vh;
+  /* Extremely Generous Spacing for "Boutique" feel */
+  --outer-gutter: 20vw;
+  --vertical-gutter: 12vh;
 }
 
 main {
   padding-top: var(--vertical-gutter);
 }
 
-@media (max-width: 1440px) {
-  :root { --outer-gutter: 10vw; }
+@media (max-width: 1600px) {
+  :root { --outer-gutter: 15vw; }
 }
 
-@media (max-width: 1024px) {
-  :root { --outer-gutter: 8vw; }
+@media (max-width: 1200px) {
+  :root { --outer-gutter: 10vw; }
 }
 
 @media (max-width: 768px) {
   :root { 
-    --outer-gutter: 24px;
-    --vertical-gutter: 40px;
+    --outer-gutter: 32px;
+    --vertical-gutter: 60px;
   }
-  main { padding-top: 80px; }
+  main { padding-top: 100px; }
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 15px; /* Scaled down base size */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "JetBrains Mono", ui-monospace, monospace;
-  line-height: 1.8; /* Generous line height */
-  letter-spacing: -0.01em; /* Tight letter spacing for editorial feel */
+  line-height: 1.7; 
+  letter-spacing: -0.02em;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Typography Overrides for Editorial Feel */
-h1, h2, h3 {
-  letter-spacing: -0.04em;
+/* Typography Scale Down */
+h1 {
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  font-weight: 900;
+}
+
+h2, h3 {
+  letter-spacing: -0.03em;
   line-height: 1.1;
+  font-weight: 800;
 }
 
 /* Layout Containers */
 .editorial-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1000px; /* More focused content area */
   margin-left: auto;
   margin-right: auto;
   padding-left: var(--outer-gutter);
   padding-right: var(--outer-gutter);
-  /* Ensure fluid width when max-width not reached */
-  box-sizing: content-box; 
-}
-
-@media (min-width: 1921px) {
-  .editorial-container {
-    max-width: 1400px;
-  }
 }
 
 /* ===================

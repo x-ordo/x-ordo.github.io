@@ -38,19 +38,19 @@ export default function Navigation() {
           : "bg-transparent"
       )}
     >
-      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 h-16 md:px-12 md:h-20 lg:px-0 lg:h-24">
+      <nav className="mx-auto flex max-w-[1000px] items-center justify-between px-8 md:px-16 lg:px-0 h-14 md:h-16 lg:h-20">
         {/* Logo */}
-        <Link href="/" className="group flex items-center gap-3">
-          <span className="flex h-8 w-8 items-center justify-center border-2 border-black bg-black text-white text-xs font-black transition-all group-hover:bg-[#00ff00] group-hover:text-black">
+        <Link href="/" className="group flex items-center gap-2.5">
+          <span className="flex h-7 w-7 items-center justify-center border-2 border-black bg-black text-white text-[10px] font-black transition-all group-hover:bg-[#00ff00] group-hover:text-black">
             JP
           </span>
-          <span className="text-sm font-black text-black tracking-tighter">
+          <span className="text-xs font-black text-black tracking-tight">
             Jed Park
           </span>
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-8 lg:gap-12">
+        <div className="hidden md:flex items-center gap-6 lg:gap-10">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -58,7 +58,7 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative py-1 text-sm font-bold uppercase tracking-[0.2em] transition-all",
+                  "relative py-1 text-xs font-bold uppercase tracking-[0.15em] transition-all",
                   isActive
                     ? "text-black"
                     : "text-black/40 hover:text-black"
