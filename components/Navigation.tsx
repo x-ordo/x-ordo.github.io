@@ -38,7 +38,7 @@ export default function Navigation() {
           : "bg-transparent"
       )}
     >
-    >      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 h-16 md:px-12 md:h-20 lg:px-0 lg:h-24">
+      <nav className="mx-auto flex max-w-[1200px] items-center justify-between px-6 h-16 md:px-12 md:h-20 lg:px-0 lg:h-24">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-3">
           <span className="flex h-8 w-8 items-center justify-center border-2 border-black bg-black text-white text-xs font-black transition-all group-hover:bg-[#00ff00] group-hover:text-black">
