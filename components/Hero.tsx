@@ -31,7 +31,7 @@ export default function Hero() {
           baseAngle={0}
         />
       </div>
-      <div className="mx-auto max-w-6xl relative z-10">
+      <div className="mx-auto max-w-screen-2xl relative z-10 px-6 md:px-12 lg:px-24">
         {/* Badge with decrypt effect */}
         <div className="mb-8 md:mb-12">
           <span className="badge badge-primary scale-110 origin-left animate-pulse-neon shadow-[4px_4px_0_#000]">
