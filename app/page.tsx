@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Hero from "../components/Hero";
+import Manifesto from "../components/Manifesto";
 import ProjectCard from "../components/ProjectCard";
 import { featuredProjects } from "../data/projects";
 
@@ -7,6 +8,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
+      <Manifesto />
 
       {/* Featured Projects Section */}
       <section className="pt-[10vh] pb-[15vh] border-t border-black/5 bg-white">

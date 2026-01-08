@@ -23,23 +23,23 @@ export default function Hero() {
         {/* Minimal Badge */}
         <div className="mb-10 md:mb-14">
           <span className="text-[9px] font-black uppercase tracking-[0.3em] text-black/20 border-b border-black/5 pb-1">
-            Independent Developer & Strategist
+            Sovereign Hacker & System Builder
           </span>
         </div>
 
         {/* Scaled Down Editorial Heading */}
         <h1 className="text-4xl font-black leading-[0.9] tracking-tighter text-black mb-10 md:text-7xl lg:text-[7rem] max-w-3xl">
-          AI로 비즈니스
+          세상의 원리를 꿰뚫어
           <br />
-          <span className="text-[#00ff00]">가치를 만듭니다</span>
+          <span className="text-[#00ff00]">시스템을 구축합니다</span>
         </h1>
 
         {/* Tighter Description Grid */}
         <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-20 items-start">
           <div className="space-y-6">
             <p className="text-lg md:text-xl font-bold leading-snug tracking-tight text-black/70">
-              LLM 기반 서비스 설계부터 자동화 파이프라인까지,
-              실제 운영 가능한 솔루션을 구축합니다.
+              단순한 기술 구현을 넘어, 자본과 시장의 원리를 이해하고 주체적으로 변화를 만들어냅니다.
+              지속 가능한 가치를 창출하는 경제 시스템(Economic Machine)을 설계합니다.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link href="/projects" className="group inline-flex items-center gap-3 text-sm font-black uppercase tracking-widest border-b-2 border-black pb-1 hover:text-[#00ff00] hover:border-[#00ff00] transition-all">
