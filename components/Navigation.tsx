@@ -18,39 +18,34 @@ export default function Navigation() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => setScrolled(window.scrollY > 10);
     onScroll();
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
-
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b-2 border-black",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg py-0"
-          : "bg-white py-2"
+          ? "bg-white/90 backdrop-blur-md border-[#f2f4f6] py-0"
+          : "bg-transparent border-transparent py-4"
       )}
     >
-      <nav className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20 lg:h-24">
-        {/* Logo */}
-        <Link href="/" className="group flex items-center gap-2.5">
-          <span className="flex h-7 w-7 items-center justify-center border-2 border-black bg-black text-white text-[10px] font-black transition-all group-hover:bg-[#00ff00] group-hover:text-black">
-            JP
-          </span>
-          <span className="text-xs font-black text-black tracking-tight">
+      <nav className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
+        {/* Logo - TDS Clean Style */}
+        <Link href="/" className="group flex items-center gap-2">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0066ff] text-white transition-transform group-hover:scale-105">
+            <span className="text-[13px] font-bold">JP</span>
+          </div>
+          <span className="text-[15px] font-bold text-[#191f28] tracking-tight group-hover:text-[#0066ff] transition-colors">
             Jed Park
           </span>
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-6 lg:gap-10">
+        <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
@@ -58,10 +53,10 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "relative py-1 text-xs font-bold uppercase tracking-[0.15em] transition-all",
+                  "text-[15px] font-medium transition-colors",
                   isActive
-                    ? "text-black"
-                    : "text-black/40 hover:text-black"
+                    ? "text-[#0066ff]"
+                    : "text-[#4e5968] hover:text-[#191f28]"
                 )}
               >
                 {item.label}
@@ -70,15 +65,15 @@ export default function Navigation() {
           })}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button - Minimal */}
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex items-center justify-center w-9 h-9 border-2 border-black bg-white transition-all hover:shadow-[2px_2px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5"
+          className="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-transparent hover:bg-gray-100 text-[#191f28] transition-colors"
           aria-label="Toggle menu"
         >
           <svg
-            className="w-4 h-4"
+            className="w-5 h-5"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -87,14 +82,14 @@ export default function Navigation() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2.5}
+                strokeWidth={2}
                 d="M6 18L18 6M6 6l12 12"
               />
             ) : (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2.5}
+                strokeWidth={2}
                 d="M4 6h16M4 12h16M4 18h16"
               />
             )}
@@ -102,21 +97,22 @@ export default function Navigation() {
         </button>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Clean Overlay */}
       {mobileOpen && (
-        <div className="md:hidden border-t-2 border-black bg-white">
-          <div className="px-4 py-3 space-y-1">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-[#f2f4f6] shadow-xl py-4 px-6 animate-in slide-in-from-top-2 duration-200">
+          <div className="flex flex-col space-y-2">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link
                   key={item.href}
                   href={item.href}
+                  onClick={() => setMobileOpen(false)}
                   className={cn(
-                    "block px-3 py-2.5 text-xs font-bold uppercase tracking-wider border-2 transition-all",
+                    "block px-4 py-3 rounded-xl text-[15px] font-medium transition-colors",
                     isActive
-                      ? "border-black bg-[#00ff00] text-black shadow-[3px_3px_0_#000]"
-                      : "border-transparent text-black/70 hover:border-black hover:bg-black/5"
+                      ? "bg-blue-50 text-[#0066ff]"
+                      : "text-[#4e5968] hover:bg-gray-50 hover:text-[#191f28]"
                   )}
                 >
                   {item.label}

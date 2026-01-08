@@ -1,22 +1,24 @@
 @import "tailwindcss";
 
 :root {
-  /* Restore: Original Neon Brutalist Palette */
+  /* TDS Inspired Palette - Clean, Human-centric */
   --background: #ffffff;
-  --foreground: #000000;
-  --accent: #00ff00;
-  --accent-hover: #00dd00;
-  --accent-soft: #00ff0015;
-  --secondary: #ff00ff;
-  --tertiary: #00ffff;
-  --muted: #666666;
-  --grid-line: #000000; /* Darker, sharper grid lines */
+  --background-subtle: #f9fafb; /* Soft background for sections */
+  --foreground: #191f28; /* TDS Grey 900 - Soft Black */
+  --accent: #0066ff; /* TDS Blue - Trustworthy & Digital */
+  --secondary: #333d4b; /* TDS Grey 800 - Body Text */
+  --muted: #8b95a1; /* TDS Grey 500 - Meta info */
+  --grid-line: #f2f4f6; /* Extremely subtle */
+  
+  /* Layout Variables */
+  --container-max-width: 1200px; /* Tighter focus for readability */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-sans: var(--font-sans), -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
 /* Reset & Base */
@@ -29,74 +31,105 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-mono);
-  line-height: 1.7; /* Increased for better readability */
-  letter-spacing: -0.01em;
+  color: var(--secondary);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  letter-spacing: -0.003em; /* Modern, clean tracking */
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* 
-   SYSTEM GRID (Restored with Black Lines)
+   TDS GRID SYSTEM 
+   Removed visible grid lines for cleaner look
 */
 .system-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 2px; /* Increased gap for more breathing room between cells */
-  background-color: var(--grid-line);
-  border: 2px solid var(--grid-line);
+  column-gap: 24px;
   width: 100%;
-  max-width: 1400px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
+  padding: 0 24px; /* Default horizontal padding */
 }
 
-.system-grid > * {
-  background-color: var(--background);
-}
-
-/* Typography Restored to Bold/Black weights */
+/* Typography Utilities */
 .text-display {
-  font-size: clamp(2.5rem, 6vw, 5.5rem);
-  font-weight: 900; /* Extra bold */
-  line-height: 0.9;
-  letter-spacing: -0.05em;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--foreground);
+}
+
+.text-heading {
+  font-size: 1.75rem; /* ~28px */
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--foreground);
+  letter-spacing: -0.01em;
 }
 
 .text-label {
-  font-size: 0.7rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: 0.925rem; /* ~15px */
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
+.text-body {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem; /* ~17px - Standard readable size */
+  line-height: 1.7;
+  color: var(--secondary);
+  word-break: keep-all; /* Korean typography standard */
+}
+
+/* Buttons - TDS Solid & Ghost */
 .btn-system {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 28px;
-  background: var(--accent);
-  color: var(--foreground);
-  font-size: 0.8rem;
-  font-weight: 900;
-  border: 2px solid var(--grid-line);
-  box-shadow: 4px 4px 0 var(--grid-line);
-  transition: all 0.1s ease;
-  text-transform: uppercase;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 24px;
+  border-radius: 12px; /* Smoother rounding */
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+  text-decoration: none;
 }
 
-.btn-system:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--grid-line);
+.btn-primary {
+  background: var(--foreground); /* or Accent */
+  color: white;
+  border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+  background: var(--secondary);
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: rgba(0,0,0,0.04);
+  color: var(--secondary);
+}
+
+.btn-ghost:hover {
+  background: rgba(0,0,0,0.08);
 }
 
 /* Selection */
 ::selection {
-  background: var(--accent);
+  background: rgba(0, 102, 255, 0.2);
   color: var(--foreground);
 }

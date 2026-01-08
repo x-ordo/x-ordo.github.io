@@ -4,68 +4,59 @@ import React from "react";
 
 export default function Manifesto() {
   return (
-    <section className="py-32 md:py-48 px-4 md:px-8 border-t-2 border-black bg-white">
-      <div className="system-grid w-full border-black">
+    <section className="py-24 px-6 md:px-12 bg-white">
+      <div className="system-grid">
         
         {/* Header */}
-        <div className="col-span-12 p-8 md:p-20 border-b-2 border-black bg-[#fafafa]">
-          <span className="text-label inline-block mb-10 border-b-2 border-black">Target Sector Analysis</span>
-          <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-10 leading-[0.9]">
-            Identifying <span className="text-[#00cc00]">Chaos</span>
-          </h2>
-          <p className="text-xl md:text-2xl font-bold text-black max-w-3xl leading-tight">
-            우리는 시장의 혼돈과 비효율이 극대화된 영역을 조준합니다.<br/>
-            정보 비대칭을 분쇄하고 복잡성을 자동화하여 압도적인 수익 구조를 설계합니다.
+        <div className="col-span-12 mb-20">
+          <span className="text-label text-[#0066ff] mb-4 block">Analysis</span>
+          <h2 className="text-4xl font-bold text-[#191f28] mb-6 tracking-tight">Target Sectors</h2>
+          <p className="text-[#4e5968] max-w-2xl leading-relaxed text-xl font-normal">
+            시장의 비효율은 곧 기회입니다. 우리는 복잡성이 높은 영역(High-Entropy Zones)에 진입하여 구조적 문제를 해결합니다.
           </p>
         </div>
 
-        {/* Table Header */}
-        <div className="hidden md:block col-span-3 p-6 bg-black text-[#00ff00] text-sm font-black uppercase border-b-2 border-r-2 border-black">
-          Sector_Zone
-        </div>
-        <div className="hidden md:block col-span-5 p-6 bg-black text-[#00ff00] text-sm font-black uppercase border-b-2 border-r-2 border-black">
-          Systemic_Chaos
-        </div>
-        <div className="hidden md:block col-span-4 p-6 bg-black text-[#00ff00] text-sm font-black uppercase border-b-2 border-black">
-          Operational_Order
-        </div>
+        {/* Clean List Layout (TDS Style) */}
+        <div className="col-span-12 flex flex-col">
+          
+          {[
+            {
+              zone: "Financial Services",
+              problem: "Intentionally complex processes designed to hide extraction fees.",
+              solution: "Arbitrage & Simplification"
+            },
+            {
+              zone: "Regulatory Tech",
+              problem: "Manual compliance nightmares and fear-driven bureaucratic waste.",
+              solution: "Automated Compliance Robots"
+            },
+            {
+              zone: "Legacy Industries",
+              problem: "Static workflows. Paper-based systems in a digital era.",
+              solution: "Zero-to-One Transformation"
+            },
+            {
+              zone: "Platform Economy",
+              problem: "High fees and locked gates preventing direct customer access.",
+              solution: "Direct Access & Bypass"
+            }
+          ].map((item, idx) => (
+            <div key={idx} className="group py-10 border-b border-[#f2f4f6] last:border-b-0 grid grid-cols-1 md:grid-cols-12 gap-6 items-start hover:bg-[#f9fafb] transition-colors rounded-xl px-4 -mx-4">
+              <div className="md:col-span-3">
+                <h3 className="text-xl font-bold text-[#191f28] group-hover:text-[#0066ff] transition-colors">{item.zone}</h3>
+              </div>
+              <div className="md:col-span-6">
+                <p className="text-[#4e5968] leading-relaxed text-[17px]">{item.problem}</p>
+              </div>
+              <div className="md:col-span-3 flex items-center md:justify-end">
+                <span className="text-[13px] font-medium text-[#0066ff] bg-blue-50 px-4 py-2 rounded-full">
+                  {item.solution}
+                </span>
+              </div>
+            </div>
+          ))}
 
-        {/* Row 1 */}
-        <div className="col-span-12 md:col-span-3 p-10 md:p-12 border-b-2 border-r-0 md:border-r-2 border-black font-black uppercase text-2xl">
-          Financials
         </div>
-        <div className="col-span-12 md:col-span-5 p-10 md:p-12 border-b-2 border-r-0 md:border-r-2 border-black font-bold text-gray-700 text-lg leading-relaxed">
-          Intentionally complex processes designed to hide extraction fees and maintain information asymmetry.
-        </div>
-        <div className="col-span-12 md:col-span-4 p-10 md:p-12 border-b-2 border-black bg-[#00ff0008] font-black italic uppercase text-lg">
-          <span className="text-[#00aa00] text-[12px] block not-italic mb-2 font-black tracking-widest">COMMAND:</span>
-          Arbitrage & Simplification
-        </div>
-
-        {/* Row 2 */}
-        <div className="col-span-12 md:col-span-3 p-10 md:p-12 border-b-2 border-r-0 md:border-r-2 border-black font-black uppercase text-2xl">
-          Reg_Tech
-        </div>
-        <div className="col-span-12 md:col-span-5 p-10 md:p-12 border-b-2 border-r-0 md:border-r-2 border-black font-bold text-gray-700 text-lg leading-relaxed">
-          Manual compliance nightmares and fear-driven bureaucratic waste that cripples operational speed.
-        </div>
-        <div className="col-span-12 md:col-span-4 p-10 md:p-12 border-b-2 border-black bg-[#00ff0008] font-black italic uppercase text-lg">
-          <span className="text-[#00aa00] text-[12px] block not-italic mb-2 font-black tracking-widest">COMMAND:</span>
-          Automated Compliance Robots
-        </div>
-
-        {/* Row 3 */}
-        <div className="col-span-12 md:col-span-3 p-10 md:p-12 border-b-0 md:border-r-2 border-black font-black uppercase text-2xl">
-          Legacy_Biz
-        </div>
-        <div className="col-span-12 md:col-span-5 p-10 md:p-12 border-b-0 md:border-r-2 border-black font-bold text-gray-700 text-lg leading-relaxed">
-          Static workflows. Paper-based systems in a digital era. Resistance to inevitable technological evolution.
-        </div>
-        <div className="col-span-12 md:col-span-4 p-10 md:p-12 border-b-0 border-black bg-[#00ff0008] font-black italic uppercase text-lg">
-          <span className="text-[#00aa00] text-[12px] block not-italic mb-2 font-black tracking-widest">COMMAND:</span>
-          Zero-to-One Transformation
-        </div>
-        
       </div>
     </section>
   );
