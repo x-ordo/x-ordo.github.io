@@ -38,30 +38,39 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  line-height: 1.65;
+  line-height: 1.75;
   letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
 }
 
 /* TDS GRID SYSTEM */
 .system-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 24px;
+  column-gap: 32px;
+  row-gap: 24px;
   width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
+}
+
+@media (max-width: 768px) {
+  .system-grid {
+    column-gap: 20px;
+    padding: 0 20px;
+  }
 }
 
 /* Typography Utilities */
 .text-display {
   font-family: var(--font-sans);
-  font-size: clamp(3.5rem, 8vw, 6rem); /* Larger, more aggressive */
-  font-weight: 900; /* Black weight */
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 900;
   text-transform: uppercase;
-  line-height: 0.9;
-  letter-spacing: -0.05em;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
   color: var(--foreground);
 }
 
@@ -69,26 +78,34 @@ body {
   font-size: 2.5rem;
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: 1.15;
   color: var(--foreground);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.025em;
 }
 
 .text-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
   color: var(--accent-dark);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
   display: block;
 }
 
 .text-body {
   font-family: var(--font-sans);
   font-size: 1.125rem;
-  line-height: 1.6;
+  line-height: 1.8;
+  color: var(--secondary);
+  word-break: keep-all;
+}
+
+.text-body-lg {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  line-height: 1.85;
   color: var(--secondary);
   word-break: keep-all;
 }

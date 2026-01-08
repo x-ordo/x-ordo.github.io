@@ -45,29 +45,29 @@ const techStack = [
 
 export default function AboutPage() {
   return (
-    <div className="bg-white min-h-screen py-20 px-4 md:px-8">
+    <div className="bg-white min-h-screen py-12 md:py-20">
       <div className="system-grid w-full border-black">
-        
+
         {/* Header */}
-        <div className="col-span-12 p-8 md:p-20 border-b-2 border-black bg-[#fafafa]">
-          <span className="text-label inline-block mb-10 border-b-2 border-black">About The Architect</span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-10 leading-[0.9]">
+        <div className="col-span-12 p-8 md:p-16 lg:p-20 border-b-2 border-black bg-[#fafafa]">
+          <span className="text-label inline-block mb-8 md:mb-10 border-b-2 border-black">About The Architect</span>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter uppercase mb-8 md:mb-12 leading-[0.95]">
             Bridging <span className="text-[#00cc00]">Tech</span> & <span className="text-[#00cc00]">Business</span>
           </h1>
-          <p className="text-xl md:text-2xl font-bold text-black max-w-3xl leading-tight">
+          <p className="text-lg md:text-xl lg:text-2xl font-bold text-black max-w-3xl leading-[1.6]">
             AI/ML 기반 솔루션을 설계하고, 복잡한 비즈니스 문제를 제품으로 구현합니다.<br/>
             실용적인 관점으로 시스템을 설계하고 운영합니다.
           </p>
         </div>
 
         {/* Capabilities Grid */}
-        <div className="col-span-12 p-8 md:p-16 border-b-2 border-black">
-          <h2 className="text-label mb-12">Core Capabilities</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-1px bg-black border-2 border-black">
+        <div className="col-span-12 p-8 md:p-16 lg:p-20 border-b-2 border-black">
+          <h2 className="text-label mb-10 md:mb-14">Core Capabilities</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-px bg-black border-2 border-black">
             {capabilities.map((item) => (
-              <div key={item.title} className="bg-white p-10 flex flex-col justify-between hover:bg-[#00ff0005] transition-colors">
-                <h3 className="text-xl font-black uppercase mb-6">{item.title}</h3>
-                <p className="text-sm font-bold text-gray-600 leading-relaxed">
+              <div key={item.title} className="bg-white p-8 md:p-10 flex flex-col justify-between hover:bg-[#00ff0005] transition-colors">
+                <h3 className="text-lg md:text-xl font-black uppercase mb-5 md:mb-6">{item.title}</h3>
+                <p className="text-sm md:text-base font-bold text-gray-600 leading-[1.7]">
                   {item.description}
                 </p>
               </div>
@@ -76,15 +76,15 @@ export default function AboutPage() {
         </div>
 
         {/* Tech Stack */}
-        <div className="col-span-12 p-8 md:p-16 border-b-2 border-black bg-[#f0f0f0]">
-          <h2 className="text-label mb-12">Authorized Toolset</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="col-span-12 p-8 md:p-16 lg:p-20 border-b-2 border-black bg-[#f0f0f0]">
+          <h2 className="text-label mb-10 md:mb-14">Authorized Toolset</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-14">
             {techStack.map((group) => (
               <div key={group.title}>
-                <h3 className="text-base font-black uppercase mb-6 border-b-2 border-black pb-2">{group.title}</h3>
-                <div className="flex flex-wrap gap-3">
+                <h3 className="text-sm md:text-base font-black uppercase mb-5 md:mb-6 border-b-2 border-black pb-3">{group.title}</h3>
+                <div className="flex flex-wrap gap-2.5 md:gap-3">
                   {group.items.map((item) => (
-                    <span key={item} className="text-xs font-black bg-black text-[#00ff00] px-3 py-1.5 border-2 border-black shadow-[3px_3px_0_0_#000]">
+                    <span key={item} className="text-[11px] md:text-xs font-black bg-black text-[#00ff00] px-3 py-2 border-2 border-black shadow-[3px_3px_0_0_#000]">
                       {item.toUpperCase()}
                     </span>
                   ))}
@@ -95,15 +95,15 @@ export default function AboutPage() {
         </div>
 
         {/* Philosophy */}
-        <div className="col-span-12 p-8 md:p-20 bg-black text-white">
-          <h2 className="text-label text-[#00ff00] border-[#00ff00] mb-10">Philosophy</h2>
+        <div className="col-span-12 p-8 md:p-16 lg:p-24 bg-black text-white">
+          <h2 className="text-label text-[#00ff00] border-[#00ff00] mb-10 md:mb-12">Philosophy</h2>
           <div className="max-w-4xl">
-            <p className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none mb-10">
+            <p className="text-2xl md:text-3xl lg:text-4xl font-black uppercase tracking-tighter leading-[1.15] mb-10 md:mb-12">
               Pragmatic AI. <br/>
               User-Centric Architecture. <br/>
               Continuous Sovereignty.
             </p>
-            <p className="text-lg md:text-xl font-bold text-gray-400 leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl font-bold text-gray-400 leading-[1.75]">
               기술을 통해 실질적인 비즈니스 가치를 만드는 데 집중합니다.
               복잡한 문제를 단순하게 풀고, 확장 가능한 시스템을 구축합니다.
             </p>

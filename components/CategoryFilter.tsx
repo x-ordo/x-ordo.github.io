@@ -38,7 +38,7 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
           type="button"
           onClick={() => setActive("all")}
           className={cn(
-            "px-6 py-4 text-xs font-black uppercase tracking-widest transition-all border-r-2 border-black",
+            "px-4 md:px-6 py-4 md:py-5 text-[10px] md:text-xs font-black uppercase tracking-widest transition-all border-r-2 border-black",
             active === "all"
               ? "bg-[#00ff00] text-black"
               : "bg-black text-white hover:bg-white/10"
@@ -52,7 +52,7 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
             type="button"
             onClick={() => setActive(category.key)}
             className={cn(
-              "px-6 py-4 text-xs font-black uppercase tracking-widest transition-all border-r-2 border-black",
+              "px-4 md:px-6 py-4 md:py-5 text-[10px] md:text-xs font-black uppercase tracking-widest transition-all border-r-2 border-black",
               active === category.key
                 ? "bg-[#00ff00] text-black"
                 : "bg-black text-white hover:bg-white/10"
@@ -66,7 +66,7 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
       {/* Project Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-black gap-px border-b-2 border-black">
         {filtered.map((project) => (
-          <div key={project.slug} className="bg-white hover:bg-[#00ff0008] transition-colors p-8 md:p-12">
+          <div key={project.slug} className="bg-white hover:bg-[#00ff0008] transition-colors p-6 md:p-10 lg:p-12">
             <ProjectCard project={project} />
           </div>
         ))}
