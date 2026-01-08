@@ -32,13 +32,13 @@ export default function Navigation() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b-2 border-black",
         scrolled
-          ? "glass border-b-2 border-black shadow-sm"
-          : "bg-transparent"
+          ? "bg-white/95 backdrop-blur-md shadow-lg py-0"
+          : "bg-white py-2"
       )}
     >
-      <nav className="flex items-center justify-between h-14 md:h-16 lg:h-20">
+      <nav className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between h-16 md:h-20 lg:h-24">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-2.5">
           <span className="flex h-7 w-7 items-center justify-center border-2 border-black bg-black text-white text-[10px] font-black transition-all group-hover:bg-[#00ff00] group-hover:text-black">
