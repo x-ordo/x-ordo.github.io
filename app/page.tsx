@@ -6,41 +6,47 @@ import { featuredProjects } from "../data/projects";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-white min-h-screen">
       <Hero />
+      
       <Manifesto />
 
       {/* Featured Projects Section */}
-      <section className="pt-[10vh] pb-[15vh] border-t border-black/5 bg-white">
-        <div>
+      <section className="py-20 px-4 md:px-8 border-t border-[#e5e5e5]">
+        <div className="system-grid w-full max-w-[1400px] border-r border-[#e5e5e5]">
+          
           {/* Section Header */}
-          <div className="flex flex-col gap-10 mb-20 md:flex-row md:items-end md:justify-between lg:mb-24">
-            <div className="space-y-5 max-w-xl">
-              <span className="text-[9px] font-black uppercase tracking-[0.3em] text-black/20 border-b border-black/5 pb-1">
-                Selected Works
-              </span>
-              <h2 className="text-3xl font-black text-black md:text-5xl tracking-tighter pt-3">
-                대표 프로젝트
+          <div className="col-span-12 p-6 md:p-10 border-b border-[#e5e5e5] flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <div className="max-w-2xl">
+              <span className="text-label block mb-4">Selected Works</span>
+              <h2 className="text-2xl md:text-3xl font-medium">
+                Building Economic Machines
               </h2>
-              <p className="text-base md:text-lg text-black/60 leading-relaxed font-medium">
+              <p className="mt-4 text-gray-500">
                 AI 제품, 자동화 시스템, 엔터프라이즈 워크플로우를 아우르는 프로젝트입니다.
-                비즈니스 가치를 창출하고 기술적 난제를 해결한 사례들을 소개합니다.
+                기술적 난제를 해결하고 실제 비즈니스 가치를 창출한 사례들을 소개합니다.
               </p>
             </div>
-            <Link href="/projects" className="group inline-flex items-center gap-3 text-xs font-black uppercase tracking-widest border-b-2 border-black pb-1 hover:text-[#00ff00] hover:border-[#00ff00] transition-all">
-              All Projects
-              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+            
+            <Link href="/projects" className="btn-system whitespace-nowrap">
+              View All Projects
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </Link>
           </div>
 
-          {/* Project Grid */}
-          <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 md:gap-14 lg:gap-16">
+          {/* Project Grid - Masonry-ish feel via CSS Grid */}
+          <div className="col-span-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {featuredProjects.slice(0, 6).map((project) => (
-              <ProjectCard key={project.slug} project={project} compact />
+              <div key={project.slug} className="border-b border-[#e5e5e5] md:border-r last:border-r-0 lg:[&:nth-child(3n)]:border-r-0">
+                 {/* Removing border from ProjectCard since the wrapper handles it in this grid context, 
+                     but ProjectCard has its own hover effects. Let's adjust ProjectCard slightly to fill. */}
+                <div className="h-full p-6 md:p-8 hover:bg-gray-50 transition-colors duration-200">
+                   <ProjectCard project={project} compact />
+                </div>
+              </div>
             ))}
           </div>
+          
         </div>
       </section>
     </div>

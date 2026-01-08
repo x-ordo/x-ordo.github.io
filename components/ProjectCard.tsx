@@ -1,140 +1,68 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
-import type { Project } from "../types/project";
-import { categoryMeta } from "../data/projects";
-import { cn } from "../lib/utils";
-import SpotlightCard from "./ui/SpotlightCard";
-import TiltCard from "./ui/TiltCard";
-import ShinyText from "./ui/ShinyText";
-import PixelCard from "./ui/PixelCard";
+import { Project } from "../types/project";
 
-type ProjectCardProps = {
+interface ProjectCardProps {
   project: Project;
   compact?: boolean;
-};
-
-const categoryColors: Record<string, string> = {
-  saas: "bg-[#00ff00]",
-  consumer: "bg-[#ff00ff]",
-  ai: "bg-[#00ffff]",
-  automation: "bg-[#ffff00]",
-  tools: "bg-[#ff6600]",
-};
-
-const spotlightColors: Record<string, string> = {
-  saas: "rgba(0, 255, 0, 0.15)",
-  consumer: "rgba(255, 0, 255, 0.15)",
-  ai: "rgba(0, 255, 255, 0.15)",
-  automation: "rgba(255, 255, 0, 0.15)",
-  tools: "rgba(255, 102, 0, 0.15)",
-};
+}
 
 export default function ProjectCard({ project, compact }: ProjectCardProps) {
-  const meta = categoryMeta[project.category];
-  const accentColor = categoryColors[project.category] || "bg-[#00ff00]";
-  const spotlightColor = spotlightColors[project.category] || "rgba(0, 255, 0, 0.15)";
-
-  const pixelColors: Record<string, string[]> = {
-    "b2b-saas": ["#00ff00", "#00dd00", "#00bb00"],
-    "b2c-consumer": ["#ff00ff", "#dd00dd", "#bb00bb"],
-    "ai-agent": ["#00ffff", "#00dddd", "#00bbbb"],
-    automation: ["#ffff00", "#dddd00", "#bbbb00"],
-    "developer-tools": ["#ff6600", "#dd5500", "#bb4400"],
-    analytics: ["#6600ff", "#5500dd", "#4400bb"],
-    experimental: ["#ff0066", "#dd0055", "#bb0044"],
-  };
-
   return (
-    <PixelCard colors={pixelColors[project.category] || ["#00ff00", "#00dd00", "#00bb00"]} className="h-full">
-      <TiltCard tiltAmount={8} scale={1.02} className="h-full">
-        <SpotlightCard spotlightColor={spotlightColor} className="h-full">
-          <Link
-          href={`/projects/${project.slug}`}
-          className={cn(
-            "group flex h-full flex-col bg-white border-3 border-black transition-all duration-150",
-            "hover:shadow-[4px_4px_0_#000] hover:-translate-x-0.5 hover:-translate-y-0.5",
-            "md:hover:shadow-[6px_6px_0_#000] md:hover:-translate-x-1 md:hover:-translate-y-1",
-            compact ? "p-5 md:p-6" : "p-6 md:p-8"
-          )}
-        >
-      {/* Header: Category Indicator + Featured Badge */}
-      <div className="flex items-center justify-between mb-4 md:mb-5">
-        <span className={cn("h-2 w-10 md:w-12", accentColor)} />
-        {project.featured && (
-          <span className="px-2.5 py-1 text-[9px] md:text-[10px] font-bold text-black bg-[#00ff00] border border-black uppercase tracking-wider animate-pulse-neon">
-            <ShinyText text="Featured" speed={2} />
-          </span>
-        )}
-      </div>
-
-      {/* Content */}
-      <div className="flex flex-1 flex-col">
-        {/* Category Label */}
-        <p className="text-[10px] md:text-xs font-bold text-black/50 uppercase tracking-wider mb-2 md:mb-3">
-          {meta.label}
-        </p>
-
-        {/* Project Name */}
-        <h3 className="text-lg md:text-xl font-black text-black leading-tight mb-3 md:mb-4 lg:text-2xl tracking-tight">
-          {project.name}
-        </h3>
-
-        {/* Summary */}
-        <p className="text-sm md:text-base text-black/70 leading-relaxed line-clamp-3 mb-4 md:mb-6 font-medium">
-          {project.summary}
-        </p>
-
-        {/* Metrics */}
-        {project.metrics && (
-          <div className="flex flex-wrap gap-2 mb-4 md:mb-5">
-            <span className="px-2 py-1 text-[9px] md:text-[10px] font-bold text-white bg-black">
-              {project.metrics.duration}
+    <Link href={`/projects/${project.slug}`} className="block group h-full">
+      <div className="h-full flex flex-col justify-between">
+        
+        {/* Top: Header */}
+        <div>
+          <div className="flex justify-between items-start mb-4">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-1 rounded-sm group-hover:border-black transition-colors">
+              {project.category.replace("-", " ")}
             </span>
-            <span className="px-2 py-1 text-[9px] md:text-[10px] font-bold text-black/80 bg-black/10">
-              {project.metrics.role}
-            </span>
-            {project.metrics.impact && (
-              <span className="px-2 py-1 text-[9px] md:text-[10px] font-bold text-[#008800] bg-[#00ff00]/25 border border-[#00ff00]/60">
-                {project.metrics.impact}
+            {project.featured && (
+              <span className="flex items-center gap-1.5">
+                 <span className="w-1.5 h-1.5 bg-[#00cc00] rounded-full animate-pulse"></span>
               </span>
             )}
           </div>
-        )}
-
-        {/* Tech Stack Tags */}
-        <div className="mt-auto flex flex-wrap gap-1.5 md:gap-2">
-          {project.stack.slice(0, 3).map((item, i) => (
-            <span
-              key={item}
-              className="px-2 py-1 md:px-2.5 md:py-1.5 text-[10px] md:text-[11px] font-semibold text-black/80 bg-white border border-black/20 shadow-[2px_2px_0_rgba(0,0,0,0.1)] transition-all duration-200 hover:bg-[#00ff00] hover:text-black hover:border-black hover:shadow-[2px_2px_0_#000] hover:-translate-y-0.5"
-              style={{ transitionDelay: `${i * 50}ms` }}
-            >
-              {item}
-            </span>
-          ))}
-          {project.stack.length > 3 && (
-            <span className="px-2 py-1 md:px-2.5 md:py-1.5 text-[10px] md:text-[11px] font-semibold text-black/50 border border-transparent">
-              +{project.stack.length - 3}
-            </span>
-          )}
+          
+          <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors">
+            {project.name}
+          </h3>
+          
+          <p className="text-sm text-gray-600 leading-relaxed mb-8 line-clamp-3">
+            {project.summary}
+          </p>
         </div>
-      </div>
 
-      {/* Footer */}
-      <div className="mt-3 md:mt-4 pt-3 md:pt-4 border-t-2 border-black/10 flex items-center justify-between">
-        <span className="text-[10px] md:text-xs font-bold text-black/50 uppercase tracking-wider">
-          View
-        </span>
-        <span className="w-6 h-6 md:w-7 md:h-7 flex items-center justify-center bg-black text-white transition-all group-hover:bg-[#00ff00] group-hover:text-black group-hover:scale-110">
-          <svg className="w-3 h-3 md:w-3.5 md:h-3.5 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-          </svg>
-        </span>
+        {/* Bottom: Metrics & Stack */}
+        <div className="space-y-5">
+          {/* Metrics Grid */}
+          {project.metrics && (
+            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-dashed border-gray-200 group-hover:border-gray-300 transition-colors">
+              <div>
+                <span className="block text-[10px] text-gray-400 uppercase mb-0.5">Role</span>
+                <span className="text-xs font-medium text-gray-700">{project.metrics.role}</span>
+              </div>
+              <div>
+                <span className="block text-[10px] text-gray-400 uppercase mb-0.5">Impact</span>
+                <span className="text-xs font-medium text-black group-hover:text-accent transition-colors">{project.metrics.impact}</span>
+              </div>
+            </div>
+          )}
+
+          {/* Tech Stack - Minimal Text List */}
+          <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-mono text-gray-400 pt-2">
+            {project.stack.slice(0, 4).map((tech) => (
+              <span key={tech}>
+                 # {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
       </div>
-          </Link>
-        </SpotlightCard>
-      </TiltCard>
-    </PixelCard>
+    </Link>
   );
 }
