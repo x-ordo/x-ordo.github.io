@@ -22,10 +22,22 @@
   --font-mono: var(--font-mono), ui-monospace, monospace;
 }
 
+/* Main content padding for fixed navbar */
+.main-content {
+  padding-top: 96px;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding-top: 128px;
+  }
+}
+
 /* Reset & Base */
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
 }
 

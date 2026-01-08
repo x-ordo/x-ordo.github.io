@@ -47,7 +47,7 @@ export default function RootLayout({
         <FloatingParticles />
         <ClickSpark sparkColor="#00ff00" sparkSize={12} sparkRadius={25} sparkCount={10}>
           <Navigation />
-          <main className="min-h-screen relative z-10 pt-24 md:pt-32">{children}</main>
+          <main className="min-h-screen relative z-10 main-content">{children}</main>
           <Footer />
         </ClickSpark>
         <PixelDog />
