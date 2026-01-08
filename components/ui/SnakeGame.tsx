@@ -8,7 +8,7 @@ interface Position {
 }
 
 const GRID_SIZE = 20;
-const CELL_SIZE = 15;
+const CELL_SIZE = 20;
 const INITIAL_SPEED = 150;
 
 export default function SnakeGame() {
@@ -165,8 +165,8 @@ export default function SnakeGame() {
   return (
     <div className="flex flex-col items-center gap-4" ref={gameRef}>
       {/* Score Display */}
-      <div className="flex items-center justify-between w-full max-w-[300px] font-mono text-xs">
-        <span className="text-[#00cc00]">SCORE: {score}</span>
+      <div className="flex items-center justify-between w-full max-w-[400px] font-mono text-sm">
+        <span className="text-[#00cc00] font-bold">SCORE: {score}</span>
         <span className="text-[#5c5e62]">HIGH: {highScore}</span>
       </div>
 

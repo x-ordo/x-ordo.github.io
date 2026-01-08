@@ -57,7 +57,7 @@ export default function Hero() {
           </div>
 
           {/* Quick Stats */}
-          <div className="grid grid-cols-3 gap-4 mt-6 w-full max-w-[340px]">
+          <div className="grid grid-cols-3 gap-4 mt-6 w-full max-w-[432px]">
             <div className="text-center p-3 rounded-xl bg-[#f5f5f5]">
               <div className="text-2xl font-black text-[#171a20]">20+</div>
               <div className="text-[10px] font-mono uppercase text-[#9ca3af]">Projects</div>
