@@ -5,98 +5,101 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 px-4 md:px-8">
-      {/* Main Grid Container */}
-      <div className="system-grid w-full max-w-[1400px] border-b border-r border-[#e5e5e5]">
+    <section className="min-h-screen flex items-center justify-center py-20 px-4 md:px-8 bg-white">
+      <div className="system-grid w-full border-b border-black">
         
-        {/* Row 1: Header / Status */}
-        <div className="col-span-12 md:col-span-8 p-6 md:p-10 border-r border-[#e5e5e5]">
-          <div className="flex items-center justify-between mb-8">
-            <span className="text-label">System Identity</span>
-            <span className="flex items-center gap-2 text-xs font-mono text-[#00cc00]">
-              <span className="w-2 h-2 rounded-full bg-[#00cc00] animate-pulse"></span>
-              ONLINE
-            </span>
+        {/* Row 1: Left - Identity */}
+        <div className="col-span-12 md:col-span-8 p-6 md:p-12 border-r border-black flex flex-col justify-between min-h-[50vh]">
+          <div>
+            <div className="flex items-center justify-between mb-12">
+              <span className="text-label border-b-2 border-black pb-1">System Identity</span>
+              <span className="flex items-center gap-2 text-[10px] font-black text-black">
+                <span className="w-2.5 h-2.5 bg-[#00ff00] border border-black animate-pulse"></span>
+                SVRGN_HKR_ONLINE
+              </span>
+            </div>
+            
+            <h1 className="text-display mb-8">
+              JED PARK
+              <br />
+              <span className="bg-[#00ff00] px-2">SOVEREIGN</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl font-bold leading-tight max-w-2xl text-black">
+              비즈니스의 본질을 파악해<br/>
+              지속 가능한 시스템을 만듭니다.
+            </p>
           </div>
-          <h1 className="text-display mb-6">
-            Jed Park
-            <br />
-            <span className="text-gray-400">Sovereign Hacker</span>
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl leading-relaxed">
-            비즈니스의 본질을 파악해 지속 가능한 시스템을 만듭니다.<br/>
-            단순한 코딩이 아닌, 자본과 가치의 흐름을 설계하는<br/>
-            <strong>Economic Engineer</strong>입니다.
-          </p>
           
-          <div className="mt-12 flex gap-4">
+          <div className="mt-16 flex flex-wrap gap-4">
             <Link href="/projects" className="btn-system">
-              View Projects
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              View Missions
+              <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="round"/></svg>
             </Link>
-            <a href="mailto:parkdavid31@gmail.com" className="btn-system bg-white !text-black hover:bg-black hover:!text-white">
-              Contact Signal
+            <a href="mailto:parkdavid31@gmail.com" className="btn-system bg-white">
+              Establish Uplink
             </a>
           </div>
         </div>
 
-        <div className="col-span-12 md:col-span-4 bg-[#f9f9f9] p-6 md:p-10 border-r border-[#e5e5e5]">
-          <span className="text-label block mb-8">Live Metrics</span>
+        {/* Row 1: Right - Metrics */}
+        <div className="col-span-12 md:col-span-4 bg-[#f0f0f0] p-6 md:p-12 flex flex-col justify-between border-t md:border-t-0 border-black">
+          <span className="text-label block mb-12">Live Telemetry</span>
           
-          <div className="space-y-8 font-mono text-sm">
-            <div>
-              <p className="text-gray-400 mb-1">Total Projects</p>
-              <p className="text-3xl font-medium">36+</p>
+          <div className="space-y-10 font-black">
+            <div className="border-l-4 border-[#00ff00] pl-4">
+              <p className="text-[10px] text-gray-500 uppercase mb-1">Total Assets</p>
+              <p className="text-5xl tracking-tighter">36+</p>
             </div>
-            <div>
-              <p className="text-gray-400 mb-1">Focus Area</p>
-              <p className="text-xl">B2B SaaS / Agents</p>
+            <div className="border-l-4 border-[#00ff00] pl-4">
+              <p className="text-[10px] text-gray-500 uppercase mb-1">Focus Sector</p>
+              <p className="text-2xl uppercase">B2B SaaS / AI</p>
             </div>
-            <div>
-              <p className="text-gray-400 mb-1">Current Status</p>
-              <p className="text-xl">Building Monopolies</p>
+            <div className="border-l-4 border-[#00ff00] pl-4">
+              <p className="text-[10px] text-gray-500 uppercase mb-1">Current Modus</p>
+              <p className="text-2xl uppercase">Monopolizing</p>
             </div>
-            
-            <div className="pt-8 border-t border-gray-200">
-              <p className="text-[10px] uppercase text-gray-400 mb-2">Recent Commit</p>
-              <p className="text-xs truncate">feat: update sovereign hacker profile</p>
-            </div>
+          </div>
+
+          <div className="pt-10 mt-10 border-t-2 border-black/10">
+            <p className="text-[9px] uppercase font-bold text-gray-400 mb-2">Kernel Version</p>
+            <p className="text-[10px] font-mono break-all opacity-60">SH_v5.0_STABLE_BUILD_2026</p>
           </div>
         </div>
 
-        {/* Row 2: Manifesto Summary (Integrated) */}
-        <div className="col-span-12 p-6 md:p-10 border-t border-[#e5e5e5]">
-            <div className="grid md:grid-cols-4 gap-8">
+        {/* Row 2: Directives */}
+        <div className="col-span-12 p-6 md:p-12 border-t border-black bg-black text-white">
+            <div className="grid md:grid-cols-4 gap-12">
                 <div className="col-span-1">
-                    <span className="text-label">The Code</span>
+                    <span className="text-label text-[#00ff00] border-[#00ff00]">The Directives</span>
                 </div>
-                <div className="col-span-3 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="space-y-2">
-                        <span className="text-accent font-bold">01</span>
-                        <h3 className="font-bold text-sm">Monopoly First</h3>
-                        <p className="text-xs text-gray-500 leading-relaxed">
-                            경쟁은 패자를 위한 것.<br/>틈새 시장을 독점합니다.
+                <div className="col-span-3 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div className="space-y-3">
+                        <span className="text-[#00ff00] font-black text-xl">01</span>
+                        <h3 className="font-black text-sm uppercase tracking-tighter">Monopoly</h3>
+                        <p className="text-[11px] text-gray-400 leading-snug">
+                            경쟁은 패자를 위한 것.<br/>틈새를 찾아 독점한다.
                         </p>
                     </div>
-                    <div className="space-y-2">
-                        <span className="text-accent font-bold">02</span>
-                        <h3 className="font-bold text-sm">Pragmatism</h3>
-                        <p className="text-xs text-gray-500 leading-relaxed">
-                            투박한 UI라도<br/>돈을 벌면 아름답습니다.
+                    <div className="space-y-3">
+                        <span className="text-[#00ff00] font-black text-xl">02</span>
+                        <h3 className="font-black text-sm uppercase tracking-tighter">Pragmatism</h3>
+                        <p className="text-[11px] text-gray-400 leading-snug">
+                            투박한 UI라도<br/>현금흐름을 만들면 아름답다.
                         </p>
                     </div>
-                    <div className="space-y-2">
-                        <span className="text-accent font-bold">03</span>
-                        <h3 className="font-bold text-sm">The Fixer</h3>
-                        <p className="text-xs text-gray-500 leading-relaxed">
-                            비즈니스의 비효율을 찾아<br/>자동화로 해결합니다.
+                    <div className="space-y-3">
+                        <span className="text-[#00ff00] font-black text-xl">03</span>
+                        <h3 className="font-black text-sm uppercase tracking-tighter">The Fixer</h3>
+                        <p className="text-[11px] text-gray-400 leading-snug">
+                            비즈니스 비효율을 찾아<br/>자동화 시스템으로 치환한다.
                         </p>
                     </div>
-                    <div className="space-y-2">
-                        <span className="text-accent font-bold">04</span>
-                        <h3 className="font-bold text-sm">Sovereignty</h3>
-                        <p className="text-xs text-gray-500 leading-relaxed">
-                            지속 가능한 자립 시스템을<br/>구축합니다.
+                    <div className="space-y-3">
+                        <span className="text-[#00ff00] font-black text-xl">04</span>
+                        <h3 className="font-black text-sm uppercase tracking-tighter">Agency</h3>
+                        <p className="text-[11px] text-gray-400 leading-snug">
+                            의존성을 제거하고<br/>자립 가능한 주권을 구축한다.
                         </p>
                     </div>
                 </div>

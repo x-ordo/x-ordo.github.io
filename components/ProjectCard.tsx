@@ -12,51 +12,49 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, compact }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project.slug}`} className="block group h-full">
-      <div className="h-full flex flex-col justify-between">
+      <div className="h-full flex flex-col justify-between p-2">
         
         {/* Top: Header */}
         <div>
-          <div className="flex justify-between items-start mb-4">
-            <span className="text-[10px] font-mono uppercase tracking-widest text-gray-400 border border-gray-200 px-2 py-1 rounded-sm group-hover:border-black transition-colors">
-              {project.category.replace("-", " ")}
+          <div className="flex justify-between items-start mb-6">
+            <span className="text-[9px] font-black uppercase tracking-wider text-black bg-[#00ff00] border-2 border-black px-2 py-1 shadow-[2px_2px_0_0_#000]">
+              {project.category.replace("-", "_")}
             </span>
             {project.featured && (
-              <span className="flex items-center gap-1.5">
-                 <span className="w-1.5 h-1.5 bg-[#00cc00] rounded-full animate-pulse"></span>
-              </span>
+              <span className="w-3 h-3 bg-black border-2 border-[#00ff00] rounded-full animate-pulse"></span>
             )}
           </div>
           
-          <h3 className="text-xl font-bold mb-3 group-hover:text-accent transition-colors">
+          <h3 className="text-2xl font-black mb-4 uppercase tracking-tighter group-hover:text-[#00aa00] transition-colors leading-none">
             {project.name}
           </h3>
           
-          <p className="text-sm text-gray-600 leading-relaxed mb-8 line-clamp-3">
+          <p className="text-xs font-bold text-gray-500 leading-snug mb-8 line-clamp-3">
             {project.summary}
           </p>
         </div>
 
         {/* Bottom: Metrics & Stack */}
-        <div className="space-y-5">
+        <div className="space-y-6">
           {/* Metrics Grid */}
           {project.metrics && (
-            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-dashed border-gray-200 group-hover:border-gray-300 transition-colors">
+            <div className="grid grid-cols-2 gap-4 pt-6 border-t-2 border-black group-hover:bg-[#00ff0005] transition-colors p-2">
               <div>
-                <span className="block text-[10px] text-gray-400 uppercase mb-0.5">Role</span>
-                <span className="text-xs font-medium text-gray-700">{project.metrics.role}</span>
+                <span className="block text-[8px] font-black text-gray-400 uppercase mb-1">Role_ID</span>
+                <span className="text-[11px] font-black text-black uppercase">{project.metrics.role}</span>
               </div>
               <div>
-                <span className="block text-[10px] text-gray-400 uppercase mb-0.5">Impact</span>
-                <span className="text-xs font-medium text-black group-hover:text-accent transition-colors">{project.metrics.impact}</span>
+                <span className="block text-[8px] font-black text-gray-400 uppercase mb-1">Impact_Score</span>
+                <span className="text-[11px] font-black text-[#00aa00] uppercase">{project.metrics.impact}</span>
               </div>
             </div>
           )}
 
           {/* Tech Stack - Minimal Text List */}
-          <div className="flex flex-wrap gap-x-3 gap-y-1 text-[10px] font-mono text-gray-400 pt-2">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-[9px] font-black text-gray-400 p-2 pt-0">
             {project.stack.slice(0, 4).map((tech) => (
               <span key={tech}>
-                 # {tech}
+                 // {tech.toUpperCase()}
               </span>
             ))}
           </div>
