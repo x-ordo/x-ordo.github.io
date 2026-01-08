@@ -4,73 +4,62 @@ import React from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-// Dynamic import for client-side only
 const SnakeGame = dynamic(() => import("./ui/SnakeGame"), { ssr: false });
 
 export default function Hero() {
   return (
-    <section className="min-h-[90vh] flex flex-col justify-center py-20 md:py-28 bg-white relative overflow-hidden">
+    <section className="min-h-[90vh] flex flex-col justify-center py-24 md:py-32 bg-white relative overflow-hidden">
       <div className="system-grid relative z-10">
 
-        {/* Left: Main Content - Bold Typography */}
+        {/* Left: Main Content */}
         <div className="col-span-12 lg:col-span-7 flex flex-col justify-center">
-          <div className="mb-12 md:mb-14">
-            <span className="inline-block px-3 py-1 rounded bg-[#171a20] text-[#00ff00] text-xs font-mono font-bold uppercase tracking-widest mb-6">
-              Sovereign Hacker
+          <div className="mb-14 md:mb-16">
+            <span className="inline-block px-4 py-1.5 rounded-full bg-green-50 text-[#00cc00] text-sm font-mono font-bold mb-8">
+              System Identity
             </span>
-            <h1 className="text-display mb-8">
-              Build.<br />
-              <span className="text-[#00ff00]">Ship.</span><br />
-              <span className="text-[#171a20]/30">Profit.</span>
+            <h1 className="text-display mb-10 tracking-tight text-[#171a20]">
+              Sovereign<br />
+              <span className="text-[#00ff00]">Hacker.</span>
             </h1>
-            <p className="text-lg md:text-xl text-[#3e3e3e] font-medium leading-[1.8] max-w-lg">
-              AI 제품과 자동화 시스템을 설계합니다.<br/>
-              <span className="text-[#171a20] font-bold">자율성</span>과 <span className="text-[#171a20] font-bold">수익성</span>을 갖춘 경제적 기계.
+            <p className="text-xl md:text-2xl text-[#3e3e3e] font-normal leading-[1.7] max-w-xl">
+              We build economic machines that operate with <span className="text-[#171a20] font-semibold">autonomy</span> and <span className="text-[#171a20] font-semibold">profitability</span>.
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-5">
             <Link href="/projects" className="btn-system btn-primary">
-              View Projects
-              <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
+              View Missions
             </Link>
             <a href="mailto:parkdavid31@gmail.com" className="btn-system btn-ghost">
-              Contact
+              Contact Access
             </a>
           </div>
         </div>
 
-        {/* Right: Snake Game */}
-        <div className="col-span-12 lg:col-span-5 mt-16 lg:mt-0 flex flex-col items-center justify-center">
-          <div className="p-6 md:p-8 rounded-2xl bg-[#fafafa] border border-[#e5e5e5]">
+        {/* Right: Snake Game + Philosophy */}
+        <div className="col-span-12 lg:col-span-5 mt-20 lg:mt-0 flex flex-col justify-center gap-5">
+
+          {/* Snake Game */}
+          <div className="p-6 rounded-3xl bg-[#fafafa] hover:bg-[#f2f4f6] transition-colors duration-300">
             <div className="flex items-center justify-between mb-4">
-              <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#00cc00]">
-                Mini Game
-              </span>
-              <span className="text-[10px] font-mono text-[#9ca3af]">
-                Easter Egg
-              </span>
+              <span className="text-label text-[#5c5e62] mb-0 block">Mini Game</span>
+              <span className="text-[10px] font-mono text-[#9ca3af]">Click to Play</span>
             </div>
             <SnakeGame />
           </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-3 gap-4 mt-6 w-full max-w-[432px]">
-            <div className="text-center p-3 rounded-xl bg-[#f5f5f5]">
-              <div className="text-2xl font-black text-[#171a20]">20+</div>
-              <div className="text-[10px] font-mono uppercase text-[#9ca3af]">Projects</div>
+          {/* System Status */}
+          <div className="p-7 md:p-9 rounded-3xl bg-[#fafafa] hover:bg-[#f2f4f6] transition-colors duration-300 flex items-center justify-between">
+            <div>
+              <span className="text-label text-[#5c5e62] mb-2 block">System Status</span>
+              <h3 className="text-lg font-black font-mono uppercase text-[#171a20]">Operational</h3>
             </div>
-            <div className="text-center p-3 rounded-xl bg-[#f5f5f5]">
-              <div className="text-2xl font-black text-[#171a20]">5Y</div>
-              <div className="text-[10px] font-mono uppercase text-[#9ca3af]">Experience</div>
-            </div>
-            <div className="text-center p-3 rounded-xl bg-[#f5f5f5]">
-              <div className="text-2xl font-black text-[#00cc00]">AI</div>
-              <div className="text-[10px] font-mono uppercase text-[#9ca3af]">Focus</div>
+            <div className="relative flex h-4 w-4">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff00] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-4 w-4 bg-[#00cc00]"></span>
             </div>
           </div>
+
         </div>
 
       </div>

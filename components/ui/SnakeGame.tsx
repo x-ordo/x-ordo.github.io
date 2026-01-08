@@ -19,7 +19,7 @@ export default function SnakeGame() {
   const [score, setScore] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [highScore, setHighScore] = useState(0);
-  const gameRef = useRef<HTMLDivElement>(null);
+  const gameBoardRef = useRef<HTMLDivElement>(null);
 
   const generateFood = useCallback((): Position => {
     let newFood: Position;
@@ -32,7 +32,7 @@ export default function SnakeGame() {
     return newFood;
   }, [snake]);
 
-  const resetGame = useCallback(() => {
+  const startGame = useCallback(() => {
     setSnake([{ x: 10, y: 10 }]);
     setFood({ x: 15, y: 10 });
     setDirection({ x: 1, y: 0 });
@@ -43,17 +43,16 @@ export default function SnakeGame() {
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent) => {
-      if (!isPlaying && !gameOver && e.key === " ") {
-        resetGame();
+      // Start or restart with SPACE
+      if (e.key === " ") {
+        e.preventDefault();
+        if (!isPlaying || gameOver) {
+          startGame();
+        }
         return;
       }
 
-      if (gameOver && e.key === " ") {
-        resetGame();
-        return;
-      }
-
-      if (!isPlaying) return;
+      if (!isPlaying || gameOver) return;
 
       switch (e.key) {
         case "ArrowUp":
@@ -78,7 +77,7 @@ export default function SnakeGame() {
           break;
       }
     },
-    [direction, isPlaying, gameOver, resetGame]
+    [direction, isPlaying, gameOver, startGame]
   );
 
   useEffect(() => {
@@ -135,16 +134,9 @@ export default function SnakeGame() {
     return () => clearInterval(interval);
   }, [direction, food, isPlaying, gameOver, score, highScore, generateFood]);
 
-  // Touch controls
-  const handleTouch = (dir: "up" | "down" | "left" | "right") => {
-    if (!isPlaying && !gameOver) {
-      resetGame();
-      return;
-    }
-    if (gameOver) {
-      resetGame();
-      return;
-    }
+  // Touch direction controls
+  const handleDirection = (dir: "up" | "down" | "left" | "right") => {
+    if (!isPlaying || gameOver) return;
 
     switch (dir) {
       case "up":
@@ -162,8 +154,15 @@ export default function SnakeGame() {
     }
   };
 
+  // Click on game board to start/restart
+  const handleBoardClick = () => {
+    if (!isPlaying || gameOver) {
+      startGame();
+    }
+  };
+
   return (
-    <div className="flex flex-col items-center gap-4" ref={gameRef}>
+    <div className="flex flex-col items-center gap-4">
       {/* Score Display */}
       <div className="flex items-center justify-between w-full max-w-[400px] font-mono text-sm">
         <span className="text-[#00cc00] font-bold">SCORE: {score}</span>
@@ -172,7 +171,9 @@ export default function SnakeGame() {
 
       {/* Game Board */}
       <div
-        className="relative bg-[#0a0a0a] border-2 border-[#00ff00]/30 rounded-lg overflow-hidden"
+        ref={gameBoardRef}
+        onClick={handleBoardClick}
+        className="relative bg-[#0a0a0a] border-2 border-[#00ff00]/30 rounded-lg overflow-hidden cursor-pointer"
         style={{
           width: GRID_SIZE * CELL_SIZE,
           height: GRID_SIZE * CELL_SIZE,
@@ -180,7 +181,7 @@ export default function SnakeGame() {
       >
         {/* Grid Lines */}
         <div
-          className="absolute inset-0 opacity-10"
+          className="absolute inset-0 opacity-10 pointer-events-none"
           style={{
             backgroundImage: `
               linear-gradient(to right, #00ff00 1px, transparent 1px),
@@ -194,7 +195,7 @@ export default function SnakeGame() {
         {snake.map((segment, index) => (
           <div
             key={index}
-            className="absolute rounded-sm transition-all duration-75"
+            className="absolute rounded-sm pointer-events-none"
             style={{
               left: segment.x * CELL_SIZE,
               top: segment.y * CELL_SIZE,
@@ -208,84 +209,93 @@ export default function SnakeGame() {
 
         {/* Food */}
         <div
-          className="absolute rounded-full animate-pulse"
+          className="absolute rounded-full animate-pulse pointer-events-none"
           style={{
-            left: food.x * CELL_SIZE + 2,
-            top: food.y * CELL_SIZE + 2,
-            width: CELL_SIZE - 5,
-            height: CELL_SIZE - 5,
+            left: food.x * CELL_SIZE + 3,
+            top: food.y * CELL_SIZE + 3,
+            width: CELL_SIZE - 6,
+            height: CELL_SIZE - 6,
             backgroundColor: "#ff0066",
             boxShadow: "0 0 10px #ff0066",
           }}
         />
 
-        {/* Overlay Messages */}
+        {/* Start Overlay */}
         {!isPlaying && !gameOver && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 text-center">
-            <span className="text-[#00ff00] font-mono text-sm font-bold mb-2">
-              SNAKE GAME
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/85">
+            <span className="text-[#00ff00] font-mono text-lg font-bold mb-3">
+              SNAKE
             </span>
-            <span className="text-[#5c5e62] font-mono text-xs">
-              Press SPACE or tap to start
-            </span>
-            <span className="text-[#5c5e62] font-mono text-[10px] mt-1">
-              WASD / Arrows to move
+            <button
+              type="button"
+              onClick={startGame}
+              className="px-6 py-2 bg-[#00ff00] text-[#0a0a0a] font-mono text-sm font-bold rounded hover:bg-[#00cc00] transition-colors"
+            >
+              START
+            </button>
+            <span className="text-[#5c5e62] font-mono text-[10px] mt-3">
+              WASD / Arrow Keys
             </span>
           </div>
         )}
 
+        {/* Game Over Overlay */}
         {gameOver && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/80 text-center">
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/85">
             <span className="text-[#ff0066] font-mono text-sm font-bold mb-1">
               GAME OVER
             </span>
-            <span className="text-[#00ff00] font-mono text-lg font-bold mb-2">
+            <span className="text-[#00ff00] font-mono text-2xl font-bold mb-4">
               {score} pts
             </span>
-            <span className="text-[#5c5e62] font-mono text-xs">
-              Press SPACE to restart
-            </span>
+            <button
+              type="button"
+              onClick={startGame}
+              className="px-6 py-2 bg-[#00ff00] text-[#0a0a0a] font-mono text-sm font-bold rounded hover:bg-[#00cc00] transition-colors"
+            >
+              RESTART
+            </button>
           </div>
         )}
       </div>
 
       {/* Touch Controls (Mobile) */}
-      <div className="grid grid-cols-3 gap-1 md:hidden mt-2">
+      <div className="grid grid-cols-3 gap-2 md:hidden mt-2">
         <div />
         <button
           type="button"
-          onClick={() => handleTouch("up")}
-          className="w-12 h-12 bg-[#171a20] text-[#00ff00] rounded-lg flex items-center justify-center active:bg-[#00ff00] active:text-[#171a20] transition-colors"
+          onClick={() => handleDirection("up")}
+          className="w-14 h-14 bg-[#171a20] text-[#00ff00] rounded-xl flex items-center justify-center active:bg-[#00ff00] active:text-[#171a20] transition-colors"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 15l7-7 7 7" />
           </svg>
         </button>
         <div />
         <button
           type="button"
-          onClick={() => handleTouch("left")}
-          className="w-12 h-12 bg-[#171a20] text-[#00ff00] rounded-lg flex items-center justify-center active:bg-[#00ff00] active:text-[#171a20] transition-colors"
+          onClick={() => handleDirection("left")}
+          className="w-14 h-14 bg-[#171a20] text-[#00ff00] rounded-xl flex items-center justify-center active:bg-[#00ff00] active:text-[#171a20] transition-colors"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
         <button
           type="button"
-          onClick={() => handleTouch("down")}
-          className="w-12 h-12 bg-[#171a20] text-[#00ff00] rounded-lg flex items-center justify-center active:bg-[#00ff00] active:text-[#171a20] transition-colors"
+          onClick={() => handleDirection("down")}
+          className="w-14 h-14 bg-[#171a20] text-[#00ff00] rounded-xl flex items-center justify-center active:bg-[#00ff00] active:text-[#171a20] transition-colors"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
           </svg>
         </button>
         <button
           type="button"
-          onClick={() => handleTouch("right")}
-          className="w-12 h-12 bg-[#171a20] text-[#00ff00] rounded-lg flex items-center justify-center active:bg-[#00ff00] active:text-[#171a20] transition-colors"
+          onClick={() => handleDirection("right")}
+          className="w-14 h-14 bg-[#171a20] text-[#00ff00] rounded-xl flex items-center justify-center active:bg-[#00ff00] active:text-[#171a20] transition-colors"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
