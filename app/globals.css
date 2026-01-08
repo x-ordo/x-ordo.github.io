@@ -186,28 +186,28 @@ body {
     }
   }
 
-  /* Typography - Aggressive & Bold */
+  /* Typography */
   .font-display {
     font-family: 'Daeojamjil', var(--font-sans), sans-serif;
   }
 
   .text-display {
     font-family: 'Daeojamjil', var(--font-sans), sans-serif;
-    font-size: clamp(3.5rem, 10vw, 7rem);
-    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
     text-transform: uppercase;
-    line-height: 0.85;
-    letter-spacing: -0.04em;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
     color: var(--foreground);
   }
 
   .text-heading {
-    font-size: clamp(2rem, 6vw, 3.5rem);
-    font-weight: 800;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
     text-transform: uppercase;
-    line-height: 1.0;
+    line-height: 1.1;
     color: var(--foreground);
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
   }
 
   .text-label {

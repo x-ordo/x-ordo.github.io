@@ -121,8 +121,8 @@ export default function ClickGame() {
       {/* Game Board */}
       <div
         onClick={handleClick}
-        className={`relative w-full aspect-[4/3] rounded-xl cursor-pointer transition-colors duration-100 flex flex-col items-center justify-center select-none ${getBackgroundColor()}`}
-        style={{ minHeight: "200px", maxHeight: "280px" }}
+        className={`relative w-full aspect-[16/9] rounded-lg cursor-pointer transition-colors duration-100 flex flex-col items-center justify-center select-none ${getBackgroundColor()}`}
+        style={{ minHeight: "140px", maxHeight: "180px" }}
       >
         <span
           className={`font-mono text-2xl md:text-3xl font-black tracking-tight ${
