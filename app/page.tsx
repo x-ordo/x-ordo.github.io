@@ -19,11 +19,11 @@ export default function Home() {
           <div className="col-span-12 mb-16 md:mb-24">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
               <div className="max-w-2xl">
-                <span className="text-label text-[#0066ff] mb-4 block">Selected Works</span>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#191f28] mb-6">
+                <span className="text-label text-[#00cc00] mb-4 block">Selected Works</span>
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#171a20] mb-6">
                   Economic Machines
                 </h2>
-                <p className="text-body text-xl text-[#4e5968] font-medium leading-relaxed">
+                <p className="text-body text-xl text-[#3e3e3e] font-medium leading-relaxed">
                   AI 제품, 자동화 시스템, 엔터프라이즈 워크플로우.<br className="hidden md:block"/>
                   비즈니스 가치를 창출한 핵심 프로젝트입니다.
                 </p>

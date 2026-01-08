@@ -42,10 +42,10 @@ export default function RootLayout({
           speed={0.3}
           borderColor="rgba(0, 0, 0, 0.02)"
           squareSize={60}
-          hoverFillColor="rgba(0, 102, 255, 0.03)"
+          hoverFillColor="rgba(0, 255, 0, 0.05)"
         />
         <FloatingParticles />
-        <ClickSpark sparkColor="#0066ff" sparkSize={12} sparkRadius={25} sparkCount={10}>
+        <ClickSpark sparkColor="#00ff00" sparkSize={12} sparkRadius={25} sparkCount={10}>
           <Navigation />
           <main className="min-h-screen relative z-10 pt-24 md:pt-32">{children}</main>
           <Footer />

@@ -12,23 +12,23 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, compact }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project.slug}`} className="block group h-full">
-      <div className="h-full flex flex-col justify-between p-8 bg-white rounded-[24px] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-[#0066ff]/10">
+      <div className="h-full flex flex-col justify-between p-8 bg-white rounded-[24px] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-transparent hover:border-[#00cc00]/10">
         
         <div>
           <div className="flex justify-between items-start mb-6">
-            <span className="inline-block px-3 py-1 rounded-md bg-gray-50 text-[11px] font-semibold uppercase tracking-wider text-[#8b95a1]">
+            <span className="inline-block px-3 py-1 rounded-md bg-gray-50 text-[10px] font-mono uppercase tracking-widest text-[#5c5e62]">
               {project.category.replace("-", " ")}
             </span>
             {project.featured && (
-              <span className="w-2 h-2 bg-[#0066ff] rounded-full"></span>
+              <span className="w-2 h-2 bg-[#00cc00] rounded-full animate-pulse"></span>
             )}
           </div>
           
-          <h3 className="text-2xl font-bold mb-3 text-[#191f28] group-hover:text-[#0066ff] transition-colors">
+          <h3 className="text-2xl font-bold mb-3 text-[#171a20] group-hover:text-[#00cc00] transition-colors">
             {project.name}
           </h3>
           
-          <p className="text-[17px] text-[#4e5968] leading-relaxed mb-8 font-normal">
+          <p className="text-[17px] text-[#3e3e3e] leading-relaxed mb-8 font-normal">
             {project.summary}
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
           {/* Tech Stack - Clean Pills */}
           <div className="flex flex-wrap gap-2">
             {project.stack.slice(0, 4).map((tech) => (
-              <span key={tech} className="px-3 py-1.5 rounded-lg bg-[#f2f4f6] text-[13px] font-medium text-[#4e5968]">
+              <span key={tech} className="px-3 py-1.5 rounded-lg bg-[#f2f4f6] text-[12px] font-mono text-[#5c5e62]">
                  {tech}
               </span>
             ))}

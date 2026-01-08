@@ -9,9 +9,9 @@ export default function Manifesto() {
         
         {/* Header */}
         <div className="col-span-12 mb-20">
-          <span className="text-label text-[#0066ff] mb-4 block">Analysis</span>
-          <h2 className="text-4xl font-bold text-[#191f28] mb-6 tracking-tight">Target Sectors</h2>
-          <p className="text-[#4e5968] max-w-2xl leading-relaxed text-xl font-normal">
+          <span className="text-label text-[#00cc00] mb-4 block">Analysis</span>
+          <h2 className="text-4xl font-bold text-[#171a20] mb-6 tracking-tight">Target Sectors</h2>
+          <p className="text-[#3e3e3e] max-w-2xl leading-relaxed text-xl font-normal">
             시장의 비효율은 곧 기회입니다. 우리는 복잡성이 높은 영역(High-Entropy Zones)에 진입하여 구조적 문제를 해결합니다.
           </p>
         </div>
@@ -41,15 +41,15 @@ export default function Manifesto() {
               solution: "Direct Access & Bypass"
             }
           ].map((item, idx) => (
-            <div key={idx} className="group py-10 border-b border-[#f2f4f6] last:border-b-0 grid grid-cols-1 md:grid-cols-12 gap-6 items-start hover:bg-[#f9fafb] transition-colors rounded-xl px-4 -mx-4">
+            <div key={idx} className="group py-10 border-b border-[#f2f4f6] last:border-b-0 grid grid-cols-1 md:grid-cols-12 gap-6 items-start hover:bg-[#fafafa] transition-colors rounded-xl px-4 -mx-4">
               <div className="md:col-span-3">
-                <h3 className="text-xl font-bold text-[#191f28] group-hover:text-[#0066ff] transition-colors">{item.zone}</h3>
+                <h3 className="text-xl font-bold text-[#171a20] group-hover:text-[#00cc00] transition-colors">{item.zone}</h3>
               </div>
               <div className="md:col-span-6">
-                <p className="text-[#4e5968] leading-relaxed text-[17px]">{item.problem}</p>
+                <p className="text-[#3e3e3e] leading-relaxed text-[17px]">{item.problem}</p>
               </div>
               <div className="md:col-span-3 flex items-center md:justify-end">
-                <span className="text-[13px] font-medium text-[#0066ff] bg-blue-50 px-4 py-2 rounded-full">
+                <span className="text-[13px] font-mono font-medium text-[#00cc00] bg-green-50 px-4 py-2 rounded-full">
                   {item.solution}
                 </span>
               </div>

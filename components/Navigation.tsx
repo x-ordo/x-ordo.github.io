@@ -34,12 +34,12 @@ export default function Navigation() {
       )}
     >
       <nav className="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-16">
-        {/* Logo - TDS Clean Style */}
+        {/* Logo - Restored Original Style */}
         <Link href="/" className="group flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#0066ff] text-white transition-transform group-hover:scale-105">
-            <span className="text-[13px] font-bold">JP</span>
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#171a20] text-[#00ff00] transition-transform group-hover:scale-105 group-hover:bg-[#00ff00] group-hover:text-[#171a20]">
+            <span className="text-[12px] font-black">JP</span>
           </div>
-          <span className="text-[15px] font-bold text-[#191f28] tracking-tight group-hover:text-[#0066ff] transition-colors">
+          <span className="text-[15px] font-bold text-[#171a20] tracking-tight group-hover:text-[#00cc00] transition-colors">
             Jed Park
           </span>
         </Link>
@@ -53,10 +53,10 @@ export default function Navigation() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "text-[15px] font-medium transition-colors",
+                  "text-[14px] font-mono font-bold uppercase tracking-widest transition-colors",
                   isActive
-                    ? "text-[#0066ff]"
-                    : "text-[#4e5968] hover:text-[#191f28]"
+                    ? "text-[#00cc00]"
+                    : "text-[#171a20]/60 hover:text-[#171a20]"
                 )}
               >
                 {item.label}
