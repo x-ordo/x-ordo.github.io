@@ -19,7 +19,7 @@ export default function Hero() {
             </span>
             <h1 className="text-display mb-10 tracking-tight text-[#171a20]">
               Sovereign<br />
-              <span className="text-[#10b981]">Hacker.</span>
+              <span className="text-[#00ff00]">Hacker.</span>
             </h1>
             <p className="text-xl md:text-2xl text-[#3e3e3e] font-normal leading-[1.7] max-w-xl">
               We build economic machines that operate with <span className="text-[#171a20] font-semibold">autonomy</span> and <span className="text-[#171a20] font-semibold">profitability</span>.

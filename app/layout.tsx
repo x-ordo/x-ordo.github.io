@@ -43,7 +43,7 @@ export default function RootLayout({
             lineThickness={1}
             linesColor="#392e4e"
             gridScale={0.08}
-            scanColor="#10b981"
+            scanColor="#00ff00"
             scanOpacity={0.3}
             enablePost
             bloomIntensity={0.4}
@@ -51,7 +51,7 @@ export default function RootLayout({
             noiseIntensity={0.008}
           />
         </div>
-        <ClickSpark sparkColor="#10b981" sparkSize={12} sparkRadius={25} sparkCount={10}>
+        <ClickSpark sparkColor="#00ff00" sparkSize={12} sparkRadius={25} sparkCount={10}>
           <Navigation />
           <main className="min-h-screen relative z-10 main-content">{children}</main>
           <Footer />
