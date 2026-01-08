@@ -48,7 +48,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
   const accentColor = categoryColors[project.category] || "bg-[#00ff00]";
 
   return (
-    <div className="px-6 md:px-8 lg:px-12 pt-8 md:pt-12 pb-24 md:pb-36 lg:pb-48">
+    <div className="px-6 md:px-8 lg:px-12 pt-24 md:pt-32 lg:pt-36 pb-24 md:pb-36 lg:pb-48">
       <div className="mx-auto max-w-7xl">
         {/* Back Link */}
         <Link

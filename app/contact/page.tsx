@@ -16,7 +16,7 @@ const focusAreas = [
 
 export default function ContactPage() {
   return (
-    <div className="bg-white min-h-screen py-12 md:py-20">
+    <div className="bg-white min-h-screen pt-24 md:pt-32 pb-12 md:pb-20">
       <div className="system-grid w-full border-black">
 
         {/* Header */}
