@@ -24,7 +24,7 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
             )}
           </div>
           
-          <h3 className="text-2xl font-bold mb-3 text-[#171a20] group-hover:text-[#00cc00] transition-colors">
+          <h3 className="text-2xl font-black uppercase tracking-tighter mb-3 text-[#171a20] group-hover:text-[#00cc00] transition-colors leading-tight">
             {project.name}
           </h3>
           

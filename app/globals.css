@@ -57,35 +57,38 @@ body {
 /* Typography Utilities */
 .text-display {
   font-family: var(--font-sans);
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-size: clamp(3.5rem, 8vw, 6rem); /* Larger, more aggressive */
+  font-weight: 900; /* Black weight */
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
   color: var(--foreground);
 }
 
 .text-heading {
-  font-size: 1.75rem;
-  font-weight: 700;
-  line-height: 1.35;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
   color: var(--foreground);
+  letter-spacing: -0.03em;
 }
 
 .text-label {
-  font-family: var(--font-mono); /* Restored Mono */
+  font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--muted);
+  letter-spacing: 0.15em;
+  color: var(--accent-dark);
   margin-bottom: 0.5rem;
   display: block;
 }
 
 .text-body {
   font-family: var(--font-sans);
-  font-size: 1.0625rem;
-  line-height: 1.7;
+  font-size: 1.125rem;
+  line-height: 1.6;
   color: var(--secondary);
   word-break: keep-all;
 }

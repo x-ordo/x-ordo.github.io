@@ -60,7 +60,7 @@ export default function Hero() {
           <div className="p-8 rounded-3xl bg-[#fafafa] hover:bg-[#f2f4f6] transition-colors duration-300 flex items-center justify-between">
              <div>
                 <span className="text-label text-[#5c5e62] mb-1">System Status</span>
-                <h3 className="text-lg font-bold text-[#171a20]">Operational</h3>
+                <h3 className="text-lg font-black font-mono uppercase text-[#171a20]">Operational</h3>
              </div>
              <div className="relative flex h-4 w-4">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ff00] opacity-75"></span>

@@ -20,7 +20,7 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
               <div className="max-w-2xl">
                 <span className="text-label text-[#00cc00] mb-4 block">Selected Works</span>
-                <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-[#171a20] mb-6">
+                <h2 className="text-5xl md:text-7xl font-black uppercase tracking-tighter text-[#171a20] mb-6 leading-[0.9]">
                   Economic Machines
                 </h2>
                 <p className="text-body text-xl text-[#3e3e3e] font-medium leading-relaxed">
