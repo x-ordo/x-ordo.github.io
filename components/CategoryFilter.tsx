@@ -32,16 +32,14 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
 
   return (
     <div className="w-full">
-      {/* Filter Tabs */}
-      <div className="flex flex-wrap border-b-2 border-black bg-black">
+      {/* Filter Tabs - Mobile optimized with horizontal scroll */}
+      <div className="category-filter-container pb-4 mb-6">
         <button
           type="button"
           onClick={() => setActive("all")}
           className={cn(
-            "px-4 md:px-6 py-4 md:py-5 text-[10px] md:text-xs font-black uppercase tracking-widest transition-all border-r-2 border-black",
-            active === "all"
-              ? "bg-[#00ff00] text-black"
-              : "bg-black text-white hover:bg-white/10"
+            "category-filter-btn",
+            active === "all" && "active"
           )}
         >
           All ({projects.length})
@@ -52,10 +50,8 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
             type="button"
             onClick={() => setActive(category.key)}
             className={cn(
-              "px-4 md:px-6 py-4 md:py-5 text-[10px] md:text-xs font-black uppercase tracking-widest transition-all border-r-2 border-black",
-              active === category.key
-                ? "bg-[#00ff00] text-black"
-                : "bg-black text-white hover:bg-white/10"
+              "category-filter-btn",
+              active === category.key && "active"
             )}
           >
             {category.label} ({category.count})
@@ -63,10 +59,10 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
         ))}
       </div>
 
-      {/* Project Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-black gap-px border-b-2 border-black">
+      {/* Project Grid - Refined spacing */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         {filtered.map((project) => (
-          <div key={project.slug} className="bg-white hover:bg-[#00ff0008] transition-colors p-6 md:p-10 lg:p-12">
+          <div key={project.slug} className="project-card">
             <ProjectCard project={project} />
           </div>
         ))}
