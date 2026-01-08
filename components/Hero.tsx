@@ -21,25 +21,25 @@ export default function Hero() {
     <section className="relative overflow-hidden pb-[10vh] md:pb-[15vh]">
       <div className="relative z-10">
         {/* Minimal Badge */}
-        <div className="mb-10 md:mb-14">
-          <span className="text-[9px] font-black uppercase tracking-[0.3em] text-black/20 border-b border-black/5 pb-1">
+        <div className="mb-6 md:mb-8">
+          <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-black/40 border-b border-black/10 pb-1">
             Sovereign Hacker & System Builder
           </span>
         </div>
 
-        {/* Scaled Down Editorial Heading */}
-        <h1 className="text-4xl font-black leading-[0.9] tracking-tighter text-black mb-10 md:text-7xl lg:text-[7rem] max-w-3xl">
-          세상의 원리를 꿰뚫어
+        {/* Scaled Down Heading */}
+        <h1 className="text-3xl font-black leading-tight tracking-tight text-black mb-8 md:text-5xl lg:text-6xl max-w-4xl">
+          비즈니스의 본질을 파악해
           <br />
-          <span className="text-[#00ff00]">시스템을 구축합니다</span>
+          <span className="text-[#00cc00]">지속 가능한 시스템을 만듭니다</span>
         </h1>
 
-        {/* Tighter Description Grid */}
-        <div className="grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-20 items-start">
+        {/* Description Grid */}
+        <div className="grid md:grid-cols-[1.2fr_1fr] gap-8 md:gap-16 items-start">
           <div className="space-y-6">
-            <p className="text-lg md:text-xl font-bold leading-snug tracking-tight text-black/70">
-              단순한 기술 구현을 넘어, 자본과 시장의 원리를 이해하고 주체적으로 변화를 만들어냅니다.
-              지속 가능한 가치를 창출하는 경제 시스템(Economic Machine)을 설계합니다.
+            <p className="text-base md:text-lg font-medium leading-relaxed text-black/70 max-w-xl">
+              단순한 기술 구현을 넘어, 자본과 시장의 흐름을 이해하고 주체적으로 가치를 만듭니다.
+              실질적인 현금 흐름을 창출하는 견고한 경제 시스템(Economic Machine)을 설계합니다.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link href="/projects" className="group inline-flex items-center gap-3 text-sm font-black uppercase tracking-widest border-b-2 border-black pb-1 hover:text-[#00ff00] hover:border-[#00ff00] transition-all">
