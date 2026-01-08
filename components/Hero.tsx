@@ -5,8 +5,8 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 px-4 md:px-8 bg-white">
-      <div className="system-grid w-full border-b border-black">
+    <section className="py-32 md:py-48 px-4 md:px-8 bg-white">
+      <div className="system-grid w-full border-b-2 border-black">
         
         {/* Row 1: Left - Identity */}
         <div className="col-span-12 md:col-span-8 p-8 md:p-16 border-r-2 border-black flex flex-col justify-between min-h-[60vh]">

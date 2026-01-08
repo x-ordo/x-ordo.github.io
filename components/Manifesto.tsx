@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Manifesto() {
   return (
-    <section className="py-20 px-4 md:px-8 border-t border-black bg-white">
+    <section className="py-32 md:py-48 px-4 md:px-8 border-t-2 border-black bg-white">
       <div className="system-grid w-full border-black">
         
         {/* Header */}

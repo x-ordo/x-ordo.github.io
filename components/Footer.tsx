@@ -13,69 +13,63 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/5 bg-white">
-      <div className="py-20 md:py-24 lg:py-32">
-        <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr] md:gap-20 lg:gap-24">
-          {/* Brand */}
+    <footer className="bg-white border-t-2 border-black py-20 px-4 md:px-8">
+      <div className="system-grid w-full border-black bg-black gap-1px">
+        {/* Brand */}
+        <div className="col-span-12 md:col-span-6 bg-white p-10 md:p-16 flex flex-col justify-between">
           <div>
-            <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-5">
-              <span className="flex h-8 w-8 md:h-9 md:w-9 items-center justify-center border-2 border-black bg-[#00ff00] text-xs md:text-sm font-black">
+            <div className="flex items-center gap-4 mb-10">
+              <span className="flex h-12 w-12 items-center justify-center border-2 border-black bg-[#00ff00] text-lg font-black shadow-[4px_4px_0_0_#000]">
                 JP
               </span>
-              <span className="text-sm md:text-base font-bold text-black">Jed Park</span>
+              <span className="text-2xl font-black uppercase tracking-tighter">Jed Park</span>
             </div>
-            <p className="text-xs md:text-sm text-black/60 max-w-xs leading-relaxed">
-              AI/ML 기반 솔루션을 설계하고 비즈니스 가치를 구현하는 풀스택 개발자입니다.
+            <p className="text-lg font-bold text-black max-w-sm leading-tight">
+              AI/ML 기반 솔루션을 설계하고 비즈니스 가치를 구현하는 Sovereign Hacker입니다.
             </p>
           </div>
+          <div className="mt-20">
+             <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">© 2026 SVRGN_ARCHITECT</p>
+          </div>
+        </div>
 
-          {/* Navigation */}
-          <div>
-            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-4 md:mb-5">
-              Navigation
-            </p>
-            <nav className="flex flex-col gap-2 md:gap-3">
+        {/* Navigation & Connect */}
+        <div className="col-span-12 md:col-span-6 bg-white grid grid-cols-2">
+          <div className="p-10 md:p-16 border-r border-black">
+            <p className="text-label mb-8">Navigation</p>
+            <nav className="flex flex-col gap-4">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-xs md:text-sm font-semibold text-black/60 hover:text-black transition-colors"
+                  className="text-sm font-black uppercase hover:text-[#00aa00] transition-colors"
                 >
                   {link.label}
                 </Link>
               ))}
             </nav>
           </div>
-
-          {/* Connect */}
-          <div>
-            <p className="text-[9px] md:text-[11px] font-bold text-black/50 uppercase tracking-wider mb-4 md:mb-5">
-              Connect
-            </p>
-            <div className="flex flex-col gap-2 md:gap-3">
+          <div className="p-10 md:p-16">
+            <p className="text-label mb-8">Connect</p>
+            <div className="flex flex-col gap-4">
               {socials.map((social) => (
                 <a
                   key={social.label}
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
                   rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="text-xs md:text-sm font-semibold text-black/60 hover:text-black transition-colors"
+                  className="text-sm font-black uppercase hover:text-[#00aa00] transition-colors"
                 >
                   {social.label}
                 </a>
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="mt-8 md:mt-12 pt-4 md:pt-6 border-t-2 border-black/10 flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-3">
-          <p className="text-[10px] md:text-xs text-black/50 font-semibold">
-            © 2025 Jed Park. All rights reserved.
-          </p>
-          <p className="text-[10px] md:text-xs text-black/50 font-semibold">
-            Built with Next.js & Tailwind CSS
-          </p>
+          <div className="col-span-2 p-10 border-t border-black bg-[#fafafa]">
+             <p className="text-[10px] font-mono text-gray-400">
+                STABLE_BUILD_RELEASE_2026 // BUILT_WITH_NEXTJS_16 // POWERED_BY_AI
+             </p>
+          </div>
         </div>
       </div>
     </footer>

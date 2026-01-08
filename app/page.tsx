@@ -12,7 +12,7 @@ export default function Home() {
       <Manifesto />
 
       {/* Featured Projects Section */}
-      <section className="py-32 px-4 md:px-8 border-t-2 border-black bg-white">
+      <section className="py-32 md:py-48 px-4 md:px-8 border-t-2 border-black bg-white">
         <div className="system-grid w-full border-r-2 border-black">
           
           {/* Section Header */}

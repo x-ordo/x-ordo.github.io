@@ -45,81 +45,71 @@ const techStack = [
 
 export default function AboutPage() {
   return (
-    <div className="px-5 pt-12 pb-24 md:px-8 md:pt-20 md:pb-36 lg:pt-24 lg:pb-48">
-      <div className="mx-auto max-w-5xl">
-        {/* Page Header */}
-        <section className="mb-16 md:mb-24 lg:mb-32">
-          <span className="badge badge-primary mb-6 md:mb-8 scale-110 origin-left">About</span>
-          <h1 className="text-3xl font-black text-black sm:text-4xl md:text-5xl lg:text-6xl leading-[1.1] tracking-tight">
-            기술과 비즈니스를
-            <br />
-            연결하는 개발자
+    <div className="bg-white min-h-screen py-20 px-4 md:px-8">
+      <div className="system-grid w-full border-black">
+        
+        {/* Header */}
+        <div className="col-span-12 p-8 md:p-20 border-b-2 border-black bg-[#fafafa]">
+          <span className="text-label inline-block mb-10 border-b-2 border-black">About The Architect</span>
+          <h1 className="text-5xl md:text-7xl font-black tracking-tighter uppercase mb-10 leading-[0.9]">
+            Bridging <span className="text-[#00cc00]">Tech</span> & <span className="text-[#00cc00]">Business</span>
           </h1>
-          <p className="mt-8 text-sm md:text-lg text-black/70 max-w-2xl leading-relaxed md:leading-[1.8] font-medium lg:text-xl lg:mt-12">
-            AI/ML 기반 솔루션을 설계하고, 복잡한 비즈니스 문제를 제품으로 구현합니다.
-            <br className="hidden md:block" />
+          <p className="text-xl md:text-2xl font-bold text-black max-w-3xl leading-tight">
+            AI/ML 기반 솔루션을 설계하고, 복잡한 비즈니스 문제를 제품으로 구현합니다.<br/>
             실용적인 관점으로 시스템을 설계하고 운영합니다.
           </p>
-        </section>
+        </div>
 
-        {/* Capabilities */}
-        <section className="mb-16 md:mb-24 lg:mb-32">
-          <h2 className="text-xs md:text-sm font-bold text-black/50 uppercase tracking-widest mb-8 md:mb-12">
-            Core Capabilities
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-2 md:gap-8 lg:gap-10">
+        {/* Capabilities Grid */}
+        <div className="col-span-12 p-8 md:p-16 border-b-2 border-black">
+          <h2 className="text-label mb-12">Core Capabilities</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-1px bg-black border-2 border-black">
             {capabilities.map((item) => (
-              <div key={item.title} className="card-elevated p-6 md:p-8 lg:p-10 hover:-translate-y-1 transition-transform duration-300">
-                <h3 className="text-lg md:text-xl font-bold text-black mb-4 md:mb-5">{item.title}</h3>
-                <p className="text-sm md:text-base text-black/70 leading-relaxed">
+              <div key={item.title} className="bg-white p-10 flex flex-col justify-between hover:bg-[#00ff0005] transition-colors">
+                <h3 className="text-xl font-black uppercase mb-6">{item.title}</h3>
+                <p className="text-sm font-bold text-gray-600 leading-relaxed">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
-        </section>
+        </div>
 
         {/* Tech Stack */}
-        <section className="mb-16 md:mb-24 lg:mb-32">
-          <h2 className="text-xs md:text-sm font-bold text-black/50 uppercase tracking-widest mb-8 md:mb-12">
-            Tech Stack
-          </h2>
-          <div className="card-elevated p-6 md:p-10 lg:p-12">
-            <div className="grid gap-8 sm:grid-cols-2 md:gap-12 lg:gap-16">
-              {techStack.map((group) => (
-                <div key={group.title}>
-                  <h3 className="text-sm md:text-base font-bold text-black mb-5 md:mb-6 uppercase tracking-wide">
-                    {group.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2.5 md:gap-3">
-                    {group.items.map((item) => (
-                      <span key={item} className="brutal-tag text-xs md:text-sm py-2 px-3 md:py-2.5 md:px-4">
-                        {item}
-                      </span>
-                    ))}
-                  </div>
+        <div className="col-span-12 p-8 md:p-16 border-b-2 border-black bg-[#f0f0f0]">
+          <h2 className="text-label mb-12">Authorized Toolset</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {techStack.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-base font-black uppercase mb-6 border-b-2 border-black pb-2">{group.title}</h3>
+                <div className="flex flex-wrap gap-3">
+                  {group.items.map((item) => (
+                    <span key={item} className="text-xs font-black bg-black text-[#00ff00] px-3 py-1.5 border-2 border-black shadow-[3px_3px_0_0_#000]">
+                      {item.toUpperCase()}
+                    </span>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
 
         {/* Philosophy */}
-        <section>
-          <div className="card-elevated p-6 md:p-10 lg:p-12 bg-[#00ff00]/10 border-[#00ff00]">
-            <h2 className="text-xs md:text-sm font-bold text-black/50 uppercase tracking-widest mb-6 md:mb-8">
-              Philosophy
-            </h2>
-            <p className="text-xl md:text-2xl font-black text-black leading-snug md:leading-relaxed lg:text-3xl tracking-tight">
-              실용적인 AI 응용, 사용자 중심 설계, 지속적 학습
+        <div className="col-span-12 p-8 md:p-20 bg-black text-white">
+          <h2 className="text-label text-[#00ff00] border-[#00ff00] mb-10">Philosophy</h2>
+          <div className="max-w-4xl">
+            <p className="text-2xl md:text-4xl font-black uppercase tracking-tighter leading-none mb-10">
+              Pragmatic AI. <br/>
+              User-Centric Architecture. <br/>
+              Continuous Sovereignty.
             </p>
-            <p className="mt-6 text-sm md:text-base text-black/70 leading-relaxed md:mt-8 lg:mt-10 font-medium">
+            <p className="text-lg md:text-xl font-bold text-gray-400 leading-relaxed">
               기술을 통해 실질적인 비즈니스 가치를 만드는 데 집중합니다.
-              <br className="hidden md:block" />
               복잡한 문제를 단순하게 풀고, 확장 가능한 시스템을 구축합니다.
             </p>
           </div>
-        </section>
+        </div>
+
       </div>
     </div>
   );
