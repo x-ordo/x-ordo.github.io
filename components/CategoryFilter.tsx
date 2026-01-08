@@ -31,21 +31,20 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
       : projects.filter((project) => project.category === active);
 
   return (
-    <div className="space-y-8 md:space-y-12">
+    <div className="w-full">
       {/* Filter Tabs */}
-      <div className="flex flex-wrap gap-2 md:gap-3 pb-5 md:pb-8 border-b-2 border-black/10">
+      <div className="flex flex-wrap border-b-2 border-black bg-black">
         <button
           type="button"
           onClick={() => setActive("all")}
           className={cn(
-            "px-2.5 py-1.5 md:px-4 md:py-2.5 text-[10px] md:text-sm font-bold uppercase tracking-wider transition-all border-2",
+            "px-6 py-4 text-xs font-black uppercase tracking-widest transition-all border-r-2 border-black",
             active === "all"
-              ? "border-black bg-black text-white shadow-[2px_2px_0_#00ff00] md:shadow-[3px_3px_0_#00ff00]"
-              : "border-black/20 text-black/60 hover:text-black hover:border-black"
+              ? "bg-[#00ff00] text-black"
+              : "bg-black text-white hover:bg-white/10"
           )}
         >
-          All
-          <span className="ml-1.5 md:ml-2 text-[9px] md:text-xs opacity-60">{projects.length}</span>
+          All ({projects.length})
         </button>
         {categories.map((category) => (
           <button
@@ -53,27 +52,23 @@ export default function CategoryFilter({ projects }: CategoryFilterProps) {
             type="button"
             onClick={() => setActive(category.key)}
             className={cn(
-              "px-2.5 py-1.5 md:px-4 md:py-2.5 text-[10px] md:text-sm font-bold uppercase tracking-wider transition-all border-2",
+              "px-6 py-4 text-xs font-black uppercase tracking-widest transition-all border-r-2 border-black",
               active === category.key
-                ? "border-black bg-black text-white shadow-[2px_2px_0_#00ff00] md:shadow-[3px_3px_0_#00ff00]"
-                : "border-black/20 text-black/60 hover:text-black hover:border-black"
+                ? "bg-[#00ff00] text-black"
+                : "bg-black text-white hover:bg-white/10"
             )}
           >
-            {category.label}
-            <span className="ml-1.5 md:ml-2 text-[9px] md:text-xs opacity-60">{category.count}</span>
+            {category.label} ({category.count})
           </button>
         ))}
       </div>
 
-      {/* Results Count */}
-      <p className="text-xs md:text-sm text-black/50 font-semibold">
-        {filtered.length}개 프로젝트
-      </p>
-
       {/* Project Grid */}
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-black gap-px border-b-2 border-black">
         {filtered.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+          <div key={project.slug} className="bg-white hover:bg-[#00ff0008] transition-colors p-8 md:p-12">
+            <ProjectCard project={project} />
+          </div>
         ))}
       </div>
     </div>
