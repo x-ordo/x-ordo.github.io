@@ -119,6 +119,7 @@ const ko: Translations = {
     about: "소개",
     projects: "프로젝트",
     contact: "연락처",
+    resume: "이력서",
   },
   footer: {
     bio: "실제 문제를 해결하는 AI 제품을 만드는 Sovereign Hacker입니다.",

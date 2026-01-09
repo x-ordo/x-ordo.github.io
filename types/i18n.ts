@@ -81,6 +81,7 @@ export interface NavTranslations {
   about: string;
   projects: string;
   contact: string;
+  resume: string;
 }
 
 export interface FooterTranslations {

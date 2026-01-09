@@ -119,6 +119,7 @@ const en: Translations = {
     about: "About",
     projects: "Projects",
     contact: "Contact",
+    resume: "Resume",
   },
   footer: {
     bio: "Sovereign Hacker building AI-powered products that solve real problems.",
