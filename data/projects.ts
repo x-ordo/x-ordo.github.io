@@ -71,6 +71,7 @@ export const projects: Project[] = [
       role: "풀스택 단독",
       impact: "증거 정리 70% 단축",
     },
+    status: "종료",
   },
   {
     slug: "tee-up",
@@ -204,6 +205,7 @@ export const projects: Project[] = [
       role: "풀스택 단독",
       impact: "11개+ 플랫폼 통합",
     },
+    status: "아카이브",
   },
   {
     slug: "salon-mate",
@@ -420,6 +422,7 @@ export const projects: Project[] = [
       role: "풀스택 단독",
       impact: "DAU 1,200+",
     },
+    status: "운영중",
   },
   {
     slug: "some-some",
@@ -579,6 +582,7 @@ export const projects: Project[] = [
       role: "Sole Architect & Developer",
       impact: "40+ PRs, 일평균 0.3% 알파",
     },
+    status: "개발중",
   },
   {
     slug: "airalo-api",
@@ -816,6 +820,7 @@ export const projects: Project[] = [
       role: "Full-stack Developer",
       impact: "정산 수작업 80% 감소",
     },
+    status: "운영중",
   },
   {
     slug: "soul-lab-ops",

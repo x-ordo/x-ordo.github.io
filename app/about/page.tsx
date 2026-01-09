@@ -163,6 +163,29 @@ export default function AboutPage() {
           </div>
         </div>
 
+        {/* Hiring Info */}
+        <div className="py-12 md:py-16 border-b border-[#f2f4f6]">
+          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00cc00] mb-4 block">
+            채용 관련 정보
+          </span>
+          <h2 className="text-2xl md:text-3xl font-bold text-[#171a20] mb-8">
+            Hiring Info
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { label: "희망 포지션", value: "Senior Full-Stack Engineer" },
+              { label: "근무 형태", value: "정규직 · 원격 가능" },
+              { label: "입사 가능일", value: "즉시 가능" },
+              { label: "비자 상태", value: "내국인 (병역필)" },
+            ].map((item, idx) => (
+              <div key={idx} className="p-5 rounded-xl bg-[#fafafa]">
+                <span className="text-xs font-mono text-[#9ca3af] block mb-2">{item.label}</span>
+                <p className="text-base font-bold text-[#171a20]">{item.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Final Note */}
         <div className="py-16 md:py-24 bg-[#171a20] rounded-2xl mt-12 md:mt-16 -mx-6 md:-mx-8 px-6 md:px-8">
           <div className="max-w-3xl mx-auto text-center">

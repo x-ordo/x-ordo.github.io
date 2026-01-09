@@ -10,11 +10,15 @@ export interface HeroTranslations {
   title: string;
   titleAccent: string;
   subtitle: string;
+  valueProposition: string;
   executiveSummary: string;
   ctaPrimary: string;
+  ctaPortfolio: string;
   ctaSecondary: string;
-  gameLabel: string;
-  gameHint: string;
+  highlightsLabel: string;
+  highlight1: string;
+  highlight2: string;
+  highlight3: string;
   statusLabel: string;
   statusValue: string;
 }

@@ -2,12 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { useI18n } from "@/lib/i18n";
 import MetricsDashboard from "./sections/MetricsDashboard";
 import ExperienceTimeline from "./sections/ExperienceTimeline";
-
-const ClickGame = dynamic(() => import("./ui/ClickGame"), { ssr: false });
 
 export default function Hero() {
   const { t } = useI18n();
@@ -29,7 +26,13 @@ export default function Hero() {
             <p className="text-sm md:text-base text-[#5c5e62] font-medium mb-4">
               {t.hero.subtitle}
             </p>
-            <p className="text-base md:text-lg text-[#3e3e3e] font-normal leading-[1.7] max-w-xl">
+
+            {/* Value Proposition - Recruiter-focused */}
+            <div className="text-lg md:text-xl text-[#171a20] font-medium leading-relaxed max-w-2xl mb-4">
+              <span>{t.hero.valueProposition}</span>
+            </div>
+
+            <p className="text-base text-[#5c5e62] font-normal leading-[1.7] max-w-xl">
               {t.hero.executiveSummary}
             </p>
           </div>
@@ -40,8 +43,11 @@ export default function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Link href="/projects" className="btn-system btn-primary">
+            <Link href="/resume" className="btn-system btn-primary">
               {t.hero.ctaPrimary}
+            </Link>
+            <Link href="/projects" className="btn-system btn-ghost">
+              {t.hero.ctaPortfolio}
             </Link>
             <a href="mailto:haspark912@kakao.com" className="btn-system btn-ghost">
               {t.hero.ctaSecondary}
@@ -49,7 +55,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right: Timeline + Game + Status */}
+        {/* Right: Timeline + Key Highlights + Status */}
         <div className="col-span-12 lg:col-span-5 mt-10 lg:mt-0 flex flex-col justify-center gap-4">
 
           {/* Experience Timeline (condensed) */}
@@ -57,15 +63,23 @@ export default function Hero() {
             <ExperienceTimeline limit={4} />
           </div>
 
-          {/* Click Game */}
+          {/* Key Highlights - Replacing Click Game */}
           <div className="p-5 rounded-2xl bg-[#fafafa]">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00cc00]">
-                {t.hero.gameLabel}
-              </span>
-              <span className="text-[10px] font-mono text-[#9ca3af]">{t.hero.gameHint}</span>
+            <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#00cc00] mb-4 block">
+              {t.hero.highlightsLabel}
+            </span>
+            <div className="space-y-3">
+              {[
+                { icon: "🏛️", text: t.hero.highlight1 },
+                { icon: "🚀", text: t.hero.highlight2 },
+                { icon: "🤖", text: t.hero.highlight3 },
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <span className="text-lg flex-shrink-0">{item.icon}</span>
+                  <span className="text-sm text-[#3e3e3e] leading-relaxed">{item.text}</span>
+                </div>
+              ))}
             </div>
-            <ClickGame />
           </div>
 
           {/* System Status */}

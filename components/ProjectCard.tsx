@@ -2,12 +2,19 @@
 
 import React from "react";
 import Link from "next/link";
-import { Project } from "../types/project";
+import { Project, ProjectStatus } from "../types/project";
 
 interface ProjectCardProps {
   project: Project;
   compact?: boolean;
 }
+
+const statusStyles: Record<ProjectStatus, string> = {
+  "운영중": "bg-green-100 text-green-800",
+  "종료": "bg-gray-100 text-gray-600",
+  "개발중": "bg-blue-100 text-blue-800",
+  "아카이브": "bg-amber-100 text-amber-700",
+};
 
 export default function ProjectCard({ project, compact }: ProjectCardProps) {
   return (
@@ -16,9 +23,16 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
 
         <div>
           <div className="flex justify-between items-start mb-7">
-            <span className="inline-block px-3 py-1.5 rounded-md bg-gray-50 text-[11px] font-mono uppercase tracking-widest text-[#5c5e62]">
-              {project.category.replace("-", " ")}
-            </span>
+            <div className="flex flex-wrap gap-2 items-center">
+              <span className="inline-block px-3 py-1.5 rounded-md bg-gray-50 text-[11px] font-mono uppercase tracking-widest text-[#5c5e62]">
+                {project.category.replace("-", " ")}
+              </span>
+              {project.status && (
+                <span className={`inline-block px-2 py-1 rounded text-[10px] font-medium ${statusStyles[project.status]}`}>
+                  {project.status}
+                </span>
+              )}
+            </div>
             {project.featured && (
               <span className="w-2.5 h-2.5 bg-[#00cc00] rounded-full animate-pulse"></span>
             )}
@@ -28,9 +42,16 @@ export default function ProjectCard({ project, compact }: ProjectCardProps) {
             {project.name}
           </h3>
 
-          <p className="text-base md:text-[17px] text-[#3e3e3e] leading-[1.75] mb-8 font-normal">
+          <p className="text-base md:text-[17px] text-[#3e3e3e] leading-[1.75] mb-4 font-normal">
             {project.summary}
           </p>
+
+          {/* Impact Metric - Highlight business value */}
+          {project.metrics?.impact && (
+            <div className="px-3 py-2 bg-[#00ff00]/10 rounded-lg text-sm font-medium text-[#00aa00] mb-4">
+              📊 {project.metrics.impact}
+            </div>
+          )}
         </div>
 
         <div className="pt-6 mt-auto border-t border-[#f2f4f6]">

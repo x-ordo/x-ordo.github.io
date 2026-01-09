@@ -23,9 +23,19 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Haseong Park | Sovereign Hacker",
+  title: "박하성 | Full-Stack Engineer · System Architect · 5년차",
   description:
-    "Sovereign Hacker · Software Engineer · Business-Oriented Builder. I identify leverage points and push them forward.",
+    "국가사업 2건, 스타트업 3개, 36개+ 프로젝트 경험. AI/LLM, Go, Rust, Python, Next.js, React 전문. 문제를 정의하고 구조를 설계하며 실행까지 책임지는 엔지니어.",
+  keywords: ["풀스택 개발자", "소프트웨어 엔지니어", "AI 개발자", "LLM", "Go", "Rust", "Next.js", "React", "TypeScript", "박하성"],
+  authors: [{ name: "박하성", url: "https://x-ordo.github.io" }],
+  openGraph: {
+    title: "박하성 | Full-Stack Engineer · System Architect",
+    description: "국가사업 2건, 스타트업 3개, 36개+ 프로젝트 경험. 문제를 정의하고 구조를 설계하며 실행까지 책임지는 엔지니어.",
+    url: "https://x-ordo.github.io",
+    siteName: "박하성 포트폴리오",
+    locale: "ko_KR",
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -7,6 +7,8 @@ export type ProjectCategory =
   | "analytics"
   | "experimental";
 
+export type ProjectStatus = "운영중" | "종료" | "개발중" | "아카이브";
+
 export type ProjectLink = {
   label: string;
   href: string;
@@ -31,4 +33,5 @@ export type Project = {
   links?: ProjectLink[];
   featured?: boolean;
   metrics?: ProjectMetrics;
+  status?: ProjectStatus;  // 프로젝트 상태
 };
