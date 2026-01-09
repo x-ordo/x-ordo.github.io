@@ -10,12 +10,47 @@ export interface HeroTranslations {
   title: string;
   titleAccent: string;
   subtitle: string;
+  executiveSummary: string;
   ctaPrimary: string;
   ctaSecondary: string;
   gameLabel: string;
   gameHint: string;
   statusLabel: string;
   statusValue: string;
+}
+
+export interface CoreStrength {
+  title: string;
+  description: string;
+}
+
+export interface StrengthsTranslations {
+  badge: string;
+  title: string;
+  items: CoreStrength[];
+}
+
+export interface TechStackCategory {
+  category: string;
+  items: string[];
+}
+
+export interface TechStackTranslations {
+  badge: string;
+  title: string;
+  categories: TechStackCategory[];
+}
+
+export interface LookingForItem {
+  title: string;
+  description: string;
+}
+
+export interface LookingForTranslations {
+  badge: string;
+  title: string;
+  subtitle: string;
+  items: LookingForItem[];
 }
 
 export interface ManifestoTranslations {
@@ -66,18 +101,45 @@ export interface ProjectsPageTranslations {
   sectionSubtitle: string;
 }
 
+export interface PhilosophyItem {
+  principle: string;
+  description: string;
+}
+
+export interface FailureLesson {
+  title: string;
+  story: string;
+  lesson: string;
+}
+
 export interface AboutPageTranslations {
   badge: string;
   title: string;
   subtitle: string;
+  executiveSummary: string;
   capabilitiesTitle: string;
   toolsetTitle: string;
   philosophyTitle: string;
   philosophySubtitle: string;
+  philosophyItems: PhilosophyItem[];
+  failureTitle: string;
+  failureSubtitle: string;
+  failureLessons: FailureLesson[];
+  failureRule: string;
+  leadershipTitle: string;
+  leadershipSubtitle: string;
+  leadershipItems: string[];
+  rhythmTitle: string;
+  rhythmSubtitle: string;
+  rhythmItems: string[];
+  finalNote: string;
 }
 
 export interface Translations {
   hero: HeroTranslations;
+  strengths: StrengthsTranslations;
+  techStack: TechStackTranslations;
+  lookingFor: LookingForTranslations;
   manifesto: ManifestoTranslations;
   metrics: MetricsTranslations;
   timeline: TimelineTranslations;

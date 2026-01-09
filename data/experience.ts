@@ -3,7 +3,7 @@ export interface ExperienceEntry {
   title: { en: string; ko: string };
   company?: string;
   description: { en: string; ko: string };
-  type: "founder" | "project" | "milestone";
+  type: "founder" | "project" | "milestone" | "work";
 }
 
 export const experiences: ExperienceEntry[] = [
@@ -22,8 +22,8 @@ export const experiences: ExperienceEntry[] = [
     title: { en: "CHAGOK", ko: "CHAGOK" },
     company: "Founder",
     description: {
-      en: "AI paralegal for divorce litigation with multimodal evidence analysis",
-      ko: "이혼 소송 AI 파라리걸, 멀티모달 증거 분석",
+      en: "AI paralegal for divorce litigation with multimodal evidence analysis (~95% complete)",
+      ko: "이혼 소송 AI 파라리걸, 멀티모달 증거 분석 (~95% 완료)",
     },
     type: "founder",
   },
@@ -38,6 +38,16 @@ export const experiences: ExperienceEntry[] = [
     type: "founder",
   },
   {
+    year: "2023-2026",
+    title: { en: "Ravi International", ko: "Ravi International" },
+    company: "Founder / Operator",
+    description: {
+      en: "Marketing automation, review platforms, seafood e-commerce, cross-border tools",
+      ko: "마케팅 자동화, 리뷰 플랫폼, 수산물 이커머스, 크로스보더 도구",
+    },
+    type: "founder",
+  },
+  {
     year: "2023",
     title: { en: "AI Product Development", ko: "AI 제품 개발" },
     description: {
@@ -48,12 +58,23 @@ export const experiences: ExperienceEntry[] = [
   },
   {
     year: "2022",
-    title: { en: "Full-Stack Development", ko: "풀스택 개발" },
+    title: { en: "GA Field Experience", ko: "GA 영업 현장 경험" },
+    company: "Ads Financial Service",
     description: {
-      en: "Enterprise backend systems, API development, infrastructure",
-      ko: "엔터프라이즈 백엔드 시스템, API 개발, 인프라 구축",
+      en: "Studied distribution mechanics, incentive structures, sales psychology in insurance GA",
+      ko: "보험 GA에서 유통 구조, 인센티브 체계, 영업 심리 학습",
     },
-    type: "project",
+    type: "work",
+  },
+  {
+    year: "2021-2023",
+    title: { en: "Zetalux Systems", ko: "Zetalux Systems" },
+    company: "Software Engineer",
+    description: {
+      en: "Hadoop data pipelines, YOLO wildfire detection, Android GIS (MapJoy), Kafka streaming",
+      ko: "Hadoop 데이터 파이프라인, YOLO 산불 감지, Android GIS (MapJoy), Kafka 스트리밍",
+    },
+    type: "work",
   },
   {
     year: "2020",

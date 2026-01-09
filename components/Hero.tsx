@@ -22,12 +22,15 @@ export default function Hero() {
             <span className="inline-block px-3 py-1 rounded-full bg-green-50 text-[#00cc00] text-xs font-mono font-bold mb-4">
               {t.hero.badge}
             </span>
-            <h1 className="text-display mb-4 tracking-tight text-[#171a20]">
+            <h1 className="text-display mb-2 tracking-tight text-[#171a20]">
               {t.hero.title}<br />
               <span className="text-[#00ff00]">{t.hero.titleAccent}</span>
             </h1>
-            <p className="text-base md:text-lg text-[#3e3e3e] font-normal leading-[1.7] max-w-lg">
+            <p className="text-sm md:text-base text-[#5c5e62] font-medium mb-4">
               {t.hero.subtitle}
+            </p>
+            <p className="text-base md:text-lg text-[#3e3e3e] font-normal leading-[1.7] max-w-xl">
+              {t.hero.executiveSummary}
             </p>
           </div>
 
@@ -40,7 +43,7 @@ export default function Hero() {
             <Link href="/projects" className="btn-system btn-primary">
               {t.hero.ctaPrimary}
             </Link>
-            <a href="mailto:parkdavid31@gmail.com" className="btn-system btn-ghost">
+            <a href="mailto:haspark912@kakao.com" className="btn-system btn-ghost">
               {t.hero.ctaSecondary}
             </a>
           </div>

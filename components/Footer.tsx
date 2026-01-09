@@ -5,7 +5,7 @@ import { useI18n } from "@/lib/i18n";
 
 const socials = [
   { label: "GitHub", href: "https://github.com/x-ordo" },
-  { label: "Email", href: "mailto:parkdavid31@gmail.com" },
+  { label: "Email", href: "mailto:haspark912@kakao.com" },
 ];
 
 export default function Footer() {
@@ -26,9 +26,9 @@ export default function Footer() {
           <div className="flex-1 max-w-md">
             <div className="flex items-center gap-3 mb-8">
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#171a20] text-[#00ff00] shadow-md">
-                <span className="text-sm font-black">JP</span>
+                <span className="text-sm font-black">HP</span>
               </div>
-              <span className="text-xl font-bold text-[#171a20] tracking-tight">Jed Park</span>
+              <span className="text-xl font-bold text-[#171a20] tracking-tight">Haseong Park</span>
             </div>
             <p className="text-base md:text-[17px] leading-[1.8] text-[#3e3e3e] mb-10 font-normal">
               {t.footer.bio}

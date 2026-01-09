@@ -23,9 +23,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jed Park | Technical Founder",
+  title: "Haseong Park | Sovereign Hacker",
   description:
-    "Technical Founder building AI-powered products. Full-stack engineer turned entrepreneur.",
+    "Sovereign Hacker · Software Engineer · Business-Oriented Builder. I identify leverage points and push them forward.",
 };
 
 export default function RootLayout({

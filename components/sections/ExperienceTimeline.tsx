@@ -15,6 +15,7 @@ function TimelineItem({ entry, isLast }: TimelineItemProps) {
     founder: "bg-[#00ff00]",
     project: "bg-[#3b82f6]",
     milestone: "bg-[#f59e0b]",
+    work: "bg-[#8b5cf6]",
   };
 
   return (

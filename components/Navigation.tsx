@@ -40,10 +40,10 @@ export default function Navigation() {
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-2">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#171a20] text-[#00ff00] transition-transform group-hover:scale-105 group-hover:bg-[#00ff00] group-hover:text-[#171a20]">
-            <span className="text-[12px] font-black">JP</span>
+            <span className="text-[12px] font-black">HP</span>
           </div>
           <span className="text-[15px] font-bold text-[#171a20] tracking-tight group-hover:text-[#00cc00] transition-colors">
-            Jed Park
+            Haseong Park
           </span>
         </Link>
 
