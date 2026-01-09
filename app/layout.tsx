@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import PixelDog from "../components/PixelDog";
 import DockNavigation from "../components/DockNavigation";
 import ClickSpark from "../components/ui/ClickSpark";
+import { I18nProvider } from "../lib/i18n";
 
 // TDS Style Sans-Serif for Readability
 const inter = Inter({
@@ -22,9 +23,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jed Park | Sovereign Hacker",
+  title: "Jed Park | Technical Founder",
   description:
-    "AI/ML 기반 솔루션을 설계하고 비즈니스 가치를 구현하는 풀스택 개발자.",
+    "Technical Founder building AI-powered products. Full-stack engineer turned entrepreneur.",
 };
 
 export default function RootLayout({
@@ -33,15 +34,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <body className={`${inter.variable} ${jetbrains.variable} font-sans antialiased bg-white`}>
-        <ClickSpark sparkColor="#00ff00" sparkSize={12} sparkRadius={25} sparkCount={10}>
-          <Navigation />
-          <main className="min-h-screen main-content">{children}</main>
-          <Footer />
-        </ClickSpark>
-        <PixelDog />
-        <DockNavigation />
+        <I18nProvider>
+          <ClickSpark sparkColor="#00ff00" sparkSize={12} sparkRadius={25} sparkCount={10}>
+            <Navigation />
+            <main className="min-h-screen main-content">{children}</main>
+            <Footer />
+          </ClickSpark>
+          <PixelDog />
+          <DockNavigation />
+        </I18nProvider>
       </body>
     </html>
   );
