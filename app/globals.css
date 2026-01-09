@@ -563,3 +563,84 @@ body {
     border-color: var(--border-strong);
   }
 }
+
+/* Print Styles */
+@media print {
+  /* Hide navigation, footer, and non-essential elements */
+  header[class*="fixed"],
+  nav,
+  footer,
+  .no-print,
+  .print-hide {
+    display: none !important;
+  }
+
+  /* Reset body styles for print */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Remove shadows and borders that don't print well */
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure links are readable */
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  /* Page break controls */
+  h1, h2, h3, h4 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+
+  section {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* Resume specific print styles */
+  .resume-page {
+    padding: 0 !important;
+    margin: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .resume-page .resume-container {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .resume-page .print-hide {
+    display: none !important;
+  }
+
+  /* Ensure accent colors print correctly */
+  .resume-page [class*="bg-[#171a20]"] {
+    background-color: #171a20 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .resume-page [class*="text-[#00ff00]"],
+  .resume-page [class*="text-[#00cc00]"] {
+    color: #00aa00 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Adjust margins for A4 */
+  @page {
+    size: A4;
+    margin: 15mm 12mm;
+  }
+}
