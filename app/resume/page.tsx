@@ -18,7 +18,7 @@ export default function ResumePage() {
                 박하성
               </h1>
               <p className="text-[18px] text-[#787774] mt-1 print:text-[12pt]">
-                소프트웨어 엔지니어 · 풀스택 (5년차)
+                Technical Leader · System Architect · Full-stack (5+ years)
               </p>
             </div>
           </div>
@@ -187,21 +187,89 @@ export default function ResumePage() {
         {/* Divider */}
         <hr className="border-t border-[#e9e9e7] my-10 print:my-6" />
 
+        {/* Engineering Leadership */}
+        <section className="mb-10 print:mb-6">
+          <h2 className="text-[14px] font-semibold text-[#9b9a97] uppercase tracking-wider mb-4 print:text-[9pt]">
+            Engineering Leadership
+          </h2>
+          <div className="grid gap-3">
+            {[
+              {
+                icon: "🏗️",
+                title: "Architecture-First Thinking",
+                detail: "코드 작성 전 시스템을 설계합니다. 모든 프로젝트는 문서화되고 정당화된 아키텍처 결정으로 시작합니다."
+              },
+              {
+                icon: "🔒",
+                title: "Security-Conscious Development",
+                detail: "CVE 모니터링, Dependabot 자동화, 보안 우선 코드 리뷰를 모든 프로젝트에 적용합니다."
+              },
+              {
+                icon: "📊",
+                title: "Risk Management Orientation",
+                detail: "Kelly Criterion 포지션 사이징부터 Merkle Tree 데이터 무결성까지 - 모든 도메인에 정량적 리스크 평가를 적용합니다."
+              },
+              {
+                icon: "🔧",
+                title: "DevOps Culture Advocate",
+                detail: "Conventional commits, semantic versioning, CI/CD 파이프라인, 포괄적 테스트 커버리지를 필수로 적용합니다."
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="flex gap-3 p-4 bg-[#f7f7f5] rounded-lg print:p-3">
+                <span className="text-xl flex-shrink-0">{item.icon}</span>
+                <div>
+                  <h3 className="font-semibold text-[#37352f] text-[15px] print:text-[10pt]">{item.title}</h3>
+                  <p className="text-[14px] text-[#787774] mt-1 print:text-[8pt]">{item.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Engineering Culture Evidence */}
+        <section className="mb-10 print:mb-6">
+          <h2 className="text-[14px] font-semibold text-[#9b9a97] uppercase tracking-wider mb-4 print:text-[9pt]">
+            Engineering Culture Evidence
+          </h2>
+          <div className="border border-[#e9e9e7] rounded-lg overflow-hidden">
+            {[
+              { metric: "PRs Merged (ArbQuant)", value: "40+", context: "Conventional Commit 표준" },
+              { metric: "Test Coverage (HwpBridge)", value: "80%+", context: "Rust Workspace + Integration Tests" },
+              { metric: "Issue Triage", value: "P0/P1/P2", context: "우선순위 기반 이슈 관리" },
+              { metric: "Security Posture", value: "Active", context: "CVE 패칭, Dependabot 자동화" },
+              { metric: "Documentation", value: "RUNBOOK + DR", context: "프로덕션 런북, 재해 복구 문서" },
+            ].map((row, idx, arr) => (
+              <div key={idx} className={`flex ${idx !== arr.length - 1 ? 'border-b border-[#e9e9e7]' : ''}`}>
+                <div className="w-44 sm:w-48 flex-shrink-0 px-4 py-3 bg-[#f7f7f5] text-[14px] font-medium text-[#37352f] print:text-[9pt] print:w-36">
+                  {row.metric}
+                </div>
+                <div className="flex-1 px-4 py-3 text-[14px] print:text-[9pt]">
+                  <span className="font-semibold text-[#2eaadc]">{row.value}</span>
+                  <span className="text-[#787774] ml-2">{row.context}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Divider */}
+        <hr className="border-t border-[#e9e9e7] my-10 print:my-6" />
+
         {/* Projects */}
         <section className="mb-10 print:mb-6">
           <h2 className="text-[14px] font-semibold text-[#9b9a97] uppercase tracking-wider mb-6 print:text-[9pt]">
-            Key Projects & 고민
+            Key Projects & Technical Decisions
           </h2>
 
           <div className="grid gap-4">
             {[
-              { icon: "⚖️", name: "이혼 전문 변호사용 AI 법률 보조 서비스 (CHAGOK)", problem: "법률 영역에서 '자동화'가 어디까지 허용되는가", solution: "판단을 대신하지 않고, 정리·구조화·검색에 집중하는 방향으로 설계" },
-              { icon: "📝", name: "콘텐츠 자동 생성 시스템", problem: "생성 품질보다 중요한 것은 일관성과 운영 비용", solution: "단일 고성능 모델보다, 역할 분리된 멀티 에이전트 구조 채택" },
-              { icon: "⛳", name: "골프 레슨 플랫폼", problem: "기능을 늘릴수록 강사와 수강생 모두 피로해짐", solution: "예약·결제·피드백의 최소 흐름만 남기고 나머지는 제거" },
-              { icon: "📺", name: "디지털 사이니지 스트리밍 시스템", problem: "이론적으로 이상적인 구조 vs 실제 운영 인력의 한계", solution: "장애 대응과 로그 추적이 쉬운 구조를 우선 선택" },
-              { icon: "📊", name: "대용량 데이터 처리 파이프라인", problem: "'확장 가능성'이라는 추상적 목표의 함정", solution: "현재 데이터 규모와 팀 역량에 맞춘 현실적 설계" },
-              { icon: "🖥️", name: "Kotlin + Golang Windows 마케팅·커머스 앱", problem: "웹 불가 환경에서 로컬 자원 접근·백그라운드 상주 필요", solution: "IPC 기반 Kotlin↔Golang 분리 구조로 '웹보다 빠르고, 서버보다 단순한' 설계" },
-              { icon: "🤖", name: "Windows 온디바이스 LLM 금융 교육 챗봇 (Ollama)", problem: "GPU 없이 클라우드 의존 없는 LLM 서비스화", solution: "Ollama + watchdog 구조, 응답 톤 제어로 외부 API 의존도 0 달성" },
+              { icon: "💹", name: "ArbQuant - 암호화폐 차익거래 시스템", problem: "개인 트레이딩에서 기관급 리스크 관리 구현 가능한가?", solution: "Kelly Criterion + Almgren-Chriss + Walk-Forward 백테스트로 정량적 리스크 관리" },
+              { icon: "🛡️", name: "Reporty (Project Iron Dome) - 직장 괴롭힘 리스크 관리", problem: "양측 모두 기록 조작 동기가 있을 때 증거 무결성 보장", solution: "Merkle Tree + SHA-256 해시 체인으로 암호학적 변조 탐지" },
+              { icon: "🦀", name: "HwpBridge - Rust HWP 파서", problem: "한국 정부/기업 문서가 AI 도구에서 접근 불가", solution: "MCP 서버 + 80%+ 테스트 커버리지 + Semantic Versioning으로 프로덕션급 구현" },
+              { icon: "⛳", name: "Ansim Golf - 골프장 자동화", problem: "시니어 운영자가 복잡한 UI를 탐색할 수 없음", solution: "시니어 친화적 UI + Edge 아키텍처로 정산 수작업 80% 감소" },
+              { icon: "🔮", name: "Soul Lab - 토스 운세 미니앱", problem: "소비자 앱에도 프로덕션급 운영이 필요", solution: "RUNBOOK + DISASTER_RECOVERY 문서화, 1,260개 결정론적 템플릿" },
+              { icon: "⚖️", name: "CHAGOK - AI 법률 보조 서비스", problem: "법률 영역에서 '자동화'가 어디까지 허용되는가", solution: "Human-in-the-loop + 이중 RAG로 할루시네이션 최소화" },
+              { icon: "📝", name: "콘텐츠 자동 생성 시스템", problem: "생성 품질보다 중요한 것은 일관성과 운영 비용", solution: "역할 분리된 멀티 에이전트 구조로 11개+ 플랫폼 통합" },
             ].map((project, idx) => (
               <div key={idx} className="p-4 bg-[#f7f7f5] rounded-lg hover:bg-[#f1f1ef] transition-colors print:p-3">
                 <div className="flex items-start gap-3">
@@ -235,20 +303,24 @@ export default function ResumePage() {
         {/* Divider */}
         <hr className="border-t border-[#e9e9e7] my-10 print:my-6" />
 
-        {/* Skills - Table style */}
+        {/* Skills - CTO-Oriented Table */}
         <section className="mb-10 print:mb-6">
           <h2 className="text-[14px] font-semibold text-[#9b9a97] uppercase tracking-wider mb-4 print:text-[9pt]">
-            Skills
+            Technical Competencies
           </h2>
 
           <div className="border border-[#e9e9e7] rounded-lg overflow-hidden">
             {[
-              { category: "Backend / Infra", skills: "Python, FastAPI, Go, Node.js, AWS, Linux, Kafka" },
-              { category: "Frontend / Mobile", skills: "React, Next.js, TypeScript, Flutter, Kotlin, Android" },
-              { category: "AI / LLM", skills: "LLM 업무 자동화, Function Calling, LoRA/SFT, 멀티 에이전트" },
-            ].map((row, idx) => (
-              <div key={idx} className={`flex ${idx !== 2 ? 'border-b border-[#e9e9e7]' : ''}`}>
-                <div className="w-36 sm:w-44 flex-shrink-0 px-4 py-3 bg-[#f7f7f5] text-[14px] font-medium text-[#37352f] print:text-[9pt] print:w-32">
+              { category: "System Architecture", skills: "Event-driven (NATS JetStream), CQRS, Merkle Trees, Multi-cloud failover" },
+              { category: "Backend / Infra", skills: "Go, Rust, Python/FastAPI, Node.js, AWS, Cloudflare Workers, Fly.io" },
+              { category: "Frontend / Mobile", skills: "Next.js, React, TypeScript, Flutter, Kotlin, Android" },
+              { category: "Data & Analytics", skills: "TimescaleDB, PostgreSQL, Qdrant, Redis, Walk-Forward Backtest" },
+              { category: "AI / LLM", skills: "LangChain, RAG, MCP Server, Multi-Agent, PII Detection" },
+              { category: "DevOps & Security", skills: "CI/CD, Dependabot, CVE 모니터링, Semantic Versioning, 80%+ Coverage" },
+              { category: "Risk Management", skills: "Kelly Criterion, Almgren-Chriss, Z-Score Signals, Correlation Risk" },
+            ].map((row, idx, arr) => (
+              <div key={idx} className={`flex ${idx !== arr.length - 1 ? 'border-b border-[#e9e9e7]' : ''}`}>
+                <div className="w-40 sm:w-44 flex-shrink-0 px-4 py-3 bg-[#f7f7f5] text-[14px] font-medium text-[#37352f] print:text-[9pt] print:w-32">
                   {row.category}
                 </div>
                 <div className="flex-1 px-4 py-3 text-[14px] text-[#37352f] print:text-[9pt]">
