@@ -20,10 +20,34 @@ export default function AboutPage() {
             <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep">
               {t.about.title}
             </h1>
+            <p className="text-xs text-[#00aa00] font-mono font-bold break-keep mt-1">
+              {t.about.titleDescription}
+            </p>
             <p className="text-sm md:text-base text-[#3e3e3e] font-bold break-keep mt-2">
               {t.about.subtitle}
             </p>
           </div>
+
+          {/* Key Metrics Grid */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {t.about.keyMetrics.map((metric, idx) => (
+              <div
+                key={idx}
+                className="p-4 rounded-lg bg-[#171a20] border-2 border-black shadow-[2px_2px_0_#00ff00] text-center"
+              >
+                <span className="text-2xl md:text-3xl font-black text-[#00ff00] block">
+                  {metric.value}
+                </span>
+                <span className="text-xs font-bold text-white block mt-1">
+                  {metric.label}
+                </span>
+                <span className="text-[10px] text-gray-400 block">
+                  {metric.detail}
+                </span>
+              </div>
+            ))}
+          </div>
+
           <p className="text-xs md:text-sm text-[#5c5e62] max-w-3xl break-keep text-justify">
             {t.about.executiveSummary}
           </p>

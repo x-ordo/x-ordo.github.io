@@ -144,8 +144,15 @@ const en: Translations = {
   about: {
     badge: "Profile",
     title: "Sovereign Hacker",
-    subtitle: "Software Engineer · Business-Oriented Builder",
-    executiveSummary: "I am not a developer who only writes code. If I join your team, I identify leverage points—technical, operational, and market-facing—and push them forward. I am comfortable taking responsibility beyond my title, and I expect the same level of seriousness from my environment. I learned that winning markets is less about perfect products, and more about securing distribution, attention, and initiative early. I operate as a sovereign hacker: someone who understands systems end-to-end—from human behavior and organizational dynamics down to code, APIs, and packets—and translates that understanding into real execution, users, and revenue.",
+    subtitle: "Full-Stack Engineer · 3 Years Engineering + 2 Years Startup Ops",
+    titleDescription: "An engineer who understands systems end-to-end and translates that into execution",
+    executiveSummary: "2 government projects delivered, 4 ventures founded/operated, 39 products shipped. A Full-Stack Engineer with end-to-end experience from technical implementation to business operations. I don't just write code—I identify leverage points across technical, operational, and market dimensions, and execute.",
+    keyMetrics: [
+      { label: "Engineering", value: "3 yrs", detail: "Full-Stack Dev" },
+      { label: "Startup Ops", value: "2 yrs", detail: "4 Ventures" },
+      { label: "Projects", value: "39+", detail: "Design→Ship→Operate" },
+      { label: "Gov Projects", value: "2", detail: "Delivered" },
+    ],
     capabilitiesTitle: "Core Capabilities",
     toolsetTitle: "Tech Stack",
     philosophyTitle: "Engineering Philosophy",
@@ -207,7 +214,7 @@ const en: Translations = {
       "Execution until close",
       "Reflection or personal projects at night",
     ],
-    finalNote: "I am not searching for safety. I am searching for environments where initiative is allowed, conflict is productive, and outcomes matter. Even without a team, I assign myself work and execute. With a team, I shape the environment to fit the mission. Technology is pain and joy to me—and it is only complete when exposed to real evaluation. I build. I sell. I adapt. I finish.",
+    finalNote: "I create value in early-stage 0→1 builds, growth-phase tech leadership, and complex system design. If you need an engineer who bridges technology and business, let's connect.",
   },
 };
 

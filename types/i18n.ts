@@ -117,11 +117,19 @@ export interface FailureLesson {
   lesson: string;
 }
 
+export interface KeyMetric {
+  label: string;
+  value: string;
+  detail: string;
+}
+
 export interface AboutPageTranslations {
   badge: string;
   title: string;
   subtitle: string;
+  titleDescription: string;
   executiveSummary: string;
+  keyMetrics: KeyMetric[];
   capabilitiesTitle: string;
   toolsetTitle: string;
   philosophyTitle: string;
