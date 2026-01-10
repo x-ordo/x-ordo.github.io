@@ -4,6 +4,7 @@ import Link from "next/link";
 import Hero from "../components/Hero";
 import Manifesto from "../components/Manifesto";
 import ProjectCard from "../components/ProjectCard";
+import GitHubStats from "../components/sections/GitHubStats";
 import { featuredProjects } from "../data/projects";
 import { useI18n } from "../lib/i18n";
 
@@ -15,6 +16,9 @@ export default function Home() {
       <Hero />
 
       <Manifesto />
+
+      {/* GitHub Stats Section */}
+      <GitHubStats />
 
       {/* Featured Projects Section */}
       <section className="py-12 md:py-16 bg-[#f9fafb]">
