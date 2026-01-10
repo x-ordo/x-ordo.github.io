@@ -1,68 +1,58 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useI18n } from "@/lib/i18n";
 import { metrics } from "@/data/metrics";
 
 function AnimatedNumber({ value, suffix = "" }: { value: number; suffix?: string }) {
-  const [count, setCount] = useState(value); // SSR용 초기값
-  const [isClient, setIsClient] = useState(false);
-  const hasAnimatedRef = useRef(false);
+  // 항상 실제 값으로 시작 (SSR과 hydration 모두에서)
+  const [count, setCount] = useState(value);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
 
-  const animate = useCallback(() => {
-    if (hasAnimatedRef.current) return;
-    hasAnimatedRef.current = true;
-
-    let start = 0;
-    const duration = 1200;
-    const increment = value / (duration / 16);
-
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= value) {
-        setCount(value);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(start));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [value]);
-
   useEffect(() => {
-    setIsClient(true);
-    setCount(0); // 클라이언트에서 0으로 시작
+    // 이미 애니메이션했으면 스킵
+    if (hasAnimated) return;
 
-    // 짧은 딜레이 후 IntersectionObserver 설정
-    const timeout = setTimeout(() => {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            animate();
-            observer.disconnect();
-          }
-        },
-        { threshold: 0.1 }
-      );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          // 뷰포트에 들어오면 애니메이션 시작
+          setHasAnimated(true);
 
-      if (ref.current) {
-        observer.observe(ref.current);
-      }
+          // 잠시 0으로 리셋 후 애니메이션
+          setCount(0);
 
-      return () => observer.disconnect();
-    }, 100);
+          let start = 0;
+          const duration = 1200;
+          const increment = value / (duration / 16);
 
-    return () => clearTimeout(timeout);
-  }, [animate]);
+          const timer = setInterval(() => {
+            start += increment;
+            if (start >= value) {
+              setCount(value);
+              clearInterval(timer);
+            } else {
+              setCount(Math.floor(start));
+            }
+          }, 16);
 
-  // SSR에서는 실제 값 표시, 클라이언트에서는 애니메이션 값 표시
-  const displayValue = isClient ? count : value;
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => observer.disconnect();
+  }, [value, hasAnimated]);
 
   return (
     <span ref={ref} className="tabular-nums">
-      {displayValue}{suffix}
+      {count}{suffix}
     </span>
   );
 }
