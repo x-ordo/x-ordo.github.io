@@ -87,13 +87,13 @@
   --space-4xl: 6rem;     /* 96px */
 
   /* Semantic Spacing Tokens */
-  --space-section: 4rem;        /* 64px - between sections (mobile) */
-  --space-section-inner: 2rem;  /* 32px - inside section padding */
-  --space-component: 2rem;      /* 32px - between components */
-  --space-element: 1rem;        /* 16px - between elements */
-  --space-text: 1rem;           /* 16px - between text blocks */
+  --space-section: 2rem;        /* 32px - between sections (mobile) */
+  --space-section-inner: 1rem;  /* 16px - inside section padding */
+  --space-component: 1rem;      /* 16px - between components */
+  --space-element: 0.5rem;      /* 8px - between elements */
+  --space-text: 0.5rem;         /* 8px - between text blocks */
   --space-button-gap: 0.75rem;  /* 12px - gap between buttons */
-  --space-badge-mb: 0.75rem;    /* 12px - badge margin bottom */
+  --space-badge-mb: 1.5rem;     /* 24px - badge margin bottom */
   --space-card-padding: 1.25rem; /* 20px - card internal padding */
 
   /* Typography Tokens - Reduced sizes */
@@ -119,25 +119,26 @@
   --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Responsive Spacing - Desktop */
+/* Responsive Spacing - Tablet */
 @media (min-width: 768px) {
   :root {
-    --space-section: 5rem;        /* 80px */
-    --space-section-inner: 2.5rem; /* 40px */
-    --space-component: 2.5rem;    /* 40px */
-    --space-element: 1.25rem;     /* 20px */
-    --space-text: 1.25rem;        /* 20px */
+    --space-section: 2.5rem;      /* 40px */
+    --space-section-inner: 1.25rem; /* 20px */
+    --space-component: 1.25rem;   /* 20px */
+    --space-element: 0.75rem;     /* 12px */
+    --space-text: 0.75rem;        /* 12px */
     --space-button-gap: 1rem;     /* 16px */
-    --space-badge-mb: 1rem;       /* 16px */
+    --space-badge-mb: 1.75rem;    /* 28px */
     --space-card-padding: 1.5rem; /* 24px */
   }
 }
 
+/* Responsive Spacing - Desktop */
 @media (min-width: 1024px) {
   :root {
-    --space-section: 6rem;        /* 96px */
-    --space-section-inner: 3rem;  /* 48px */
-    --space-component: 3rem;      /* 48px */
+    --space-section: 3rem;        /* 48px */
+    --space-section-inner: 1.5rem; /* 24px */
+    --space-component: 1.5rem;    /* 24px */
   }
 }
 
@@ -290,6 +291,7 @@ body {
     line-height: 1.75;
     color: var(--foreground-secondary);
     word-break: keep-all;
+    text-align: justify;
   }
 
   @media (min-width: 768px) {
@@ -304,6 +306,7 @@ body {
     line-height: 1.8;
     color: var(--foreground-secondary);
     word-break: keep-all;
+    text-align: justify;
   }
 
   @media (min-width: 768px) {
@@ -668,19 +671,16 @@ body {
     font-size: 0.6875rem;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
     color: var(--accent-dark);
-    background: rgba(0, 255, 0, 0.1);
-    border: 1.5px solid rgba(0, 204, 0, 0.3);
-    border-radius: 0.375rem;
-    padding: 0.375rem 0.75rem;
-    margin-bottom: var(--space-badge-mb);
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--accent-dark);
+    margin-bottom: var(--space-badge-mb) !important;
   }
 
   @media (min-width: 768px) {
     .ds-badge {
       font-size: 0.75rem;
-      padding: 0.5rem 1rem;
     }
   }
 

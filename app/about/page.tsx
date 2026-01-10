@@ -8,62 +8,62 @@ export default function AboutPage() {
   const { t } = useI18n();
 
   return (
-    <div className="bg-white min-h-screen pb-16">
+    <div className="bg-white min-h-screen">
       <div className="max-w-[1000px] mx-auto px-4 md:px-6">
 
         {/* Header */}
-        <div className="py-8 md:py-12 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             {t.about.badge}
           </span>
-          <h1 className="heading-section text-[#171a20] keep-all">
+          <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
             {t.about.title}
           </h1>
-          <p className="text-sm md:text-base text-[#3e3e3e] font-bold mb-3 keep-all">
+          <p className="text-sm md:text-base text-[#3e3e3e] font-bold mb-3 break-keep mt-2">
             {t.about.subtitle}
           </p>
-          <p className="text-xs md:text-sm text-[#5c5e62] max-w-3xl keep-all">
+          <p className="text-xs md:text-sm text-[#5c5e62] max-w-3xl break-keep text-justify">
             {t.about.executiveSummary}
           </p>
-        </div>
+        </section>
 
         {/* Core Strengths */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             {t.strengths.badge}
           </span>
-          <h2 className="heading-section text-[#171a20] keep-all">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
             {t.strengths.title}
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 ds-mt-component">
             {t.strengths.items.map((item, idx) => (
               <div
                 key={idx}
                 className="p-4 rounded-lg bg-[#fafafa] border border-transparent hover:border-[#00cc00] group cursor-default transition-all"
               >
-                <h3 className="text-sm font-black text-[#171a20] mb-1.5 group-hover:text-[#00cc00] transition-colors keep-all">
+                <h3 className="text-sm font-black text-[#171a20] mb-1.5 group-hover:text-[#00cc00] transition-colors break-keep">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[#5c5e62] keep-all leading-relaxed">
+                <p className="text-xs text-[#5c5e62] break-keep leading-relaxed text-justify">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Tech Stack */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             {t.techStack.badge}
           </span>
-          <h2 className="heading-section text-[#171a20] keep-all">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
             {t.techStack.title}
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-6 ds-mt-component">
             {t.techStack.categories.map((category, idx) => (
               <div key={idx}>
-                <h3 className="text-xs font-black text-[#171a20] mb-3 pb-2 border-b-2 border-black/10 keep-all">
+                <h3 className="text-xs font-black text-[#171a20] mb-3 pb-2 border-b-2 border-black/10 break-keep">
                   {category.category}
                 </h3>
                 <div className="flex flex-wrap gap-1.5">
@@ -79,120 +79,120 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* What I'm Looking For */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             {t.lookingFor.badge}
           </span>
-          <h2 className="heading-section text-[#171a20] !mb-2 keep-all">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
             {t.lookingFor.title}
           </h2>
-          <p className="text-xs md:text-sm text-[#5c5e62] mb-4 keep-all">{t.lookingFor.subtitle}</p>
-          <div className="grid md:grid-cols-3 gap-3">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-2 text-justify">{t.lookingFor.subtitle}</p>
+          <div className="grid md:grid-cols-3 gap-3 ds-mt-component">
             {t.lookingFor.items.map((item, idx) => (
               <div
                 key={idx}
                 className="group p-4 rounded-lg border-2 border-[#171a20] bg-white hover:bg-[#00ff00] hover:border-[#00ff00] shadow-[2px_2px_0_#000] hover:shadow-[3px_3px_0_#000] transition-all cursor-default"
               >
-                <h3 className="text-sm font-black text-[#171a20] mb-1.5 keep-all">
+                <h3 className="text-sm font-black text-[#171a20] mb-1.5 break-keep">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[#5c5e62] group-hover:text-black/70 keep-all leading-relaxed">
+                <p className="text-xs text-[#5c5e62] group-hover:text-black/70 break-keep leading-relaxed text-justify">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Experience Timeline */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10">
           <ExperienceTimeline showTitle={true} />
-        </div>
+        </section>
 
         {/* Engineering Philosophy */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             Engineering Philosophy
           </span>
-          <p className="text-xs md:text-sm text-[#5c5e62] mb-4 keep-all">{t.about.philosophySubtitle}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-3 text-justify">{t.about.philosophySubtitle}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 ds-mt-component">
             {t.about.philosophyItems.map((item, idx) => (
               <div
                 key={idx}
                 className="group p-4 rounded-lg bg-[#171a20] hover:bg-black border-2 border-black shadow-[2px_2px_0_#00ff00] hover:shadow-[3px_3px_0_#00ff00] transition-all cursor-default"
               >
-                <h3 className="text-xs font-black text-[#00ff00] mb-1.5 keep-all">
+                <h3 className="text-xs font-black text-[#00ff00] mb-1.5 break-keep">
                   {item.principle}
                 </h3>
-                <p className="text-xs text-gray-300 keep-all leading-relaxed">
+                <p className="text-xs text-gray-300 break-keep leading-relaxed text-justify">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Failure & Verification */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             {t.about.failureTitle}
           </span>
-          <p className="text-xs md:text-sm text-[#5c5e62] mb-4 keep-all">{t.about.failureSubtitle}</p>
-          <div className="space-y-4 mb-6">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-3 text-justify">{t.about.failureSubtitle}</p>
+          <div className="space-y-4 ds-mt-component">
             {t.about.failureLessons.map((lesson, idx) => (
               <div
                 key={idx}
                 className="group p-4 rounded-lg bg-[#fafafa] border-l-4 border-[#f59e0b] hover:bg-white hover:shadow-md transition-all cursor-default"
               >
-                <h3 className="text-sm font-black text-[#171a20] mb-1.5 keep-all">
+                <h3 className="text-sm font-black text-[#171a20] mb-1.5 break-keep">
                   {lesson.title}
                 </h3>
-                <p className="text-xs text-[#5c5e62] mb-2 keep-all leading-relaxed">
+                <p className="text-xs text-[#5c5e62] mb-2 break-keep leading-relaxed text-justify">
                   {lesson.story}
                 </p>
-                <p className="text-xs font-bold text-[#f59e0b] keep-all">
+                <p className="text-xs font-bold text-[#f59e0b] break-keep">
                   {lesson.lesson}
                 </p>
               </div>
             ))}
           </div>
-          <div className="p-5 rounded-lg bg-[#171a20] border-2 border-black shadow-[3px_3px_0_#00ff00]">
-            <p className="text-sm font-black text-[#00ff00] keep-all">
+          <div className="p-5 rounded-lg bg-[#171a20] border-2 border-black shadow-[3px_3px_0_#00ff00] ds-mt-component">
+            <p className="text-sm font-black text-[#00ff00] break-keep">
               &quot;{t.about.failureRule}&quot;
             </p>
           </div>
-        </div>
+        </section>
 
         {/* Leadership & Conflict */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             {t.about.leadershipTitle}
           </span>
-          <p className="text-xs md:text-sm text-[#5c5e62] mb-4 keep-all">{t.about.leadershipSubtitle}</p>
-          <div className="space-y-2">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-3">{t.about.leadershipSubtitle}</p>
+          <div className="space-y-2 ds-mt-component">
             {t.about.leadershipItems.map((item, idx) => (
               <div
                 key={idx}
                 className="group p-3 rounded-lg bg-[#fafafa] border-l-4 border-[#3b82f6] hover:bg-white hover:shadow-md transition-all cursor-default"
               >
-                <p className="text-xs text-[#3e3e3e] font-medium keep-all leading-relaxed">
+                <p className="text-xs text-[#3e3e3e] font-medium break-keep leading-relaxed">
                   {item}
                 </p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Operating Rhythm */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             {t.about.rhythmTitle}
           </span>
-          <p className="text-xs md:text-sm text-[#5c5e62] mb-4 keep-all">{t.about.rhythmSubtitle}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-3">{t.about.rhythmSubtitle}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 ds-mt-component">
             {t.about.rhythmItems.map((item, idx) => (
               <div
                 key={idx}
@@ -201,23 +201,23 @@ export default function AboutPage() {
                 <span className="text-xs font-mono font-black text-[#00cc00] block mb-1">
                   {String(idx + 1).padStart(2, '0')}
                 </span>
-                <p className="text-xs text-[#3e3e3e] font-medium keep-all">
+                <p className="text-xs text-[#3e3e3e] font-medium break-keep">
                   {item}
                 </p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Hiring Info */}
-        <div className="py-8 md:py-10 border-b-2 border-black/10">
-          <span className="badge-section">
+        <section className="ds-section-padded border-b-2 border-black/10">
+          <span className="ds-badge">
             채용 관련 정보
           </span>
-          <h2 className="heading-section text-[#171a20] keep-all">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
             Hiring Info
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 ds-mt-component">
             {[
               { label: "희망 포지션", value: "Senior Full-Stack Engineer" },
               { label: "근무 형태", value: "정규직 · 원격 가능" },
@@ -231,39 +231,41 @@ export default function AboutPage() {
                 <span className="text-xs font-mono font-bold text-[#9ca3af] block mb-1.5">
                   {item.label}
                 </span>
-                <p className="text-sm font-black text-[#171a20] keep-all">
+                <p className="text-sm font-black text-[#171a20] break-keep">
                   {item.value}
                 </p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
         {/* Final Note */}
-        <div className="py-8 md:py-10 bg-[#171a20] rounded-xl mt-10 -mx-4 md:-mx-6 px-6 md:px-8 border-2 border-black shadow-[4px_4px_0_#00ff00]">
-          <div className="max-w-2xl mx-auto text-center">
-            <span className="badge-section !mb-4">
-              Final Note
-            </span>
-            <p className="text-sm text-white font-medium mb-6 keep-all">
-              {t.about.finalNote}
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <a
-                href="mailto:haspark912@kakao.com"
-                className="btn-senior btn-senior-primary"
-              >
-                {t.hero.ctaSecondary}
-              </a>
-              <Link
-                href="/resume"
-                className="btn-senior bg-white text-black border-2 border-black shadow-[2px_2px_0_#00ff00] hover:shadow-[3px_3px_0_#00ff00] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-[1px_1px_0_#00ff00] transition-all"
-              >
-                View Resume
-              </Link>
+        <section className="ds-section-padded">
+          <div className="bg-[#171a20] rounded-xl px-6 md:px-8 py-8 md:py-10 border-2 border-black shadow-[4px_4px_0_#00ff00]">
+            <div className="max-w-2xl mx-auto text-center">
+              <span className="ds-badge">
+                Final Note
+              </span>
+              <p className="text-sm text-white font-medium mt-4 break-keep">
+                {t.about.finalNote}
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-3 ds-mt-component">
+                <a
+                  href="mailto:haspark912@kakao.com"
+                  className="ds-button ds-button-primary"
+                >
+                  {t.hero.ctaSecondary}
+                </a>
+                <Link
+                  href="/resume"
+                  className="ds-button ds-button-outline bg-white"
+                >
+                  View Resume
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </section>
 
       </div>
     </div>

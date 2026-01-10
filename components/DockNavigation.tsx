@@ -59,13 +59,13 @@ export default function DockNavigation() {
   ];
 
   return (
-    <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 hidden md:block">
-      <div className="bg-white border-2 border-black rounded-2xl px-2 pb-2 pt-2 shadow-[4px_4px_0_#000]">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden md:block">
+      <div className="bg-white border-2 border-black rounded-xl px-1.5 py-1.5 shadow-[3px_3px_0_#000]">
         <Dock
           items={navItems}
-          panelHeight={52}
-          baseItemSize={40}
-          magnification={48}
+          panelHeight={40}
+          baseItemSize={32}
+          magnification={38}
         />
       </div>
     </div>

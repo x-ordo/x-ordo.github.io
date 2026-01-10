@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
 
           {/* Left: Main Content */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="lg:col-span-7 flex flex-col justify-center gap-6">
             <div className="space-y-4">
               <span className="ds-badge">
                 {t.hero.badge}
@@ -41,9 +41,7 @@ export default function Hero() {
             </div>
 
             {/* Metrics Dashboard */}
-            <div className="ds-mt-component">
-              <MetricsDashboard />
-            </div>
+            <MetricsDashboard />
 
             {/* CTA Buttons */}
             <div className="ds-button-group-lg">

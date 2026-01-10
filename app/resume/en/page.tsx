@@ -26,11 +26,11 @@ const topStacks = Object.entries(stackCounts)
 
 export default function ResumeEnPage() {
   return (
-    <div className="resume-en bg-[#0a0a0a] min-h-screen pt-24 pb-20 print:pt-8 print:pb-0 print:bg-white">
+    <div className="resume-en bg-[#0a0a0a] min-h-screen ds-py-section print:pt-8 print:pb-0 print:bg-white">
       <div className="max-w-[900px] mx-auto px-6 sm:px-10 print:px-8 print:max-w-none">
 
         {/* Terminal Header */}
-        <header className="mb-12 print:mb-8">
+        <header className="ds-mt-section print:mt-8">
           {/* Terminal Window Chrome */}
           <div className="bg-[#1a1a2e] rounded-t-lg px-4 py-2 flex items-center gap-2 print:hidden">
             <div className="flex gap-1.5">
@@ -71,7 +71,7 @@ export default function ResumeEnPage() {
             </div>
 
             {/* Contact as Terminal Commands */}
-            <div className="mt-6 font-mono text-sm space-y-1 print:text-[9pt]">
+            <div className="ds-mt-component font-mono text-sm space-y-1 print:text-[9pt]">
               <div className="text-[#5c5e62]">
                 <span className="text-[#00cc00]">$</span> echo <span className="text-[#e0e0e0] print:text-[#171a20]">&quot;haspark912@kakao.com&quot;</span>
               </div>
@@ -86,11 +86,11 @@ export default function ResumeEnPage() {
         </header>
 
         {/* Stats Section */}
-        <section className="mb-10 print:mb-6">
-          <h2 className="font-mono text-sm text-[#5c5e62] mb-4 print:text-[9pt]">
+        <section className="ds-section-padded print:pt-4 print:pb-4">
+          <h2 className="font-mono text-sm text-[#5c5e62] print:text-[9pt]">
             <span className="text-[#00cc00]">//</span> STATS
           </h2>
-          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 font-mono text-sm print:bg-gray-50 print:border-gray-200 print:text-[9pt]">
+          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 font-mono text-sm print:bg-gray-50 print:border-gray-200 print:text-[9pt] ds-mt-element">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
               {[
                 { label: "projects_completed", value: `${stats.totalProjects}+` },
@@ -111,11 +111,11 @@ export default function ResumeEnPage() {
         </section>
 
         {/* Summary */}
-        <section className="mb-10 print:mb-6">
-          <h2 className="font-mono text-sm text-[#5c5e62] mb-4 print:text-[9pt]">
+        <section className="ds-section-padded print:pt-4 print:pb-4">
+          <h2 className="font-mono text-sm text-[#5c5e62] print:text-[9pt]">
             <span className="text-[#00cc00]">//</span> SUMMARY
           </h2>
-          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 font-mono text-sm leading-relaxed print:bg-gray-50 print:border-gray-200 print:text-[9pt]">
+          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 font-mono text-sm leading-relaxed print:bg-gray-50 print:border-gray-200 print:text-[9pt] ds-mt-element">
             <div className="space-y-2 text-[#e0e0e0] print:text-[#171a20]">
               <div className="flex gap-2">
                 <span className="text-[#787774] flex-shrink-0">├─</span>
@@ -138,19 +138,19 @@ export default function ResumeEnPage() {
         </section>
 
         {/* Experience */}
-        <section className="mb-10 print:mb-6">
-          <h2 className="font-mono text-sm text-[#5c5e62] mb-4 print:text-[9pt]">
+        <section className="ds-section-padded print:pt-4 print:pb-4">
+          <h2 className="font-mono text-sm text-[#5c5e62] print:text-[9pt]">
             <span className="text-[#00cc00]">//</span> EXPERIENCE
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-6 ds-mt-element">
             {/* Zetalux Systems */}
             <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 print:bg-gray-50 print:border-gray-200">
               <div className="font-mono">
                 <div className="flex flex-wrap items-baseline gap-2 mb-3">
                   <span className="text-[#00cc00] text-sm">[2021.11-2023.05]</span>
                   <span className="text-[#e0e0e0] font-bold print:text-[#171a20]">Zetalux Systems Co., Ltd.</span>
-                  <span className="text-xs px-2 py-0.5 bg-blue-500/20 text-blue-400 rounded print:bg-blue-100 print:text-blue-800">Gov Projects</span>
+                  <span className="text-xs font-black text-blue-400 border-b border-blue-400 print:text-blue-700 print:border-blue-700">Gov Projects</span>
                 </div>
                 <p className="text-[#787774] text-sm mb-3 print:text-[9pt]">role: Software Developer (Senior)</p>
                 <div className="text-sm space-y-1.5 print:text-[9pt]">
@@ -165,7 +165,7 @@ export default function ResumeEnPage() {
                       <span className="text-[#787774] flex-shrink-0">{idx === 4 ? "└─" : "├─"}</span>
                       <span>{item.text}</span>
                       {item.tag && (
-                        <span className="text-xs px-1.5 py-0.5 bg-purple-500/20 text-purple-400 rounded print:bg-purple-100 print:text-purple-800">{item.tag}</span>
+                        <span className="text-xs font-black text-purple-400 border-b border-purple-400 print:text-purple-700 print:border-purple-700">{item.tag}</span>
                       )}
                     </div>
                   ))}
@@ -202,7 +202,7 @@ export default function ResumeEnPage() {
                 <div className="flex flex-wrap items-baseline gap-2 mb-3">
                   <span className="text-[#00cc00] text-sm">[2023.11-2026.01]</span>
                   <span className="text-[#e0e0e0] font-bold print:text-[#171a20]">Ravi International</span>
-                  <span className="text-xs px-2 py-0.5 bg-gray-500/20 text-gray-400 rounded print:bg-gray-100 print:text-gray-800">Closed</span>
+                  <span className="text-xs font-black text-gray-400 border-b border-gray-400 print:text-gray-600 print:border-gray-600">Closed</span>
                 </div>
                 <p className="text-[#787774] text-sm mb-3 print:text-[9pt]">role: Founder / Solo Developer → Seeking full-time position</p>
                 <div className="text-sm space-y-1.5 print:text-[9pt]">
@@ -217,7 +217,7 @@ export default function ResumeEnPage() {
                     </div>
                   ))}
                 </div>
-                <div className="mt-4 p-3 bg-[#0a0a0a] rounded border border-[#2a2a3e] text-sm text-[#787774] italic print:bg-gray-100 print:border-gray-200 print:text-[8pt]">
+                <div className="ds-mt-component p-3 bg-[#0a0a0a] rounded border border-[#2a2a3e] text-sm text-[#787774] italic print:bg-gray-100 print:border-gray-200 print:text-[8pt]">
                   <span className="text-[#00cc00] not-italic">/*</span> Lesson learned: You can&apos;t know anything without execution. Even what you see, trust only half. <span className="text-[#00cc00] not-italic">*/</span>
                 </div>
               </div>
@@ -226,12 +226,12 @@ export default function ResumeEnPage() {
         </section>
 
         {/* Featured Projects */}
-        <section className="mb-10 print:mb-6">
-          <h2 className="font-mono text-sm text-[#5c5e62] mb-4 print:text-[9pt]">
+        <section className="ds-section-padded print:pt-4 print:pb-4">
+          <h2 className="font-mono text-sm text-[#5c5e62] print:text-[9pt]">
             <span className="text-[#00cc00]">//</span> FEATURED_PROJECTS <span className="text-[#787774]">// from projects.ts</span>
           </h2>
 
-          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg overflow-hidden print:bg-gray-50 print:border-gray-200">
+          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg overflow-hidden print:bg-gray-50 print:border-gray-200 ds-mt-element">
             {featuredProjects.slice(0, 7).map((project, idx, arr) => (
               <div
                 key={project.slug}
@@ -252,7 +252,7 @@ export default function ResumeEnPage() {
                         </span>
                       ))}
                       {project.metrics?.impact && (
-                        <span className="text-xs px-1.5 py-0.5 bg-yellow-500/20 text-yellow-400 rounded print:bg-yellow-100 print:text-yellow-800">
+                        <span className="text-xs font-black text-yellow-400 border-b border-yellow-400 print:text-yellow-700 print:border-yellow-700">
                           {project.metrics.impact}
                         </span>
                       )}
@@ -265,19 +265,19 @@ export default function ResumeEnPage() {
 
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-[#00cc00] font-mono mt-4 hover:underline print:hidden"
+            className="inline-flex items-center gap-2 text-sm text-[#00cc00] font-mono ds-mt-element hover:underline print:hidden"
           >
             $ ls ./projects --all <span className="text-[#787774]"># View all {stats.totalProjects}+ projects</span>
           </Link>
         </section>
 
         {/* Tech Stack */}
-        <section className="mb-10 print:mb-6">
-          <h2 className="font-mono text-sm text-[#5c5e62] mb-4 print:text-[9pt]">
+        <section className="ds-section-padded print:pt-4 print:pb-4">
+          <h2 className="font-mono text-sm text-[#5c5e62] print:text-[9pt]">
             <span className="text-[#00cc00]">//</span> TECH_STACK
           </h2>
 
-          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 font-mono text-sm print:bg-gray-50 print:border-gray-200 print:text-[9pt]">
+          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 font-mono text-sm print:bg-gray-50 print:border-gray-200 print:text-[9pt] ds-mt-element">
             <div className="space-y-3">
               {[
                 { category: "Backend", techs: "Go, Rust, Python/FastAPI, Node.js" },
@@ -297,7 +297,7 @@ export default function ResumeEnPage() {
           </div>
 
           {/* Top Technologies by Usage */}
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="ds-mt-element flex flex-wrap gap-2">
             {topStacks.slice(0, 10).map(([tech, count]) => (
               <span
                 key={tech}
@@ -310,12 +310,12 @@ export default function ResumeEnPage() {
         </section>
 
         {/* Engineering Leadership */}
-        <section className="mb-10 print:mb-6">
-          <h2 className="font-mono text-sm text-[#5c5e62] mb-4 print:text-[9pt]">
+        <section className="ds-section-padded print:pt-4 print:pb-4">
+          <h2 className="font-mono text-sm text-[#5c5e62] print:text-[9pt]">
             <span className="text-[#00cc00]">//</span> ENGINEERING_PRINCIPLES
           </h2>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid sm:grid-cols-2 gap-4 ds-mt-element">
             {[
               { icon: "🏗️", title: "Architecture-First", desc: "Design systems before writing code. Every project starts with documented, justified architecture decisions." },
               { icon: "🔒", title: "Security-Conscious", desc: "CVE monitoring, Dependabot automation, security-first code reviews on every project." },
@@ -336,12 +336,12 @@ export default function ResumeEnPage() {
         </section>
 
         {/* Work Philosophy */}
-        <section className="mb-10 print:mb-6">
-          <h2 className="font-mono text-sm text-[#5c5e62] mb-4 print:text-[9pt]">
+        <section className="ds-section-padded print:pt-4 print:pb-4">
+          <h2 className="font-mono text-sm text-[#5c5e62] print:text-[9pt]">
             <span className="text-[#00cc00]">//</span> PHILOSOPHY
           </h2>
 
-          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 font-mono text-sm print:bg-gray-50 print:border-gray-200 print:text-[9pt]">
+          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-5 font-mono text-sm print:bg-gray-50 print:border-gray-200 print:text-[9pt] ds-mt-element">
             <div className="space-y-2 text-[#e0e0e0] print:text-[#171a20]">
               <div className="flex gap-2">
                 <span className="text-[#787774] flex-shrink-0">├─</span>
@@ -364,12 +364,12 @@ export default function ResumeEnPage() {
         </section>
 
         {/* Why I Apply */}
-        <section className="mb-10 print:mb-6">
+        <section className="ds-section-padded print:pt-4 print:pb-4">
           <div className="bg-[#00ff00]/5 border border-[#00ff00]/30 rounded-lg p-6 print:bg-green-50 print:border-green-200">
-            <h2 className="font-mono text-sm text-[#00cc00] mb-4">
+            <h2 className="font-mono text-sm text-[#00cc00]">
               <span className="text-[#00cc00]">//</span> WHY_I_APPLY
             </h2>
-            <div className="font-mono text-[#e0e0e0] space-y-3 print:text-[#171a20]">
+            <div className="font-mono text-[#e0e0e0] space-y-3 print:text-[#171a20] ds-mt-element">
               <p className="text-sm leading-relaxed print:text-[10pt]">
                 Not looking to just execute tasks. <br />
                 <span className="text-[#00ff00] font-bold">I want to define problems and design structures together.</span>
@@ -383,28 +383,30 @@ export default function ResumeEnPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-6 text-center print:hidden">
-          <p className="font-mono text-[#e0e0e0] mb-5">
-            <span className="text-[#00cc00]">$</span> ./lets_talk --collaboration
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="mailto:haspark912@kakao.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00cc00] text-[#0a0a0a] text-sm font-mono font-bold rounded hover:bg-[#00ff00] transition-colors"
-            >
-              Send Email
-            </a>
-            <a
-              href="tel:010-3980-4154"
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#00cc00] text-[#00cc00] text-sm font-mono font-bold rounded hover:bg-[#00cc00] hover:text-[#0a0a0a] transition-colors"
-            >
-              Call Now
-            </a>
+        <section className="ds-section-padded print:hidden">
+          <div className="bg-[#111318] border border-[#2a2a3e] rounded-lg p-6 text-center">
+            <p className="font-mono text-[#e0e0e0]">
+              <span className="text-[#00cc00]">$</span> ./lets_talk --collaboration
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 ds-mt-component">
+              <a
+                href="mailto:haspark912@kakao.com"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#00cc00] text-[#0a0a0a] text-sm font-mono font-bold rounded hover:bg-[#00ff00] transition-colors"
+              >
+                Send Email
+              </a>
+              <a
+                href="tel:010-3980-4154"
+                className="inline-flex items-center gap-2 px-5 py-2.5 border border-[#00cc00] text-[#00cc00] text-sm font-mono font-bold rounded hover:bg-[#00cc00] hover:text-[#0a0a0a] transition-colors"
+              >
+                Call Now
+              </a>
+            </div>
           </div>
         </section>
 
         {/* Language Toggle Hint */}
-        <div className="mt-8 text-center print:hidden">
+        <div className="ds-mt-section text-center print:hidden">
           <Link
             href="/resume/ko"
             className="text-[#5c5e62] text-sm font-mono hover:text-[#00cc00] transition-colors"
@@ -414,7 +416,7 @@ export default function ResumeEnPage() {
         </div>
 
         {/* Print hint */}
-        <div className="mt-6 text-center text-[#5c5e62] text-xs font-mono print:hidden">
+        <div className="ds-mt-element text-center text-[#5c5e62] text-xs font-mono print:hidden">
           <p>Press Ctrl/Cmd + P to print this resume</p>
         </div>
 

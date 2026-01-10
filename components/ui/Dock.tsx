@@ -62,12 +62,12 @@ function DockItem({
 export default function Dock({
   items,
   className = "",
-  panelHeight = 52,
-  baseItemSize = 40,
-  magnification = 52,
+  panelHeight = 40,
+  baseItemSize = 32,
+  magnification = 38,
 }: DockProps) {
   return (
-    <div className="dock-outer" style={{ height: panelHeight + 20 }}>
+    <div className="dock-outer" style={{ height: panelHeight + 16 }}>
       <div
         className={`dock-panel ${className}`}
         style={{ height: panelHeight }}
