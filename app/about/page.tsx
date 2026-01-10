@@ -20,7 +20,7 @@ export default function AboutPage() {
             <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep">
               {t.about.title}
             </h1>
-            <p className="text-xs text-[#00aa00] font-mono font-bold break-keep mt-1">
+            <p className="text-xs text-amber-600 font-mono font-bold break-keep mt-1">
               {t.about.titleDescription}
             </p>
             <p className="text-sm md:text-base text-[#3e3e3e] font-bold break-keep mt-2">
@@ -33,15 +33,15 @@ export default function AboutPage() {
             {t.about.keyMetrics.map((metric, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-lg bg-[#171a20] border-2 border-black shadow-[2px_2px_0_#00ff00] text-center"
+                className="p-4 rounded-lg bg-gradient-to-br from-amber-50 to-orange-50 border-2 border-amber-200 shadow-[2px_2px_0_#f59e0b] text-center"
               >
-                <span className="text-2xl md:text-3xl font-black text-[#00ff00] block">
+                <span className="text-2xl md:text-3xl font-black text-amber-600 block">
                   {metric.value}
                 </span>
-                <span className="text-xs font-bold text-white block mt-1">
+                <span className="text-xs font-bold text-amber-900 block mt-1">
                   {metric.label}
                 </span>
-                <span className="text-[10px] text-gray-400 block">
+                <span className="text-[10px] text-amber-600/70 block">
                   {metric.detail}
                 </span>
               </div>
@@ -65,9 +65,9 @@ export default function AboutPage() {
             {t.strengths.items.map((item, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-lg bg-[#fafafa] border border-transparent hover:border-[#00cc00] group cursor-default transition-all"
+                className="p-4 rounded-lg bg-[#fafafa] border border-transparent hover:border-amber-400 group cursor-default transition-all"
               >
-                <h3 className="text-sm font-black text-[#171a20] mb-1.5 group-hover:text-[#00cc00] transition-colors break-keep">
+                <h3 className="text-sm font-black text-[#171a20] mb-1.5 group-hover:text-amber-600 transition-colors break-keep">
                   {item.title}
                 </h3>
                 <p className="text-xs text-[#5c5e62] break-keep leading-relaxed text-justify">
@@ -96,7 +96,7 @@ export default function AboutPage() {
                   {category.items.map((item, itemIdx) => (
                     <span
                       key={itemIdx}
-                      className="text-xs font-mono font-bold bg-[#171a20] text-[#00ff00] px-2 py-1 rounded hover:bg-[#00ff00] hover:text-black transition-colors cursor-default"
+                      className="text-xs font-mono font-bold bg-amber-100 text-amber-800 px-2 py-1 rounded hover:bg-amber-500 hover:text-white transition-colors cursor-default"
                     >
                       {item}
                     </span>
@@ -122,12 +122,12 @@ export default function AboutPage() {
             {t.lookingFor.items.map((item, idx) => (
               <div
                 key={idx}
-                className="group p-4 rounded-lg border-2 border-[#171a20] bg-white hover:bg-[#00ff00] hover:border-[#00ff00] shadow-[2px_2px_0_#000] hover:shadow-[3px_3px_0_#000] transition-all cursor-default"
+                className="group p-4 rounded-lg border-2 border-amber-300 bg-white hover:bg-amber-50 hover:border-amber-400 shadow-[2px_2px_0_#d97706] hover:shadow-[3px_3px_0_#d97706] transition-all cursor-default"
               >
                 <h3 className="text-sm font-black text-[#171a20] mb-1.5 break-keep">
                   {item.title}
                 </h3>
-                <p className="text-xs text-[#5c5e62] group-hover:text-black/70 break-keep leading-relaxed text-justify">
+                <p className="text-xs text-[#5c5e62] group-hover:text-amber-900/70 break-keep leading-relaxed text-justify">
                   {item.description}
                 </p>
               </div>
@@ -150,12 +150,12 @@ export default function AboutPage() {
             {t.about.philosophyItems.map((item, idx) => (
               <div
                 key={idx}
-                className="group p-4 rounded-lg bg-[#171a20] hover:bg-black border-2 border-black shadow-[2px_2px_0_#00ff00] hover:shadow-[3px_3px_0_#00ff00] transition-all cursor-default"
+                className="group p-4 rounded-lg bg-gradient-to-br from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 border-2 border-amber-700 shadow-[2px_2px_0_#92400e] hover:shadow-[3px_3px_0_#92400e] transition-all cursor-default"
               >
-                <h3 className="text-xs font-black text-[#00ff00] mb-1.5 break-keep">
+                <h3 className="text-xs font-black text-white mb-1.5 break-keep">
                   {item.principle}
                 </h3>
-                <p className="text-xs text-gray-300 break-keep leading-relaxed text-justify">
+                <p className="text-xs text-amber-100 break-keep leading-relaxed text-justify">
                   {item.description}
                 </p>
               </div>
@@ -187,8 +187,8 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <div className="p-5 rounded-lg bg-[#171a20] border-2 border-black shadow-[3px_3px_0_#00ff00]">
-            <p className="text-sm font-black text-[#00ff00] break-keep">
+          <div className="p-5 rounded-lg bg-gradient-to-r from-amber-500 to-orange-500 border-2 border-amber-600 shadow-[3px_3px_0_#92400e]">
+            <p className="text-sm font-black text-white break-keep">
               &quot;{t.about.failureRule}&quot;
             </p>
           </div>
@@ -224,9 +224,9 @@ export default function AboutPage() {
             {t.about.rhythmItems.map((item, idx) => (
               <div
                 key={idx}
-                className="group p-3 rounded-lg bg-[#fafafa] text-center border border-transparent hover:border-[#00cc00] hover:bg-white hover:shadow-[2px_2px_0_#00ff00] transition-all cursor-default"
+                className="group p-3 rounded-lg bg-[#fafafa] text-center border border-transparent hover:border-amber-400 hover:bg-white hover:shadow-[2px_2px_0_#f59e0b] transition-all cursor-default"
               >
-                <span className="text-xs font-mono font-black text-[#00cc00] block mb-1">
+                <span className="text-xs font-mono font-black text-amber-600 block mb-1">
                   {String(idx + 1).padStart(2, '0')}
                 </span>
                 <p className="text-xs text-[#3e3e3e] font-medium break-keep">
@@ -254,9 +254,9 @@ export default function AboutPage() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-lg bg-[#fafafa] border border-transparent hover:border-[#00cc00] group cursor-default transition-all"
+                className="p-4 rounded-lg bg-[#fafafa] border border-transparent hover:border-amber-400 group cursor-default transition-all"
               >
-                <span className="text-xs font-mono font-bold text-[#9ca3af] block mb-1.5">
+                <span className="text-xs font-mono font-bold text-amber-600/70 block mb-1.5">
                   {item.label}
                 </span>
                 <p className="text-sm font-black text-[#171a20] break-keep">
@@ -269,9 +269,9 @@ export default function AboutPage() {
 
         {/* Final Note */}
         <section className="ds-section-padded">
-          <div className="bg-[#171a20] rounded-xl px-6 md:px-8 py-8 md:py-10 border-2 border-black shadow-[4px_4px_0_#00ff00]">
+          <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl px-6 md:px-8 py-8 md:py-10 border-2 border-amber-700 shadow-[4px_4px_0_#92400e]">
             <div className="max-w-2xl mx-auto text-center flex flex-col gap-4">
-              <span className="ds-badge">
+              <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-mono font-bold text-white border border-white/30 w-fit mx-auto">
                 Final Note
               </span>
               <p className="text-sm text-white font-medium break-keep">
@@ -280,13 +280,13 @@ export default function AboutPage() {
               <div className="flex flex-col sm:flex-row justify-center gap-3">
                 <a
                   href="mailto:haspark912@kakao.com"
-                  className="ds-button ds-button-primary"
+                  className="px-6 py-3 bg-white text-amber-700 font-bold rounded-lg hover:bg-amber-50 transition-colors shadow-[2px_2px_0_#92400e]"
                 >
                   {t.hero.ctaSecondary}
                 </a>
                 <Link
                   href="/resume"
-                  className="ds-button ds-button-outline bg-white"
+                  className="px-6 py-3 bg-transparent text-white font-bold rounded-lg border-2 border-white hover:bg-white/10 transition-colors"
                 >
                   View Resume
                 </Link>
