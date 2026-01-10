@@ -52,13 +52,13 @@ export default function MetricsDashboard() {
   const { t } = useI18n();
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 py-6 px-4 md:px-6 bg-[#171a20] rounded-2xl">
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 py-4 px-3 md:px-4 bg-[#171a20] rounded-lg border-2 border-black shadow-[2px_2px_0_#00ff00]">
       {metrics.map((metric, index) => (
         <div key={index} className="text-center">
-          <div className="text-2xl md:text-3xl font-black text-[#00ff00] font-mono">
+          <div className="text-lg md:text-xl font-black text-[#00ff00] font-mono">
             <AnimatedNumber value={metric.value} suffix={metric.suffix} />
           </div>
-          <div className="text-[11px] md:text-xs font-mono text-white/60 uppercase tracking-wider mt-1">
+          <div className="text-[10px] md:text-[11px] font-mono text-white/60 uppercase tracking-wider mt-1">
             {t.metrics[metric.labelKey]}
           </div>
         </div>

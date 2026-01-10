@@ -1,48 +1,126 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 export default function PixelDog() {
   const [position, setPosition] = useState({ x: 100, y: 100 });
-  const [targetPosition, setTargetPosition] = useState({ x: 100, y: 100 });
   const [direction, setDirection] = useState<"left" | "right">("right");
   const [isMoving, setIsMoving] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
+  const targetPositionRef = useRef({ x: 100, y: 100 });
+  const positionRef = useRef({ x: 100, y: 100 });
+  const rafRef = useRef<number | null>(null);
+  const isVisibleRef = useRef(true);
+
+  // Check reduced motion preference
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setTargetPosition({ x: e.clientX, y: e.clientY });
-    };
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
   }, []);
 
+  // Animation loop using RAF
+  const animate = useCallback(() => {
+    if (!isVisibleRef.current || prefersReducedMotion) {
+      rafRef.current = null;
+      return;
+    }
+
+    const prev = positionRef.current;
+    const target = targetPositionRef.current;
+
+    const dx = target.x - prev.x - 20;
+    const dy = target.y - prev.y - 20;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+
+    if (distance > 5) {
+      setIsMoving(true);
+      if (dx > 0) setDirection("right");
+      else if (dx < 0) setDirection("left");
+
+      const newPos = {
+        x: prev.x + dx * 0.08,
+        y: prev.y + dy * 0.08,
+      };
+      positionRef.current = newPos;
+      setPosition(newPos);
+    } else {
+      setIsMoving(false);
+    }
+
+    rafRef.current = requestAnimationFrame(animate);
+  }, [prefersReducedMotion]);
+
+  // Throttled mouse move handler using RAF
   useEffect(() => {
-    const animate = () => {
-      setPosition((prev) => {
-        const dx = targetPosition.x - prev.x - 20;
-        const dy = targetPosition.y - prev.y - 20;
-        const distance = Math.sqrt(dx * dx + dy * dy);
+    if (prefersReducedMotion) return;
 
-        if (distance > 5) {
-          setIsMoving(true);
-          if (dx > 0) setDirection("right");
-          else if (dx < 0) setDirection("left");
+    let rafId: number | null = null;
+    let lastMouseEvent: MouseEvent | null = null;
 
-          return {
-            x: prev.x + dx * 0.08,
-            y: prev.y + dy * 0.08,
-          };
-        } else {
-          setIsMoving(false);
-          return prev;
-        }
-      });
+    const updateTarget = () => {
+      if (lastMouseEvent) {
+        targetPositionRef.current = {
+          x: lastMouseEvent.clientX,
+          y: lastMouseEvent.clientY
+        };
+        lastMouseEvent = null;
+      }
+      rafId = null;
     };
 
-    const interval = setInterval(animate, 16);
-    return () => clearInterval(interval);
-  }, [targetPosition]);
+    const handleMouseMove = (e: MouseEvent) => {
+      lastMouseEvent = e;
+      if (!rafId) {
+        rafId = requestAnimationFrame(updateTarget);
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [prefersReducedMotion]);
+
+  // Start/stop animation based on visibility
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        isVisibleRef.current = false;
+        if (rafRef.current) {
+          cancelAnimationFrame(rafRef.current);
+          rafRef.current = null;
+        }
+      } else {
+        isVisibleRef.current = true;
+        if (!rafRef.current) {
+          rafRef.current = requestAnimationFrame(animate);
+        }
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    rafRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [animate, prefersReducedMotion]);
+
+  // Don't render if reduced motion is preferred
+  if (prefersReducedMotion) {
+    return null;
+  }
 
   return (
     <div
@@ -51,6 +129,7 @@ export default function PixelDog() {
         left: position.x,
         top: position.y,
         transform: `scaleX(${direction === "left" ? -1 : 1})`,
+        willChange: "transform, left, top",
       }}
     >
       <div className={`pixel-dog ${isMoving ? "running" : "idle"}`}>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 type CanvasStrokeStyle = string | CanvasGradient | CanvasPattern;
 
@@ -30,6 +30,18 @@ const Squares: React.FC<SquaresProps> = ({
   const numSquaresY = useRef<number>(0);
   const gridOffset = useRef<GridOffset>({ x: 0, y: 0 });
   const hoveredSquareRef = useRef<GridOffset | null>(null);
+  const isVisibleRef = useRef<boolean>(true);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Check for reduced motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -74,6 +86,13 @@ const Squares: React.FC<SquaresProps> = ({
     };
 
     const updateAnimation = () => {
+      // Stop animation if not visible or user prefers reduced motion
+      if (!isVisibleRef.current || prefersReducedMotion) {
+        // Just draw static grid once
+        drawGrid();
+        return;
+      }
+
       const effectiveSpeed = Math.max(speed, 0.1);
       switch (direction) {
         case "right":
@@ -99,6 +118,45 @@ const Squares: React.FC<SquaresProps> = ({
       drawGrid();
       requestRef.current = requestAnimationFrame(updateAnimation);
     };
+
+    // Page visibility handler
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        isVisibleRef.current = false;
+        if (requestRef.current) {
+          cancelAnimationFrame(requestRef.current);
+          requestRef.current = null;
+        }
+      } else {
+        isVisibleRef.current = true;
+        if (!requestRef.current && !prefersReducedMotion) {
+          requestRef.current = requestAnimationFrame(updateAnimation);
+        }
+      }
+    };
+
+    // Intersection observer for visibility
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const isIntersecting = entries[0]?.isIntersecting ?? false;
+        if (isIntersecting && !document.hidden) {
+          isVisibleRef.current = true;
+          if (!requestRef.current && !prefersReducedMotion) {
+            requestRef.current = requestAnimationFrame(updateAnimation);
+          }
+        } else {
+          isVisibleRef.current = false;
+          if (requestRef.current) {
+            cancelAnimationFrame(requestRef.current);
+            requestRef.current = null;
+          }
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(canvas);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     const handleMouseMove = (event: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -126,15 +184,23 @@ const Squares: React.FC<SquaresProps> = ({
 
     canvas.addEventListener("mousemove", handleMouseMove);
     canvas.addEventListener("mouseleave", handleMouseLeave);
-    requestRef.current = requestAnimationFrame(updateAnimation);
+
+    // Initial draw and start animation
+    if (!prefersReducedMotion) {
+      requestRef.current = requestAnimationFrame(updateAnimation);
+    } else {
+      drawGrid();
+    }
 
     return () => {
       window.removeEventListener("resize", resizeCanvas);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      observer.disconnect();
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
       canvas.removeEventListener("mousemove", handleMouseMove);
       canvas.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [direction, speed, borderColor, hoverFillColor, squareSize]);
+  }, [direction, speed, borderColor, hoverFillColor, squareSize, prefersReducedMotion]);
 
   return (
     <canvas

@@ -6,17 +6,17 @@ const en: Translations = {
     title: "Sovereign",
     titleAccent: "Hacker.",
     subtitle: "Software Engineer · Business-Oriented Builder",
-    valueProposition: "5+ years designing, building & operating 2 government projects, 3 startups, and 36+ products as a Full-Stack Engineer",
+    valueProposition: "3 years engineering + 2 years startup operations. 2 government projects, 4 ventures, and 36+ products as a Full-Stack Engineer",
     executiveSummary: "I define problems, design systems, and take responsibility through execution. Technology is my thinking tool, not the end goal.",
     ctaPrimary: "View Resume",
     ctaPortfolio: "Portfolio",
     ctaSecondary: "Let's Connect",
     highlightsLabel: "Key Experience",
     highlight1: "2 Government Projects (Digital Signage, Cadastral Data)",
-    highlight2: "Founded & operated 3 startups/businesses",
+    highlight2: "Operated 4 ventures over 2 years (planning→dev→ops)",
     highlight3: "Built multiple AI/LLM automation systems",
     statusLabel: "Status",
-    statusValue: "Open to Work",
+    statusValue: "Seeking Team",
   },
   strengths: {
     badge: "Core Strengths",
@@ -35,8 +35,8 @@ const en: Translations = {
         description: "High-velocity development with Claude, Gemini, GPT",
       },
       {
-        title: "Business-Aware Engineering",
-        description: "Distribution, incentives, sales reality",
+        title: "Product Thinking (PM/PO)",
+        description: "Ask 'why build this' before implementation",
       },
       {
         title: "Ownership Mentality",
@@ -65,15 +65,15 @@ const en: Translations = {
   lookingFor: {
     badge: "What I Seek",
     title: "Ideal Environment",
-    subtitle: "I evaluate teams with a VC-like lens",
+    subtitle: "After 2 years solo, I learned the value of growing together with teammates",
     items: [
       {
         title: "Founder-led Teams",
         description: "High-trust environments where initiative is allowed and rewarded",
       },
       {
-        title: "Uncomfortable Domains",
-        description: "Defense, finance, manufacturing, agriculture — biotech especially",
+        title: "Growth Culture",
+        description: "Teams that learn from each other and exchange feedback",
       },
       {
         title: "Execution Energy",
@@ -109,10 +109,10 @@ const en: Translations = {
     ],
   },
   metrics: {
-    products: "Products Shipped",
-    years: "Years Building",
-    ventures: "Ventures Founded",
-    users: "Users Reached",
+    projects: "Projects Completed",
+    engineering: "Engineering Years",
+    startup: "Startup Operations",
+    ventures: "Ventures Operated",
   },
   timeline: {
     badge: "Journey",

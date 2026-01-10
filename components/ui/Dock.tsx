@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 
 export type DockItemData = {
   icon: React.ReactNode;
@@ -35,39 +34,28 @@ function DockItem({
   baseItemSize,
   magnification,
 }: DockItemProps) {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
-    <motion.div
-      animate={{
-        width: isHovered ? magnification : baseItemSize,
-        height: isHovered ? magnification : baseItemSize,
-      }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+    <div
       onClick={onClick}
-      className={`dock-item ${className}`}
+      className={`dock-item group relative ${className}`}
       tabIndex={0}
       role="button"
+      style={{
+        width: baseItemSize,
+        height: baseItemSize,
+        // CSS custom properties for hover animation
+        "--base-size": `${baseItemSize}px`,
+        "--magnified-size": `${magnification}px`,
+      } as React.CSSProperties}
     >
       <div className="dock-icon">{icon}</div>
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: -10 }}
-            exit={{ opacity: 0, y: 0 }}
-            transition={{ duration: 0.15 }}
-            className="dock-label"
-            role="tooltip"
-            style={{ x: "-50%" }}
-          >
-            {label}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.div>
+      <div
+        className="dock-label opacity-0 translate-y-0 group-hover:opacity-100 group-hover:-translate-y-2.5 transition-all duration-150 ease-out"
+        role="tooltip"
+      >
+        {label}
+      </div>
+    </div>
   );
 }
 
@@ -98,6 +86,27 @@ export default function Dock({
           />
         ))}
       </div>
+      <style jsx global>{`
+        .dock-item {
+          transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                      width 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                      height 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .dock-item:hover {
+          width: var(--magnified-size) !important;
+          height: var(--magnified-size) !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .dock-item {
+            transition: none;
+          }
+          .dock-label {
+            transition: none;
+          }
+        }
+      `}</style>
     </div>
   );
 }

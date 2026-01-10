@@ -69,10 +69,10 @@ export interface ManifestoTranslations {
 }
 
 export interface MetricsTranslations {
-  products: string;
-  years: string;
+  projects: string;
+  engineering: string;
+  startup: string;
   ventures: string;
-  users: string;
 }
 
 export interface TimelineTranslations {

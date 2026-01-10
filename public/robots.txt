@@ -1,0 +1,10 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://x-ordo.github.io/sitemap.xml
+
+# Block unnecessary paths
+Disallow: /_next/
+Disallow: /api/

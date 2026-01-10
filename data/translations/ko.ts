@@ -6,17 +6,17 @@ const ko: Translations = {
     title: "Sovereign",
     titleAccent: "Hacker.",
     subtitle: "소프트웨어 엔지니어 · 비즈니스 지향 빌더",
-    valueProposition: "5년간 국가사업 2건, 스타트업 3개, 36개+ 프로젝트를 설계-구현-운영한 Full-Stack Engineer",
+    valueProposition: "3년 엔지니어링 + 2년 창업 운영. 국가사업 2건, 4개 사업체, 36개+ 프로젝트를 설계-구현-운영한 Full-Stack Engineer",
     executiveSummary: "문제를 정의하고, 구조를 설계하고, 실행까지 책임집니다. 기술을 목적이 아닌 사고의 도구로 사용합니다.",
     ctaPrimary: "이력서 보기",
     ctaPortfolio: "포트폴리오",
     ctaSecondary: "연락하기",
     highlightsLabel: "핵심 경험",
     highlight1: "국가사업 2건 수행 (디지털 사이니지, 지적측량 데이터)",
-    highlight2: "3개 스타트업/사업체 창업 및 운영 경험",
+    highlight2: "2년간 4개 사업체 운영 (기획→개발→운영 전 과정)",
     highlight3: "AI/LLM 기반 자동화 시스템 다수 구축",
     statusLabel: "상태",
-    statusValue: "구직중",
+    statusValue: "팀 합류 희망",
   },
   strengths: {
     badge: "핵심 역량",
@@ -35,8 +35,8 @@ const ko: Translations = {
         description: "Claude, Gemini, GPT를 활용한 고속 개발",
       },
       {
-        title: "비즈니스 이해 엔지니어링",
-        description: "유통, 인센티브, 세일즈 현실",
+        title: "제품 중심 사고 (PM/PO)",
+        description: "기술 구현 전 '왜 만드는가'를 먼저 질문",
       },
       {
         title: "오너십 마인드",
@@ -65,15 +65,15 @@ const ko: Translations = {
   lookingFor: {
     badge: "찾는 환경",
     title: "이상적인 환경",
-    subtitle: "VC의 시선으로 팀을 평가합니다",
+    subtitle: "2년간 창업을 경험하며 함께 고민하고 성장할 팀원의 소중함을 깨달았습니다",
     items: [
       {
         title: "창업자 주도 팀",
         description: "주도권이 허용되고 보상받는 신뢰 높은 환경",
       },
       {
-        title: "불편한 도메인",
-        description: "국방, 금융, 제조, 농업 — 특히 바이오테크",
+        title: "함께 성장하는 문화",
+        description: "서로 배우고 피드백을 주고받는 팀",
       },
       {
         title: "실행 에너지",
@@ -109,10 +109,10 @@ const ko: Translations = {
     ],
   },
   metrics: {
-    products: "출시 프로덕트",
-    years: "개발 경력",
-    ventures: "창업 경험",
-    users: "누적 사용자",
+    projects: "완료 프로젝트",
+    engineering: "엔지니어링 경력",
+    startup: "창업 운영",
+    ventures: "운영 사업체",
   },
   timeline: {
     badge: "여정",

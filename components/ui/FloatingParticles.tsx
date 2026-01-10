@@ -14,12 +14,25 @@ interface Particle {
 
 export default function FloatingParticles() {
   const [particles, setParticles] = useState<Particle[]>([]);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  // Check reduced motion preference
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPrefersReducedMotion(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setPrefersReducedMotion(e.matches);
+    mediaQuery.addEventListener("change", handler);
+    return () => mediaQuery.removeEventListener("change", handler);
+  }, []);
 
   useEffect(() => {
+    // Use fewer particles if reduced motion is preferred
+    const particleCount = prefersReducedMotion ? 8 : 20;
     const colors = ["#00ff00", "#00ffff", "#ff00ff", "#ffff00"];
     const newParticles: Particle[] = [];
 
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < particleCount; i++) {
       newParticles.push({
         id: i,
         x: Math.random() * 100,
@@ -32,7 +45,7 @@ export default function FloatingParticles() {
     }
 
     setParticles(newParticles);
-  }, []);
+  }, [prefersReducedMotion]);
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
@@ -47,8 +60,11 @@ export default function FloatingParticles() {
             height: particle.size,
             backgroundColor: particle.color,
             boxShadow: `0 0 ${particle.size * 2}px ${particle.color}`,
-            animation: `float ${particle.duration}s ease-in-out infinite`,
-            animationDelay: `${particle.delay}s`,
+            // Only animate if reduced motion is not preferred
+            animation: prefersReducedMotion
+              ? "none"
+              : `float ${particle.duration}s ease-in-out infinite`,
+            animationDelay: prefersReducedMotion ? "0s" : `${particle.delay}s`,
           }}
         />
       ))}
