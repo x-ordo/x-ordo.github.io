@@ -165,6 +165,46 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Vibe Coding Routine */}
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
+          <span className="ds-badge w-fit">
+            {t.about.vibeCodingTitle}
+          </span>
+          <div className="flex flex-col gap-2">
+            <h2 className="text-lg md:text-xl font-black text-[#171a20] break-keep">
+              {t.about.vibeCodingSubtitle}
+            </h2>
+            <p className="text-xs md:text-sm text-[#5c5e62] break-keep text-justify">
+              {t.about.vibeCodingDescription}
+            </p>
+          </div>
+          <div className="grid md:grid-cols-5 gap-3 mt-2">
+            {t.about.vibeCodingSteps.map((item, idx) => (
+              <div
+                key={idx}
+                className="group p-4 rounded-lg bg-[#171a20] border-2 border-[#00ff00]/20 hover:border-[#00ff00] hover:shadow-[3px_3px_0_#00ff00] transition-all cursor-default"
+              >
+                <span className="text-xs font-mono font-black text-[#00ff00] block mb-2">
+                  {item.step}
+                </span>
+                <p className="text-xs text-gray-400 break-keep leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-wrap gap-2 mt-2">
+            {["Claude Code", "Custom Skills", "AI Agent", "TDD", "SDD", "Template-Driven"].map((tag) => (
+              <span
+                key={tag}
+                className="text-xs font-mono font-bold bg-[#00ff00]/10 text-[#00cc00] px-3 py-1.5 rounded border border-[#00cc00]/30"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </section>
+
         {/* Failure & Verification */}
         <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">

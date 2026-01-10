@@ -191,6 +191,31 @@ const en: Translations = {
         description: "Markets are the final test suite",
       },
     ],
+    vibeCodingTitle: "Vibe Coding Routine",
+    vibeCodingSubtitle: "My development methodology combining TDD + SDD + AI Agents",
+    vibeCodingDescription: "I operate a development routine that blends TDD (Test-Driven Development) and SDD (Schema-Driven Development) using Claude Code's Skills and Agents. I continuously update custom templates to achieve both development speed and quality.",
+    vibeCodingSteps: [
+      {
+        step: "01. Schema First",
+        description: "Define data schemas with Zod/TypeScript → Ensure type safety",
+      },
+      {
+        step: "02. Test Skeleton",
+        description: "Write failing test cases → Specify requirements",
+      },
+      {
+        step: "03. AI Agent Delegation",
+        description: "Delegate implementation to Claude Code Agent → Context-based code generation",
+      },
+      {
+        step: "04. Skill Invocation",
+        description: "Automate repetitive tasks with custom Skills (lint, test, deploy)",
+      },
+      {
+        step: "05. Template Evolution",
+        description: "Convert patterns to templates → Reuse in next projects",
+      },
+    ],
     failureTitle: "Failure & Verification",
     failureSubtitle: "I have experienced real failure, not theoretical lessons",
     failureLessons: [

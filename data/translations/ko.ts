@@ -191,6 +191,31 @@ const ko: Translations = {
         description: "시장이 최종 테스트 스위트",
       },
     ],
+    vibeCodingTitle: "Vibe Coding 루틴",
+    vibeCodingSubtitle: "TDD + SDD + AI Agent를 결합한 나만의 개발 방법론",
+    vibeCodingDescription: "Claude Code의 Skills와 Agent를 활용하여 TDD(Test-Driven Development)와 SDD(Schema-Driven Development)를 혼합한 개발 루틴을 운영합니다. 커스텀 템플릿을 지속적으로 업데이트하며 개발 속도와 품질을 동시에 확보합니다.",
+    vibeCodingSteps: [
+      {
+        step: "01. Schema First",
+        description: "Zod/TypeScript로 데이터 스키마 정의 → 타입 안정성 확보",
+      },
+      {
+        step: "02. Test Skeleton",
+        description: "실패하는 테스트 케이스 작성 → 요구사항 명세화",
+      },
+      {
+        step: "03. AI Agent 위임",
+        description: "Claude Code Agent에 구현 위임 → 컨텍스트 기반 코드 생성",
+      },
+      {
+        step: "04. Skill 호출",
+        description: "커스텀 Skills로 반복 작업 자동화 (lint, test, deploy)",
+      },
+      {
+        step: "05. Template 진화",
+        description: "패턴 발견 시 템플릿화 → 다음 프로젝트에 재사용",
+      },
+    ],
     failureTitle: "실패 & 검증",
     failureSubtitle: "이론적 교훈이 아닌 실제 실패를 경험했습니다",
     failureLessons: [

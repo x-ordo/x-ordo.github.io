@@ -123,6 +123,11 @@ export interface KeyMetric {
   detail: string;
 }
 
+export interface VibeCodingStep {
+  step: string;
+  description: string;
+}
+
 export interface AboutPageTranslations {
   badge: string;
   title: string;
@@ -135,6 +140,10 @@ export interface AboutPageTranslations {
   philosophyTitle: string;
   philosophySubtitle: string;
   philosophyItems: PhilosophyItem[];
+  vibeCodingTitle: string;
+  vibeCodingSubtitle: string;
+  vibeCodingDescription: string;
+  vibeCodingSteps: VibeCodingStep[];
   failureTitle: string;
   failureSubtitle: string;
   failureLessons: FailureLesson[];
