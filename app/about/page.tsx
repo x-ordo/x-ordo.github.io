@@ -12,24 +12,26 @@ export default function AboutPage() {
       <div className="max-w-[1000px] mx-auto px-4 md:px-6">
 
         {/* Header */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
-          <span className="ds-badge">
-            {t.about.badge}
-          </span>
-          <div>
-            <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep">
-              {t.about.title}
-            </h1>
-            <p className="text-xs text-amber-600 font-mono font-bold break-keep mt-1">
-              {t.about.titleDescription}
-            </p>
-            <p className="text-sm md:text-base text-[#3e3e3e] font-bold break-keep mt-2">
-              {t.about.subtitle}
-            </p>
+        <section className="py-12 md:py-16 border-b-2 border-black/10">
+          <div className="flex flex-col gap-4">
+            <span className="ds-badge w-fit">
+              {t.about.badge}
+            </span>
+            <div className="flex flex-col gap-2">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#171a20] leading-tight break-keep">
+                {t.about.title}
+              </h1>
+              <p className="text-xs text-amber-600 font-mono font-bold break-keep">
+                {t.about.titleDescription}
+              </p>
+              <p className="text-sm md:text-base text-[#5c5e62] font-medium break-keep">
+                {t.about.subtitle}
+              </p>
+            </div>
           </div>
 
           {/* Key Metrics Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
             {t.about.keyMetrics.map((metric, idx) => (
               <div
                 key={idx}
@@ -48,13 +50,13 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <p className="text-xs md:text-sm text-[#5c5e62] max-w-3xl break-keep text-justify">
+          <p className="text-xs md:text-sm text-[#5c5e62] max-w-3xl break-keep text-justify mt-6">
             {t.about.executiveSummary}
           </p>
         </section>
 
         {/* Core Strengths */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.strengths.badge}
           </span>
@@ -79,7 +81,7 @@ export default function AboutPage() {
         </section>
 
         {/* Tech Stack */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.techStack.badge}
           </span>
@@ -108,7 +110,7 @@ export default function AboutPage() {
         </section>
 
         {/* What I'm Looking For */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.lookingFor.badge}
           </span>
@@ -136,12 +138,12 @@ export default function AboutPage() {
         </section>
 
         {/* Experience Timeline */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="py-12 md:py-16 border-b-2 border-black/10">
           <ExperienceTimeline showTitle={true} />
         </section>
 
         {/* Engineering Philosophy */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             Engineering Philosophy
           </span>
@@ -164,7 +166,7 @@ export default function AboutPage() {
         </section>
 
         {/* Failure & Verification */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.about.failureTitle}
           </span>
@@ -195,7 +197,7 @@ export default function AboutPage() {
         </section>
 
         {/* Leadership & Conflict */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.about.leadershipTitle}
           </span>
@@ -215,7 +217,7 @@ export default function AboutPage() {
         </section>
 
         {/* Operating Rhythm */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.about.rhythmTitle}
           </span>
@@ -238,7 +240,7 @@ export default function AboutPage() {
         </section>
 
         {/* Hiring Info */}
-        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
+        <section className="py-12 md:py-16 border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             채용 관련 정보
           </span>
@@ -268,7 +270,7 @@ export default function AboutPage() {
         </section>
 
         {/* Final Note */}
-        <section className="ds-section-padded">
+        <section className="py-12 md:py-16">
           <div className="bg-gradient-to-r from-amber-600 to-orange-600 rounded-xl px-6 md:px-8 py-8 md:py-10 border-2 border-amber-700 shadow-[4px_4px_0_#92400e]">
             <div className="max-w-2xl mx-auto text-center flex flex-col gap-4">
               <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/20 backdrop-blur-sm rounded-full text-xs font-mono font-bold text-white border border-white/30 w-fit mx-auto">
