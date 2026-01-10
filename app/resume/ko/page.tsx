@@ -107,17 +107,25 @@ export default function ResumePage() {
                     <h3 className="text-sm md:text-base font-black text-[#171a20] print:text-[9pt]">㈜제타럭스시스템</h3>
                     <span className="text-xs text-[#5c5e62] font-bold print:text-[7pt]">2021.11 – 2023.05</span>
                   </div>
-                  <p className="text-xs text-[#5c5e62] mt-0.5 font-medium print:text-[7pt]">소프트웨어 개발자 (주임)</p>
+                  <p className="text-xs text-[#5c5e62] mt-0.5 font-medium print:text-[7pt]">소프트웨어 개발자 (주임) · 7인 개발팀</p>
                 </div>
               </div>
 
               <div className="ml-0 md:ml-12 ds-mt-component space-y-3">
+                {/* 협업 환경 */}
+                <div className="flex flex-wrap gap-1.5 text-[10px] print:text-[6pt]">
+                  <span className="px-2 py-0.5 bg-[#e8deee] text-purple-700 rounded font-bold">Git Flow</span>
+                  <span className="px-2 py-0.5 bg-[#d3e5ef] text-blue-700 rounded font-bold">코드 리뷰</span>
+                  <span className="px-2 py-0.5 bg-[#ddedea] text-green-700 rounded font-bold">주간 기술 공유</span>
+                  <span className="px-2 py-0.5 bg-[#fbecdd] text-orange-700 rounded font-bold">Jira 스프린트</span>
+                </div>
+
                 {[
-                  { title: "Hadoop 기반 대용량 데이터 처리 파이프라인", desc: "분석 흐름에서 병목이 발생하는 지점을 기준으로 구조를 재정의", badge: null },
-                  { title: "YOLO 기반 산불 영상 인식 시스템 (ETRI 연구용역)", desc: "Android Native에서 실시간 영상 처리 성능과 안정성의 균형 조정", badge: null },
-                  { title: "모바일 GIS 솔루션 MapJoy GS 인증 대응", desc: "전면 수정보다 최소 침습적 개선 선택", badge: null },
-                  { title: "디지털 사이니지 시스템 (Kafka, Go, Kotlin)", desc: "'확장성'보다 '운영 가능성'을 우선 고려", badge: "국가사업" },
-                  { title: "지적측량 데이터 통합 시스템", desc: "대용량 공간데이터 처리 및 실시간 동기화 아키텍처 설계", badge: "국가사업" },
+                  { title: "Hadoop 기반 대용량 데이터 처리 파이프라인", desc: "시니어 개발자와 페어 프로그래밍으로 병목 지점 분석 및 구조 재정의", badge: null },
+                  { title: "YOLO 기반 산불 영상 인식 시스템 (ETRI 연구용역)", desc: "ETRI 연구원과 주간 미팅, Android 실시간 영상 처리 성능 최적화 담당", badge: null },
+                  { title: "모바일 GIS 솔루션 MapJoy GS 인증 대응", desc: "QA팀과 협업하여 최소 침습적 개선 방향 도출", badge: null },
+                  { title: "디지털 사이니지 시스템 (Kafka, Go, Kotlin)", desc: "백엔드 2인 협업, PR 리뷰 기반 코드 품질 관리", badge: "국가사업" },
+                  { title: "지적측량 데이터 통합 시스템", desc: "PM과 아키텍처 설계 논의, 대용량 공간데이터 실시간 동기화 구현", badge: "국가사업" },
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-2 text-xs print:text-[7pt]">
                     <span className="text-[#00cc00] flex-shrink-0 font-black">•</span>
@@ -221,6 +229,11 @@ export default function ResumePage() {
           <div className="grid gap-3">
             {[
               {
+                icon: "🤝",
+                title: "Collaboration & Communication",
+                detail: "코드 리뷰 문화, 주간 기술 공유, 명확한 PR 템플릿을 통해 팀 내 지식 전파와 코드 품질을 동시에 추구합니다."
+              },
+              {
                 icon: "🏗️",
                 title: "Architecture-First Thinking",
                 detail: "코드 작성 전 시스템을 설계합니다. 모든 프로젝트는 문서화되고 정당화된 아키텍처 결정으로 시작합니다."
@@ -289,19 +302,26 @@ export default function ResumePage() {
 
           <div className="grid gap-3">
             {[
-              { icon: "💹", name: "ArbQuant - 암호화폐 차익거래 시스템", problem: "개인 트레이딩에서 기관급 리스크 관리 구현 가능한가?", solution: "Kelly Criterion + Almgren-Chriss + Walk-Forward 백테스트로 정량적 리스크 관리" },
-              { icon: "🛡️", name: "Reporty (Project Iron Dome) - 직장 괴롭힘 리스크 관리", problem: "양측 모두 기록 조작 동기가 있을 때 증거 무결성 보장", solution: "Merkle Tree + SHA-256 해시 체인으로 암호학적 변조 탐지" },
-              { icon: "🦀", name: "HwpBridge - Rust HWP 파서", problem: "한국 정부/기업 문서가 AI 도구에서 접근 불가", solution: "MCP 서버 + 80%+ 테스트 커버리지 + Semantic Versioning으로 프로덕션급 구현" },
-              { icon: "⛳", name: "Ansim Golf - 골프장 자동화", problem: "시니어 운영자가 복잡한 UI를 탐색할 수 없음", solution: "시니어 친화적 UI + Edge 아키텍처로 정산 수작업 80% 감소" },
-              { icon: "🔮", name: "Soul Lab - 토스 운세 미니앱", problem: "소비자 앱에도 프로덕션급 운영이 필요", solution: "RUNBOOK + DISASTER_RECOVERY 문서화, 1,260개 결정론적 템플릿" },
-              { icon: "⚖️", name: "CHAGOK - AI 법률 보조 서비스", problem: "법률 영역에서 '자동화'가 어디까지 허용되는가", solution: "Human-in-the-loop + 이중 RAG로 할루시네이션 최소화" },
-              { icon: "📝", name: "콘텐츠 자동 생성 시스템", problem: "생성 품질보다 중요한 것은 일관성과 운영 비용", solution: "역할 분리된 멀티 에이전트 구조로 11개+ 플랫폼 통합" },
+              { icon: "🏥", name: "CareGuide CKD - AI 건강관리 플랫폼", problem: "복잡한 의료 도메인에서 팀 협업으로 정확도 확보", solution: "4인 팀 리드 · 도메인별 에이전트 설계 · 하이브리드 검색으로 13,000+ 의료 데이터 RAG 구축", team: "팀 리드 (4인)" },
+              { icon: "💹", name: "ArbQuant - 암호화폐 차익거래 시스템", problem: "개인 트레이딩에서 기관급 리스크 관리 구현 가능한가?", solution: "Kelly Criterion + Almgren-Chriss + Walk-Forward 백테스트로 정량적 리스크 관리", team: null },
+              { icon: "🛡️", name: "Reporty (Project Iron Dome) - 직장 괴롭힘 리스크 관리", problem: "양측 모두 기록 조작 동기가 있을 때 증거 무결성 보장", solution: "Merkle Tree + SHA-256 해시 체인으로 암호학적 변조 탐지", team: null },
+              { icon: "🦀", name: "HwpBridge - Rust HWP 파서", problem: "한국 정부/기업 문서가 AI 도구에서 접근 불가", solution: "MCP 서버 + 80%+ 테스트 커버리지 + Semantic Versioning으로 프로덕션급 구현", team: null },
+              { icon: "⛳", name: "Ansim Golf - 골프장 자동화", problem: "시니어 운영자가 복잡한 UI를 탐색할 수 없음", solution: "시니어 친화적 UI + Edge 아키텍처로 정산 수작업 80% 감소", team: null },
+              { icon: "⚖️", name: "CHAGOK - AI 법률 보조 서비스", problem: "법률 영역에서 '자동화'가 어디까지 허용되는가", solution: "Human-in-the-loop + 이중 RAG로 할루시네이션 최소화", team: null },
+              { icon: "📝", name: "콘텐츠 자동 생성 시스템", problem: "생성 품질보다 중요한 것은 일관성과 운영 비용", solution: "역할 분리된 멀티 에이전트 구조로 11개+ 플랫폼 통합", team: null },
             ].map((project, idx) => (
               <div key={idx} className="group p-3 md:p-4 bg-[#f7f7f5] rounded-lg border border-transparent hover:border-[#00cc00] transition-all print:p-2 cursor-default">
                 <div className="flex items-start gap-2.5">
                   <span className="text-lg flex-shrink-0">{project.icon}</span>
                   <div className="flex-1 min-w-0">
-                    <h4 className="text-xs md:text-sm font-black text-[#171a20] group-hover:text-[#00cc00] transition-colors print:text-[8pt]">{project.name}</h4>
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <h4 className="text-xs md:text-sm font-black text-[#171a20] group-hover:text-[#00cc00] transition-colors print:text-[8pt]">{project.name}</h4>
+                      {project.team && (
+                        <span className="text-[10px] font-black text-purple-700 bg-purple-100 px-1.5 py-0.5 rounded print:text-[6pt]">
+                          👥 {project.team}
+                        </span>
+                      )}
+                    </div>
                     <div className="space-y-1.5 mt-2 text-[11px] md:text-xs print:text-[7pt]">
                       <div className="flex gap-2">
                         <span className="text-[#9b9a97] flex-shrink-0 w-8 font-black">고민</span>
