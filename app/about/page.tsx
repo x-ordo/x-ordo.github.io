@@ -12,30 +12,32 @@ export default function AboutPage() {
       <div className="max-w-[1000px] mx-auto px-4 md:px-6">
 
         {/* Header */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.about.badge}
           </span>
-          <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
-            {t.about.title}
-          </h1>
-          <p className="text-sm md:text-base text-[#3e3e3e] font-bold mb-3 break-keep mt-2">
-            {t.about.subtitle}
-          </p>
+          <div>
+            <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep">
+              {t.about.title}
+            </h1>
+            <p className="text-sm md:text-base text-[#3e3e3e] font-bold break-keep mt-2">
+              {t.about.subtitle}
+            </p>
+          </div>
           <p className="text-xs md:text-sm text-[#5c5e62] max-w-3xl break-keep text-justify">
             {t.about.executiveSummary}
           </p>
         </section>
 
         {/* Core Strengths */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.strengths.badge}
           </span>
-          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep">
             {t.strengths.title}
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3 ds-mt-component">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
             {t.strengths.items.map((item, idx) => (
               <div
                 key={idx}
@@ -53,14 +55,14 @@ export default function AboutPage() {
         </section>
 
         {/* Tech Stack */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.techStack.badge}
           </span>
-          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep">
             {t.techStack.title}
           </h2>
-          <div className="grid md:grid-cols-3 gap-6 ds-mt-component">
+          <div className="grid md:grid-cols-3 gap-6">
             {t.techStack.categories.map((category, idx) => (
               <div key={idx}>
                 <h3 className="text-xs font-black text-[#171a20] mb-3 pb-2 border-b-2 border-black/10 break-keep">
@@ -82,15 +84,17 @@ export default function AboutPage() {
         </section>
 
         {/* What I'm Looking For */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.lookingFor.badge}
           </span>
-          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
-            {t.lookingFor.title}
-          </h2>
-          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-2 text-justify">{t.lookingFor.subtitle}</p>
-          <div className="grid md:grid-cols-3 gap-3 ds-mt-component">
+          <div>
+            <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep">
+              {t.lookingFor.title}
+            </h2>
+            <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-2 text-justify">{t.lookingFor.subtitle}</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-3">
             {t.lookingFor.items.map((item, idx) => (
               <div
                 key={idx}
@@ -113,12 +117,12 @@ export default function AboutPage() {
         </section>
 
         {/* Engineering Philosophy */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             Engineering Philosophy
           </span>
-          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-3 text-justify">{t.about.philosophySubtitle}</p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3 ds-mt-component">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep text-justify">{t.about.philosophySubtitle}</p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
             {t.about.philosophyItems.map((item, idx) => (
               <div
                 key={idx}
@@ -136,12 +140,12 @@ export default function AboutPage() {
         </section>
 
         {/* Failure & Verification */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.about.failureTitle}
           </span>
-          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-3 text-justify">{t.about.failureSubtitle}</p>
-          <div className="space-y-4 ds-mt-component">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep text-justify">{t.about.failureSubtitle}</p>
+          <div className="space-y-4">
             {t.about.failureLessons.map((lesson, idx) => (
               <div
                 key={idx}
@@ -159,7 +163,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-          <div className="p-5 rounded-lg bg-[#171a20] border-2 border-black shadow-[3px_3px_0_#00ff00] ds-mt-component">
+          <div className="p-5 rounded-lg bg-[#171a20] border-2 border-black shadow-[3px_3px_0_#00ff00]">
             <p className="text-sm font-black text-[#00ff00] break-keep">
               &quot;{t.about.failureRule}&quot;
             </p>
@@ -167,12 +171,12 @@ export default function AboutPage() {
         </section>
 
         {/* Leadership & Conflict */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.about.leadershipTitle}
           </span>
-          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-3">{t.about.leadershipSubtitle}</p>
-          <div className="space-y-2 ds-mt-component">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep">{t.about.leadershipSubtitle}</p>
+          <div className="space-y-2">
             {t.about.leadershipItems.map((item, idx) => (
               <div
                 key={idx}
@@ -187,12 +191,12 @@ export default function AboutPage() {
         </section>
 
         {/* Operating Rhythm */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             {t.about.rhythmTitle}
           </span>
-          <p className="text-xs md:text-sm text-[#5c5e62] break-keep mt-3">{t.about.rhythmSubtitle}</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2 ds-mt-component">
+          <p className="text-xs md:text-sm text-[#5c5e62] break-keep">{t.about.rhythmSubtitle}</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-2">
             {t.about.rhythmItems.map((item, idx) => (
               <div
                 key={idx}
@@ -210,14 +214,14 @@ export default function AboutPage() {
         </section>
 
         {/* Hiring Info */}
-        <section className="ds-section-padded border-b-2 border-black/10">
+        <section className="ds-section-padded border-b-2 border-black/10 flex flex-col gap-4">
           <span className="ds-badge">
             채용 관련 정보
           </span>
-          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep mt-3">
+          <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] break-keep">
             Hiring Info
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 ds-mt-component">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {[
               { label: "희망 포지션", value: "Senior Full-Stack Engineer" },
               { label: "근무 형태", value: "정규직 · 원격 가능" },
@@ -242,14 +246,14 @@ export default function AboutPage() {
         {/* Final Note */}
         <section className="ds-section-padded">
           <div className="bg-[#171a20] rounded-xl px-6 md:px-8 py-8 md:py-10 border-2 border-black shadow-[4px_4px_0_#00ff00]">
-            <div className="max-w-2xl mx-auto text-center">
+            <div className="max-w-2xl mx-auto text-center flex flex-col gap-4">
               <span className="ds-badge">
                 Final Note
               </span>
-              <p className="text-sm text-white font-medium mt-4 break-keep">
+              <p className="text-sm text-white font-medium break-keep">
                 {t.about.finalNote}
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-3 ds-mt-component">
+              <div className="flex flex-col sm:flex-row justify-center gap-3">
                 <a
                   href="mailto:haspark912@kakao.com"
                   className="ds-button ds-button-primary"
