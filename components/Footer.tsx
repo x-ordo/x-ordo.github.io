@@ -18,7 +18,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-white border-t border-[#f2f4f6] py-24 md:py-28">
+    <footer className="bg-white border-t border-[#f2f4f6] ds-py-section">
       <div className="max-w-[1200px] mx-auto px-6 md:px-8">
         <div className="flex flex-col md:flex-row justify-between gap-16 md:gap-28">
 

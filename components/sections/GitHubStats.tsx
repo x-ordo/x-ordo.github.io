@@ -161,11 +161,11 @@ export default function GitHubStats() {
   }
 
   return (
-    <section className="py-12 md:py-16 bg-white border-t-2 border-black/5">
+    <section className="ds-section-padded bg-white border-t-2 border-black/5">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
         {/* Section Header */}
-        <div className="mb-8 md:mb-10">
-          <span className="badge-section">
+        <div className="ds-section-header">
+          <span className="ds-badge">
             GitHub Activity
           </span>
           <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] keep-all mt-3">
@@ -177,7 +177,7 @@ export default function GitHubStats() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8">
+        <div className="ds-grid-4 ds-mb-component">
           {[
             { label: "Repositories", value: stats.totalRepos, icon: "📦" },
             { label: "Total Stars", value: stats.totalStars, icon: "⭐" },
@@ -186,7 +186,7 @@ export default function GitHubStats() {
           ].map((item, idx) => (
             <div
               key={idx}
-              className="bg-[#f7f7f5] rounded-xl p-4 md:p-5 border-2 border-black/5 hover:border-[#00cc00] transition-all group"
+              className="ds-card group"
             >
               <div className="flex items-center gap-2 mb-2">
                 <span className="text-lg">{item.icon}</span>
@@ -202,9 +202,9 @@ export default function GitHubStats() {
         </div>
 
         {/* Languages & Recent Activity */}
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6">
+        <div className="ds-grid-2">
           {/* Top Languages */}
-          <div className="bg-[#f7f7f5] rounded-xl p-5 md:p-6 border-2 border-black/5">
+          <div className="ds-card">
             <h3 className="text-sm md:text-base font-black text-[#171a20] mb-4 flex items-center gap-2">
               <span>💻</span> Top Languages
             </h3>
@@ -240,7 +240,7 @@ export default function GitHubStats() {
           </div>
 
           {/* Recent Activity */}
-          <div className="bg-[#f7f7f5] rounded-xl p-5 md:p-6 border-2 border-black/5">
+          <div className="ds-card">
             <h3 className="text-sm md:text-base font-black text-[#171a20] mb-4 flex items-center gap-2">
               <span>🔥</span> Recent Activity (30일)
             </h3>

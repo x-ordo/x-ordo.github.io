@@ -21,7 +21,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <Link href={`/projects/${project.slug}`} className="block group h-full">
-      <div className="h-full flex flex-col justify-between p-4 md:p-5 bg-white rounded-xl border-2 border-black/10 shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:border-[#00cc00] hover:shadow-[3px_3px_0_#00ff00] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-200">
+      <div className="ds-card-bordered h-full flex flex-col justify-between shadow-[2px_2px_0_rgba(0,0,0,0.1)] hover:shadow-[3px_3px_0_#00ff00] hover:-translate-x-0.5 hover:-translate-y-0.5">
 
         <div>
           {/* Header: Category + Status + Featured */}

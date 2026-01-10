@@ -7,12 +7,12 @@ export default function Manifesto() {
   const { t } = useI18n();
 
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="ds-section-padded bg-white">
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
         {/* Header */}
-        <div className="mb-8 md:mb-10">
-          <span className="badge-section">
+        <div className="ds-section-header">
+          <span className="ds-badge">
             {t.manifesto.badge}
           </span>
           <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] keep-all mt-3">

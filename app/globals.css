@@ -85,9 +85,16 @@
   --space-2xl: 4rem;     /* 64px */
   --space-3xl: 5rem;     /* 80px */
   --space-4xl: 6rem;     /* 96px */
-  --space-section: 6rem; /* 96px - between sections */
-  --space-component: 2.5rem; /* 40px - between components */
-  --space-text: 1.5rem;  /* 24px - between text blocks */
+
+  /* Semantic Spacing Tokens */
+  --space-section: 4rem;        /* 64px - between sections (mobile) */
+  --space-section-inner: 2rem;  /* 32px - inside section padding */
+  --space-component: 2rem;      /* 32px - between components */
+  --space-element: 1rem;        /* 16px - between elements */
+  --space-text: 1rem;           /* 16px - between text blocks */
+  --space-button-gap: 0.75rem;  /* 12px - gap between buttons */
+  --space-badge-mb: 0.75rem;    /* 12px - badge margin bottom */
+  --space-card-padding: 1.25rem; /* 20px - card internal padding */
 
   /* Typography Tokens - Reduced sizes */
   --text-xs: 0.8125rem;  /* 13px */
@@ -115,9 +122,22 @@
 /* Responsive Spacing - Desktop */
 @media (min-width: 768px) {
   :root {
-    --space-section: 8rem;   /* 128px */
-    --space-component: 3rem; /* 48px */
-    --space-text: 2rem;      /* 32px */
+    --space-section: 5rem;        /* 80px */
+    --space-section-inner: 2.5rem; /* 40px */
+    --space-component: 2.5rem;    /* 40px */
+    --space-element: 1.25rem;     /* 20px */
+    --space-text: 1.25rem;        /* 20px */
+    --space-button-gap: 1rem;     /* 16px */
+    --space-badge-mb: 1rem;       /* 16px */
+    --space-card-padding: 1.5rem; /* 24px */
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --space-section: 6rem;        /* 96px */
+    --space-section-inner: 3rem;  /* 48px */
+    --space-component: 3rem;      /* 48px */
   }
 }
 
@@ -608,6 +628,237 @@ body {
 
   /* ===== DESIGN TOKEN UTILITY CLASSES ===== */
 
+  /* ==========================================================================
+     SECTION SYSTEM
+     - All sections MUST use these classes for consistent outer spacing
+     ========================================================================== */
+
+  /* Base section - applies margin-top for spacing between sections */
+  .ds-section {
+    margin-top: var(--space-section);
+  }
+
+  .ds-section:first-child {
+    margin-top: 0;
+  }
+
+  /* Section with internal padding */
+  .ds-section-padded {
+    margin-top: var(--space-section);
+    padding-top: var(--space-section-inner);
+    padding-bottom: var(--space-section-inner);
+  }
+
+  .ds-section-padded:first-child {
+    margin-top: 0;
+  }
+
+  /* Section header (badge + title + subtitle) */
+  .ds-section-header {
+    margin-bottom: var(--space-component);
+  }
+
+  /* ==========================================================================
+     BADGE SYSTEM
+     ========================================================================== */
+
+  .ds-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-dark);
+    background: rgba(0, 255, 0, 0.1);
+    border: 1.5px solid rgba(0, 204, 0, 0.3);
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    margin-bottom: var(--space-badge-mb);
+  }
+
+  @media (min-width: 768px) {
+    .ds-badge {
+      font-size: 0.75rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  /* ==========================================================================
+     BUTTON SYSTEM
+     - All buttons MUST have outer margin when in groups
+     ========================================================================== */
+
+  /* Button group container */
+  .ds-button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-button-gap);
+    margin-top: var(--space-element);
+  }
+
+  .ds-button-group-lg {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-button-gap);
+    margin-top: var(--space-component);
+  }
+
+  /* Base button styles */
+  .ds-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+    font-weight: 800;
+    border-radius: 0.5rem;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+  }
+
+  .ds-button-primary {
+    background: var(--accent-dark);
+    color: #000;
+    box-shadow: 3px 3px 0 #000;
+  }
+
+  .ds-button-primary:hover {
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-1px, -1px);
+  }
+
+  .ds-button-secondary {
+    background: #000;
+    color: #fff;
+    box-shadow: 3px 3px 0 var(--accent);
+  }
+
+  .ds-button-secondary:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 4px 4px 0 #000;
+    transform: translate(-1px, -1px);
+  }
+
+  .ds-button-outline {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .ds-button-outline:hover {
+    background: #000;
+    color: #fff;
+    box-shadow: 3px 3px 0 var(--accent);
+    transform: translate(-1px, -1px);
+  }
+
+  @media (min-width: 768px) {
+    .ds-button {
+      min-height: 3rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 0.875rem;
+    }
+  }
+
+  /* ==========================================================================
+     CARD SYSTEM
+     ========================================================================== */
+
+  .ds-card {
+    padding: var(--space-card-padding);
+    border-radius: 0.75rem;
+    background: var(--background-subtle);
+    border: 2px solid transparent;
+    transition: all var(--transition-base);
+  }
+
+  .ds-card:hover {
+    border-color: var(--accent-dark);
+  }
+
+  .ds-card-bordered {
+    padding: var(--space-card-padding);
+    border-radius: 0.75rem;
+    background: var(--background);
+    border: 2px solid var(--border);
+    transition: all var(--transition-base);
+  }
+
+  .ds-card-bordered:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  /* ==========================================================================
+     GRID & LAYOUT SYSTEM
+     ========================================================================== */
+
+  .ds-grid {
+    display: grid;
+    gap: var(--space-element);
+  }
+
+  .ds-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-element);
+  }
+
+  .ds-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: var(--space-element);
+  }
+
+  .ds-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-element);
+  }
+
+  @media (min-width: 768px) {
+    .ds-grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ds-grid-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .ds-grid-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .ds-grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  /* ==========================================================================
+     ELEMENT SPACING
+     ========================================================================== */
+
+  .ds-mt-section { margin-top: var(--space-section); }
+  .ds-mt-component { margin-top: var(--space-component); }
+  .ds-mt-element { margin-top: var(--space-element); }
+  .ds-mt-text { margin-top: var(--space-text); }
+
+  .ds-mb-section { margin-bottom: var(--space-section); }
+  .ds-mb-component { margin-bottom: var(--space-component); }
+  .ds-mb-element { margin-bottom: var(--space-element); }
+  .ds-mb-text { margin-bottom: var(--space-text); }
+
+  .ds-py-section { padding-top: var(--space-section-inner); padding-bottom: var(--space-section-inner); }
+  .ds-py-component { padding-top: var(--space-component); padding-bottom: var(--space-component); }
+
+  /* Legacy classes - use ds-* classes instead */
   /* Section Spacing */
   .section-gap {
     padding-top: var(--space-section);
