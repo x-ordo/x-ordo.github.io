@@ -11,13 +11,13 @@ export default function Navigation() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   const navItems = [
     { label: t.nav.home, href: "/" },
     { label: t.nav.about, href: "/about" },
     { label: t.nav.projects, href: "/projects" },
-    { label: t.nav.resume, href: "/resume" },
+    { label: t.nav.resume, href: `/resume/${locale}` },
     { label: t.nav.contact, href: "/contact" },
   ];
 
@@ -51,7 +51,10 @@ export default function Navigation() {
         {/* Desktop Nav Links + Social + Language Toggle */}
         <div className="hidden md:flex items-center gap-6">
           {navItems.map((item) => {
-            const isActive = pathname === item.href;
+            // Handle resume page special case (matches /resume, /resume/ko, /resume/en)
+            const isActive = item.href.startsWith("/resume")
+              ? pathname.startsWith("/resume")
+              : pathname === item.href;
             return (
               <Link
                 key={item.href}
@@ -131,7 +134,10 @@ export default function Navigation() {
         <div className="md:hidden absolute top-full left-0 right-0 bg-white border-b border-[#f2f4f6] shadow-xl py-4 px-6 animate-in slide-in-from-top-2 duration-200">
           <div className="flex flex-col space-y-2">
             {navItems.map((item) => {
-              const isActive = pathname === item.href;
+              // Handle resume page special case (matches /resume, /resume/ko, /resume/en)
+              const isActive = item.href.startsWith("/resume")
+                ? pathname.startsWith("/resume")
+                : pathname === item.href;
               return (
                 <Link
                   key={item.href}
