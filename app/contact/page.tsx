@@ -20,16 +20,18 @@ export default function ContactPage() {
       <div className="max-w-[1200px] mx-auto px-4 md:px-6">
 
         {/* Header */}
-        <section className="ds-section-padded border-b-2 border-black bg-[#fafafa] -mx-4 md:-mx-6 px-4 md:px-6">
+        <section className="ds-section-padded border-b-2 border-black bg-[#fafafa] -mx-4 md:-mx-6 px-4 md:px-6 flex flex-col gap-4">
           <span className="ds-badge">
             Establish Link
           </span>
-          <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] keep-all mt-3">
-            Let&apos;s build the <span className="text-[#00cc00]">Future</span>
-          </h1>
-          <p className="text-sm md:text-base font-bold text-black max-w-3xl keep-all mt-2">
-            스타트업 빌딩, AI 제품, 엔터프라이즈 자동화까지 다양한 협업을 환영합니다.
-          </p>
+          <div>
+            <h1 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] keep-all">
+              Let&apos;s build the <span className="text-[#00cc00]">Future</span>
+            </h1>
+            <p className="text-sm md:text-base font-bold text-black max-w-3xl keep-all mt-2">
+              스타트업 빌딩, AI 제품, 엔터프라이즈 자동화까지 다양한 협업을 환영합니다.
+            </p>
+          </div>
         </section>
 
         {/* Contact Grid */}
@@ -37,12 +39,12 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-8">
 
             {/* Communications */}
-            <div className="p-6 md:p-8 border-2 border-black rounded-xl bg-white">
+            <div className="p-6 md:p-8 border-2 border-black rounded-xl bg-white flex flex-col gap-4">
               <span className="ds-badge">
                 Communications
               </span>
 
-              <div className="space-y-8 ds-mt-component">
+              <div className="space-y-8">
                 {/* Email */}
                 <div>
                   <p className="text-xs font-black text-gray-400 uppercase mb-3 tracking-widest">
@@ -80,21 +82,19 @@ export default function ContactPage() {
             </div>
 
             {/* Focus & Status */}
-            <div className="p-6 md:p-8 border-2 border-black rounded-xl bg-[#f0f0f0] flex flex-col justify-between">
-              <div>
+            <div className="p-6 md:p-8 border-2 border-black rounded-xl bg-[#f0f0f0] flex flex-col justify-between gap-6">
+              <div className="flex flex-col gap-4">
                 <span className="ds-badge">
                   Current Status
                 </span>
-                <div className="ds-mt-component">
-                  <Lanyard />
-                </div>
+                <Lanyard />
               </div>
 
-              <div className="ds-mt-component">
+              <div className="flex flex-col gap-4">
                 <span className="ds-badge">
                   Primary Focus Areas
                 </span>
-                <div className="flex flex-wrap gap-2 ds-mt-element">
+                <div className="flex flex-wrap gap-2">
                   {focusAreas.map((item) => (
                     <span
                       key={item}
