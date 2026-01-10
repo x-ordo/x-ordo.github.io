@@ -18,6 +18,7 @@ export type ProjectMetrics = {
   duration: string;      // 개발 기간: "2주", "3개월"
   role: string;          // 역할: "단독 개발", "백엔드 리드"
   impact?: string;       // 성과: "처리속도 3배 향상", "MAU 5,000+"
+  quantitative?: string[]; // 정량적 성과 지표: ["응답 시간 70% 단축", "테스트 커버리지 85%"]
 };
 
 export type Project = {

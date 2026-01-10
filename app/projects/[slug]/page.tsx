@@ -95,7 +95,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
 
           {/* Metrics Cards - Clear, Big Numbers */}
           {project.metrics && (
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-12 md:mb-16">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 mb-8 md:mb-10">
               {project.metrics.duration && (
                 <div className="group bg-white border-4 border-black p-6 md:p-8 shadow-[6px_6px_0_#000] hover:shadow-[8px_8px_0_#00ff00] hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all cursor-default">
                   <div className="text-xs md:text-sm font-black text-black/40 uppercase tracking-widest mb-3">
@@ -126,6 +126,31 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                   </div>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* Quantitative Metrics - Key Performance Indicators */}
+          {project.metrics?.quantitative && project.metrics.quantitative.length > 0 && (
+            <div className="bg-black border-4 border-black p-6 md:p-8 mb-12 md:mb-16 shadow-[8px_8px_0_#00ff00]">
+              <h3 className="text-xs md:text-sm font-black text-white/50 uppercase tracking-[0.2em] mb-6 flex items-center gap-3">
+                <span className="w-6 h-6 md:w-8 md:h-8 bg-[#00ff00] text-black flex items-center justify-center text-sm md:text-base font-black">📊</span>
+                <span className="text-white">Key Metrics</span>
+              </h3>
+              <div className="flex flex-wrap gap-3 md:gap-4">
+                {project.metrics.quantitative.map((metric, index) => (
+                  <span
+                    key={index}
+                    className="group inline-flex items-center gap-2 px-4 py-2.5 md:px-5 md:py-3
+                               bg-white/10 border-2 border-white/30 text-white
+                               text-sm md:text-base font-bold
+                               hover:bg-[#00ff00] hover:border-[#00ff00] hover:text-black
+                               transition-all cursor-default select-none"
+                  >
+                    <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#00ff00] group-hover:bg-black rounded-full flex-shrink-0" />
+                    {metric}
+                  </span>
+                ))}
+              </div>
             </div>
           )}
 

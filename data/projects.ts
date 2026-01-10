@@ -72,6 +72,12 @@ export const projects: Project[] = [
       duration: "3개월",
       role: "풀스택 단독",
       impact: "증거 정리 70% 단축",
+      quantitative: [
+        "테스트 케이스 67개 작성",
+        "증거 처리 시간 70% 단축 (30분 → 9분)",
+        "5가지 멀티모달 파서 통합 (이미지/음성/영상/PDF/텍스트)",
+        "SHA-256 해싱 100% 적용",
+      ],
     },
     status: "종료",
   },
@@ -99,6 +105,11 @@ export const projects: Project[] = [
       duration: "5주",
       role: "풀스택 단독",
       impact: "프로 등록 50+",
+      quantitative: [
+        "등록 프로 50명+",
+        "카카오톡 알림톡 자동화",
+        "Toss Payments 결제 연동",
+      ],
     },
   },
   {
@@ -128,6 +139,12 @@ export const projects: Project[] = [
       duration: "6주",
       role: "풀스택 단독",
       impact: "주문 처리 <10초, eSIM 4사 통합",
+      quantitative: [
+        "주문 처리 시간 10초 이내",
+        "eSIM 제공자 4사 통합 (RedteaGO/eSIMCard/MobiMatter/Airalo)",
+        "인프라 비용 $0/월 (Oracle Cloud Free Tier)",
+        "Circuit Breaker 자동 Failover 100%",
+      ],
     },
   },
   {
@@ -147,14 +164,18 @@ export const projects: Project[] = [
     },
     highlights: [
       "Slither, Mythril 등 오픈소스 센서와 LLM을 연동한 다단계 분석 파이프라인",
-      "탐지된 취약점을 LLM이 재검증하여 90% 이상의 오탐 필터링",
+      "탐지된 취약점을 LLM이 재검증하여 오탐(False Positive) 필터링",
       "취약점 우선순위 스코어링 및 자동 패치 코드 제안 기능",
     ],
     featured: true,
     metrics: {
       duration: "2개월",
       role: "AI/백엔드",
-      impact: "오탐률 90% 감소",
+      impact: "3개 정적 분석 도구 + LLM 통합",
+      quantitative: [
+        "3개 정적 분석 도구 통합 (Slither/Mythril/Aderyn)",
+        "LLM 기반 취약점 재검증 파이프라인",
+      ],
     },
   },
   {
@@ -184,6 +205,13 @@ export const projects: Project[] = [
       duration: "8주",
       role: "팀 리드",
       impact: "13,000+ 의료 데이터 RAG",
+      quantitative: [
+        "의료 데이터 13,102건 RAG 구축",
+        "데이터 정규화 99.4% 감소 (2,224,451 → 13,102)",
+        "4개 전문 에이전트 구현",
+        "하이브리드 검색 (BM25 40% + Vector 60%)",
+        "세션당 토큰 제한 20K",
+      ],
     },
   },
   {
@@ -210,6 +238,11 @@ export const projects: Project[] = [
       duration: "2개월",
       role: "풀스택 단독",
       impact: "11개+ 플랫폼 통합",
+      quantitative: [
+        "11개 소셜 플랫폼 API 통합",
+        "콘텐츠 생성 자동화 100%",
+        "Gemini 2.0 Flash + Stable Diffusion XL 멀티미디어 생성",
+      ],
     },
     status: "아카이브",
   },
@@ -239,7 +272,12 @@ export const projects: Project[] = [
     metrics: {
       duration: "6주",
       role: "풀스택 단독",
-      impact: "리뷰 응답 시간 90% 감소",
+      impact: "AI 리뷰 자동 응답 시스템",
+      quantitative: [
+        "JWT Access Token 30분 + Refresh 7일",
+        "Clean Architecture 3계층 분리",
+        "AI 기반 리뷰 감성 분석",
+      ],
     },
   },
   {
@@ -258,7 +296,12 @@ export const projects: Project[] = [
     metrics: {
       duration: "4주",
       role: "풀스택 단독",
-      impact: "고객 클레임 40% 감소",
+      impact: "사진 기반 자동 인증 시스템",
+      quantitative: [
+        "사진 인증 알림 자동화",
+        "화이트라벨링 지원",
+        "Before/After 슬라이더 UI",
+      ],
     },
   },
   {
@@ -288,7 +331,14 @@ export const projects: Project[] = [
     metrics: {
       duration: "4주",
       role: "풀스택 단독",
-      impact: "E2E < 2.5초, RAG 정확도 >70%",
+      impact: "E2E < 2.5초, SSE 스트리밍",
+      quantitative: [
+        "E2E 응답 시간 2.5초 이내",
+        "SSE 스트리밍: STT 500-800ms + LLM 800-1200ms + TTS 300-500ms",
+        "한국어 7개 섹션 자동 인식",
+        "8축 역량 평가 모델",
+        "3가지 면접관 페르소나",
+      ],
     },
   },
   {
@@ -319,6 +369,13 @@ export const projects: Project[] = [
       duration: "7주",
       role: "풀스택 단독",
       impact: "예측 엔진 13팩터, B2B API 4티어",
+      quantitative: [
+        "13개 팩터 기반 예측 엔진",
+        "Redis 캐싱 5분 TTL",
+        "API 응답 시간 Exponential Backoff",
+        "경마/경륜/경정 3개 종목 통합",
+        "Kelly Criterion 배팅 비율 계산",
+      ],
     },
   },
   {
@@ -339,6 +396,11 @@ export const projects: Project[] = [
       duration: "3주",
       role: "풀스택 단독",
       impact: "SEO 1페이지 노출",
+      quantitative: [
+        "Google 검색 1페이지 노출",
+        "Astro SSG 빌드",
+        "JSON-LD 구조화 데이터 자동 생성",
+      ],
     },
   },
   {
@@ -359,6 +421,12 @@ export const projects: Project[] = [
       duration: "2주",
       role: "풀스택 단독",
       impact: "예측 정확도 78%",
+      quantitative: [
+        "시계열 예측 정확도 78%",
+        "ARIMA/Prophet 모델 적용",
+        "네이버 데이터랩 트렌드 분석",
+        "Groq LLM 니치 제품명 생성",
+      ],
     },
   },
   {
@@ -378,6 +446,11 @@ export const projects: Project[] = [
       duration: "3주",
       role: "풀스택 단독",
       impact: "MVP 검증 완료",
+      quantitative: [
+        "토스 WebView MVP 검증 완료",
+        "EXIF 메타데이터 진위 검증",
+        "포인트 자동 정산 워커 구현",
+      ],
     },
   },
   {
@@ -405,7 +478,12 @@ export const projects: Project[] = [
     metrics: {
       duration: "1주",
       role: "풀스택 단독",
-      impact: "월 방문 3,000+",
+      impact: "Astro Islands + SSG",
+      quantitative: [
+        "Astro Islands Architecture",
+        "Vitest + Playwright E2E 테스트",
+        "Cloudflare Pages 배포",
+      ],
     },
   },
   {
@@ -424,7 +502,12 @@ export const projects: Project[] = [
     metrics: {
       duration: "2주",
       role: "풀스택 단독",
-      impact: "바이럴 공유 500+",
+      impact: "인간관계 ROI 분석",
+      quantitative: [
+        "클라이언트 사이드 PII 마스킹",
+        "ROI 정량화 분석 리포트",
+        "SNS 공유 이미지 생성",
+      ],
     },
   },
   {
@@ -444,6 +527,11 @@ export const projects: Project[] = [
       duration: "4주",
       role: "프론트엔드",
       impact: "토스 심사 통과",
+      quantitative: [
+        "토스 Apps in Toss 심사 통과",
+        "WebView 렌더링 최적화",
+        "실시간 멀티플레이어 지원",
+      ],
     },
   },
   {
@@ -463,7 +551,12 @@ export const projects: Project[] = [
     metrics: {
       duration: "3주",
       role: "풀스택 단독",
-      impact: "DAU 1,200+",
+      impact: "토스 미니앱 운세 서비스",
+      quantitative: [
+        "결정론적 운세 엔진",
+        "바이럴 잠금 해제 메커니즘",
+        "보상형 광고 퍼널 최적화",
+      ],
     },
     status: "운영중",
   },
@@ -493,6 +586,12 @@ export const projects: Project[] = [
       duration: "2주",
       role: "모바일 단독",
       impact: "앱스토어 출시, 60fps 렌더링",
+      quantitative: [
+        "앱스토어 출시 완료",
+        "60fps 렌더링 보장 (CustomPainter + Ticker)",
+        "Sin/Cos 8자 경로 생성",
+        "Haptic Feedback 3단계 패턴",
+      ],
     },
   },
   {
@@ -520,6 +619,12 @@ export const projects: Project[] = [
       duration: "3주",
       role: "풀스택 단독",
       impact: "Spec-First 개발 방법론 적용",
+      quantitative: [
+        "4개 플랫폼 스타일 지원 (KakaoTalk/Telegram/Instagram/Discord)",
+        "Spec-First 워크플로우 4단계",
+        "XSS 보안 테스트 자동화",
+        "3-Column 레이아웃 구현",
+      ],
     },
   },
   {
@@ -547,6 +652,12 @@ export const projects: Project[] = [
       duration: "1주",
       role: "풀스택 단독",
       impact: "11,086 음식 DB, 3 AI 페르소나",
+      quantitative: [
+        "한국 음식 DB 11,086건",
+        "3가지 AI 코치 페르소나",
+        "식약처 공식 문서 RAG",
+        "음성 식사 로깅 지원",
+      ],
     },
   },
   {
@@ -567,6 +678,12 @@ export const projects: Project[] = [
       duration: "3주",
       role: "풀스택 단독",
       impact: "6개 미학 컨셉",
+      quantitative: [
+        "6개 미학 컨셉 (플라뇌르/필름로그/미드나잇 등)",
+        "Human-in-the-loop 10단계 대화",
+        "Gemini Imagen 3.0 시각 생성",
+        "LangGraph 멀티에이전트",
+      ],
     },
   },
   {
@@ -585,7 +702,12 @@ export const projects: Project[] = [
     metrics: {
       duration: "2주",
       role: "AI/백엔드",
-      impact: "학습 시간 40% 단축",
+      impact: "AI 학습 보조 시스템",
+      quantitative: [
+        "OpenAI + Claude API 이중 LLM",
+        "자동 Q&A 생성",
+        "객관식/주관식 문제 자동 출제",
+      ],
     },
   },
   {
@@ -610,7 +732,7 @@ export const projects: Project[] = [
       "HMAC Evidence Chain: previousHash를 포함한 연쇄 해시로 변조 감지",
       "Public Code 해싱: 평문 저장 금지, SHA-256으로만 조회",
       "PII Guard: LLM 기반 민감 정보 자동 감지/마스킹",
-      "Vector DB 시맨틱 검색: 10,000+ 한국 노동법 판례",
+      "Vector DB 시맨틱 검색: OpenAI Embedding 기반",
       "자동 PDF Defense Pack 생성: 법적 절차용",
     ],
     featured: true,
@@ -618,6 +740,13 @@ export const projects: Project[] = [
       duration: "3개월",
       role: "System Architect & Lead Dev",
       impact: "Zero-Trust 증거 체인",
+      quantitative: [
+        "AES-256-GCM 암호화 + Key Versioning",
+        "HMAC Evidence Chain 변조 감지",
+        "Vector DB 시맨틱 검색 (OpenAI Embedding)",
+        "LLM 기반 PII 자동 탐지/마스킹",
+        "PIPA/GDPR 컴플라이언스",
+      ],
     },
   },
   {
@@ -652,7 +781,14 @@ export const projects: Project[] = [
     metrics: {
       duration: "2개월",
       role: "Sole Architect & Developer",
-      impact: "40+ PRs, 일평균 0.3% 알파",
+      impact: "19 PRs, 기관급 리스크 관리",
+      quantitative: [
+        "19 PRs merged (Conventional Commits)",
+        "Kelly Criterion 포지션 사이징",
+        "Almgren-Chriss 시장 영향 모델",
+        "멀티 클라우드 (Fly.io + Oracle Cloud)",
+        "CVE 패칭 워크플로우 자동화",
+      ],
     },
     status: "개발중",
   },
@@ -673,7 +809,7 @@ export const projects: Project[] = [
   {
     slug: "hwp-bridge",
     name: "HwpBridge",
-    summary: "Production Rust HWP Parser with MCP Server & 80%+ Test Coverage",
+    summary: "Production Rust HWP Parser with MCP Server",
     description:
       "한국 정부 및 기업 문서(HWP 5.x OLE/CFB)를 파싱하는 워크스페이스 기반 Rust 라이브러리입니다. Model Context Protocol (MCP) 서버를 통해 Claude Desktop이 한국 공식 문서를 읽고 분석할 수 있습니다. 프로덕션급 오픈소스 엔지니어링 관행을 보여줍니다.",
     intent: "한국 정부와 기업 문서는 HWP 포맷에 갇혀 현대 AI 도구에서 접근할 수 없습니다. 이 프로젝트는 프로덕션급 Rust 개발(Semantic Versioning, Dependabot 자동화, 포괄적 테스트)을 시연하면서 그 데이터를 열어줍니다.",
@@ -684,14 +820,14 @@ export const projects: Project[] = [
       Server: ["axum (HTTP MCP)", "stdio (Local MCP)"],
       Bindings: ["WASM (Browser)", "Tauri (Desktop GUI)"],
       DevOps: ["Semantic Versioning", "Dependabot", "GitHub Actions CI"],
-      Testing: ["80%+ Test Coverage", "Integration Tests"],
+      Testing: ["Integration Tests", "E2E Tests"],
     },
     highlights: [
       "Rust 워크스페이스 아키텍처 - cli, mcp, wasm, gui 분리",
       "Model Context Protocol (MCP) 서버 - AI 어시스턴트 통합",
       "Semantic Versioning + 자동 릴리스 관리",
       "Dependabot 자동화로 의존성 보안 관리",
-      "80%+ 테스트 커버리지 (유닛 + 통합 테스트)",
+      "통합 테스트 (유닛 + E2E)",
       "WASM 바인딩 - 브라우저 기반 문서 파싱",
       "Tauri 데스크톱 GUI - 비기술 사용자용",
     ],
@@ -699,7 +835,14 @@ export const projects: Project[] = [
     metrics: {
       duration: "3주",
       role: "Open Source Maintainer",
-      impact: "80%+ 테스트 커버리지, MCP 지원",
+      impact: "MCP 서버 + 크로스플랫폼",
+      quantitative: [
+        "MCP 서버 통합 (HTTP + stdio)",
+        "6개 Rust crate 워크스페이스",
+        "Semantic Versioning 자동 릴리스",
+        "Dependabot 보안 자동화",
+        "WASM + Tauri 크로스플랫폼",
+      ],
     },
   },
   {
@@ -747,6 +890,11 @@ export const projects: Project[] = [
       duration: "진행중",
       role: "프론트엔드 리드",
       impact: "B2E 플랫폼 구축",
+      quantitative: [
+        "React Query 서버 상태 동기화",
+        "Redux Toolkit 전역 상태 관리",
+        "Playwright E2E 테스트 자동화",
+      ],
     },
   },
   {
@@ -766,6 +914,12 @@ export const projects: Project[] = [
       duration: "초기 단계",
       role: "풀스택 리드",
       impact: "물류 비용 절감 목표",
+      quantitative: [
+        "지하철 노선 최적 경로 알고리즘",
+        "Go + sqlc Type-safe API",
+        "Asynq 비동기 작업 큐",
+        "Flutter 크로스 플랫폼 앱",
+      ],
     },
   },
   {
@@ -785,6 +939,11 @@ export const projects: Project[] = [
       duration: "2주",
       role: "풀스택 단독",
       impact: "금융 교육 개인화",
+      quantitative: [
+        "Turborepo 모노레포 스키마 공유",
+        "OpenAI + n8n 어댑터 패턴",
+        "SQLite 학습 데이터 기록",
+      ],
     },
   },
   {
@@ -819,6 +978,12 @@ export const projects: Project[] = [
       duration: "진행중",
       role: "풀스택 단독",
       impact: "로또 분석 커뮤니티",
+      quantitative: [
+        "1,200회+ 당첨 데이터 분석",
+        "Kakao Maps API 명당 시각화",
+        "AI 번호 추천 알고리즘",
+        "Cloudflare Pages 정적 배포",
+      ],
     },
   },
   {
@@ -892,14 +1057,21 @@ export const projects: Project[] = [
     metrics: {
       duration: "6주",
       role: "풀스택 단독",
-      impact: "정산 수작업 80% 감소, Gemini AI 파싱",
+      impact: "Gemini AI 파싱 + Edge-first",
+      quantitative: [
+        "API 응답 시간 50ms 이하 (Edge SQLite)",
+        "Gemini 1.5 Flash 비정형 텍스트 파싱",
+        "시니어 친화적 UI (큰 터치 타겟, 고대비)",
+        "노쇼 자동 청구 시스템",
+        "자동 정산 시스템",
+      ],
     },
     status: "운영중",
   },
   {
     slug: "soul-lab-ops",
     name: "Soul Lab (Operations)",
-    summary: "1,260 Template Fortune System with Enterprise Runbook & Disaster Recovery",
+    summary: "Deterministic Fortune Engine with Enterprise Runbook & Disaster Recovery",
     description:
       "토스 미니앱 운세/궁합 서비스로 엔터프라이즈급 운영 성숙도를 보여줍니다. 포괄적인 RUNBOOK 문서, DISASTER_RECOVERY 절차, 공식 변경 관리를 통해 추적되는 컴플라이언스 수정을 제공합니다.",
     intent: "소비자 엔터테인먼트 제품도 프로덕션급 운영 문서화를 가질 자격이 있습니다. 이 프로젝트는 '빠르게 움직이기'와 '안전하게 운영하기'가 상호 배타적이지 않음을 증명합니다.",
@@ -912,7 +1084,7 @@ export const projects: Project[] = [
       Compliance: ["Change Management", "Audit Trail"],
     },
     highlights: [
-      "1,260개 결정론적 운세 템플릿 - 일관된 결과 생성 보장",
+      "Seed 기반 결정론적 운세 엔진 - 동일 입력 시 일관된 결과 보장",
       "RUNBOOK 문서 - 모든 운영 시나리오 커버",
       "DISASTER_RECOVERY 절차 - RTO/RPO 정의",
       "공식 변경 관리 프로세스로 추적되는 컴플라이언스 수정",
@@ -921,7 +1093,13 @@ export const projects: Project[] = [
     metrics: {
       duration: "3주",
       role: "Full-stack + Operations",
-      impact: "DAU 1,200+, Enterprise-grade 문서",
+      impact: "Enterprise-grade 운영 문서",
+      quantitative: [
+        "Seed 기반 결정론적 운세 엔진 (6개 카테고리)",
+        "RUNBOOK + DISASTER_RECOVERY 문서화",
+        "RTO/RPO 정의 완료",
+        "바이럴 잠금 해제 메커니즘",
+      ],
     },
   },
   {
@@ -950,6 +1128,12 @@ export const projects: Project[] = [
       duration: "2주",
       role: "Product Owner + Developer",
       impact: "PRD-driven 방법론",
+      quantitative: [
+        "PRD 기반 개발 프로세스",
+        "Authority-driven 디자인 결정",
+        "WCAG 2.1 AA 접근성 준수",
+        "Cmd+K 글로벌 검색 구현",
+      ],
     },
   },
 ];

@@ -16,8 +16,9 @@ const statusStyles: Record<ProjectStatus, { bg: string; text: string; dot?: stri
   "아카이브": { bg: "bg-amber-100", text: "text-amber-700" },
 };
 
-export default function ProjectCard({ project }: ProjectCardProps) {
+export default function ProjectCard({ project, compact = false }: ProjectCardProps) {
   const status = project.status ? statusStyles[project.status] : null;
+  const maxMetrics = compact ? 2 : 3;
 
   return (
     <Link href={`/projects/${project.slug}`} className="block group h-full">
@@ -60,6 +61,26 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1.5 bg-[#00ff00]/15 rounded-lg text-xs md:text-sm font-bold text-[#008800] mb-3 border border-[#00cc00]/20 keep-all">
               <span className="text-sm">📊</span>
               {project.metrics.impact}
+            </div>
+          )}
+
+          {/* Quantitative Metrics - Compact Display */}
+          {project.metrics?.quantitative && project.metrics.quantitative.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-3">
+              {project.metrics.quantitative.slice(0, maxMetrics).map((metric, index) => (
+                <span
+                  key={index}
+                  className="inline-flex items-center gap-1 px-2 py-1 bg-[#171a20]/5 rounded text-[10px] md:text-xs font-semibold text-[#5c5e62] border border-black/5"
+                >
+                  <span className="w-1 h-1 bg-[#00cc00] rounded-full flex-shrink-0" />
+                  {metric}
+                </span>
+              ))}
+              {project.metrics.quantitative.length > maxMetrics && (
+                <span className="px-2 py-1 rounded bg-[#f5f5f5] text-[10px] md:text-xs font-bold text-[#8b95a1]">
+                  +{project.metrics.quantitative.length - maxMetrics}
+                </span>
+              )}
             </div>
           )}
         </div>
