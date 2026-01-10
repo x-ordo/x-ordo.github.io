@@ -49,16 +49,32 @@ const ko: Translations = {
     title: "기술 스택",
     categories: [
       {
+        category: "시스템 아키텍처",
+        items: ["Event-driven (NATS JetStream)", "CQRS", "Merkle Trees", "Multi-cloud Failover"],
+      },
+      {
         category: "백엔드 / 인프라",
-        items: ["Python", "FastAPI", "Go", "Node.js", "AWS", "Linux", "Kafka"],
+        items: ["Go", "Rust", "Python/FastAPI", "Node.js", "AWS", "Cloudflare Workers", "Fly.io"],
       },
       {
         category: "프론트엔드 / 모바일",
         items: ["Next.js", "React", "TypeScript", "Flutter", "Kotlin", "Android"],
       },
       {
+        category: "데이터 & 분석",
+        items: ["TimescaleDB", "PostgreSQL", "Qdrant", "Redis", "Walk-Forward Backtest"],
+      },
+      {
         category: "AI / LLM",
-        items: ["LLM 자동화", "Function Calling", "LoRA/SFT", "멀티에이전트"],
+        items: ["LangChain", "RAG", "MCP Server", "Multi-Agent", "PII Detection"],
+      },
+      {
+        category: "DevOps & 보안",
+        items: ["CI/CD", "Dependabot", "CVE 모니터링", "Semantic Versioning", "80%+ Coverage"],
+      },
+      {
+        category: "리스크 관리",
+        items: ["Kelly Criterion", "Almgren-Chriss", "Z-Score Signals", "Correlation Risk"],
       },
     ],
   },

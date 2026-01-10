@@ -49,16 +49,32 @@ const en: Translations = {
     title: "Technical Stack",
     categories: [
       {
+        category: "System Architecture",
+        items: ["Event-driven (NATS JetStream)", "CQRS", "Merkle Trees", "Multi-cloud Failover"],
+      },
+      {
         category: "Backend / Infra",
-        items: ["Python", "FastAPI", "Go", "Node.js", "AWS", "Linux", "Kafka"],
+        items: ["Go", "Rust", "Python/FastAPI", "Node.js", "AWS", "Cloudflare Workers", "Fly.io"],
       },
       {
         category: "Frontend / Mobile",
         items: ["Next.js", "React", "TypeScript", "Flutter", "Kotlin", "Android"],
       },
       {
+        category: "Data & Analytics",
+        items: ["TimescaleDB", "PostgreSQL", "Qdrant", "Redis", "Walk-Forward Backtest"],
+      },
+      {
         category: "AI / LLM",
-        items: ["LLM Automation", "Function Calling", "LoRA/SFT", "Multi-Agent"],
+        items: ["LangChain", "RAG", "MCP Server", "Multi-Agent", "PII Detection"],
+      },
+      {
+        category: "DevOps & Security",
+        items: ["CI/CD", "Dependabot", "CVE Monitoring", "Semantic Versioning", "80%+ Coverage"],
+      },
+      {
+        category: "Risk Management",
+        items: ["Kelly Criterion", "Almgren-Chriss", "Z-Score Signals", "Correlation Risk"],
       },
     ],
   },
