@@ -21,27 +21,27 @@ export default function Home() {
       <GitHubStats />
 
       {/* Featured Projects Section */}
-      <section className="ds-section-padded bg-[#f9fafb]">
-        <div className="max-w-[1200px] mx-auto px-4 md:px-6">
+      <section className="bg-white border-t-2 border-black/5">
+        <div className="max-w-[1200px] mx-auto px-4 md:px-6 py-16 md:py-24">
 
           {/* Section Header */}
-          <div className="ds-section-header">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6">
-              <div className="max-w-2xl">
-                <span className="ds-badge">
+          <div className="flex flex-col gap-4 mb-10 md:mb-14">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+              <div className="flex flex-col gap-3">
+                <span className="ds-badge w-fit">
                   {t.projects.badge}
                 </span>
-                <h2 className="text-lg md:text-xl lg:text-2xl font-black text-[#171a20] keep-all mt-3">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#171a20] leading-tight">
                   {t.projects.title}
                 </h2>
-                <p className="text-xs md:text-sm text-[#3e3e3e] font-medium keep-all mt-2">
+                <p className="text-sm md:text-base text-[#5c5e62] font-medium max-w-2xl">
                   {t.projects.subtitle}
                 </p>
               </div>
 
               <Link
                 href="/projects"
-                className="ds-button ds-button-secondary whitespace-nowrap"
+                className="ds-button ds-button-secondary whitespace-nowrap w-fit"
               >
                 {t.projects.viewAll}
                 <svg width="14" height="14" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
