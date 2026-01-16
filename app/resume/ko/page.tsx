@@ -25,13 +25,13 @@ export default function ResumePage() {
                 <td className="border border-gray-400 px-3 py-1.5 text-sm print:text-[9pt] print:py-1" colSpan={2}>
                   박하성
                 </td>
-                <td className="border border-gray-400 px-2 py-2 text-center align-middle w-[130px] print:w-[110px]" rowSpan={5}>
-                  <div className="w-[105px] h-[140px] mx-auto border border-gray-300 overflow-hidden print:w-[95px] print:h-[125px]">
+                <td className="border border-gray-400 px-2 py-2 text-center align-middle w-[150px] print:w-[130px]" rowSpan={5}>
+                  <div className="w-[130px] h-[170px] mx-auto border border-gray-300 overflow-hidden print:w-[115px] print:h-[150px]">
                     <Image
                       src="/images/profile-photo.jpg"
                       alt="증명사진"
-                      width={105}
-                      height={140}
+                      width={130}
+                      height={170}
                       className="w-full h-full object-cover object-top"
                       priority
                     />
@@ -202,13 +202,66 @@ export default function ResumePage() {
           </table>
         </section>
 
+        {/* ========== 자격증 ========== */}
+        <section className="mb-5 print:mb-3">
+          <h2 className="text-base font-bold text-gray-900 mb-1.5 border-b-2 border-gray-800 pb-1 print:text-[11pt]">
+            자격증
+          </h2>
+          <table className="w-full border-collapse border-2 border-gray-800">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-400 px-2 py-1 text-sm font-bold text-center w-32 print:text-[8pt]">취득일</th>
+                <th className="border border-gray-400 px-2 py-1 text-sm font-bold text-center print:text-[8pt]">자격증명</th>
+                <th className="border border-gray-400 px-2 py-1 text-sm font-bold text-center w-32 print:text-[8pt]">발급기관</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-400 px-2 py-1 text-sm text-center print:text-[8pt]">2020.08</td>
+                <td className="border border-gray-400 px-2 py-1 text-sm print:text-[8pt]">자동차정비기능사</td>
+                <td className="border border-gray-400 px-2 py-1 text-sm text-center print:text-[8pt]">한국산업인력공단</td>
+              </tr>
+              <tr>
+                <td className="border border-gray-400 px-2 py-1 text-sm text-center print:text-[8pt]">2023.04</td>
+                <td className="border border-gray-400 px-2 py-1 text-sm print:text-[8pt]">SQLD (SQL 개발자)</td>
+                <td className="border border-gray-400 px-2 py-1 text-sm text-center print:text-[8pt]">한국데이터산업진흥원</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        {/* ========== 어학 ========== */}
+        <section className="mb-5 print:mb-3">
+          <h2 className="text-base font-bold text-gray-900 mb-1.5 border-b-2 border-gray-800 pb-1 print:text-[11pt]">
+            어학
+          </h2>
+          <table className="w-full border-collapse border-2 border-gray-800">
+            <thead>
+              <tr className="bg-gray-100">
+                <th className="border border-gray-400 px-2 py-1 text-sm font-bold text-center w-24 print:text-[8pt]">언어</th>
+                <th className="border border-gray-400 px-2 py-1 text-sm font-bold text-center w-32 print:text-[8pt]">자격/등급</th>
+                <th className="border border-gray-400 px-2 py-1 text-sm font-bold text-center w-28 print:text-[8pt]">취득일</th>
+                <th className="border border-gray-400 px-2 py-1 text-sm font-bold text-center print:text-[8pt]">비고</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="border border-gray-400 px-2 py-1 text-sm text-center print:text-[8pt]">독일어</td>
+                <td className="border border-gray-400 px-2 py-1 text-sm text-center print:text-[8pt]">telc B1</td>
+                <td className="border border-gray-400 px-2 py-1 text-sm text-center print:text-[8pt]">2018.09.21</td>
+                <td className="border border-gray-400 px-2 py-1 text-sm print:text-[8pt]">일상 회화 가능</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
         {/* ========== 자기소개서 ========== */}
         <section className="mb-5 print:mb-3">
           <h2 className="text-base font-bold text-gray-900 mb-1.5 border-b-2 border-gray-800 pb-1 print:text-[11pt]">
             자기소개서
           </h2>
-          <div className="border-2 border-gray-800 p-4 print:p-3">
-            <div className="text-[13px] leading-[1.9] text-gray-800 break-keep print:text-[9pt] print:leading-[1.7]" style={{ textWrap: 'pretty' }}>
+          <div className="border-2 border-gray-800 p-5 print:p-4">
+            <div className="text-[14px] leading-[2] text-gray-800 break-keep print:text-[10pt] print:leading-[1.8]" style={{ textWrap: 'pretty' }}>
 
               <p className="mb-4 print:mb-2">
                 웹과 백엔드를 중심으로 실무 개발을 수행해 온 소프트웨어 엔지니어입니다.
